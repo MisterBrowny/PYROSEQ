@@ -33,9 +33,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"23 include\feu.h
-[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time LastOutput NextOutput CanStopStart SaveTime ]
+"25 include\feu.h
+[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
+"16 include\feedback.h
+[s S339 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S339 StructFeedback Period Pulse State Step ]
 "502 include\pic18f452.h
 [v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
 "333
@@ -2988,29 +2991,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"19 include\feu.h
+"21 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 19: volatile unsigned char Decompte;
-"20
+[; ;feu.h: 21: volatile unsigned char Decompte;
+"22
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 20: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 23: typedef struct StructFeu{
-[; ;feu.h: 24: unsigned char Step;
-[; ;feu.h: 25: unsigned char Cpt;
-[; ;feu.h: 26: unsigned char Decompte;
-[; ;feu.h: 27: unsigned short SavedTime;
-[; ;feu.h: 28: unsigned short TimeToFire;
-[; ;feu.h: 29: unsigned short Time;
-[; ;feu.h: 30: unsigned char LastOutput;
-[; ;feu.h: 31: unsigned char NextOutput;
-[; ;feu.h: 32: unsigned CanStopStart :1;
-[; ;feu.h: 33: unsigned SaveTime :1;
-[; ;feu.h: 34: }struFeu;
-"36
+[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 25: typedef struct StructFeu{
+[; ;feu.h: 26: unsigned char Step;
+[; ;feu.h: 27: unsigned char Cpt;
+[; ;feu.h: 28: unsigned char Decompte;
+[; ;feu.h: 29: unsigned short SavedTime;
+[; ;feu.h: 30: unsigned short TimeToFire;
+[; ;feu.h: 31: unsigned short Time;
+[; ;feu.h: 32: unsigned short TimeStart;
+[; ;feu.h: 33: unsigned char LastOutput;
+[; ;feu.h: 34: unsigned char NextOutput;
+[; ;feu.h: 35: unsigned CanStopStart :1;
+[; ;feu.h: 36: unsigned SaveTime :1;
+[; ;feu.h: 37: }struFeu;
+"39
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 36: struFeu Feu;
-[; ;feu.h: 38: void feu_check_bp (void);
-[; ;feu.h: 39: void feu_process (void);
+[; ;feu.h: 39: struFeu Feu;
+[; ;feu.h: 41: void feu_check_bp (void);
+[; ;feu.h: 42: void feu_process (void);
+[; ;feedback.h: 16: typedef struct StructFeedback {
+[; ;feedback.h: 17: unsigned short Period;
+[; ;feedback.h: 18: unsigned char Pulse;
+[; ;feedback.h: 19: unsigned char State;
+[; ;feedback.h: 20: unsigned char Step;
+[; ;feedback.h: 21: }struFeedback;
+"23 include\feedback.h
+[v _Feedback `S339 ~T0 @X0 1 e ]
+[; ;feedback.h: 23: struFeedback Feedback;
 "3 ecran.c
 [v _ecran_raz_digit `(v ~T0 @X0 1 sf ]
 "4
@@ -3027,7 +3040,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =& _PORTC -> -> 240 `i `uc ]
 [; ;ecran.c: 7: }
 "7
-[e :UE 339 ]
+[e :UE 340 ]
 }
 "9
 [v _ecran_digit `(v ~T0 @X0 1 sf1`uc ]
@@ -3042,176 +3055,176 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;ecran.c: 11: switch (Char)
 "11
-[e $U 342  ]
+[e $U 343  ]
 [; ;ecran.c: 12: {
 "12
 {
 [; ;ecran.c: 13: case ' ': PORTD = 0x00; break;
 "13
-[e :U 343 ]
+[e :U 344 ]
 [e = _PORTD -> -> 0 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 14: case 'A': PORTD = 0xB7; break;
 "14
-[e :U 344 ]
+[e :U 345 ]
 [e = _PORTD -> -> 183 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 15: case 'B': PORTD = 0xF2; break;
 "15
-[e :U 345 ]
+[e :U 346 ]
 [e = _PORTD -> -> 242 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 16: case 'C': PORTD = 0xD0; break;
 "16
-[e :U 346 ]
+[e :U 347 ]
 [e = _PORTD -> -> 208 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 17: case 'D': PORTD = 0xF1; break;
 "17
-[e :U 347 ]
+[e :U 348 ]
 [e = _PORTD -> -> 241 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 18: case 'E': PORTD = 0xD6; break;
 "18
-[e :U 348 ]
+[e :U 349 ]
 [e = _PORTD -> -> 214 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 19: case 'F': PORTD = 0x96; break;
 "19
-[e :U 349 ]
+[e :U 350 ]
 [e = _PORTD -> -> 150 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 20: case 'P': PORTD = 0x97; break;
 "20
-[e :U 350 ]
+[e :U 351 ]
 [e = _PORTD -> -> 151 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 21: case 'b': PORTD = 0xF2; break;
 "21
-[e :U 351 ]
+[e :U 352 ]
 [e = _PORTD -> -> 242 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 22: case 'c': PORTD = 0xD0; break;
 "22
-[e :U 352 ]
+[e :U 353 ]
 [e = _PORTD -> -> 208 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 23: case 'd': PORTD = 0xF1; break;
 "23
-[e :U 353 ]
+[e :U 354 ]
 [e = _PORTD -> -> 241 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 24: case 'S': PORTD = 0x76; break;
 "24
-[e :U 354 ]
+[e :U 355 ]
 [e = _PORTD -> -> 118 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 25: case 't': PORTD = 0xD2; break;
 "25
-[e :U 355 ]
+[e :U 356 ]
 [e = _PORTD -> -> 210 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 26: case '_': PORTD = 0x40; break;
 "26
-[e :U 356 ]
+[e :U 357 ]
 [e = _PORTD -> -> 64 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 27: case '-': PORTD = 0x10; break;
 "27
-[e :U 357 ]
+[e :U 358 ]
 [e = _PORTD -> -> 16 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 28: case '0': PORTD = 0xE7; break;
 "28
-[e :U 358 ]
+[e :U 359 ]
 [e = _PORTD -> -> 231 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 29: case '1': PORTD = 0x21; break;
 "29
-[e :U 359 ]
+[e :U 360 ]
 [e = _PORTD -> -> 33 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 30: case '2': PORTD = 0xD5; break;
 "30
-[e :U 360 ]
+[e :U 361 ]
 [e = _PORTD -> -> 213 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 31: case '3': PORTD = 0x75; break;
 "31
-[e :U 361 ]
+[e :U 362 ]
 [e = _PORTD -> -> 117 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 32: case '4': PORTD = 0x33; break;
 "32
-[e :U 362 ]
+[e :U 363 ]
 [e = _PORTD -> -> 51 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 33: case '5': PORTD = 0x76; break;
 "33
-[e :U 363 ]
+[e :U 364 ]
 [e = _PORTD -> -> 118 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 34: case '6': PORTD = 0xF6; break;
 "34
-[e :U 364 ]
+[e :U 365 ]
 [e = _PORTD -> -> 246 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 35: case '7': PORTD = 0x25; break;
 "35
-[e :U 365 ]
+[e :U 366 ]
 [e = _PORTD -> -> 37 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 36: case '8': PORTD = 0xF7; break;
 "36
-[e :U 366 ]
+[e :U 367 ]
 [e = _PORTD -> -> 247 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 37: case '9': PORTD = 0x77; break;
 "37
-[e :U 367 ]
+[e :U 368 ]
 [e = _PORTD -> -> 119 `i `uc ]
-[e $U 341  ]
+[e $U 342  ]
 [; ;ecran.c: 38: default: break;
 "38
-[e :U 368 ]
-[e $U 341  ]
+[e :U 369 ]
+[e $U 342  ]
 "39
 }
 [; ;ecran.c: 39: }
-[e $U 341  ]
+[e $U 342  ]
 "11
-[e :U 342 ]
-[e [\ _Char , $ -> -> 32 `ui `uc 343
- , $ -> -> 65 `ui `uc 344
- , $ -> -> 66 `ui `uc 345
- , $ -> -> 67 `ui `uc 346
- , $ -> -> 68 `ui `uc 347
- , $ -> -> 69 `ui `uc 348
- , $ -> -> 70 `ui `uc 349
- , $ -> -> 80 `ui `uc 350
- , $ -> -> 98 `ui `uc 351
- , $ -> -> 99 `ui `uc 352
- , $ -> -> 100 `ui `uc 353
- , $ -> -> 83 `ui `uc 354
- , $ -> -> 116 `ui `uc 355
- , $ -> -> 95 `ui `uc 356
- , $ -> -> 45 `ui `uc 357
- , $ -> -> 48 `ui `uc 358
- , $ -> -> 49 `ui `uc 359
- , $ -> -> 50 `ui `uc 360
- , $ -> -> 51 `ui `uc 361
- , $ -> -> 52 `ui `uc 362
- , $ -> -> 53 `ui `uc 363
- , $ -> -> 54 `ui `uc 364
- , $ -> -> 55 `ui `uc 365
- , $ -> -> 56 `ui `uc 366
- , $ -> -> 57 `ui `uc 367
- 368 ]
+[e :U 343 ]
+[e [\ _Char , $ -> -> 32 `ui `uc 344
+ , $ -> -> 65 `ui `uc 345
+ , $ -> -> 66 `ui `uc 346
+ , $ -> -> 67 `ui `uc 347
+ , $ -> -> 68 `ui `uc 348
+ , $ -> -> 69 `ui `uc 349
+ , $ -> -> 70 `ui `uc 350
+ , $ -> -> 80 `ui `uc 351
+ , $ -> -> 98 `ui `uc 352
+ , $ -> -> 99 `ui `uc 353
+ , $ -> -> 100 `ui `uc 354
+ , $ -> -> 83 `ui `uc 355
+ , $ -> -> 116 `ui `uc 356
+ , $ -> -> 95 `ui `uc 357
+ , $ -> -> 45 `ui `uc 358
+ , $ -> -> 48 `ui `uc 359
+ , $ -> -> 49 `ui `uc 360
+ , $ -> -> 50 `ui `uc 361
+ , $ -> -> 51 `ui `uc 362
+ , $ -> -> 52 `ui `uc 363
+ , $ -> -> 53 `ui `uc 364
+ , $ -> -> 54 `ui `uc 365
+ , $ -> -> 55 `ui `uc 366
+ , $ -> -> 56 `ui `uc 367
+ , $ -> -> 57 `ui `uc 368
+ 369 ]
 "39
-[e :U 341 ]
+[e :U 342 ]
 [; ;ecran.c: 40: }
 "40
-[e :UE 340 ]
+[e :UE 341 ]
 }
 "42
 [v _ecran_dot `(v ~T0 @X0 1 sf1`uc ]
@@ -3226,7 +3239,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;ecran.c: 44: if (Dot == 1)
 "44
-[e $ ! == -> _Dot `i -> 1 `i 370  ]
+[e $ ! == -> _Dot `i -> 1 `i 371  ]
 [; ;ecran.c: 45: {
 "45
 {
@@ -3235,11 +3248,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =| _PORTD -> -> 8 `i `uc ]
 "47
 }
-[e :U 370 ]
+[e :U 371 ]
 [; ;ecran.c: 47: }
 [; ;ecran.c: 48: }
 "48
-[e :UE 369 ]
+[e :UE 370 ]
 }
 "50
 [v _ecran_print_one_char `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -3261,50 +3274,50 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _ecran_digit (1 _Character ]
 [; ;ecran.c: 56: switch (Digit)
 "56
-[e $U 373  ]
+[e $U 374  ]
 [; ;ecran.c: 57: {
 "57
 {
 [; ;ecran.c: 58: case 0: PORTCbits.RC1 = 1; break;
 "58
-[e :U 374 ]
+[e :U 375 ]
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-[e $U 372  ]
+[e $U 373  ]
 [; ;ecran.c: 59: case 1: PORTCbits.RC2 = 1; break;
 "59
-[e :U 375 ]
+[e :U 376 ]
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-[e $U 372  ]
+[e $U 373  ]
 [; ;ecran.c: 60: case 2: PORTCbits.RC3 = 1; break;
 "60
-[e :U 376 ]
+[e :U 377 ]
 [e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
-[e $U 372  ]
+[e $U 373  ]
 [; ;ecran.c: 61: case 3: PORTCbits.RC0 = 1; break;
 "61
-[e :U 377 ]
+[e :U 378 ]
 [e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[e $U 372  ]
+[e $U 373  ]
 [; ;ecran.c: 62: default: break;
 "62
-[e :U 378 ]
-[e $U 372  ]
+[e :U 379 ]
+[e $U 373  ]
 "63
 }
 [; ;ecran.c: 63: }
-[e $U 372  ]
+[e $U 373  ]
 "56
-[e :U 373 ]
-[e [\ _Digit , $ -> -> 0 `i `uc 374
- , $ -> -> 1 `i `uc 375
- , $ -> -> 2 `i `uc 376
- , $ -> -> 3 `i `uc 377
- 378 ]
+[e :U 374 ]
+[e [\ _Digit , $ -> -> 0 `i `uc 375
+ , $ -> -> 1 `i `uc 376
+ , $ -> -> 2 `i `uc 377
+ , $ -> -> 3 `i `uc 378
+ 379 ]
 "63
-[e :U 372 ]
+[e :U 373 ]
 [; ;ecran.c: 64: }
 "64
-[e :UE 371 ]
+[e :UE 372 ]
 }
 "66
 [v _ecran_print_num `(v ~T0 @X0 1 ef1`uc ]
@@ -3334,7 +3347,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 32 `ui `uc ]
 [; ;ecran.c: 77: if (Num < 10)
 "77
-[e $ ! < -> _Num `i -> 10 `i 380  ]
+[e $ ! < -> _Num `i -> 10 `i 381  ]
 [; ;ecran.c: 78: {
 "78
 {
@@ -3347,9 +3360,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "81
 }
 [; ;ecran.c: 81: }
-[e $U 381  ]
+[e $U 382  ]
 "82
-[e :U 380 ]
+[e :U 381 ]
 [; ;ecran.c: 82: else
 [; ;ecran.c: 83: {
 "83
@@ -3362,14 +3375,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux *U + _tempStr * -> -> 0 `i `x -> -> # *U _tempStr `i `x ]
 "86
 }
-[e :U 381 ]
+[e :U 382 ]
 [; ;ecran.c: 86: }
 [; ;ecran.c: 88: Ecran.Digits = Ecran.Digit;
 "88
 [e = . _Ecran 1 &U . _Ecran 0 ]
 [; ;ecran.c: 89: }
 "89
-[e :UE 379 ]
+[e :UE 380 ]
 }
 "91
 [v _ecran_wait `(v ~T0 @X0 1 ef ]
@@ -3393,7 +3406,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _Ecran 7 -> -> 1 `i `uc ]
 [; ;ecran.c: 101: }
 "101
-[e :UE 382 ]
+[e :UE 383 ]
 }
 "103
 [v _ecran_blank `(v ~T0 @X0 1 ef ]
@@ -3423,7 +3436,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _Ecran 7 -> -> 0 `i `uc ]
 [; ;ecran.c: 114: }
 "114
-[e :UE 383 ]
+[e :UE 384 ]
 }
 "116
 [v _ecran_refresh `(v ~T0 @X0 1 ef ]
@@ -3436,7 +3449,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ecran.c: 118: if ( (Ecran.Solid == 0)
 [; ;ecran.c: 119: && ((++ Ecran.Cpt) <= Ecran.tRate))
 "119
-[e $ ! && == -> . _Ecran 7 `i -> 0 `i <= -> =+ . _Ecran 4 -> -> 1 `i `uc `i -> . _Ecran 5 `i 385  ]
+[e $ ! && == -> . _Ecran 7 `i -> 0 `i <= -> =+ . _Ecran 4 -> -> 1 `i `uc `i -> . _Ecran 5 `i 386  ]
 [; ;ecran.c: 120: {
 "120
 {
@@ -3448,16 +3461,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _ecran_dot (1 *U + &U . _Ecran 2 * -> . _Ecran 3 `ux -> -> # *U &U . _Ecran 2 `ui `ux ]
 [; ;ecran.c: 125: if (++ Ecran.Index > 3) {Ecran.Index = 0;}
 "125
-[e $ ! > -> =+ . _Ecran 3 -> -> 1 `i `uc `i -> 3 `i 386  ]
+[e $ ! > -> =+ . _Ecran 3 -> -> 1 `i `uc `i -> 3 `i 387  ]
 {
 [e = . _Ecran 3 -> -> 0 `i `uc ]
 }
-[e :U 386 ]
+[e :U 387 ]
 "126
 }
-[e :U 385 ]
+[e :U 386 ]
 [; ;ecran.c: 126: }
 [; ;ecran.c: 127: }
 "127
-[e :UE 384 ]
+[e :UE 385 ]
 }

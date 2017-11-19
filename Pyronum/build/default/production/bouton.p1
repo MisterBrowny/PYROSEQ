@@ -33,9 +33,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"23 include\feu.h
-[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time LastOutput NextOutput CanStopStart SaveTime ]
+"25 include\feu.h
+[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
+"16 include\feedback.h
+[s S339 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S339 StructFeedback Period Pulse State Step ]
 [s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S25 . RE0 RE1 RE2 ]
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -3046,29 +3049,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"19 include\feu.h
+"21 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 19: volatile unsigned char Decompte;
-"20
+[; ;feu.h: 21: volatile unsigned char Decompte;
+"22
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 20: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 23: typedef struct StructFeu{
-[; ;feu.h: 24: unsigned char Step;
-[; ;feu.h: 25: unsigned char Cpt;
-[; ;feu.h: 26: unsigned char Decompte;
-[; ;feu.h: 27: unsigned short SavedTime;
-[; ;feu.h: 28: unsigned short TimeToFire;
-[; ;feu.h: 29: unsigned short Time;
-[; ;feu.h: 30: unsigned char LastOutput;
-[; ;feu.h: 31: unsigned char NextOutput;
-[; ;feu.h: 32: unsigned CanStopStart :1;
-[; ;feu.h: 33: unsigned SaveTime :1;
-[; ;feu.h: 34: }struFeu;
-"36
+[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 25: typedef struct StructFeu{
+[; ;feu.h: 26: unsigned char Step;
+[; ;feu.h: 27: unsigned char Cpt;
+[; ;feu.h: 28: unsigned char Decompte;
+[; ;feu.h: 29: unsigned short SavedTime;
+[; ;feu.h: 30: unsigned short TimeToFire;
+[; ;feu.h: 31: unsigned short Time;
+[; ;feu.h: 32: unsigned short TimeStart;
+[; ;feu.h: 33: unsigned char LastOutput;
+[; ;feu.h: 34: unsigned char NextOutput;
+[; ;feu.h: 35: unsigned CanStopStart :1;
+[; ;feu.h: 36: unsigned SaveTime :1;
+[; ;feu.h: 37: }struFeu;
+"39
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 36: struFeu Feu;
-[; ;feu.h: 38: void feu_check_bp (void);
-[; ;feu.h: 39: void feu_process (void);
+[; ;feu.h: 39: struFeu Feu;
+[; ;feu.h: 41: void feu_check_bp (void);
+[; ;feu.h: 42: void feu_process (void);
+[; ;feedback.h: 16: typedef struct StructFeedback {
+[; ;feedback.h: 17: unsigned short Period;
+[; ;feedback.h: 18: unsigned char Pulse;
+[; ;feedback.h: 19: unsigned char State;
+[; ;feedback.h: 20: unsigned char Step;
+[; ;feedback.h: 21: }struFeedback;
+"23 include\feedback.h
+[v _Feedback `S339 ~T0 @X0 1 e ]
+[; ;feedback.h: 23: struFeedback Feedback;
 "3 bouton.c
 [v _bouton_init `(v ~T0 @X0 1 ef ]
 "4
@@ -3091,7 +3104,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 . . _PORTBbits 0 0 ]
 [; ;bouton.c: 9: }
 "9
-[e :UE 339 ]
+[e :UE 340 ]
 }
 "11
 [v _bouton_refresh `(v ~T0 @X0 1 ef ]
@@ -3108,10 +3121,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "15
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> . `E3044 4 `i 341  ]
-[e $U 342  ]
+[e $ < -> _i `i -> . `E3044 4 `i 342  ]
+[e $U 343  ]
 "16
-[e :U 341 ]
+[e :U 342 ]
 [; ;bouton.c: 16: {
 {
 "17
@@ -3119,62 +3132,62 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bouton.c: 17: unsigned char temp;
 [; ;bouton.c: 19: switch (i)
 "19
-[e $U 345  ]
+[e $U 346  ]
 [; ;bouton.c: 20: {
 "20
 {
 [; ;bouton.c: 21: case Bp_On: temp = PORTEbits.RE0; break;
 "21
-[e :U 346 ]
+[e :U 347 ]
 [e = _temp . . _PORTEbits 0 0 ]
-[e $U 344  ]
+[e $U 345  ]
 [; ;bouton.c: 22: case Bp_IdTest: temp = PORTEbits.RE1; break;
 "22
-[e :U 347 ]
+[e :U 348 ]
 [e = _temp . . _PORTEbits 0 1 ]
-[e $U 344  ]
+[e $U 345  ]
 [; ;bouton.c: 23: case Comu_Test: temp = PORTCbits.RC5; break;
 "23
-[e :U 348 ]
+[e :U 349 ]
 [e = _temp . . _PORTCbits 0 5 ]
-[e $U 344  ]
+[e $U 345  ]
 [; ;bouton.c: 24: case Bp_Start: temp = PORTBbits.RB0; break;
 "24
-[e :U 349 ]
+[e :U 350 ]
 [e = _temp . . _PORTBbits 0 0 ]
-[e $U 344  ]
+[e $U 345  ]
 [; ;bouton.c: 25: default: break;
 "25
-[e :U 350 ]
-[e $U 344  ]
+[e :U 351 ]
+[e $U 345  ]
 "26
 }
 [; ;bouton.c: 26: }
-[e $U 344  ]
+[e $U 345  ]
 "19
-[e :U 345 ]
-[e [\ _i , $ -> . `E3044 0 `uc 346
- , $ -> . `E3044 1 `uc 347
- , $ -> . `E3044 2 `uc 348
- , $ -> . `E3044 3 `uc 349
- 350 ]
+[e :U 346 ]
+[e [\ _i , $ -> . `E3044 0 `uc 347
+ , $ -> . `E3044 1 `uc 348
+ , $ -> . `E3044 2 `uc 349
+ , $ -> . `E3044 3 `uc 350
+ 351 ]
 "26
-[e :U 344 ]
+[e :U 345 ]
 [; ;bouton.c: 28: if (temp == Bouton[i].Memo)
 "28
-[e $ ! == -> _temp `i -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 1 `i 351  ]
+[e $ ! == -> _temp `i -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 1 `i 352  ]
 [; ;bouton.c: 29: {
 "29
 {
 [; ;bouton.c: 30: if (Bouton[i].State != Bouton[i].Memo)
 "30
-[e $ ! != -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 1 `i 352  ]
+[e $ ! != -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 1 `i 353  ]
 [; ;bouton.c: 31: {
 "31
 {
 [; ;bouton.c: 32: if ((((unsigned short) (Cptms - Bouton[i].Time) > (((i == Bp_Start) && (Micro.Mods == 1)) ? 5 : 100)) ? 1 : 0))
 "32
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 0 `ui `us `ui -> ? && == -> _i `i -> . `E3044 3 `i == -> . . _Micro 4 0 `i -> 1 `i : -> 5 `i -> 100 `i `ui : -> 1 `i -> 0 `i -> 0 `i 353  ]
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 0 `ui `us `ui -> ? && == -> _i `i -> . `E3044 3 `i == -> . . _Micro 4 0 `i -> 1 `i : -> 5 `i -> 100 `i `ui : -> 1 `i -> 0 `i -> 0 `i 354  ]
 [; ;bouton.c: 33: {
 "33
 {
@@ -3183,18 +3196,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 2 . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 1 ]
 "35
 }
-[e :U 353 ]
+[e :U 354 ]
 "36
 }
-[e :U 352 ]
+[e :U 353 ]
 "37
 }
 [; ;bouton.c: 35: }
 [; ;bouton.c: 36: }
 [; ;bouton.c: 37: }
-[e $U 354  ]
+[e $U 355  ]
 "38
-[e :U 351 ]
+[e :U 352 ]
 [; ;bouton.c: 38: else
 [; ;bouton.c: 39: {
 "39
@@ -3207,18 +3220,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . *U + &U _Bouton * -> _i `ux -> -> # *U &U _Bouton `ui `ux 0 _Cptms ]
 "42
 }
-[e :U 354 ]
+[e :U 355 ]
 "43
 }
 "15
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> . `E3044 4 `i 341  ]
-[e :U 342 ]
+[e $ < -> _i `i -> . `E3044 4 `i 342  ]
+[e :U 343 ]
 "43
 }
 [; ;bouton.c: 42: }
 [; ;bouton.c: 43: }
 [; ;bouton.c: 44: }
 "44
-[e :UE 340 ]
+[e :UE 341 ]
 }

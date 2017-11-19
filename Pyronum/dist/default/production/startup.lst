@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-                                                                                                           Thu Aug 25 18:15:51 2016
+                                                                                                           Sun Nov 19 21:05:26 2017
 
 
      1                           
@@ -16,7 +16,7 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
     10                           	; --chip=18F452 -G -mdist/default/production/Pyronum.production.map \
     11                           	; --double=32 --float=24 --emi=wordwrite \
     12                           	; --opt=default,+asm,-asmfile,+speed,-space,-debug --addrqual=ignore -P \
-    13                           	; -N255 -Iinclude --warn=0 --asmlist \
+    13                           	; -N255 -Iinclude --warn=0 --asmlist -DXPRJ_default=default \
     14                           	; --summary=default,-psect,-class,+mem,-hex,-file \
     15                           	; --output=default,-inhx032 \
     16                           	; --runtime=default,+clear,+init,+keep,-no_startup,-download,+config,+clib,+plib \
@@ -81,11 +81,11 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
     75                           	psect	init,class=CODE,delta=1,reloc=2
     76                           	psect	text,class=CODE,delta=1,reloc=2
     77                           GLOBAL	intlevel0,intlevel1,intlevel2
-    78  002D9A                     intlevel0:
-    79  002D9A                     intlevel1:
-    80  002D9A                     intlevel2:
+    78  0035D6                     intlevel0:
+    79  0035D6                     intlevel1:
+    80  0035D6                     intlevel2:
     81                           GLOBAL	intlevel3
-    82  002D9A                     intlevel3:
+    82  0035D6                     intlevel3:
     83                           	psect	end_init,class=CODE,delta=1,reloc=2
     84                           	psect	clrtext,class=CODE,delta=1,reloc=2
     85                           
@@ -148,7 +148,7 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
    142                           
    143                           	psect	end_init
    144                           	global start_initialization
-   145  000112  EFE4  F013         	goto start_initialization	;jump to C runtime clear & initialization
+   145  000112  EF19  F019         	goto start_initialization	;jump to C runtime clear & initialization
    146                           
    147                           ; Config register IDLOC0 @ 0x200000
    148                           ;	unspecified using default value
@@ -359,20 +359,20 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
    353                           psect sfr,class=SFR,space=1
    354                           
    355                           
-   356  002D9A  FFFF               
+   356  0035D6  FFFF               
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-Symbol Table                                                                                               Thu Aug 25 18:15:51 2016
+Symbol Table                                                                                               Sun Nov 19 21:05:26 2017
 
                                               __S1 016B                                               ___sp 0000  
-                                             _main 2640                                               start 0112  
+                                             _main 2E0C                                               start 0112  
                                             __HRAM 0000                                              __LRAM 0001  
                                      __mediumconst 0000                                             stackhi 0005FF  
                                            stacklo 00016B                                             powerup 00F2  
                                        __accesstop 000080                                         ___inthi_sp 0000  
                                        ___intlo_sp 0000                                            __ramtop 0600  
-                              start_initialization 27C8                                        __smallconst 0600  
-                                         intlevel0 2D9A                                           intlevel1 2D9A  
-                                         intlevel2 2D9A                                           intlevel3 2D9A  
+                              start_initialization 3232                                        __smallconst 0600  
+                                         intlevel0 35D6                                           intlevel1 35D6  
+                                         intlevel2 35D6                                           intlevel3 35D6  
                                          reset_vec 0000  

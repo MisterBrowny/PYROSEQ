@@ -10,7 +10,7 @@
 	; --chip=18F452 -G -mdist/default/production/Pyronum.production.map \
 	; --double=32 --float=24 --emi=wordwrite \
 	; --opt=default,+asm,-asmfile,+speed,-space,-debug --addrqual=ignore -P \
-	; -N255 -Iinclude --warn=0 --asmlist \
+	; -N255 -Iinclude --warn=0 --asmlist -DXPRJ_default=default \
 	; --summary=default,-psect,-class,+mem,-hex,-file \
 	; --output=default,-inhx032 \
 	; --runtime=default,+clear,+init,+keep,-no_startup,-download,+config,+clib,+plib \

@@ -34,7 +34,10 @@ void feu_check_bp (void)
 	else if (	(Bouton[Bp_Start].State == 1)
 			 &&	(Feu.CanStopStart == false))
 	{
-		Feu.CanStopStart = true;
+		if (TempsSup(Feu.TimeStart, TIME_TO_STOP))
+		{
+			Feu.CanStopStart = true;
+		}
 	}
 	else if (	(Micro.Mods == false)
 			 &&	(Feu.CanStopStart == true)
@@ -49,6 +52,7 @@ void feu_check_bp (void)
 		{
 			Feu.Step = FEU_RESTART;
 			Micro.State = GO;
+			Feu.TimeStart = Cptms;
 		}
 
 		Feu.CanStopStart = false;
@@ -101,6 +105,7 @@ void feu_process (void)
 				Feu.LastOutput = 0;
 
 				Feu.CanStopStart = false;
+				Feu.TimeStart = Cptms;
 			}
 			break;
 		case FEU_SELECT :

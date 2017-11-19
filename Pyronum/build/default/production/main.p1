@@ -33,9 +33,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"23 include\feu.h
-[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time LastOutput NextOutput CanStopStart SaveTime ]
+"25 include\feu.h
+[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
+"16 include\feedback.h
+[s S339 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S339 StructFeedback Period Pulse State Step ]
 "6705 include\pic18f452.h
 [v _RCIE `Vb ~T0 @X0 0 e@31981 ]
 "6707
@@ -52,6 +55,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
 "5184
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+[s S15 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S15 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . T1OSO T1OSI . SCK SDI SDO TX RX ]
+[s S17 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S17 . T1CKI CCP2 CCP1 SCL SDA . CK DT ]
+[s S18 :2 `uc 1 :1 `uc 1 ]
+[n S18 . . PA1 ]
+[s S19 :1 `uc 1 :1 `uc 1 ]
+[n S19 . . PA2 ]
+[u S14 `S15 1 `S16 1 `S17 1 `S18 1 `S19 1 ]
+[n S14 . . . . . . ]
+"378
+[v _PORTCbits `VS14 ~T0 @X0 0 e@3970 ]
 [p mainexit ]
 "15 include\hardware.h
 [v _hw_config `(v ~T0 @X0 0 ef ]
@@ -79,9 +96,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _test_process `(uc ~T0 @X0 0 ef ]
 "21 include\armement.h
 [v _armement_process `(v ~T0 @X0 0 ef ]
-"39 include\feu.h
+"42 include\feu.h
 [v _feu_process `(v ~T0 @X0 0 ef ]
-"38
+"41
 [v _feu_check_bp `(v ~T0 @X0 0 ef ]
 [; ;pic18f452.h: 47: extern volatile unsigned char PORTA @ 0xF80;
 "49 include\pic18f452.h
@@ -3015,29 +3032,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"19 include\feu.h
+"21 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 19: volatile unsigned char Decompte;
-"20
+[; ;feu.h: 21: volatile unsigned char Decompte;
+"22
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 20: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 23: typedef struct StructFeu{
-[; ;feu.h: 24: unsigned char Step;
-[; ;feu.h: 25: unsigned char Cpt;
-[; ;feu.h: 26: unsigned char Decompte;
-[; ;feu.h: 27: unsigned short SavedTime;
-[; ;feu.h: 28: unsigned short TimeToFire;
-[; ;feu.h: 29: unsigned short Time;
-[; ;feu.h: 30: unsigned char LastOutput;
-[; ;feu.h: 31: unsigned char NextOutput;
-[; ;feu.h: 32: unsigned CanStopStart :1;
-[; ;feu.h: 33: unsigned SaveTime :1;
-[; ;feu.h: 34: }struFeu;
-"36
+[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 25: typedef struct StructFeu{
+[; ;feu.h: 26: unsigned char Step;
+[; ;feu.h: 27: unsigned char Cpt;
+[; ;feu.h: 28: unsigned char Decompte;
+[; ;feu.h: 29: unsigned short SavedTime;
+[; ;feu.h: 30: unsigned short TimeToFire;
+[; ;feu.h: 31: unsigned short Time;
+[; ;feu.h: 32: unsigned short TimeStart;
+[; ;feu.h: 33: unsigned char LastOutput;
+[; ;feu.h: 34: unsigned char NextOutput;
+[; ;feu.h: 35: unsigned CanStopStart :1;
+[; ;feu.h: 36: unsigned SaveTime :1;
+[; ;feu.h: 37: }struFeu;
+"39
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 36: struFeu Feu;
-[; ;feu.h: 38: void feu_check_bp (void);
-[; ;feu.h: 39: void feu_process (void);
+[; ;feu.h: 39: struFeu Feu;
+[; ;feu.h: 41: void feu_check_bp (void);
+[; ;feu.h: 42: void feu_process (void);
+[; ;feedback.h: 16: typedef struct StructFeedback {
+[; ;feedback.h: 17: unsigned short Period;
+[; ;feedback.h: 18: unsigned char Pulse;
+[; ;feedback.h: 19: unsigned char State;
+[; ;feedback.h: 20: unsigned char Step;
+[; ;feedback.h: 21: }struFeedback;
+"23 include\feedback.h
+[v _Feedback `S339 ~T0 @X0 1 e ]
+[; ;feedback.h: 23: struFeedback Feedback;
 "7 main.c
 [p x OSC=HSPLL ]
 "8
@@ -3096,9 +3123,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR0=OFF ]
 "45
 [p x EBTRB=OFF ]
-[v F3164 `(v ~T0 @X0 1 tf ]
+[v F3172 `(v ~T0 @X0 1 tf ]
 "51
-[v _Low_priority `ILF3164 ~T0 @X0 1 e ]
+[v _Low_priority `ILF3172 ~T0 @X0 1 e ]
 "52
 {
 [; ;main.c: 51: void interrupt low_priority Low_priority (void)
@@ -3107,7 +3134,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;main.c: 53: if (RCIE && RCIF)
 "53
-[e $ ! && _RCIE _RCIF 340  ]
+[e $ ! && _RCIE _RCIF 341  ]
 [; ;main.c: 54: {
 "54
 {
@@ -3125,18 +3152,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _Cf 2 _Cptms ]
 [; ;main.c: 62: return;
 "62
-[e $UE 339  ]
+[e $UE 340  ]
 "63
 }
-[e :U 340 ]
+[e :U 341 ]
 [; ;main.c: 63: }
 [; ;main.c: 64: }
 "64
-[e :UE 339 ]
+[e :UE 340 ]
 }
-[v F3167 `(v ~T0 @X0 1 tf ]
+[v F3175 `(v ~T0 @X0 1 tf ]
 "66
-[v _High_priority `IHF3167 ~T0 @X0 1 e ]
+[v _High_priority `IHF3175 ~T0 @X0 1 e ]
 "67
 {
 [; ;main.c: 66: void interrupt high_priority High_priority (void)
@@ -3145,7 +3172,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;main.c: 68: if (TMR0IE && TMR0IF)
 "68
-[e $ ! && _TMR0IE _TMR0IF 342  ]
+[e $ ! && _TMR0IE _TMR0IF 343  ]
 [; ;main.c: 69: {
 "69
 {
@@ -3163,7 +3190,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _Cptms -> -> 1 `i `us ]
 [; ;main.c: 77: if (-- Decompte == 0)
 "77
-[e $ ! == -> =- _Decompte -> -> 1 `i `uc `i -> 0 `i 343  ]
+[e $ ! == -> =- _Decompte -> -> 1 `i `uc `i -> 0 `i 344  ]
 [; ;main.c: 78: {
 "78
 {
@@ -3175,142 +3202,268 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ++ _Cpt1Sur20s -> -> 1 `i `us ]
 "81
 }
-[e :U 343 ]
+[e :U 344 ]
 [; ;main.c: 81: }
-[; ;main.c: 83: return;
+[; ;main.c: 83: if (Micro.State)
 "83
-[e $UE 341  ]
+[e $ ! != -> . . _Micro 3 0 `i -> -> -> 0 `i `uc `i 345  ]
+[; ;main.c: 84: {
 "84
-}
-[e :U 342 ]
-[; ;main.c: 84: }
-[; ;main.c: 85: }
+{
+[; ;main.c: 85: if (Feedback.Period == 0)
 "85
-[e :UE 341 ]
+[e $ ! == -> . _Feedback 0 `ui -> -> 0 `i `ui 346  ]
+[; ;main.c: 86: {
+"86
+{
+[; ;main.c: 87: Feedback.State = Micro.State;
+"87
+[e = . _Feedback 2 . . _Micro 3 0 ]
+[; ;main.c: 88: Feedback.Period = 500;
+"88
+[e = . _Feedback 0 -> -> 500 `i `us ]
+[; ;main.c: 89: Feedback.Step = 0;
+"89
+[e = . _Feedback 3 -> -> 0 `i `uc ]
+"90
 }
+[; ;main.c: 90: }
+[e $U 347  ]
 "91
-[v _main `(v ~T0 @X0 1 ef ]
+[e :U 346 ]
+[; ;main.c: 91: else
+[; ;main.c: 92: {
 "92
 {
-[; ;main.c: 91: void main(void)
-[; ;main.c: 92: {
+[; ;main.c: 93: Feedback.Period --;
+"93
+[e -- . _Feedback 0 -> -> 1 `i `us ]
+"94
+}
+[e :U 347 ]
+[; ;main.c: 94: }
+[; ;main.c: 96: if ((0x01 << (unsigned char) (Feedback.Step / 2)) <= Feedback.State)
+"96
+[e $ ! <= << -> 1 `i -> / -> . _Feedback 3 `i -> 2 `i `uc -> . _Feedback 2 `i 348  ]
+[; ;main.c: 97: {
+"97
+{
+[; ;main.c: 98: if ((Feedback.Step & 0x01) == 0)
+"98
+[e $ ! == & -> . _Feedback 3 `i -> 1 `i -> 0 `i 349  ]
+[; ;main.c: 99: {
+"99
+{
+[; ;main.c: 100: if ((Feedback.Step == 0) || (-- Feedback.Pulse == 0))
+"100
+[e $ ! || == -> . _Feedback 3 `i -> 0 `i == -> =- . _Feedback 1 -> -> 1 `i `uc `i -> 0 `i 350  ]
+[; ;main.c: 101: {
+"101
+{
+[; ;main.c: 102: PORTCbits.RC4 = 1;
+"102
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 103: Feedback.Pulse = 50;
+"103
+[e = . _Feedback 1 -> -> 50 `i `uc ]
+[; ;main.c: 104: Feedback.Step ++;
+"104
+[e ++ . _Feedback 3 -> -> 1 `i `uc ]
+"105
+}
+[e :U 350 ]
+"106
+}
+[; ;main.c: 105: }
+[; ;main.c: 106: }
+[e $U 351  ]
+"107
+[e :U 349 ]
+[; ;main.c: 107: else
+[; ;main.c: 108: {
+"108
+{
+[; ;main.c: 109: if (-- Feedback.Pulse == 0)
+"109
+[e $ ! == -> =- . _Feedback 1 -> -> 1 `i `uc `i -> 0 `i 352  ]
+[; ;main.c: 110: {
+"110
+{
+[; ;main.c: 111: PORTCbits.RC4 = 0;
+"111
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 112: Feedback.Pulse = 50;
+"112
+[e = . _Feedback 1 -> -> 50 `i `uc ]
+[; ;main.c: 113: Feedback.Step ++;
+"113
+[e ++ . _Feedback 3 -> -> 1 `i `uc ]
+"114
+}
+[e :U 352 ]
+"115
+}
+[e :U 351 ]
+"116
+}
+[e :U 348 ]
+"117
+}
+[; ;main.c: 114: }
+[; ;main.c: 115: }
+[; ;main.c: 116: }
+[; ;main.c: 117: }
+[e $U 353  ]
+"118
+[e :U 345 ]
+[; ;main.c: 118: else
+[; ;main.c: 119: {
+"119
+{
+[; ;main.c: 120: PORTCbits.RC4 = 0;
+"120
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 121: Feedback.Period = 0;
+"121
+[e = . _Feedback 0 -> -> 0 `i `us ]
+"122
+}
+[e :U 353 ]
+[; ;main.c: 122: }
+[; ;main.c: 124: return;
+"124
+[e $UE 342  ]
+"125
+}
+[e :U 343 ]
+[; ;main.c: 125: }
+[; ;main.c: 126: }
+"126
+[e :UE 342 ]
+}
+"132
+[v _main `(v ~T0 @X0 1 ef ]
+"133
+{
+[; ;main.c: 132: void main(void)
+[; ;main.c: 133: {
 [e :U _main ]
 [f ]
-"93
+"134
 [v _i `uc ~T0 @X0 1 a ]
 [v _temp `uc ~T0 @X0 1 a ]
 [v _cpt `uc ~T0 @X0 1 a ]
-[; ;main.c: 93: unsigned char i, temp, cpt = 0;
+[; ;main.c: 134: unsigned char i, temp, cpt = 0;
 [e = _cpt -> -> 0 `i `uc ]
-[; ;main.c: 96: hw_config();
-"96
+[; ;main.c: 137: hw_config();
+"137
 [e ( _hw_config ..  ]
-[; ;main.c: 97: micro_config();
-"97
-[e ( _micro_config ..  ]
-[; ;main.c: 100: check_comutest(0);
-"100
-[e ( _check_comutest (1 -> -> 0 `i `uc ]
-[; ;main.c: 103: if (check_program_0() == 0)
-"103
-[e $ ! == -> ( _check_program_0 ..  `i -> 0 `i 345  ]
-[; ;main.c: 104: {
-"104
-{
-[; ;main.c: 106: check_idtest();
-"106
-[e ( _check_idtest ..  ]
-[; ;main.c: 109: check_bpon();
-"109
-[e ( _check_bpon ..  ]
-[; ;main.c: 112: cf_check_and_display();
-"112
-[e ( _cf_check_and_display ..  ]
-"113
-}
-[e :U 345 ]
-[; ;main.c: 113: }
-[; ;main.c: 115: bouton_init();
-"115
-[e ( _bouton_init ..  ]
-[; ;main.c: 117: while (1)
-"117
-[e :U 347 ]
-[; ;main.c: 118: {
-"118
-{
-[; ;main.c: 119: bouton_refresh();
-"119
-[e ( _bouton_refresh ..  ]
-[; ;main.c: 120: ecran_refresh();
-"120
-[e ( _ecran_refresh ..  ]
-[; ;main.c: 122: switch (Micro.Phase)
-"122
-[e $U 350  ]
-[; ;main.c: 123: {
-"123
-{
-[; ;main.c: 124: case 0x00:
-"124
-[e :U 351 ]
-[; ;main.c: 125: micro_wait();
-"125
-[e ( _micro_wait ..  ]
-[; ;main.c: 126: break;
-"126
-[e $U 349  ]
-[; ;main.c: 127: case 0x01:
-"127
-[e :U 352 ]
-[; ;main.c: 128: test_process();
-"128
-[e ( _test_process ..  ]
-[; ;main.c: 129: break;
-"129
-[e $U 349  ]
-[; ;main.c: 130: case 0x02:
-"130
-[e :U 353 ]
-[; ;main.c: 131: armement_process();
-"131
-[e ( _armement_process ..  ]
-[; ;main.c: 132: break;
-"132
-[e $U 349  ]
-[; ;main.c: 133: case 0x03:
-"133
-[e :U 354 ]
-[; ;main.c: 134: feu_process();
-"134
-[e ( _feu_process ..  ]
-[; ;main.c: 135: feu_check_bp();
-"135
-[e ( _feu_check_bp ..  ]
-[; ;main.c: 136: break;
-"136
-[e $U 349  ]
-"137
-}
-[; ;main.c: 137: }
-[e $U 349  ]
-"122
-[e :U 350 ]
-[e [\ . _Micro 1 , $ -> -> 0 `i `uc 351
- , $ -> -> 1 `i `uc 352
- , $ -> -> 2 `i `uc 353
- , $ -> -> 3 `i `uc 354
- 349 ]
-"137
-[e :U 349 ]
+[; ;main.c: 138: micro_config();
 "138
+[e ( _micro_config ..  ]
+[; ;main.c: 141: check_comutest(0);
+"141
+[e ( _check_comutest (1 -> -> 0 `i `uc ]
+[; ;main.c: 144: if (check_program_0() == 0)
+"144
+[e $ ! == -> ( _check_program_0 ..  `i -> 0 `i 355  ]
+[; ;main.c: 145: {
+"145
+{
+[; ;main.c: 147: check_idtest();
+"147
+[e ( _check_idtest ..  ]
+[; ;main.c: 150: check_bpon();
+"150
+[e ( _check_bpon ..  ]
+[; ;main.c: 153: cf_check_and_display();
+"153
+[e ( _cf_check_and_display ..  ]
+"154
 }
-[e :U 346 ]
-"117
-[e $U 347  ]
-[e :U 348 ]
-[; ;main.c: 138: }
-[; ;main.c: 139: }
-"139
-[e :UE 344 ]
+[e :U 355 ]
+[; ;main.c: 154: }
+[; ;main.c: 156: bouton_init();
+"156
+[e ( _bouton_init ..  ]
+[; ;main.c: 158: while (1)
+"158
+[e :U 357 ]
+[; ;main.c: 159: {
+"159
+{
+[; ;main.c: 160: bouton_refresh();
+"160
+[e ( _bouton_refresh ..  ]
+[; ;main.c: 161: ecran_refresh();
+"161
+[e ( _ecran_refresh ..  ]
+[; ;main.c: 163: switch (Micro.Phase)
+"163
+[e $U 360  ]
+[; ;main.c: 164: {
+"164
+{
+[; ;main.c: 165: case 0x00:
+"165
+[e :U 361 ]
+[; ;main.c: 166: micro_wait();
+"166
+[e ( _micro_wait ..  ]
+[; ;main.c: 167: break;
+"167
+[e $U 359  ]
+[; ;main.c: 168: case 0x01:
+"168
+[e :U 362 ]
+[; ;main.c: 169: test_process();
+"169
+[e ( _test_process ..  ]
+[; ;main.c: 170: break;
+"170
+[e $U 359  ]
+[; ;main.c: 171: case 0x02:
+"171
+[e :U 363 ]
+[; ;main.c: 172: armement_process();
+"172
+[e ( _armement_process ..  ]
+[; ;main.c: 173: break;
+"173
+[e $U 359  ]
+[; ;main.c: 174: case 0x03:
+"174
+[e :U 364 ]
+[; ;main.c: 175: feu_process();
+"175
+[e ( _feu_process ..  ]
+[; ;main.c: 176: feu_check_bp();
+"176
+[e ( _feu_check_bp ..  ]
+[; ;main.c: 177: break;
+"177
+[e $U 359  ]
+"178
+}
+[; ;main.c: 178: }
+[e $U 359  ]
+"163
+[e :U 360 ]
+[e [\ . _Micro 1 , $ -> -> 0 `i `uc 361
+ , $ -> -> 1 `i `uc 362
+ , $ -> -> 2 `i `uc 363
+ , $ -> -> 3 `i `uc 364
+ 359 ]
+"178
+[e :U 359 ]
+"179
+}
+[e :U 356 ]
+"158
+[e $U 357  ]
+[e :U 358 ]
+[; ;main.c: 179: }
+[; ;main.c: 180: }
+"180
+[e :UE 354 ]
 }

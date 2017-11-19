@@ -7,19 +7,19 @@ const char Version[] = "0008";
 // Micro->Phase
 #define MICRO_WAIT		0x00
 #define MICRO_TEST		0x01
-#define MICRO_ARM			0x02
-#define MICRO_FEU			0x03
+#define MICRO_ARM		0x02
+#define MICRO_FEU		0x03
 
 // Micro->Step
-#define MICRO_STEP_1		0x00
-#define MICRO_STEP_2		0x01
-#define MICRO_STEP_3		0x03
+#define MICRO_STEP_1	0x00
+#define MICRO_STEP_2	0x01
+#define MICRO_STEP_3	0x03
 
 // Micro.State
-#define ARMED				0x01
-#define GO					0x02
-#define STOP				0x04
-#define END					0x08
+#define ARMED			0x01
+#define GO				0x02
+#define STOP			0x04
+#define END				0x08
 
 typedef struct StructState{
 	unsigned	Armed	:1;

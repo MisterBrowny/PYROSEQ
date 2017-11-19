@@ -1,7 +1,7 @@
 #ifndef TIMER_H
 #define	TIMER_H
 
-#define TDef5ms	5
+#define TDef5ms		5
 #define TDef10ms	10
 #define TDef20ms	20
 #define TDef50ms	50

@@ -33,9 +33,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"23 include\feu.h
-[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time LastOutput NextOutput CanStopStart SaveTime ]
+"25 include\feu.h
+[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
+"16 include\feedback.h
+[s S339 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S339 StructFeedback Period Pulse State Step ]
 "3907 include\pic18f452.h
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
 "47
@@ -3024,29 +3027,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"19 include\feu.h
+"21 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 19: volatile unsigned char Decompte;
-"20
+[; ;feu.h: 21: volatile unsigned char Decompte;
+"22
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 20: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 23: typedef struct StructFeu{
-[; ;feu.h: 24: unsigned char Step;
-[; ;feu.h: 25: unsigned char Cpt;
-[; ;feu.h: 26: unsigned char Decompte;
-[; ;feu.h: 27: unsigned short SavedTime;
-[; ;feu.h: 28: unsigned short TimeToFire;
-[; ;feu.h: 29: unsigned short Time;
-[; ;feu.h: 30: unsigned char LastOutput;
-[; ;feu.h: 31: unsigned char NextOutput;
-[; ;feu.h: 32: unsigned CanStopStart :1;
-[; ;feu.h: 33: unsigned SaveTime :1;
-[; ;feu.h: 34: }struFeu;
-"36
+[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 25: typedef struct StructFeu{
+[; ;feu.h: 26: unsigned char Step;
+[; ;feu.h: 27: unsigned char Cpt;
+[; ;feu.h: 28: unsigned char Decompte;
+[; ;feu.h: 29: unsigned short SavedTime;
+[; ;feu.h: 30: unsigned short TimeToFire;
+[; ;feu.h: 31: unsigned short Time;
+[; ;feu.h: 32: unsigned short TimeStart;
+[; ;feu.h: 33: unsigned char LastOutput;
+[; ;feu.h: 34: unsigned char NextOutput;
+[; ;feu.h: 35: unsigned CanStopStart :1;
+[; ;feu.h: 36: unsigned SaveTime :1;
+[; ;feu.h: 37: }struFeu;
+"39
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 36: struFeu Feu;
-[; ;feu.h: 38: void feu_check_bp (void);
-[; ;feu.h: 39: void feu_process (void);
+[; ;feu.h: 39: struFeu Feu;
+[; ;feu.h: 41: void feu_check_bp (void);
+[; ;feu.h: 42: void feu_process (void);
+[; ;feedback.h: 16: typedef struct StructFeedback {
+[; ;feedback.h: 17: unsigned short Period;
+[; ;feedback.h: 18: unsigned char Pulse;
+[; ;feedback.h: 19: unsigned char State;
+[; ;feedback.h: 20: unsigned char Step;
+[; ;feedback.h: 21: }struFeedback;
+"23 include\feedback.h
+[v _Feedback `S339 ~T0 @X0 1 e ]
+[; ;feedback.h: 23: struFeedback Feedback;
 "3 hardware.c
 [v _hw_config `(v ~T0 @X0 1 ef ]
 "4
@@ -3174,5 +3187,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _TRISEbits 0 2 -> -> 0 `i `uc ]
 [; ;hardware.c: 61: }
 "61
-[e :UE 339 ]
+[e :UE 340 ]
 }

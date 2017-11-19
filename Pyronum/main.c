@@ -80,6 +80,47 @@ void interrupt high_priority High_priority (void)
 			Cpt1Sur20s ++;
 		}
 
+		if (Micro.State)	// ARMED / GO / STOP / END
+		{
+			if (Feedback.Period == 0)
+			{
+				Feedback.State = Micro.State;		// Rafraichit l'état du feedback toute les périodes 
+				Feedback.Period = FEEDBACK_PERIOD;
+				Feedback.Step = 0;
+			}
+			else
+			{
+				Feedback.Period --;
+			}
+			
+			if ((0x01 << (byte) (Feedback.Step / 2)) <= Feedback.State)	// le nb de pulse est fct de l'état ARMED / GO / STOP / END
+			{
+				if ((Feedback.Step & 0x01) == 0)
+				{// PULSE 1, 2, 3, 4
+					if ((Feedback.Step == 0) || (-- Feedback.Pulse == 0))
+					{
+						INFO_OUT = 1;
+						Feedback.Pulse = FEEDBACK_PULSE;
+						Feedback.Step ++;
+					}
+				}
+				else
+				{// INTER-PULSE
+					if (-- Feedback.Pulse == 0)
+					{
+						INFO_OUT = 0;
+						Feedback.Pulse = FEEDBACK_INTER_PULSE;
+						Feedback.Step ++;
+					}
+				}
+			}
+		}
+		else
+		{
+			INFO_OUT = 0;
+			Feedback.Period = 0;	
+		}
+		
 		return;
 	}
 }
@@ -118,7 +159,7 @@ void main(void)
 	{
 		bouton_refresh();
 		ecran_refresh();
-
+		
 		switch (Micro.Phase)
 		{
 			case MICRO_WAIT:

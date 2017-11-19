@@ -23,6 +23,7 @@
       <itemPath>include/armement.h</itemPath>
       <itemPath>include/feu.h</itemPath>
       <itemPath>include/pic18f452.inc</itemPath>
+      <itemPath>include/feedback.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -54,7 +55,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>include</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -81,6 +82,8 @@
           <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
+        <subordinates>
+        </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>

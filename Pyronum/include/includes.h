@@ -21,9 +21,7 @@
 #include "test.h"
 #include "armement.h"
 #include "feu.h"
-
-
-
+#include "feedback.h"
 
 
 #endif	/* INCLUDE_H */

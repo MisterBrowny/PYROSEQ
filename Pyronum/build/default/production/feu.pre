@@ -3798,7 +3798,7 @@ struArm Arm;
 
 void armement_process (void);
 
-# 19 "include\feu.h"
+# 21 "include\feu.h"
 volatile unsigned char Decompte;
 volatile unsigned short Cpt1Sur20s;
 
@@ -3810,6 +3810,7 @@ unsigned char Decompte;
 unsigned short SavedTime;
 unsigned short TimeToFire;
 unsigned short Time;
+unsigned short TimeStart;
 unsigned char LastOutput;
 unsigned char NextOutput;
 unsigned CanStopStart :1;
@@ -3820,6 +3821,16 @@ struFeu Feu;
 
 void feu_check_bp (void);
 void feu_process (void);
+
+# 16 "include\feedback.h"
+typedef struct StructFeedback {
+unsigned short Period;
+unsigned char Pulse;
+unsigned char State;
+unsigned char Step;
+}struFeedback;
+
+struFeedback Feedback;
 
 # 3 "feu.c"
 static unsigned char feu_check_end (void)
@@ -3856,7 +3867,10 @@ Ecran.Solid = 0;
 else if ( (Bouton[Bp_Start].State == 1)
 && (Feu.CanStopStart == 0))
 {
+if ((((unsigned short) (Cptms - Feu.TimeStart) > 1000) ? 1 : 0))
+{
 Feu.CanStopStart = 1;
+}
 }
 else if ( (Micro.Mods == 0)
 && (Feu.CanStopStart == 1)
@@ -3871,6 +3885,7 @@ else if (Micro.Stat.Stop == 1)
 {
 Feu.Step = 0x07;
 Micro.State = 0x02;
+Feu.TimeStart = Cptms;
 }
 
 Feu.CanStopStart = 0;
@@ -3923,6 +3938,7 @@ Cpt1Sur20s = 0;
 Feu.LastOutput = 0;
 
 Feu.CanStopStart = 0;
+Feu.TimeStart = Cptms;
 }
 break;
 case 0x01 :

@@ -33,9 +33,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"23 include\feu.h
-[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time LastOutput NextOutput CanStopStart SaveTime ]
+"25 include\feu.h
+[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
+"16 include\feedback.h
+[s S339 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S339 StructFeedback Period Pulse State Step ]
 [; ;pic18f452.h: 47: extern volatile unsigned char PORTA @ 0xF80;
 "49 include\pic18f452.h
 [; ;pic18f452.h: 49: asm("PORTA equ 0F80h");
@@ -2968,29 +2971,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"19 include\feu.h
+"21 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 19: volatile unsigned char Decompte;
-"20
+[; ;feu.h: 21: volatile unsigned char Decompte;
+"22
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 20: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 23: typedef struct StructFeu{
-[; ;feu.h: 24: unsigned char Step;
-[; ;feu.h: 25: unsigned char Cpt;
-[; ;feu.h: 26: unsigned char Decompte;
-[; ;feu.h: 27: unsigned short SavedTime;
-[; ;feu.h: 28: unsigned short TimeToFire;
-[; ;feu.h: 29: unsigned short Time;
-[; ;feu.h: 30: unsigned char LastOutput;
-[; ;feu.h: 31: unsigned char NextOutput;
-[; ;feu.h: 32: unsigned CanStopStart :1;
-[; ;feu.h: 33: unsigned SaveTime :1;
-[; ;feu.h: 34: }struFeu;
-"36
+[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 25: typedef struct StructFeu{
+[; ;feu.h: 26: unsigned char Step;
+[; ;feu.h: 27: unsigned char Cpt;
+[; ;feu.h: 28: unsigned char Decompte;
+[; ;feu.h: 29: unsigned short SavedTime;
+[; ;feu.h: 30: unsigned short TimeToFire;
+[; ;feu.h: 31: unsigned short Time;
+[; ;feu.h: 32: unsigned short TimeStart;
+[; ;feu.h: 33: unsigned char LastOutput;
+[; ;feu.h: 34: unsigned char NextOutput;
+[; ;feu.h: 35: unsigned CanStopStart :1;
+[; ;feu.h: 36: unsigned SaveTime :1;
+[; ;feu.h: 37: }struFeu;
+"39
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 36: struFeu Feu;
-[; ;feu.h: 38: void feu_check_bp (void);
-[; ;feu.h: 39: void feu_process (void);
+[; ;feu.h: 39: struFeu Feu;
+[; ;feu.h: 41: void feu_check_bp (void);
+[; ;feu.h: 42: void feu_process (void);
+[; ;feedback.h: 16: typedef struct StructFeedback {
+[; ;feedback.h: 17: unsigned short Period;
+[; ;feedback.h: 18: unsigned char Pulse;
+[; ;feedback.h: 19: unsigned char State;
+[; ;feedback.h: 20: unsigned char Step;
+[; ;feedback.h: 21: }struFeedback;
+"23 include\feedback.h
+[v _Feedback `S339 ~T0 @X0 1 e ]
+[; ;feedback.h: 23: struFeedback Feedback;
 "3 utils.c
 [v _DecToStr `(*uc ~T0 @X0 1 ef2`uc`*uc ]
 "4
@@ -3016,9 +3029,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "10
 {
 [e = _power10 -> -> 0 `i `uc ]
-[e $U 343  ]
+[e $U 344  ]
 "11
-[e :U 340 ]
+[e :U 341 ]
 [; ;utils.c: 11: {
 {
 [; ;utils.c: 12: compareValue *= 10;
@@ -3028,19 +3041,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "10
 [e ++ _power10 -> -> 1 `i `uc ]
-[e :U 343 ]
-[e $ <= -> _compareValue `ui -> _value `ui 340  ]
-[e :U 341 ]
+[e :U 344 ]
+[e $ <= -> _compareValue `ui -> _value `ui 341  ]
+[e :U 342 ]
 "13
 }
 [; ;utils.c: 13: }
 [; ;utils.c: 15: if (value == 0) {power10 = 1;}
 "15
-[e $ ! == -> _value `i -> 0 `i 344  ]
+[e $ ! == -> _value `i -> 0 `i 345  ]
 {
 [e = _power10 -> -> 1 `i `uc ]
 }
-[e :U 344 ]
+[e :U 345 ]
 [; ;utils.c: 17: result[power10] = '\0';
 "17
 [e = *U + _result * -> _power10 `ux -> -> # *U _result `ui `ux -> -> 0 `ui `uc ]
@@ -3048,10 +3061,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "19
 {
 [e _power10 ]
-[e $ > -> _power10 `i -> 0 `i 345  ]
-[e $U 346  ]
+[e $ > -> _power10 `i -> 0 `i 346  ]
+[e $U 347  ]
 "20
-[e :U 345 ]
+[e :U 346 ]
 [; ;utils.c: 20: {
 {
 [; ;utils.c: 21: result[power10 - 1] = (value % 10) + '0';
@@ -3064,18 +3077,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "19
 [e -- _power10 -> -> 1 `i `uc ]
-[e $ > -> _power10 `i -> 0 `i 345  ]
-[e :U 346 ]
+[e $ > -> _power10 `i -> 0 `i 346  ]
+[e :U 347 ]
 "23
 }
 [; ;utils.c: 23: }
 [; ;utils.c: 25: return result;
 "25
 [e ) _result ]
-[e $UE 339  ]
+[e $UE 340  ]
 [; ;utils.c: 26: }
 "26
-[e :UE 339 ]
+[e :UE 340 ]
 }
 "28
 [v _HexToAscii `(uc ~T0 @X0 1 ef1`uc ]
@@ -3093,7 +3106,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;utils.c: 30: char character;
 [; ;utils.c: 32: if (Value < 10)
 "32
-[e $ ! < -> _Value `i -> 10 `i 349  ]
+[e $ ! < -> _Value `i -> 10 `i 350  ]
 [; ;utils.c: 33: {
 "33
 {
@@ -3103,9 +3116,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "35
 }
 [; ;utils.c: 35: }
-[e $U 350  ]
+[e $U 351  ]
 "36
-[e :U 349 ]
+[e :U 350 ]
 [; ;utils.c: 36: else
 [; ;utils.c: 37: {
 "37
@@ -3115,13 +3128,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _character -> + - -> _Value `i -> 9 `i -> 64 `i `uc ]
 "39
 }
-[e :U 350 ]
+[e :U 351 ]
 [; ;utils.c: 39: }
 [; ;utils.c: 41: return character;
 "41
 [e ) _character ]
-[e $UE 348  ]
+[e $UE 349  ]
 [; ;utils.c: 42: }
 "42
-[e :UE 348 ]
+[e :UE 349 ]
 }

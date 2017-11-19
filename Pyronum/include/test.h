@@ -2,12 +2,12 @@
 #define	TEST_H
 
 // Etape du test initial
-#define TEST_INIT					0x00
-#define TEST_WAIT					0x01
-#define TEST_ALIM					0x02
+#define TEST_INIT				0x00
+#define TEST_WAIT				0x01
+#define TEST_ALIM				0x02
 #define TEST_WAIT_2				0x03
 #define TEST_INFLA				0x04
-#define TEST_INFLA_2				0x05
+#define TEST_INFLA_2			0x05
 #define TEST_INFLA_OK			0x06
 #define TEST_INFLA_NOK			0x07
 #define TEST_FIN_INFLA			0x08
@@ -17,7 +17,7 @@
 #define TEST_INFLA_OK_P0		0x0C
 #define TEST_INFLA_NOK_P0		0x0D
 #define TEST_FIN_INFLA_P0		0x0E
-#define TEST_FIN_INFLA_P0_2	0x0F
+#define TEST_FIN_INFLA_P0_2		0x0F
 #define TEST_WAIT_3				0x10
 #define TEST_WAIT_4				0x11
 #define TEST_WAIT_5				0x12

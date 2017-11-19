@@ -33,9 +33,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"23 include\feu.h
-[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time LastOutput NextOutput CanStopStart SaveTime ]
+"25 include\feu.h
+[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
+"16 include\feedback.h
+[s S339 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S339 StructFeedback Period Pulse State Step ]
 "3003 include\pic18f452.h
 [v _EEADR `Vuc ~T0 @X0 0 e@4009 ]
 "6265
@@ -3001,29 +3004,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"19 include\feu.h
+"21 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 19: volatile unsigned char Decompte;
-"20
+[; ;feu.h: 21: volatile unsigned char Decompte;
+"22
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 20: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 23: typedef struct StructFeu{
-[; ;feu.h: 24: unsigned char Step;
-[; ;feu.h: 25: unsigned char Cpt;
-[; ;feu.h: 26: unsigned char Decompte;
-[; ;feu.h: 27: unsigned short SavedTime;
-[; ;feu.h: 28: unsigned short TimeToFire;
-[; ;feu.h: 29: unsigned short Time;
-[; ;feu.h: 30: unsigned char LastOutput;
-[; ;feu.h: 31: unsigned char NextOutput;
-[; ;feu.h: 32: unsigned CanStopStart :1;
-[; ;feu.h: 33: unsigned SaveTime :1;
-[; ;feu.h: 34: }struFeu;
-"36
+[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 25: typedef struct StructFeu{
+[; ;feu.h: 26: unsigned char Step;
+[; ;feu.h: 27: unsigned char Cpt;
+[; ;feu.h: 28: unsigned char Decompte;
+[; ;feu.h: 29: unsigned short SavedTime;
+[; ;feu.h: 30: unsigned short TimeToFire;
+[; ;feu.h: 31: unsigned short Time;
+[; ;feu.h: 32: unsigned short TimeStart;
+[; ;feu.h: 33: unsigned char LastOutput;
+[; ;feu.h: 34: unsigned char NextOutput;
+[; ;feu.h: 35: unsigned CanStopStart :1;
+[; ;feu.h: 36: unsigned SaveTime :1;
+[; ;feu.h: 37: }struFeu;
+"39
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 36: struFeu Feu;
-[; ;feu.h: 38: void feu_check_bp (void);
-[; ;feu.h: 39: void feu_process (void);
+[; ;feu.h: 39: struFeu Feu;
+[; ;feu.h: 41: void feu_check_bp (void);
+[; ;feu.h: 42: void feu_process (void);
+[; ;feedback.h: 16: typedef struct StructFeedback {
+[; ;feedback.h: 17: unsigned short Period;
+[; ;feedback.h: 18: unsigned char Pulse;
+[; ;feedback.h: 19: unsigned char State;
+[; ;feedback.h: 20: unsigned char Step;
+[; ;feedback.h: 21: }struFeedback;
+"23 include\feedback.h
+[v _Feedback `S339 ~T0 @X0 1 e ]
+[; ;feedback.h: 23: struFeedback Feedback;
 "3 eeprom.c
 [v _eeprom_read `(uc ~T0 @X0 1 ef1`uc ]
 "4
@@ -3056,10 +3069,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom.c: 14: return EEDATA;
 "14
 [e ) _EEDATA ]
-[e $UE 339  ]
+[e $UE 340  ]
 [; ;eeprom.c: 15: }
 "15
-[e :UE 339 ]
+[e :UE 340 ]
 }
 "18
 [v _eeprom_write `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -3102,11 +3115,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _WR -> -> 1 `i `b ]
 [; ;eeprom.c: 33: while(WR);
 "33
-[e $U 341  ]
-[e :U 342 ]
-[e :U 341 ]
-[e $ _WR 342  ]
+[e $U 342  ]
 [e :U 343 ]
+[e :U 342 ]
+[e $ _WR 343  ]
+[e :U 344 ]
 [; ;eeprom.c: 35: (INTCONbits.GIE = 1);
 "35
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
@@ -3115,7 +3128,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _WREN -> -> 0 `i `b ]
 [; ;eeprom.c: 38: }
 "38
-[e :UE 340 ]
+[e :UE 341 ]
 }
 "40
 [v _eeprom_read_array `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
@@ -3137,9 +3150,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "44
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 348  ]
+[e $U 349  ]
 "45
-[e :U 345 ]
+[e :U 346 ]
 [; ;eeprom.c: 45: {
 {
 [; ;eeprom.c: 46: *pData = eeprom_read(Address);
@@ -3155,15 +3168,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "44
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 348 ]
-[e $ < -> _i `i -> _NbData `i 345  ]
-[e :U 346 ]
+[e :U 349 ]
+[e $ < -> _i `i -> _NbData `i 346  ]
+[e :U 347 ]
 "49
 }
 [; ;eeprom.c: 49: }
 [; ;eeprom.c: 50: }
 "50
-[e :UE 344 ]
+[e :UE 345 ]
 }
 "52
 [v _eeprom_write_array `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
@@ -3185,9 +3198,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "56
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 353  ]
+[e $U 354  ]
 "57
-[e :U 350 ]
+[e :U 351 ]
 [; ;eeprom.c: 57: {
 {
 [; ;eeprom.c: 58: eeprom_write(*pData, Address);
@@ -3203,13 +3216,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "56
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 353 ]
-[e $ < -> _i `i -> _NbData `i 350  ]
-[e :U 351 ]
+[e :U 354 ]
+[e $ < -> _i `i -> _NbData `i 351  ]
+[e :U 352 ]
 "61
 }
 [; ;eeprom.c: 61: }
 [; ;eeprom.c: 62: }
 "62
-[e :UE 349 ]
+[e :UE 350 ]
 }

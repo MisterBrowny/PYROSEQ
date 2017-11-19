@@ -3798,7 +3798,7 @@ struArm Arm;
 
 void armement_process (void);
 
-# 19 "include\feu.h"
+# 21 "include\feu.h"
 volatile unsigned char Decompte;
 volatile unsigned short Cpt1Sur20s;
 
@@ -3810,6 +3810,7 @@ unsigned char Decompte;
 unsigned short SavedTime;
 unsigned short TimeToFire;
 unsigned short Time;
+unsigned short TimeStart;
 unsigned char LastOutput;
 unsigned char NextOutput;
 unsigned CanStopStart :1;
@@ -3820,6 +3821,16 @@ struFeu Feu;
 
 void feu_check_bp (void);
 void feu_process (void);
+
+# 16 "include\feedback.h"
+typedef struct StructFeedback {
+unsigned short Period;
+unsigned char Pulse;
+unsigned char State;
+unsigned char Step;
+}struFeedback;
+
+struFeedback Feedback;
 
 # 3 "ecran.c"
 static void ecran_raz_digit (void)

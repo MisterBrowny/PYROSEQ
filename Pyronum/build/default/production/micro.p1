@@ -33,9 +33,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"23 include\feu.h
-[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time LastOutput NextOutput CanStopStart SaveTime ]
+"25 include\feu.h
+[s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
+"16 include\feedback.h
+[s S339 `us 1 `uc 1 `uc 1 `uc 1 ]
+[n S339 StructFeedback Period Pulse State Step ]
 [s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S25 . RE0 RE1 RE2 ]
 [s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -3070,29 +3073,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"19 include\feu.h
+"21 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 19: volatile unsigned char Decompte;
-"20
+[; ;feu.h: 21: volatile unsigned char Decompte;
+"22
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 20: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 23: typedef struct StructFeu{
-[; ;feu.h: 24: unsigned char Step;
-[; ;feu.h: 25: unsigned char Cpt;
-[; ;feu.h: 26: unsigned char Decompte;
-[; ;feu.h: 27: unsigned short SavedTime;
-[; ;feu.h: 28: unsigned short TimeToFire;
-[; ;feu.h: 29: unsigned short Time;
-[; ;feu.h: 30: unsigned char LastOutput;
-[; ;feu.h: 31: unsigned char NextOutput;
-[; ;feu.h: 32: unsigned CanStopStart :1;
-[; ;feu.h: 33: unsigned SaveTime :1;
-[; ;feu.h: 34: }struFeu;
-"36
+[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 25: typedef struct StructFeu{
+[; ;feu.h: 26: unsigned char Step;
+[; ;feu.h: 27: unsigned char Cpt;
+[; ;feu.h: 28: unsigned char Decompte;
+[; ;feu.h: 29: unsigned short SavedTime;
+[; ;feu.h: 30: unsigned short TimeToFire;
+[; ;feu.h: 31: unsigned short Time;
+[; ;feu.h: 32: unsigned short TimeStart;
+[; ;feu.h: 33: unsigned char LastOutput;
+[; ;feu.h: 34: unsigned char NextOutput;
+[; ;feu.h: 35: unsigned CanStopStart :1;
+[; ;feu.h: 36: unsigned SaveTime :1;
+[; ;feu.h: 37: }struFeu;
+"39
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 36: struFeu Feu;
-[; ;feu.h: 38: void feu_check_bp (void);
-[; ;feu.h: 39: void feu_process (void);
+[; ;feu.h: 39: struFeu Feu;
+[; ;feu.h: 41: void feu_check_bp (void);
+[; ;feu.h: 42: void feu_process (void);
+[; ;feedback.h: 16: typedef struct StructFeedback {
+[; ;feedback.h: 17: unsigned short Period;
+[; ;feedback.h: 18: unsigned char Pulse;
+[; ;feedback.h: 19: unsigned char State;
+[; ;feedback.h: 20: unsigned char Step;
+[; ;feedback.h: 21: }struFeedback;
+"23 include\feedback.h
+[v _Feedback `S339 ~T0 @X0 1 e ]
+[; ;feedback.h: 23: struFeedback Feedback;
 "3 micro.c
 [v _micro_config_rs `(v ~T0 @X0 1 ef ]
 "4
@@ -3124,7 +3137,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _PEIE -> -> 1 `i `b ]
 [; ;micro.c: 37: }
 "37
-[e :UE 339 ]
+[e :UE 340 ]
 }
 "39
 [v _micro_config `(v ~T0 @X0 1 ef ]
@@ -3169,7 +3182,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _Ecran 5 -> -> 255 `i `uc ]
 [; ;micro.c: 89: }
 "89
-[e :UE 340 ]
+[e :UE 341 ]
 }
 "91
 [v _micro_wait `(v ~T0 @X0 1 ef ]
@@ -3181,16 +3194,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;micro.c: 93: switch (Micro.Step)
 "93
-[e $U 343  ]
+[e $U 344  ]
 [; ;micro.c: 94: {
 "94
 {
 [; ;micro.c: 95: case 0x00:
 "95
-[e :U 344 ]
+[e :U 345 ]
 [; ;micro.c: 96: if (Bouton[Bp_IdTest].State == 0)
 "96
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 345  ]
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 346  ]
 [; ;micro.c: 97: {
 "97
 {
@@ -3202,17 +3215,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _ecran_wait ..  ]
 "100
 }
-[e :U 345 ]
+[e :U 346 ]
 [; ;micro.c: 100: }
 [; ;micro.c: 101: break;
 "101
-[e $U 342  ]
+[e $U 343  ]
 [; ;micro.c: 102: case 0x01:
 "102
-[e :U 346 ]
+[e :U 347 ]
 [; ;micro.c: 103: if (Bouton[Bp_IdTest].State == 1)
 "103
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 347  ]
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 348  ]
 [; ;micro.c: 104: {
 "104
 {
@@ -3221,17 +3234,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . _Micro 2 -> -> 3 `i `uc ]
 "106
 }
-[e :U 347 ]
+[e :U 348 ]
 [; ;micro.c: 106: }
 [; ;micro.c: 107: break;
 "107
-[e $U 342  ]
+[e $U 343  ]
 [; ;micro.c: 108: case 0x03:
 "108
-[e :U 348 ]
+[e :U 349 ]
 [; ;micro.c: 109: if (Bouton[Bp_IdTest].State == 0)
 "109
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 349  ]
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 350  ]
 [; ;micro.c: 110: {
 "110
 {
@@ -3250,11 +3263,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "115
 }
 [; ;micro.c: 115: }
-[e $U 350  ]
+[e $U 351  ]
 "116
-[e :U 349 ]
+[e :U 350 ]
 [; ;micro.c: 116: else if (Bouton[Bp_On].State == 0)
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 0 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 351  ]
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 0 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 352  ]
 [; ;micro.c: 117: {
 "117
 {
@@ -3272,12 +3285,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _ecran_blank ..  ]
 "122
 }
-[e :U 351 ]
+[e :U 352 ]
 "124
-[e :U 350 ]
+[e :U 351 ]
 [; ;micro.c: 122: }
 [; ;micro.c: 124: if (Bouton[Bp_Start].State == 0)
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 352  ]
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 353  ]
 [; ;micro.c: 125: {
 "125
 {
@@ -3289,34 +3302,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _ecran_print_one_char (2 , -> -> 0 `i `uc -> -> 83 `ui `uc ]
 [; ;micro.c: 130: while (PORTBbits.RB0 == 0);
 "130
-[e $U 353  ]
-[e :U 354 ]
-[e :U 353 ]
-[e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 354  ]
+[e $U 354  ]
 [e :U 355 ]
+[e :U 354 ]
+[e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 355  ]
+[e :U 356 ]
 [; ;micro.c: 132: ecran_wait();
 "132
 [e ( _ecran_wait ..  ]
 "133
 }
-[e :U 352 ]
+[e :U 353 ]
 [; ;micro.c: 133: }
 [; ;micro.c: 135: break;
 "135
-[e $U 342  ]
+[e $U 343  ]
 "136
 }
 [; ;micro.c: 136: }
-[e $U 342  ]
+[e $U 343  ]
 "93
-[e :U 343 ]
-[e [\ . _Micro 2 , $ -> -> 0 `i `uc 344
- , $ -> -> 1 `i `uc 346
- , $ -> -> 3 `i `uc 348
- 342 ]
+[e :U 344 ]
+[e [\ . _Micro 2 , $ -> -> 0 `i `uc 345
+ , $ -> -> 1 `i `uc 347
+ , $ -> -> 3 `i `uc 349
+ 343 ]
 "136
-[e :U 342 ]
+[e :U 343 ]
 [; ;micro.c: 137: }
 "137
-[e :UE 341 ]
+[e :UE 342 ]
 }
