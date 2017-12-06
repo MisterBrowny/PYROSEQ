@@ -2814,11 +2814,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 48 `c
 -> 48 `c
 -> 48 `c
--> 56 `c
+-> 57 `c
 -> 0 `c
 ..
 ]
-[; ;micro.h: 5: const char Version[] = "0008";
+[; ;micro.h: 5: const char Version[] = "0009";
 [; ;micro.h: 24: typedef struct StructState{
 [; ;micro.h: 25: unsigned Armed :1;
 [; ;micro.h: 26: unsigned Go :1;

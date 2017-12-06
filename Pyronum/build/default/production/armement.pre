@@ -3630,7 +3630,7 @@ char * DecToStr (unsigned char value, char * result);
 char HexToAscii(unsigned char Value);
 
 # 5 "include\micro.h"
-const char Version[] = "0008";
+const char Version[] = "0009";
 
 # 24
 typedef struct StructState{

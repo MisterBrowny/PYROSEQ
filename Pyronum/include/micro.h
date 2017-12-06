@@ -2,7 +2,7 @@
 #define	MICRO_H
 
 // Version
-const char Version[] = "0008";
+const char Version[] = "0009";
 
 // Micro->Phase
 #define MICRO_WAIT		0x00
