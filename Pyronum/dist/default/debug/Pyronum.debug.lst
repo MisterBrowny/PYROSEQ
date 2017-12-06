@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.31 build 56723 
-                                                                                               Wed Dec 06 22:33:42 2017
+                                                                                               Sat Nov 25 18:59:23 2017
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 56723
      1                           	processor	18F452
@@ -811,7 +811,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
    805  002E0C                     __ptext0:
    806                           	opt stack 0
    807  002E0C                     _main:
-   808                           	opt stack 23
+   808                           	opt stack 22
    809                           
    810                           ;incstack = 0
    811  002E0C  FFFF               	dw	65535
@@ -976,7 +976,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
    970  000616                     __ptext1:
    971                           	opt stack 0
    972  000616                     _test_process:
-   973                           	opt stack 23
+   973                           	opt stack 22
    974                           
    975                           ;incstack = 0
    976  000616  FFFF               	dw	65535
@@ -2034,7 +2034,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   2028  0025C2                     __ptext2:
   2029                           	opt stack 0
   2030  0025C2                     _check_UInfla:
-  2031                           	opt stack 24
+  2031                           	opt stack 23
   2032                           
   2033                           ;incstack = 0
   2034  0025C2  FFFF               	dw	65535
@@ -2215,7 +2215,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   2209  0027C2                     __ptext3:
   2210                           	opt stack 0
   2211  0027C2                     _check_UAlim:
-  2212                           	opt stack 24
+  2212                           	opt stack 23
   2213                           
   2214                           ;incstack = 0
   2215  0027C2  FFFF               	dw	65535
@@ -2382,7 +2382,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   2376  00298C                     __ptext4:
   2377                           	opt stack 0
   2378  00298C                     _micro_wait:
-  2379                           	opt stack 23
+  2379                           	opt stack 22
   2380                           
   2381                           ;incstack = 0
   2382  00298C  FFFF               	dw	65535
@@ -2602,7 +2602,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   2596  0034B0                     __ptext5:
   2597                           	opt stack 0
   2598  0034B0                     _micro_config:
-  2599                           	opt stack 27
+  2599                           	opt stack 26
   2600                           
   2601                           ;incstack = 0
   2602  0034B0  FFFF               	dw	65535
@@ -2706,7 +2706,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   2700  00302C                     __ptext6:
   2701                           	opt stack 0
   2702  00302C                     _hw_config:
-  2703                           	opt stack 27
+  2703                           	opt stack 26
   2704                           
   2705                           ; BSR set to: 0
   2706                           ;incstack = 0
@@ -2893,7 +2893,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   2887  000F1E                     __ptext7:
   2888                           	opt stack 0
   2889  000F1E                     _feu_process:
-  2890                           	opt stack 25
+  2890                           	opt stack 24
   2891                           
   2892                           ;incstack = 0
   2893  000F1E  FFFF               	dw	65535
@@ -3395,7 +3395,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   3389  00343E                     __ptext8:
   3390                           	opt stack 0
   3391  00343E                     _feu_tir:
-  3392                           	opt stack 25
+  3392                           	opt stack 24
   3393                           
   3394                           ; BSR set to: 0
   3395                           ;incstack = 0
@@ -3504,7 +3504,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   3498  003280                     __ptext9:
   3499                           	opt stack 0
   3500  003280                     _register_write:
-  3501                           	opt stack 26
+  3501                           	opt stack 25
   3502                           
   3503                           ; BSR set to: 0
   3504                           ;incstack = 0
@@ -3645,7 +3645,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   3639  00355A                     __ptext10:
   3640                           	opt stack 0
   3641  00355A                     _feu_check_end:
-  3642                           	opt stack 26
+  3642                           	opt stack 25
   3643                           
   3644                           ; BSR set to: 0
   3645                           ;incstack = 0
@@ -3735,7 +3735,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   3729  001740                     __ptext11:
   3730                           	opt stack 0
   3731  001740                     _feu_check_bp:
-  3732                           	opt stack 24
+  3732                           	opt stack 23
   3733                           
   3734                           ; BSR set to: 0
   3735                           ;incstack = 0
@@ -3773,7 +3773,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   3767                           
   3768                           ; BSR set to: 0
   3769                           ;feu.c: 36: {
-  3770                           ;feu.c: 37: if ((((unsigned short) (Cptms - Feu.TimeStart) > 5000) ? 1 : 0))
+  3770                           ;feu.c: 37: if ((((unsigned short) (Cptms - Feu.TimeStart) > 1000) ? 1 : 0))
   3771  001764  0100               	movlb	0	; () banked
   3772  001766  EE20  F089         	lfsr	2,_Feu+9
   3773  00176A  CFDE F0CF          	movff	postinc2,??_feu_check_bp
@@ -3789,10 +3789,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   3783  001782  5050               	movf	_Cptms+1,w,c	;volatile
   3784  001784  0100               	movlb	0	; () banked
   3785  001786  23D0               	addwfc	(??_feu_check_bp+1)& (0+255),f,b
-  3786  001788  0E89               	movlw	137
+  3786  001788  0EE9               	movlw	233
   3787  00178A  0100               	movlb	0	; () banked
   3788  00178C  5DCF               	subwf	??_feu_check_bp& (0+255),w,b
-  3789  00178E  0E13               	movlw	19
+  3789  00178E  0E03               	movlw	3
   3790  001790  59D0               	subwfb	(??_feu_check_bp+1)& (0+255),w,b
   3791  001792  A0D8               	btfss	status,0,c
   3792  001794  D0A5               	goto	l1122
@@ -4124,7 +4124,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   4118  0028BC                     __ptext12:
   4119                           	opt stack 0
   4120  0028BC                     _ecran_print_num:
-  4121                           	opt stack 24
+  4121                           	opt stack 23
   4122                           
   4123                           ; BSR set to: 0
   4124                           ;incstack = 0
@@ -4324,7 +4324,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   4318  001EC6                     __ptext13:
   4319                           	opt stack 0
   4320  001EC6                     _DecToStr:
-  4321                           	opt stack 24
+  4321                           	opt stack 23
   4322                           
   4323                           ; BSR set to: 0
   4324                           ;incstack = 0
@@ -4599,7 +4599,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   4593  002D86                     __ptext14:
   4594                           	opt stack 0
   4595  002D86                     ___lbdiv:
-  4596                           	opt stack 24
+  4596                           	opt stack 23
   4597                           
   4598                           ; BSR set to: 0
   4599                           ;incstack = 0
@@ -4757,7 +4757,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   4751  0023A0                     __ptext15:
   4752                           	opt stack 0
   4753  0023A0                     ___awmod:
-  4754                           	opt stack 24
+  4754                           	opt stack 23
   4755                           
   4756                           ; BSR set to: 0
   4757                           ;incstack = 0
@@ -4997,7 +4997,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   4991  0030E8                     __ptext16:
   4992                           	opt stack 0
   4993  0030E8                     _check_program_0:
-  4994                           	opt stack 24
+  4994                           	opt stack 23
   4995                           
   4996                           ; BSR set to: 0
   4997                           ;incstack = 0
@@ -5129,7 +5129,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   5123  0034E0                     __ptext17:
   5124                           	opt stack 0
   5125  0034E0                     _check_idtest:
-  5126                           	opt stack 23
+  5126                           	opt stack 22
   5127                           
   5128                           ; BSR set to: 0
   5129                           ;incstack = 0
@@ -5216,7 +5216,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   5210  00357A                     __ptext18:
   5211                           	opt stack 0
   5212  00357A                     _micro_config_rs:
-  5213                           	opt stack 26
+  5213                           	opt stack 25
   5214                           
   5215                           ;incstack = 0
   5216  00357A  FFFF               	dw	65535
@@ -5305,7 +5305,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   5299  001580                     __ptext19:
   5300                           	opt stack 0
   5301  001580                     _cf_rcv:
-  5302                           	opt stack 23
+  5302                           	opt stack 22
   5303                           
   5304                           ;incstack = 0
   5305  001580  FFFF               	dw	65535
@@ -5664,7 +5664,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   5657  0031E2                     __ptext20:
   5658                           	opt stack 0
   5659  0031E2                     _eeprom_write_array:
-  5660                           	opt stack 24
+  5660                           	opt stack 23
   5661                           
   5662                           ;incstack = 0
   5663  0031E2  FFFF               	dw	65535
@@ -5781,7 +5781,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   5774  00350C                     __ptext21:
   5775                           	opt stack 0
   5776  00350C                     _eeprom_write:
-  5777                           	opt stack 24
+  5777                           	opt stack 23
   5778                           
   5779                           ; BSR set to: 0
   5780                           ;incstack = 0
@@ -5884,7 +5884,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   5877  00308C                     __ptext22:
   5878                           	opt stack 0
   5879  00308C                     _check_bpon:
-  5880                           	opt stack 25
+  5880                           	opt stack 24
   5881                           
   5882                           ;incstack = 0
   5883  00308C  FFFF               	dw	65535
@@ -5996,7 +5996,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   5989  001A7A                     __ptext23:
   5990                           	opt stack 0
   5991  001A7A                     _cf_check_and_display:
-  5992                           	opt stack 24
+  5992                           	opt stack 23
   5993                           
   5994                           ;incstack = 0
   5995  001A7A  FFFF               	dw	65535
@@ -6299,7 +6299,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   6288  003190                     __ptext24:
   6289                           	opt stack 0
   6290  003190                     _eeprom_read_array:
-  6291                           	opt stack 24
+  6291                           	opt stack 23
   6292                           
   6293                           ;incstack = 0
   6294  003190  FFFF               	dw	65535
@@ -6417,7 +6417,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   6406  003594                     __ptext25:
   6407                           	opt stack 0
   6408  003594                     _eeprom_read:
-  6409                           	opt stack 24
+  6409                           	opt stack 23
   6410                           
   6411                           ; BSR set to: 0
   6412                           ;incstack = 0
@@ -6506,7 +6506,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   6495  0033FA                     __ptext26:
   6496                           	opt stack 0
   6497  0033FA                     _cf_check:
-  6498                           	opt stack 23
+  6498                           	opt stack 22
   6499                           
   6500                           ;incstack = 0
   6501  0033FA  FFFF               	dw	65535
@@ -6613,7 +6613,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   6602  000BDE                     __ptext27:
   6603                           	opt stack 0
   6604  000BDE                     _cf_checksum:
-  6605                           	opt stack 24
+  6605                           	opt stack 23
   6606                           
   6607                           ; BSR set to: 0
   6608                           ;incstack = 0
@@ -7144,7 +7144,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   7131  002E88                     __ptext28:
   7132                           	opt stack 0
   7133  002E88                     _cf_checkrange:
-  7134                           	opt stack 24
+  7134                           	opt stack 23
   7135                           
   7136                           ; BSR set to: 0
   7137                           ;incstack = 0
@@ -7287,7 +7287,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   7274  00215E                     __ptext29:
   7275                           	opt stack 0
   7276  00215E                     _cf_checkout:
-  7277                           	opt stack 23
+  7277                           	opt stack 22
   7278                           
   7279                           ; BSR set to: 0
   7280                           ;incstack = 0
@@ -7557,7 +7557,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   7544  002F60                     __ptext30:
   7545                           	opt stack 0
   7546  002F60                     ___wmul:
-  7547                           	opt stack 24
+  7547                           	opt stack 23
   7548                           
   7549                           ; BSR set to: 0
   7550                           ;incstack = 0
@@ -7668,7 +7668,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   7655  00347C                     __ptext31:
   7656                           	opt stack 0
   7657  00347C                     _HexToAscii:
-  7658                           	opt stack 26
+  7658                           	opt stack 25
   7659                           
   7660                           ; BSR set to: 0
   7661                           ;incstack = 0
@@ -7779,7 +7779,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   7766  001188                     __ptext32:
   7767                           	opt stack 0
   7768  001188                     _bouton_refresh:
-  7769                           	opt stack 27
+  7769                           	opt stack 26
   7770                           
   7771                           ; BSR set to: 0
   7772                           ;incstack = 0
@@ -8201,7 +8201,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   8187  0032CE                     __ptext33:
   8188                           	opt stack 0
   8189  0032CE                     _bouton_init:
-  8190                           	opt stack 27
+  8190                           	opt stack 26
   8191                           
   8192                           ; BSR set to: 0
   8193                           ;incstack = 0
@@ -8323,7 +8323,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   8309  0018E4                     __ptext34:
   8310                           	opt stack 0
   8311  0018E4                     _armement_process:
-  8312                           	opt stack 23
+  8312                           	opt stack 22
   8313                           
   8314                           ; BSR set to: 0
   8315                           ;incstack = 0
@@ -8678,7 +8678,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   8664  002C68                     __ptext35:
   8665                           	opt stack 0
   8666  002C68                     _itoa:
-  8667                           	opt stack 24
+  8667                           	opt stack 23
   8668                           
   8669                           ;incstack = 0
   8670  002C68  FFFF               	dw	65535
@@ -8816,7 +8816,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   8802  002288                     __ptext36:
   8803                           	opt stack 0
   8804  002288                     _utoa:
-  8805                           	opt stack 24
+  8805                           	opt stack 23
   8806                           
   8807                           ;incstack = 0
   8808  002288  FFFF               	dw	65535
@@ -9024,7 +9024,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9010  002CF8                     __ptext37:
   9011                           	opt stack 0
   9012  002CF8                     ___lwmod:
-  9013                           	opt stack 24
+  9013                           	opt stack 23
   9014                           
   9015                           ; BSR set to: 0
   9016                           ;incstack = 0
@@ -9179,7 +9179,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9165  002BBA                     __ptext38:
   9166                           	opt stack 0
   9167  002BBA                     ___lwdiv:
-  9168                           	opt stack 24
+  9168                           	opt stack 23
   9169                           
   9170                           ; BSR set to: 0
   9171                           ;incstack = 0
@@ -9358,7 +9358,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9344  003538                     __ptext39:
   9345                           	opt stack 0
   9346  003538                     _ecran_wait:
-  9347                           	opt stack 25
+  9347                           	opt stack 24
   9348                           
   9349                           ; BSR set to: 0
   9350                           ;incstack = 0
@@ -9448,7 +9448,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9434  00313C                     __ptext40:
   9435                           	opt stack 0
   9436  00313C                     _check_comutest:
-  9437                           	opt stack 23
+  9437                           	opt stack 22
   9438                           
   9439                           ; BSR set to: 0
   9440                           ;incstack = 0
@@ -9579,7 +9579,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9565  002B08                     __ptext41:
   9566                           	opt stack 0
   9567  002B08                     _ecran_refresh:
-  9568                           	opt stack 23
+  9568                           	opt stack 22
   9569                           
   9570                           ; BSR set to: 0
   9571                           ;incstack = 0
@@ -9747,7 +9747,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9733  0033B2                     __ptext42:
   9734                           	opt stack 0
   9735  0033B2                     _ecran_print_one_char:
-  9736                           	opt stack 23
+  9736                           	opt stack 22
   9737                           
   9738                           ; BSR set to: 0
   9739                           ;incstack = 0
@@ -9873,7 +9873,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9859  0035C2                     __ptext43:
   9860                           	opt stack 0
   9861  0035C2                     _ecran_raz_digit:
-  9862                           	opt stack 25
+  9862                           	opt stack 24
   9863                           
   9864                           ; BSR set to: 0
   9865                           ;incstack = 0
@@ -9945,7 +9945,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
   9931  0026C4                     __ptext44:
   9932                           	opt stack 0
   9933  0026C4                     _ecran_digit:
-  9934                           	opt stack 23
+  9934                           	opt stack 22
   9935                           
   9936                           ;incstack = 0
   9937  0026C4  FFFF               	dw	65535
@@ -10167,7 +10167,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  10153  0035AE                     __ptext45:
  10154                           	opt stack 0
  10155  0035AE                     _ecran_dot:
- 10156                           	opt stack 25
+ 10156                           	opt stack 24
  10157                           
  10158                           ;incstack = 0
  10159  0035AE  FFFF               	dw	65535
@@ -10252,7 +10252,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  10238  002FC6                     __ptext46:
  10239                           	opt stack 0
  10240  002FC6                     _ecran_blank:
- 10241                           	opt stack 26
+ 10241                           	opt stack 25
  10242                           
  10243                           ; BSR set to: 0
  10244                           ;incstack = 0
@@ -10387,7 +10387,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  10373  0024B2                     __ptext47:
  10374                           	opt stack 0
  10375  0024B2                     _arm_UAlim_1A:
- 10376                           	opt stack 24
+ 10376                           	opt stack 23
  10377                           
  10378                           ; BSR set to: 0
  10379                           ;incstack = 0
@@ -10577,7 +10577,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  10563  002EF8                     __ptext48:
  10564                           	opt stack 0
  10565  002EF8                     _ana_read:
- 10566                           	opt stack 24
+ 10566                           	opt stack 23
  10567                           
  10568                           ;incstack = 0
  10569  002EF8  FFFF               	dw	65535
@@ -10718,7 +10718,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  10704  003368                     __ptext49:
  10705                           	opt stack 0
  10706  003368                     _delay_ms:
- 10707                           	opt stack 24
+ 10707                           	opt stack 23
  10708                           
  10709                           ; BSR set to: 0
  10710                           ;incstack = 0
@@ -10821,7 +10821,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  10807  00331C                     __ptext50:
  10808                           	opt stack 0
  10809  00331C                     ___lwtoft:
- 10810                           	opt stack 24
+ 10810                           	opt stack 23
  10811                           
  10812                           ; BSR set to: 0
  10813                           ;incstack = 0
@@ -10918,7 +10918,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  10904  001BF4                     __ptext51:
  10905                           	opt stack 0
  10906  001BF4                     ___fttol:
- 10907                           	opt stack 25
+ 10907                           	opt stack 24
  10908                           
  10909                           ;incstack = 0
  10910  001BF4  FFFF               	dw	65535
@@ -11209,7 +11209,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  11195  0013BC                     __ptext52:
  11196                           	opt stack 0
  11197  0013BC                     ___ftmul:
- 11198                           	opt stack 24
+ 11198                           	opt stack 23
  11199                           
  11200                           ; BSR set to: 0
  11201                           ;incstack = 0
@@ -11539,7 +11539,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  11525  002020                     __ptext53:
  11526                           	opt stack 0
  11527  002020                     ___ftpack:
- 11528                           	opt stack 24
+ 11528                           	opt stack 23
  11529                           
  11530                           ;incstack = 0
  11531  002020  FFFF               	dw	65535
@@ -11797,7 +11797,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  11783  000018                     __pintcodelo:
  11784                           	opt stack 0
  11785  000018                     _Low_priority:
- 11786                           	opt stack 23
+ 11786                           	opt stack 22
  11787                           
  11788                           ; BSR set to: 0
  11789                           ;incstack = 0
@@ -11949,7 +11949,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  11935  000008                     __pintcode:
  11936                           	opt stack 0
  11937  000008                     _High_priority:
- 11938                           	opt stack 23
+ 11938                           	opt stack 22
  11939                           
  11940                           ;incstack = 0
  11941  000008  FFFF               	dw	65535	; errata NOP
@@ -11984,9 +11984,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  11970                           
  11971                           	psect	intcode_body
  11972  001D6A                     __pintcode_body:
- 11973                           	opt stack 23
+ 11973                           	opt stack 22
  11974  001D6A                     int_func:
- 11975                           	opt stack 23
+ 11975                           	opt stack 22
  11976  001D6A  FFFF               	dw	65535	; errata NOP
  11977  001D6C  CFE9 F011          	movff	fsr0l,??_High_priority+7
  11978  001D70  CFEA F012          	movff	fsr0h,??_High_priority+8
@@ -12286,7 +12286,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 56723
  12272  002A54                     __ptext56:
  12273                           	opt stack 0
  12274  002A54                     ___awdiv:
- 12275                           	opt stack 23
+ 12275                           	opt stack 22
  12276                           
  12277                           ;incstack = 0
  12278  002A54  FFFF               	dw	65535
@@ -12482,7 +12482,7 @@ Auto Spaces:
     BANK2           256      0       0
     BANK3           256      0       0
     BANK4           256      0       0
-    BANK5           256      0       0
+    BANK5           239      0       0
 
 Pointer List with Targets:
 
@@ -13094,915 +13094,483 @@ Call Graph Tables:
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
-BIGRAM             5FF      0       0      17        0.0%
+BIGRAM             5EE      0       0      16        0.0%
 EEDATA             100      0       0       0        0.0%
-BITBANK5           100      0       0      16        0.0%
-BANK5              100      0       0      14        0.0%
-BITBANK4           100      0       0      12        0.0%
-BANK4              100      0       0      13        0.0%
-BITBANK3           100      0       0      10        0.0%
-BANK3              100      0       0      11        0.0%
-BITBANK2           100      0       0       8        0.0%
-BANK2              100      0       0       9        0.0%
-BITBANK1           100      0       0       6        0.0%
-BANK1              100      0      6B       7       41.8%
-BITBANK0            80      0       0       4        0.0%
-BANK0               80     2B      6A       5       82.8%
+BITBANK4           100      0       0      11        0.0%
+BANK4              100      0       0      12        0.0%
+BITBANK3           100      0       0       9        0.0%
+BANK3              100      0       0      10        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0      6B       6       41.8%
+BITBANK5            EF      0       0      15        0.0%
+BANK5               EF      0       0      13        0.0%
+BITBANK0            80      0       0       3        0.0%
+BANK0               80     2B      6A       4       82.8%
 BITCOMRAM           7F      0       0       0        0.0%
 COMRAM              7F     2D      57       1       68.5%
+BITSFR_5             0      0       0      40        0.0%
+SFR_5                0      0       0      40        0.0%
+BITSFR_4             0      0       0      40        0.0%
+SFR_4                0      0       0      40        0.0%
+BITSFR_3             0      0       0      40        0.0%
+SFR_3                0      0       0      40        0.0%
+BITSFR_2             0      0       0      40        0.0%
+SFR_2                0      0       0      40        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
 BITSFR               0      0       0      40        0.0%
 SFR                  0      0       0      40        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0     12C      15        0.0%
-DATA                 0      0     12C       3        0.0%
+ABS                  0      0     12C      14        0.0%
+DATA                 0      0     12C      17        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-Symbol Table                                                                                   Wed Dec 06 22:33:42 2017
+Symbol Table                                                                                   Sat Nov 25 18:59:23 2017
 
-                                        __end_of_check_UInfla 26C4  
-                                         ?_eeprom_write_array 00BC  
-                                              ??_feu_check_bp 00CF  
-                                                          _RD 007D30  
-                                                          _Cf 0100  
-                                                          _WR 007D31  
-                                                ___awdiv@sign 0007  
-                                      ??_cf_check_and_display 00CE  
-                                                 __CFG_BOR$ON 000000  
-                                                          bsr 000FE0  
-                                         ___wmul@multiplicand 00BC  
-                                             ??_feu_check_end 00BA  
-                                                __CFG_CP0$OFF 000000  
-                                                __CFG_CP1$OFF 000000  
-                                                __CFG_CP2$OFF 000000  
-                                                __CFG_CP3$OFF 000000  
-                                        __end_of_check_idtest 350C  
-                                                         l250 27BE  
-                                                         l260 33CC  
-                                                         l340 352C  
-                                                         l261 33D0  
-                                                         l262 33D4  
-                                                         l264 33F6  
-                                                         l280 2BB6  
-                                                         l417 21BA  
-                                                         l258 33C8  
-                                                         l426 2242  
-                                                         l603 0A52  
-                                                         l445 1BEE  
-                                                         l461 173C  
-                                                         l614 0B5E  
-                                                         l448 1BF0  
-                                                         l544 3508  
-                                                         l616 0BDA  
-                                                         l553 30E4  
-                                                         l609 0ADE  
-                                                         l548 30B0  
-                                                         l820 29BC  
-                                                         l564 062A  
-                                                         l821 29E6  
-                                                         l590 08F4  
-                                                         l815 2990  
-                                                         l591 0930  
-                                                         l584 0864  
-                                                         l568 06E0  
-                                                         l825 2A32  
-                                                         l818 29A8  
-                                                         l915 32A0  
-                                                         l828 2A50  
-                                                         l917 32B4  
-                                                         l918 32B6  
-                                                         l967 2F3A  
-                                                         _GIE 007F97  
-                                                __CFG_CPB$OFF 000000  
-                                                __CFG_CPD$OFF 000000  
-                                                         _Arm 009A  
-                                                         _Feu 0080  
-                                              _check_comutest 313C  
-                                                __CFG_BORV$45 000000  
-                                                ___awmod@sign 00C0  
-                                                         prod 000FF3  
-                                                         wreg 000FE8  
-                                                __CFG_LVP$OFF 000000  
-                                        ??_eeprom_write_array 00C0  
-                                                __CFG_WDT$OFF 000000  
-                                                        l1100 1758  
-                                                        l1110 1812  
-                                                        l1102 179E  
-                                                        l1031 1998  
-                                                        l1112 1862  
-                                                        l1033 19BC  
-                                                        l1041 1A76  
-                                                        l1105 1800  
-                                                        l1034 19D4  
-                                                        l1106 17D0  
-                                                        l1122 18E0  
-                                                        l1027 18E8  
-                                                        l1115 187E  
-                                                        l1117 189A  
-                                                        l1142 1084  
-                                                        l1126 0F22  
-                                                        l1119 18B6  
-                                                        l1151 1184  
-                                                        l1136 103C  
-                                                        l1137 1048  
-                                                        l1147 1100  
-                                                        l1093 3576  
-                                                        l1149 111A  
-                                                        l1445 215A  
-                                                        l1529 157C  
-                                                        l1571 234A  
-                                                        l1549 1D66  
-                                                        l1671 2C5C  
-                                                        l1681 2D7A  
-                                                        l6007 171C  
-                                                        l6103 3574  
-                                                        l6009 1732  
-                                                        l5331 26DC  
-                                                        l6211 310A  
-                                                        l5341 26EC  
-                                                        l5333 26E0  
-                                                        l5317 26CC  
-                                                        l5351 2700  
-                                                        l5343 26F0  
-                                                        l5335 26E4  
-                                                        l5327 26D4  
-                                                        l5319 26D0  
-                                                        l5511 2ECC  
-                                                        l6231 3502  
-                                                        l6047 25DA  
-                                                        l5361 2714  
-                                                        l5353 2704  
-                                                        l5345 26F4  
-                                                        l5337 26E8  
-                                                        l5329 26D8  
-                                                        l6065 2CD0  
-                                                        l6305 1356  
-                                                        l5505 2EAC  
-                                                        l6209 3106  
-                                                        l5523 3372  
-                                                        l5363 2718  
-                                                        l5355 2708  
-                                                        l5347 26F8  
-                                                        l6307 13A8  
-                                                        l5443 0ECA  
-                                                        l5427 0C1C  
-                                                        l6219 3132  
-                                                        l5611 2DF4  
-                                                        l5603 2DC4  
-                                                        l6331 2A12  
-                                                        l6411 0850  
-                                                        l5541 20CE  
-                                                        l5533 2058  
-                                                        l5365 271C  
-                                                        l5357 270C  
-                                                        l5349 26FC  
-                                                        l5453 0EEC  
-                                                        l6261 1B46  
-                                                        l5605 2DCC  
-                                                        l6405 080C  
-                                                        l5543 2100  
-                                                        l5535 206E  
-                                                        l5359 2710  
-                                                        l5711 31A4  
-                                                        l6263 1B76  
-                                                        l5615 2E02  
-                                                        l6423 08AE  
-                                                        l5545 2116  
-                                                        l5537 20A0  
-                                                        l5529 203E  
-                                                        l5369 2722  
-                                                        l5385 33D8  
-                                                        l5625 2BE8  
-                                                        l6521 18F6  
-                                                        l6281 11B8  
-                                                        l5457 0F12  
-                                                        l6097 3570  
-                                                        l6505 0B1C  
-                                                        l6433 08D4  
-                                                        l6345 0638  
-                                                        l5555 214E  
-                                                        l5627 2BFA  
-                                                        l6283 11C6  
-                                                        l5483 2218  
-                                                        l5467 2192  
-                                                        l6259 1B42  
-                                                        l6267 1BD8  
-                                                        l5723 31F6  
-                                                        l5731 321C  
-                                                        l5571 240E  
-                                                        l6611 10C0  
-                                                        l6339 2A3C  
-                                                        l6451 0986  
-                                                        l6443 0948  
-                                                        l6515 0B72  
-                                                        l5549 212C  
-                                                        l5813 14CC  
-                                                        l5637 2C48  
-                                                        l5629 2C02  
-                                                        l5653 2D66  
-                                                        l5645 2D18  
-                                                        l6277 119C  
-                                                        l5493 226C  
-                                                        l5477 220E  
-                                                        l6621 113A  
-                                                        l6429 08C2  
-                                                        l6381 072C  
-                                                        l6701 2E50  
-                                                        l5823 1530  
-                                                        l5647 2D2A  
-                                                        l6279 11AA  
-                                                        l6287 11D4  
-                                                        l5495 227C  
-                                                        l5743 3434  
-                                                        l5719 31CC  
-                                                        l5591 24A6  
-                                                        l5583 247A  
-                                                        l5575 242C  
-                                                        l5567 23E8  
-                                                        l5671 1EEC  
-                                                        l6703 2E56  
-                                                        l6711 2E6C  
-                                                        l5809 14A0  
-                                                        l5913 3148  
-                                                        l5649 2D32  
-                                                        l6561 1A58  
-                                                        l6297 1298  
-                                                        l6289 11F2  
-                                                        l5577 243E  
-                                                        l6625 1148  
-                                                        l6473 0A3E  
-                                                        l6377 070A  
-                                                        l6369 06F2  
-                                                        l6705 2E5C  
-                                                        l5819 1504  
-                                                        l6299 12A4  
-                                                        l5579 2446  
-                                                        l5587 248E  
-                                                        l5675 1F18  
-                                                        l6491 0AB0  
-                                                        l6467 09FA  
-                                                        l6459 09E0  
-                                                        l6707 2E62  
-                                                        l5837 1C22  
-                                                        l5925 3176  
-                                                        l5685 1F76  
-                                                        l5941 294A  
-                                                        l6653 17F8  
-                                                        l6485 0A9C  
-                                                        l6397 07DE  
-                                                        l6389 0784  
-                                                        l5855 1CC6  
-                                                        l5599 2DB8  
-                                                        l5679 1F54  
-                                                        l6495 0ABE  
-                                                        l5873 1D56  
-                                                        l5865 1D0A  
-                                                        l5945 2974  
-                                                        l6585 0FB4  
-                                                        l6569 0F34  
-                                                        l5795 142E  
-                                                        l5867 1D24  
-                                                        l5859 1CE4  
-                                                        l6667 185A  
-                                                        l6579 0F7C  
-                                                        l5789 13EA  
-                                                        l5869 1D2C  
-                                                        l5957 3498  
-                                                        l5973 1608  
-                                                        l6677 18D0  
-                                                        l6589 1018  
-                                                        l5879 2292  
-                                                        l5975 160C  
-                                                        l6599 106C  
-                                                        l6695 2E42  
-                                                        l5889 22F8  
-                                                        l5993 168E  
-                                                        l5985 1644  
-                                                        l6697 2E46  
-                                                        _CFGS 007D36  
-                                                  _Cpt1Sur20s 004D  
-                                               __CFG_DEBUG$ON 000000  
-                                                        u5110 1C4E  
-                                                        u5031 13D8  
-                                                        u5200 237E  
-                                                        _IPEN 007E87  
-                                                        u4410 0D74  
-                                                        u5051 1404  
-                                                        u5115 1C44  
-                                                        u5060 1414  
-                                                        u5140 1CEE  
-                                                        u4405 0D3A  
-                                                        u5207 2370  
-                                                        u4415 0D68  
-                                                        u5240 317E  
-                                                        u4425 0DC6  
-                                                        u5091 1C10  
-                                                        u4435 0E4E  
-                                                        _PEIE 007F96  
-                                                        u5180 22EE  
-                                                        u4445 0EB6  
-                                                        u5246 3180  
-                                                        u4390 0CE8  
-                                                        u5600 127C  
-                                                        u5370 2CBA  
-                                                        u5602 127E  
-                                                        u5187 22E2  
-                                                        u4395 0CDC  
-                                                        _RCIE 007CED  
-                                                        _RCIF 007CF5  
-                                                        u5525 32DC  
-                                                        u5535 32EE  
-                                                        u5527 32E2  
-                                                        u5377 2CAE  
-                                                        u5545 3300  
-                                                        u5537 32F4  
-                                                        u5570 121A  
-                                                        u5555 3312  
-                                                        u5547 3306  
-                                                        u5557 3318  
-                                                        i1l86 00AA  
-                                                        u5590 124E  
-                                                        _RCIP 007CFD  
-                                                        u5655 134A  
-                                                        u4880 2B6A  
-                                                        u5656 1354  
-                                                        u5592 1250  
-                                                        u5576 121C  
-                                                        u5665 1384  
-                                                        u5666 1388  
-                                                        i2l91 1E7A  
-                                                        i2l95 1E5C  
-                                                        u4887 2B60  
-                                                        i2l98 1E58  
-                                                __CFG_WDTPS$1 000000  
-                                                        _WREN 007D32  
-                                              ??_eeprom_write 00BB  
-                                                __CFG_PWRT$ON 000000  
-                                                ?_bouton_init 0001  
-                                     eeprom_write_array@pData 00BC  
-                                                        _Test 002E  
-                                                        _main 2E0C  
-                                                ___ftpack@arg 00BA  
-                                                        _itoa 2C68  
-                                                ___ftpack@exp 00BD  
-                                                        fsr0h 000FEA  
-                                                        fsr1h 000FE2  
-                                                        fsr0l 000FE9  
-                                                        fsr2h 000FDA  
-                                                        indf1 000FE7  
-                                                        fsr1l 000FE1  
-                                                        indf2 000FDF  
-                                                        fsr2l 000FD9  
-                                                        _utoa 2288  
-                                                        pclat 000FFA  
-                                                        prodh 000FF4  
-                                                        prodl 000FF3  
-                                               feu_tir@Output 00C0  
-                                                        start 0112  
-                                        __size_of_cf_checkout 012A  
-                                        __size_of_cf_checksum 0340  
-                                            ?_ecran_raz_digit 0001  
-                                                ___ftmul@cntr 00D4  
-                                                ___ftmul@sign 00D5  
-                                                ___fttol@exp1 00C8  
-                                                ___fttol@lval 00C4  
-                                     __size_of_bouton_refresh 0234  
-                                               __CFG_OSCS$OFF 000000  
-                                           ??_micro_config_rs 00BA  
-                                      __end_of_check_comutest 3190  
-                                            ?_ecran_print_num 0001  
-                                             __end_of_Version 0615  
-                                    eeprom_write_array@NbData 00BF  
-                                                       ?_main 0001  
-                                                       ?_itoa 00CB  
-                                             __end_of___awdiv 2B08  
-                                             __end_of___lbdiv 2E0C  
-                                                       _EEADR 000FA9  
-                                             __end_of___awmod 24B2  
-                                                       _EEPGD 007D37  
-                                                       ?_utoa 00C2  
-                                             __end_of___ftmul 1580  
-                                                       _T0CON 000FD5  
-                                             ___awdiv@divisor 0003  
-                                             __end_of___fttol 1D6A  
-                                             __end_of___lwdiv 2C68  
-                                                       i2l102 1E8A  
-                                             __end_of___lwmod 2D86  
-                                             ___awdiv@counter 0006  
-                                                       _RCREG 000FAE  
-                                                       _RCSTA 000FAB  
-                                                  _HexToAscii 347C  
-                                                       _TMR0H 000FD7  
-                                                       _TMR0L 000FD6  
-                                                       _SPBRG 000FAF  
-                                                       _PORTA 000F80  
-                                                       _PORTB 000F81  
-                                                       _PORTC 000F82  
-                                                       _PORTD 000F83  
-                                                       _PORTE 000F84  
-                                        __size_of_check_UAlim 00FA  
-                                        __end_of_arm_UAlim_1A 25C2  
-                                                       _TXREG 000FAD  
-                                                       _TXSTA 000FAC  
-                                                       _Blank 0606  
-                                                       _Ecran 00AA  
-                                                       _Armed 0601  
-                                               __CFG_WRT0$OFF 000000  
-                                               __CFG_WRT1$OFF 000000  
-                                               __CFG_WRT2$OFF 000000  
-                                               __CFG_WRT3$OFF 000000  
-                                                       _Cptms 004F  
-                                                       _Micro 0052  
-                                          eeprom_read_array@i 00C0  
-                                              __CFG_EBTR0$OFF 000000  
-                                              __CFG_EBTR1$OFF 000000  
-                                              __CFG_EBTR2$OFF 000000  
-                                              __CFG_EBTR3$OFF 000000  
-                                               __CFG_STVR$OFF 000000  
-                                             __end_of_feu_tir 347C  
-                                               __CFG_WRTB$OFF 000000  
-                                               __CFG_WRTC$OFF 000000  
-                                               __CFG_WRTD$OFF 000000  
-                                              __CFG_EBTRB$OFF 000000  
-                                             _check_program_0 30E8  
-                                               ___ftpack@sign 00BE  
-                                                       tablat 000FF5  
-                                            __end_of_DecToStr 2020  
-                                                       utoa@c 00CA  
-                                                       utoa@v 00C8  
-                                                       status 000FD8  
-                                             ___lbdiv@divisor 00BA  
-                                             ___lbdiv@counter 00BD  
-                                     eeprom_read_array@NbData 00BE  
-                                             __initialization 3232  
-                                                __end_of_main 2E88  
-                                                __end_of_itoa 2CF8  
-                                                __end_of_utoa 23A0  
-                                              DecToStr@result 00C1  
-                                         eeprom_write@Address 00BA  
-                                        __size_of_ecran_blank 0066  
-                                        __size_of_ecran_digit 00FE  
-                                              __CFG_OSC$HSPLL 000000  
-                                             ?_check_comutest 0001  
-                                                      ??_main 00E3  
-                                               ___fttol@sign1 00C3  
-                                                      ??_itoa 00D1  
-                                                      ??_utoa 00C8  
-                                               __activetblptr 000002  
-                               __size_of_ecran_print_one_char 0048  
-                                                      _ADCON0 000FC2  
-                                                      _ADCON1 000FC1  
-                                                      _ADRESH 000FC4  
-                                                      _ADRESL 000FC3  
-                                                      _EEDATA 000FA8  
-                                                      _EECON2 000FA7  
-                                            ___awdiv@dividend 0001  
-                                            __end_of___ftpack 215E  
-                                        __end_of_feu_check_bp 18E4  
-                                                      i2l5201 1DEE  
-                                                      i2l5203 1DF8  
-                                                      i2l5141 2AC4  
-                                                      i2l5133 2AA2  
-                                              _register_write 3280  
-                                                      i2l5151 2AE4  
-                                                      i2l5143 2AC8  
-                                                      i2l5127 2A82  
-                                                      i2l5139 2ABC  
-                                                      i2l5155 2AEE  
-                                                      i2l5159 2AFC  
-                                                      i2l5191 1DBC  
-                                            __end_of___lwtoft 3368  
-                                            __end_of_cf_check 343E  
-                                                      _TMR0IE 007F95  
-                                                      _TMR0IF 007F92  
-                                                      _TMR0IP 007F8A  
-                                       __size_of_check_UInfla 0102  
-                                            __end_of_ana_read 2F60  
-                                             bouton_refresh@i 00BF  
-                                            test_process@temp 00E1  
-                                            __end_of_delay_ms 33B2  
-                                                      _Bouton 008E  
-                                            _armement_process 18E4  
-                                               ?_micro_config 0001  
-                                        __size_of_eeprom_read 001A  
-                                        __size_of_feu_process 026A  
-                                                      ___wmul 2F60  
-                                                   ??___awdiv 0005  
-                                                   ??___lbdiv 00BB  
-                                                      _cf_rcv 1580  
-                                                   ??___awmod 00BE  
-                                       __size_of_check_idtest 002C  
-                                                   ??___ftmul 00CD  
-                                                   ??___fttol 00BE  
-                                                   ??___lwdiv 00BE  
-                                                   ??___lwmod 00BE  
-                                                      clear_0 3238  
-                                                      clear_1 3244  
-                                                      clear_2 3250  
-                                            ___awdiv@quotient 0008  
-                                             ___awmod@divisor 00BC  
-                                        __end_of_eeprom_write 3538  
-                                             ___awmod@counter 00BF  
-                                                   ??_feu_tir 00C0  
-                                     __end_of_check_program_0 313C  
-                                       ___ftmul@f3_as_product 00D1  
-                                                 ?_HexToAscii 0001  
-                                                      itoa@cp 00D1  
-                                                __mediumconst 0000  
-                                       __end_of_ecran_refresh 2BBA  
-                                                      tblptrh 000FF7  
-                                                      tblptrl 000FF6  
-                                                      tblptru 000FF8  
-                                                _check_UInfla 25C2  
-                                      __end_of_register_write 32CE  
-                                      __size_of_cf_checkrange 0070  
-                                           cf_checksum@calcul 00C8  
-                                            ___lbdiv@dividend 00BC  
-                                                  __accesstop 0080  
-                                     __end_of__initialization 3276  
-                                         eeprom_write_array@i 00C1  
-                                    eeprom_read_array@Address 00BD  
-                                                _check_idtest 34E0  
-                                        __size_of_bouton_init 004E  
-                                              ??_micro_config 00BA  
-                                               __end_of_Blank 060B  
-                                                  ___ftmul@f1 00C7  
-                                                  ___ftmul@f2 00CA  
-                                               __end_of_Armed 0606  
-                                                  ___fttol@f1 00BA  
-                                              __pcstackCOMRAM 0001  
-                                                __pidataBANK0 35D0  
-                                cf_check_and_display@configOk 00D2  
-                                              _bouton_refresh 1188  
-                                             DecToStr@power10 00CA  
-                                       __size_of_arm_UAlim_1A 0110  
-                                            ___lbdiv@quotient 00BE  
-                                                  ___lwtoft@c 00C2  
-                                          __size_of_ecran_dot 0014  
-                                                   ?_DecToStr 00C1  
-                                           __end_of_ErreurTir 0610  
-                                               ?_Low_priority 0001  
-                                             ?_register_write 0001  
-                                                  __pbssBANK0 0080  
-                                                  __pbssBANK1 0100  
-                                                  _check_bpon 308C  
-                                          delay_ms@TimeToWait 00BA  
-                                                  __pnvCOMRAM 0052  
-                                       __end_of_High_priority 1EC6  
-                                          __size_of_hw_config 0060  
-                                             _micro_config_rs 357A  
-                                          check_program_0@ret 00C0  
-                                                _arm_UAlim_1A 24B2  
-                                         __size_of_HexToAscii 0034  
-                                      __end_of_bouton_refresh 13BC  
-                                                  _ecran_wait 3538  
-                                            __CFG_CCP2MUX$OFF 000000  
-                                                     ?___wmul 00BA  
-                                               _cf_checkrange 2E88  
-                                                     ?_cf_rcv 0001  
-                                                   ?___ftpack 00BA  
-                               __size_of_cf_check_and_display 017A  
-                                                  ??_DecToStr 00C3  
-                                                   ?___lwtoft 00C2  
-                                                   ?_cf_check 0001  
-                                       __end_of_feu_check_end 357A  
-                                            ?_check_program_0 0001  
-                                              ??_Low_priority 001D  
-                                                   ?_ana_read 00C0  
-                                           _eeprom_read_array 3190  
-                                       __size_of_feu_check_bp 01A4  
-                                                   ?_delay_ms 00BA  
-                                          cf_checkrange@valid 00BB  
-                                          ?_eeprom_read_array 00BB  
-                                 __size_of_eeprom_write_array 0050  
-                                               ??_cf_checkout 00C0  
-                                               ??_cf_checksum 00BA  
-                                         ??_eeprom_read_array 00BF  
-                                    cf_check_and_display@temp 00D0  
-                                           __end_of_ecran_dot 35C2  
-                                                  cf_rcv@temp 00D0  
-                                                     __Hparam 0000  
-                                                     __Lparam 0000  
-                                              ?_cf_checkrange 0001  
-                                             ?_bouton_refresh 0001  
-                                       __size_of_eeprom_write 002C  
-                                            ??_check_comutest 00BF  
-                                                     _Version 0610  
-                                                     ___awdiv 2A54  
-                                                     ___lbdiv 2D86  
-                                                     ___awmod 23A0  
-                                             __size_of___wmul 0066  
-                                                     ___ftmul 13BC  
-                                                     ___fttol 1BF4  
-                                             __size_of_cf_rcv 01C0  
-                                                     ___lwdiv 2BBA  
-                                                     ___lwmod 2CF8  
-                                                __psmallconst 0600  
-                                                _feu_check_bp 1740  
-                                               ??_check_UAlim 00D8  
-                                                     __pcinit 3232  
-                                                  ??___ftpack 00BF  
-                                      ecran_print_num@tempStr 00CD  
-                                                     __ramtop 0600  
-                                    __size_of_ecran_raz_digit 000E  
-                                                  _micro_wait 298C  
-                                                     __ptext0 2E0C  
-                                                     __ptext1 0616  
-                                                     __ptext2 25C2  
-                                                     __ptext3 27C2  
-                                                     __ptext4 298C  
-                                                     __ptext5 34B0  
-                                                     __ptext6 302C  
-                                                     __ptext7 0F1E  
-                                                     __ptext8 343E  
-                                                     __ptext9 3280  
-                                                     _feu_tir 343E  
-                                                  ??___lwtoft 00C5  
-                                                  ??_cf_check 00CC  
-                                   __end_of_eeprom_read_array 31E2  
-                                                     cf_rcv@i 00D1  
-                                           __end_of_hw_config 308C  
-                                                  ??_ana_read 00C2  
-                                            ___awmod@dividend 00BA  
-                                        __end_of_micro_config 34E0  
-                                    __end_of_armement_process 1A7A  
-                                                  ??_delay_ms 00BC  
-                                    __size_of_ecran_print_num 00D0  
-                                                     main@cpt 00E4  
-                                              __pintcode_body 1D6A  
-                                     __end_of_micro_config_rs 3594  
-                                        end_of_initialization 3276  
-                                         HexToAscii@character 00BA  
-                                                 ?_check_bpon 0001  
-                                                     itoa@buf 00CB  
-                                                     itoa@val 00CD  
-                                               __Lmediumconst 0000  
-                                                _eeprom_write 350C  
-                                                     int_func 1D6A  
-                                __end_of_ecran_print_one_char 33FA  
-                                         __end_of_cf_checkout 2288  
-                                         __end_of_cf_checksum 0F1E  
-                                               ??_ecran_blank 00BA  
-                                               ??_ecran_digit 00BA  
-                                                 ?_ecran_wait 0001  
-                                                     postdec1 000FE5  
-                                                     postdec2 000FDD  
-                                                     postinc0 000FEE  
-                                                     postinc2 000FDE  
-                                                cf_checkout@i 00C3  
-                                                cf_checksum@i 00C7  
-                                                     utoa@buf 00C2  
-                                                     utoa@val 00C4  
-                                                   _PORTAbits 000F80  
-                                                   _PORTBbits 000F81  
-                                                   _PORTCbits 000F82  
-                                                   _PORTEbits 000F84  
-                                                ??_HexToAscii 00BA  
-                                                   _TRISAbits 000F92  
-                                                   _TRISBbits 000F93  
-                                                   _TRISCbits 000F94  
-                                                   _TRISDbits 000F95  
-                                                   _TRISEbits 000F96  
-                                         __end_of_check_UAlim 28BC  
-                                               ?_test_process 0001  
-                                          bouton_refresh@temp 00BE  
-                                               ??_eeprom_read 00BA  
-                                               ??_feu_process 00C1  
-                                             ??_cf_checkrange 00BA  
-                                        __end_of_Low_priority 00F2  
-                                          __end_of_HexToAscii 34B0  
-                                                 ___ftmul@exp 00D0  
-                                        DecToStr@compareValue 00C7  
-                                              __end_of___wmul 2FC6  
-                                              __end_of_cf_rcv 1740  
-                                                 ?_micro_wait 0001  
-                                         __size_of_check_bpon 005C  
-                                         __end_of_ecran_blank 302C  
-                                         __end_of_ecran_digit 27C2  
-                                  __size_of_eeprom_read_array 0052  
-                                            ??_register_write 00BA  
-                                         start_initialization 3232  
-                                           __size_of_DecToStr 015A  
-                                              ??_test_process 00DE  
-                                           ??_ecran_raz_digit 00BA  
-                                                   _ErreurTir 060B  
-                                               DecToStr@value 00C9  
-                                      eeprom_read_array@pData 00BB  
-                                         __size_of_ecran_wait 0022  
-                                            ?_micro_config_rs 0001  
-                                               ??_bouton_init 00BA  
-                                             ecran_digit@Char 00BA  
-                                                 _cf_checkout 215E  
-                                                 _cf_checksum 0BDE  
-                                           ??_ecran_print_num 00CB  
-                                             test_process@ret 00E0  
-                                      __size_of_ecran_refresh 00B2  
-                                                    ??___wmul 00BE  
-                                                    ??_cf_rcv 00CE  
-                                         __end_of_eeprom_read 35AE  
-                                                   _PrintTest 00E5  
-                                                 __pdataBANK0 00E5  
-                                         __end_of_feu_process 1188  
-                                            cf_checkout@valid 00C1  
-                                       __size_of_micro_config 0030  
-                                                 _check_UAlim 27C2  
-                                            cf_checksum@valid 00C6  
-                                           __size_of___ftpack 013E  
-                                                 __pbssCOMRAM 002E  
-                                           __size_of___lwtoft 004C  
-                                               __pcstackBANK0 00BA  
-                                           __size_of_cf_check 0044  
-                                                ana_read@temp 00C4  
-                                           __size_of_ana_read 0068  
-                                        _ecran_print_one_char 33B2  
-                                        register_write@Output 00BB  
-                                           __size_of_delay_ms 004A  
-                                            eeprom_write@Data 00BB  
-                                __end_of_cf_check_and_display 1BF4  
-                                            ??_bouton_refresh 00BA  
-                                         __size_of_micro_wait 00C8  
-                                   ecran_print_one_char@Digit 00BC  
-                                            ___lwdiv@dividend 00BA  
-                                                _micro_config 34B0  
-                                         __end_of_bouton_init 331C  
-                                                   _ecran_dot 35AE  
-                                                   __pintcode 0008  
-                                                 _ecran_blank 2FC6  
-                                                 _ecran_digit 26C4  
-                                                    ?___awdiv 0001  
-                                                    ?___lbdiv 00BA  
-                                                    ?___awmod 00BA  
-                                                    ?___ftmul 00C7  
-                                                    ?___fttol 00BA  
-                                                    ?___lwdiv 00BA  
-                                                    ?___lwmod 00BA  
-                                                 __pintcodelo 0018  
-                                                    ?_feu_tir 0001  
-                                                 __smallconst 0600  
-                                            arm_UAlim_1A@temp 00DC  
-                                      __size_of_High_priority 1EBE  
-                                  __end_of_eeprom_write_array 3232  
-                                           ?_armement_process 0001  
-                                       ?_ecran_print_one_char 00BB  
-                                               _ecran_refresh 2B08  
-                                            ___lwdiv@quotient 00C0  
-                                                   _hw_config 302C  
-                                          ??_armement_process 00DE  
-                                    __size_of_check_program_0 0054  
-                                                ??_check_bpon 00BD  
-                                       __size_of_Low_priority 00DA  
-                                              ___wmul@product 00BE  
-                                                 _eeprom_read 3594  
-                                                 _feu_process 0F1E  
-                                      __size_of_feu_check_end 0020  
-                                                    i2u429_44 1E1C  
-                                                    i2u429_45 1E16  
-                                        __end_of_test_process 0BDE  
-                                                  ?_ecran_dot 0001  
-                                                ??_ecran_wait 00BB  
-                                                  _ADCON0bits 000FC2  
-                                           ___wmul@multiplier 00BA  
-                                                    _DecToStr 1EC6  
-                                          __end_of_check_bpon 30E8  
-                                   eeprom_write_array@Address 00BE  
-                                            check_UInfla@temp 00DC  
-                                                    _Feedback 00A1  
-                                                    _Decompte 0051  
-                                              ?_ecran_refresh 0001  
-                                                _Low_priority 0018  
-                                               ?_check_UInfla 00D6  
-                                                  ?_hw_config 0001  
-                                                delay_ms@temp 00BE  
-                                                   copy_data0 326A  
-                                          __end_of_ecran_wait 355A  
-                                                 _bouton_init 32CE  
-                                               ?_check_idtest 0001  
-                                               _High_priority 0008  
-                                                    _Register 00A6  
-                                                    __Hrparam 0000  
-                                                    __Lrparam 0000  
-                                             register_write@i 00BC  
-                                            __size_of___awdiv 00B4  
-                                             _ecran_raz_digit 35C2  
-                                            __size_of___lbdiv 0086  
-                                            __size_of___awmod 0112  
-                                            __size_of___ftmul 01C4  
-                                            __size_of___fttol 0176  
-                                                 ana_read@ANx 00C3  
-                                            __size_of___lwdiv 00AE  
-                                            __size_of___lwmod 008E  
-                                                    ___ftpack 2020  
-                                                ??_micro_wait 00C1  
-                                        _cf_check_and_display 1A7A  
-                                                    ___lwtoft 331C  
-                                                    _cf_check 33FA  
-                                                ecran_dot@Dot 00BA  
-                                            __size_of_feu_tir 003E  
-                                               _feu_check_end 355A  
-                                                    _ana_read 2EF8  
-                                     __size_of_check_comutest 0054  
-                                      ??_ecran_print_one_char 00BC  
-                                              ??_check_UInfla 00D8  
-                                                    _delay_ms 3368  
-                                             _ecran_print_num 28BC  
-                                             ___lwdiv@divisor 00BC  
-                                             ___lwdiv@counter 00BF  
-                                                    __ptext10 355A  
-                                                    __ptext11 1740  
-                                                    __ptext20 31E2  
-                                                    __ptext12 28BC  
-                                                    __ptext21 350C  
-                                                    __ptext13 1EC6  
-                                                    __ptext30 2F60  
-                                                    __ptext22 308C  
-                                                    __ptext14 2D86  
-                                                    __ptext31 347C  
-                                                    __ptext23 1A7A  
-                                                    __ptext15 23A0  
-                                                    __ptext40 313C  
-                                                    __ptext32 1188  
-                                                    __ptext24 3190  
-                                                    __ptext16 30E8  
-                                                    __ptext41 2B08  
-                                                    __ptext33 32CE  
-                                                    __ptext25 3594  
-                                                    __ptext17 34E0  
-                                                    __ptext50 331C  
-                                                    __ptext42 33B2  
-                                                    __ptext34 18E4  
-                                                    __ptext26 33FA  
-                                                    __ptext18 357A  
-                                                    __ptext51 1BF4  
-                                                    __ptext43 35C2  
-                                                    __ptext35 2C68  
-                                                    __ptext27 0BDE  
-                                                    __ptext19 1580  
-                                                    __ptext52 13BC  
-                                                    __ptext44 26C4  
-                                                    __ptext36 2288  
-                                                    __ptext28 2E88  
-                                                    __ptext53 2020  
-                                                    __ptext45 35AE  
-                                                    __ptext37 2CF8  
-                                                    __ptext29 215E  
-                                                    __ptext46 2FC6  
-                                                    __ptext38 2BBA  
-                                                    __ptext47 24B2  
-                                                    __ptext39 3538  
-                                                    __ptext56 2A54  
-                                                    __ptext48 2EF8  
-                                                    __ptext49 3368  
-                                             check_UAlim@temp 00DC  
-                               ecran_print_one_char@Character 00BB  
-                                        armement_process@temp 00E0  
-                                                ?_cf_checkout 0001  
-                                              ??_check_idtest 00D2  
-                                                ?_cf_checksum 0001  
-                                         _bouton_refresh$2134 00BC  
-                                               __size_of_main 007C  
-                                               __size_of_itoa 0090  
-                                              ?_High_priority 0001  
-                                               __size_of_utoa 0118  
-                                          __end_of_micro_wait 2A54  
-                                               ?_arm_UAlim_1A 00D6  
-                                           ??_check_program_0 00BF  
-                                                 ??_ecran_dot 00BA  
-                                       __end_of_cf_checkrange 2EF8  
-                                                ?_check_UAlim 00D6  
-                                       ?_cf_check_and_display 0001  
-                                              ?_feu_check_end 0001  
-                                             ??_ecran_refresh 00BD  
-                                                  _INTCONbits 000FF2  
-                                              cf_checkrange@i 00BC  
-                                                    itoa@base 00CF  
-                                                 ??_hw_config 00BA  
-                                                    intlevel1 35D6  
-                                                    intlevel2 35D6  
-                                         cf_checkout@last_out 00C2  
-                                            ___lwmod@dividend 00BA  
-                                       __size_of_test_process 05C8  
-                                              ??_arm_UAlim_1A 00D8  
-                                               cf_check@valid 00CD  
-                                     __end_of_ecran_raz_digit 35D0  
-                                    __size_of_micro_config_rs 001A  
-                                                ?_ecran_blank 0001  
-                                                ?_ecran_digit 0001  
-                                         check_comutest@State 00C0  
-                                               ?_feu_check_bp 0001  
-                                     __end_of_ecran_print_num 298C  
-                                                    utoa@base 00C6  
-                                             ___lwmod@divisor 00BC  
-                                          ecran_print_num@Num 00CC  
-                                             HexToAscii@Value 00BB  
-                                             ___lwmod@counter 00BF  
-                                                _test_process 0616  
-                                             ??_High_priority 000A  
-                                     __size_of_register_write 004E  
-                                               ?_eeprom_write 00BA  
-                                                ?_eeprom_read 0001  
-                                          eeprom_read@Address 00BA  
-                                          _eeprom_write_array 31E2  
-                                                ?_feu_process 0001  
-                                   __size_of_armement_process 0196  
+                              __end_of_check_UInfla 26C4                                 ?_eeprom_write_array 00BC  
+                                    ??_feu_check_bp 00CF                                                  _RD 007D30  
+                                                _Cf 0100                                                  _WR 007D31  
+                                      ___awdiv@sign 0007                              ??_cf_check_and_display 00CE  
+                                       __CFG_BOR$ON 000000                                                  bsr 000FE0  
+                               ___wmul@multiplicand 00BC                                     ??_feu_check_end 00BA  
+                                      __CFG_CP0$OFF 000000                                        __CFG_CP1$OFF 000000  
+                                      __CFG_CP2$OFF 000000                                        __CFG_CP3$OFF 000000  
+                              __end_of_check_idtest 350C                                                 l250 27BE  
+                                               l260 33CC                                                 l340 352C  
+                                               l261 33D0                                                 l262 33D4  
+                                               l264 33F6                                                 l280 2BB6  
+                                               l417 21BA                                                 l258 33C8  
+                                               l426 2242                                                 l603 0A52  
+                                               l445 1BEE                                                 l461 173C  
+                                               l614 0B5E                                                 l448 1BF0  
+                                               l544 3508                                                 l616 0BDA  
+                                               l553 30E4                                                 l609 0ADE  
+                                               l548 30B0                                                 l820 29BC  
+                                               l564 062A                                                 l821 29E6  
+                                               l590 08F4                                                 l815 2990  
+                                               l591 0930                                                 l584 0864  
+                                               l568 06E0                                                 l825 2A32  
+                                               l818 29A8                                                 l915 32A0  
+                                               l828 2A50                                                 l917 32B4  
+                                               l918 32B6                                                 l967 2F3A  
+                                               _GIE 007F97                                        __CFG_CPB$OFF 000000  
+                                      __CFG_CPD$OFF 000000                                                 _Arm 009A  
+                                               _Feu 0080                                      _check_comutest 313C  
+                                      __CFG_BORV$45 000000                                        ___awmod@sign 00C0  
+                                               prod 000FF3                                                 wreg 000FE8  
+                                      __CFG_LVP$OFF 000000                                ??_eeprom_write_array 00C0  
+                                      __CFG_WDT$OFF 000000                                                l1100 1758  
+                                              l1110 1812                                                l1102 179E  
+                                              l1031 1998                                                l1112 1862  
+                                              l1033 19BC                                                l1041 1A76  
+                                              l1105 1800                                                l1034 19D4  
+                                              l1106 17D0                                                l1122 18E0  
+                                              l1027 18E8                                                l1115 187E  
+                                              l1117 189A                                                l1142 1084  
+                                              l1126 0F22                                                l1119 18B6  
+                                              l1151 1184                                                l1136 103C  
+                                              l1137 1048                                                l1147 1100  
+                                              l1093 3576                                                l1149 111A  
+                                              l1445 215A                                                l1529 157C  
+                                              l1571 234A                                                l1549 1D66  
+                                              l1671 2C5C                                                l1681 2D7A  
+                                              l6007 171C                                                l6103 3574  
+                                              l6009 1732                                                l5331 26DC  
+                                              l6211 310A                                                l5341 26EC  
+                                              l5333 26E0                                                l5317 26CC  
+                                              l5351 2700                                                l5343 26F0  
+                                              l5335 26E4                                                l5327 26D4  
+                                              l5319 26D0                                                l5511 2ECC  
+                                              l6231 3502                                                l6047 25DA  
+                                              l5361 2714                                                l5353 2704  
+                                              l5345 26F4                                                l5337 26E8  
+                                              l5329 26D8                                                l6065 2CD0  
+                                              l6305 1356                                                l5505 2EAC  
+                                              l6209 3106                                                l5523 3372  
+                                              l5363 2718                                                l5355 2708  
+                                              l5347 26F8                                                l6307 13A8  
+                                              l5443 0ECA                                                l5427 0C1C  
+                                              l6219 3132                                                l5611 2DF4  
+                                              l5603 2DC4                                                l6331 2A12  
+                                              l6411 0850                                                l5541 20CE  
+                                              l5533 2058                                                l5365 271C  
+                                              l5357 270C                                                l5349 26FC  
+                                              l5453 0EEC                                                l6261 1B46  
+                                              l5605 2DCC                                                l6405 080C  
+                                              l5543 2100                                                l5535 206E  
+                                              l5359 2710                                                l5711 31A4  
+                                              l6263 1B76                                                l5615 2E02  
+                                              l6423 08AE                                                l5545 2116  
+                                              l5537 20A0                                                l5529 203E  
+                                              l5369 2722                                                l5385 33D8  
+                                              l5625 2BE8                                                l6521 18F6  
+                                              l6281 11B8                                                l5457 0F12  
+                                              l6097 3570                                                l6505 0B1C  
+                                              l6433 08D4                                                l6345 0638  
+                                              l5555 214E                                                l5627 2BFA  
+                                              l6283 11C6                                                l5483 2218  
+                                              l5467 2192                                                l6259 1B42  
+                                              l6267 1BD8                                                l5723 31F6  
+                                              l5731 321C                                                l5571 240E  
+                                              l6611 10C0                                                l6339 2A3C  
+                                              l6451 0986                                                l6443 0948  
+                                              l6515 0B72                                                l5549 212C  
+                                              l5813 14CC                                                l5637 2C48  
+                                              l5629 2C02                                                l5653 2D66  
+                                              l5645 2D18                                                l6277 119C  
+                                              l5493 226C                                                l5477 220E  
+                                              l6621 113A                                                l6429 08C2  
+                                              l6381 072C                                                l6701 2E50  
+                                              l5823 1530                                                l5647 2D2A  
+                                              l6279 11AA                                                l6287 11D4  
+                                              l5495 227C                                                l5743 3434  
+                                              l5719 31CC                                                l5591 24A6  
+                                              l5583 247A                                                l5575 242C  
+                                              l5567 23E8                                                l5671 1EEC  
+                                              l6703 2E56                                                l6711 2E6C  
+                                              l5809 14A0                                                l5913 3148  
+                                              l5649 2D32                                                l6561 1A58  
+                                              l6297 1298                                                l6289 11F2  
+                                              l5577 243E                                                l6625 1148  
+                                              l6473 0A3E                                                l6377 070A  
+                                              l6369 06F2                                                l6705 2E5C  
+                                              l5819 1504                                                l6299 12A4  
+                                              l5579 2446                                                l5587 248E  
+                                              l5675 1F18                                                l6491 0AB0  
+                                              l6467 09FA                                                l6459 09E0  
+                                              l6707 2E62                                                l5837 1C22  
+                                              l5925 3176                                                l5685 1F76  
+                                              l5941 294A                                                l6653 17F8  
+                                              l6485 0A9C                                                l6397 07DE  
+                                              l6389 0784                                                l5855 1CC6  
+                                              l5599 2DB8                                                l5679 1F54  
+                                              l6495 0ABE                                                l5873 1D56  
+                                              l5865 1D0A                                                l5945 2974  
+                                              l6585 0FB4                                                l6569 0F34  
+                                              l5795 142E                                                l5867 1D24  
+                                              l5859 1CE4                                                l6667 185A  
+                                              l6579 0F7C                                                l5789 13EA  
+                                              l5869 1D2C                                                l5957 3498  
+                                              l5973 1608                                                l6677 18D0  
+                                              l6589 1018                                                l5879 2292  
+                                              l5975 160C                                                l6599 106C  
+                                              l6695 2E42                                                l5889 22F8  
+                                              l5993 168E                                                l5985 1644  
+                                              l6697 2E46                                                _CFGS 007D36  
+                                        _Cpt1Sur20s 004D                                       __CFG_DEBUG$ON 000000  
+                                              u5110 1C4E                                                u5031 13D8  
+                                              u5200 237E                                                _IPEN 007E87  
+                                              u4410 0D74                                                u5051 1404  
+                                              u5115 1C44                                                u5060 1414  
+                                              u5140 1CEE                                                u4405 0D3A  
+                                              u5207 2370                                                u4415 0D68  
+                                              u5240 317E                                                u4425 0DC6  
+                                              u5091 1C10                                                u4435 0E4E  
+                                              _PEIE 007F96                                                u5180 22EE  
+                                              u4445 0EB6                                                u5246 3180  
+                                              u4390 0CE8                                                u5600 127C  
+                                              u5370 2CBA                                                u5602 127E  
+                                              u5187 22E2                                                u4395 0CDC  
+                                              _RCIE 007CED                                                _RCIF 007CF5  
+                                              u5525 32DC                                                u5535 32EE  
+                                              u5527 32E2                                                u5377 2CAE  
+                                              u5545 3300                                                u5537 32F4  
+                                              u5570 121A                                                u5555 3312  
+                                              u5547 3306                                                u5557 3318  
+                                              i1l86 00AA                                                u5590 124E  
+                                              _RCIP 007CFD                                                u5655 134A  
+                                              u4880 2B6A                                                u5656 1354  
+                                              u5592 1250                                                u5576 121C  
+                                              u5665 1384                                                u5666 1388  
+                                              i2l91 1E7A                                                i2l95 1E5C  
+                                              u4887 2B60                                                i2l98 1E58  
+                                      __CFG_WDTPS$1 000000                                                _WREN 007D32  
+                                    ??_eeprom_write 00BB                                        __CFG_PWRT$ON 000000  
+                                      ?_bouton_init 0001                             eeprom_write_array@pData 00BC  
+                                              _Test 002E                                                _main 2E0C  
+                                      ___ftpack@arg 00BA                                                _itoa 2C68  
+                                      ___ftpack@exp 00BD                                                fsr0h 000FEA  
+                                              fsr1h 000FE2                                                fsr0l 000FE9  
+                                              fsr2h 000FDA                                                indf1 000FE7  
+                                              fsr1l 000FE1                                                indf2 000FDF  
+                                              fsr2l 000FD9                                                _utoa 2288  
+                                              pclat 000FFA                                                prodh 000FF4  
+                                              prodl 000FF3                                       feu_tir@Output 00C0  
+                                              start 0112                                __size_of_cf_checkout 012A  
+                              __size_of_cf_checksum 0340                                    ?_ecran_raz_digit 0001  
+                                      ___ftmul@cntr 00D4                                        ___ftmul@sign 00D5  
+                                      ___fttol@exp1 00C8                                        ___fttol@lval 00C4  
+                           __size_of_bouton_refresh 0234                                       __CFG_OSCS$OFF 000000  
+                                 ??_micro_config_rs 00BA                              __end_of_check_comutest 3190  
+                                  ?_ecran_print_num 0001                                     __end_of_Version 0615  
+                          eeprom_write_array@NbData 00BF                                               ?_main 0001  
+                                             ?_itoa 00CB                                     __end_of___awdiv 2B08  
+                                   __end_of___lbdiv 2E0C                                               _EEADR 000FA9  
+                                   __end_of___awmod 24B2                                               _EEPGD 007D37  
+                                             ?_utoa 00C2                                     __end_of___ftmul 1580  
+                                             _T0CON 000FD5                                     ___awdiv@divisor 0003  
+                                   __end_of___fttol 1D6A                                     __end_of___lwdiv 2C68  
+                                             i2l102 1E8A                                     __end_of___lwmod 2D86  
+                                   ___awdiv@counter 0006                                               _RCREG 000FAE  
+                                             _RCSTA 000FAB                                          _HexToAscii 347C  
+                                             _TMR0H 000FD7                                               _TMR0L 000FD6  
+                                             _SPBRG 000FAF                                               _PORTA 000F80  
+                                             _PORTB 000F81                                               _PORTC 000F82  
+                                             _PORTD 000F83                                               _PORTE 000F84  
+                              __size_of_check_UAlim 00FA                                __end_of_arm_UAlim_1A 25C2  
+                                             _TXREG 000FAD                                               _TXSTA 000FAC  
+                                             _Blank 0606                                               _Ecran 00AA  
+                                             _Armed 0601                                       __CFG_WRT0$OFF 000000  
+                                     __CFG_WRT1$OFF 000000                                       __CFG_WRT2$OFF 000000  
+                                     __CFG_WRT3$OFF 000000                                               _Cptms 004F  
+                                             _Micro 0052                                  eeprom_read_array@i 00C0  
+                                    __CFG_EBTR0$OFF 000000                                      __CFG_EBTR1$OFF 000000  
+                                    __CFG_EBTR2$OFF 000000                                      __CFG_EBTR3$OFF 000000  
+                                     __CFG_STVR$OFF 000000                                     __end_of_feu_tir 347C  
+                                     __CFG_WRTB$OFF 000000                                       __CFG_WRTC$OFF 000000  
+                                     __CFG_WRTD$OFF 000000                                      __CFG_EBTRB$OFF 000000  
+                                   _check_program_0 30E8                                       ___ftpack@sign 00BE  
+                                             tablat 000FF5                                    __end_of_DecToStr 2020  
+                                             utoa@c 00CA                                               utoa@v 00C8  
+                                             status 000FD8                                     ___lbdiv@divisor 00BA  
+                                   ___lbdiv@counter 00BD                             eeprom_read_array@NbData 00BE  
+                                   __initialization 3232                                        __end_of_main 2E88  
+                                      __end_of_itoa 2CF8                                        __end_of_utoa 23A0  
+                                    DecToStr@result 00C1                                 eeprom_write@Address 00BA  
+                              __size_of_ecran_blank 0066                                __size_of_ecran_digit 00FE  
+                                    __CFG_OSC$HSPLL 000000                                     ?_check_comutest 0001  
+                                            ??_main 00E3                                       ___fttol@sign1 00C3  
+                                            ??_itoa 00D1                                              ??_utoa 00C8  
+                                     __activetblptr 000002                       __size_of_ecran_print_one_char 0048  
+                                            _ADCON0 000FC2                                              _ADCON1 000FC1  
+                                            _ADRESH 000FC4                                              _ADRESL 000FC3  
+                                            _EEDATA 000FA8                                              _EECON2 000FA7  
+                                  ___awdiv@dividend 0001                                    __end_of___ftpack 215E  
+                              __end_of_feu_check_bp 18E4                                              i2l5201 1DEE  
+                                            i2l5203 1DF8                                              i2l5141 2AC4  
+                                            i2l5133 2AA2                                      _register_write 3280  
+                                            i2l5151 2AE4                                              i2l5143 2AC8  
+                                            i2l5127 2A82                                              i2l5139 2ABC  
+                                            i2l5155 2AEE                                              i2l5159 2AFC  
+                                            i2l5191 1DBC                                    __end_of___lwtoft 3368  
+                                  __end_of_cf_check 343E                                              _TMR0IE 007F95  
+                                            _TMR0IF 007F92                                              _TMR0IP 007F8A  
+                             __size_of_check_UInfla 0102                                    __end_of_ana_read 2F60  
+                                   bouton_refresh@i 00BF                                    test_process@temp 00E1  
+                                  __end_of_delay_ms 33B2                                              _Bouton 008E  
+                                  _armement_process 18E4                                       ?_micro_config 0001  
+                              __size_of_eeprom_read 001A                                __size_of_feu_process 026A  
+                                            ___wmul 2F60                                           ??___awdiv 0005  
+                                         ??___lbdiv 00BB                                              _cf_rcv 1580  
+                                         ??___awmod 00BE                               __size_of_check_idtest 002C  
+                                         ??___ftmul 00CD                                           ??___fttol 00BE  
+                                         ??___lwdiv 00BE                                           ??___lwmod 00BE  
+                                            clear_0 3238                                              clear_1 3244  
+                                            clear_2 3250                                    ___awdiv@quotient 0008  
+                                   ___awmod@divisor 00BC                                __end_of_eeprom_write 3538  
+                                   ___awmod@counter 00BF                                           ??_feu_tir 00C0  
+                           __end_of_check_program_0 313C                               ___ftmul@f3_as_product 00D1  
+                                       ?_HexToAscii 0001                                              itoa@cp 00D1  
+                                      __mediumconst 0000                               __end_of_ecran_refresh 2BBA  
+                                            tblptrh 000FF7                                              tblptrl 000FF6  
+                                            tblptru 000FF8                                        _check_UInfla 25C2  
+                            __end_of_register_write 32CE                              __size_of_cf_checkrange 0070  
+                                 cf_checksum@calcul 00C8                                    ___lbdiv@dividend 00BC  
+                                        __accesstop 0080                             __end_of__initialization 3276  
+                               eeprom_write_array@i 00C1                            eeprom_read_array@Address 00BD  
+                                      _check_idtest 34E0                                __size_of_bouton_init 004E  
+                                    ??_micro_config 00BA                                       __end_of_Blank 060B  
+                                        ___ftmul@f1 00C7                                          ___ftmul@f2 00CA  
+                                     __end_of_Armed 0606                                          ___fttol@f1 00BA  
+                                    __pcstackCOMRAM 0001                                        __pidataBANK0 35D0  
+                      cf_check_and_display@configOk 00D2                                      _bouton_refresh 1188  
+                                   DecToStr@power10 00CA                               __size_of_arm_UAlim_1A 0110  
+                                  ___lbdiv@quotient 00BE                                          ___lwtoft@c 00C2  
+                                __size_of_ecran_dot 0014                                           ?_DecToStr 00C1  
+                                 __end_of_ErreurTir 0610                                       ?_Low_priority 0001  
+                                   ?_register_write 0001                                          __pbssBANK0 0080  
+                                        __pbssBANK1 0100                                          _check_bpon 308C  
+                                delay_ms@TimeToWait 00BA                                          __pnvCOMRAM 0052  
+                             __end_of_High_priority 1EC6                                  __size_of_hw_config 0060  
+                                   _micro_config_rs 357A                                  check_program_0@ret 00C0  
+                                      _arm_UAlim_1A 24B2                                 __size_of_HexToAscii 0034  
+                            __end_of_bouton_refresh 13BC                                          _ecran_wait 3538  
+                                  __CFG_CCP2MUX$OFF 000000                                             ?___wmul 00BA  
+                                     _cf_checkrange 2E88                                             ?_cf_rcv 0001  
+                                         ?___ftpack 00BA                       __size_of_cf_check_and_display 017A  
+                                        ??_DecToStr 00C3                                           ?___lwtoft 00C2  
+                                         ?_cf_check 0001                               __end_of_feu_check_end 357A  
+                                  ?_check_program_0 0001                                      ??_Low_priority 001D  
+                                         ?_ana_read 00C0                                   _eeprom_read_array 3190  
+                             __size_of_feu_check_bp 01A4                                           ?_delay_ms 00BA  
+                                cf_checkrange@valid 00BB                                  ?_eeprom_read_array 00BB  
+                       __size_of_eeprom_write_array 0050                                       ??_cf_checkout 00C0  
+                                     ??_cf_checksum 00BA                                 ??_eeprom_read_array 00BF  
+                          cf_check_and_display@temp 00D0                                   __end_of_ecran_dot 35C2  
+                                        cf_rcv@temp 00D0                                             __Hparam 0000  
+                                           __Lparam 0000                                      ?_cf_checkrange 0001  
+                                   ?_bouton_refresh 0001                               __size_of_eeprom_write 002C  
+                                  ??_check_comutest 00BF                                             _Version 0610  
+                                           ___awdiv 2A54                                             ___lbdiv 2D86  
+                                           ___awmod 23A0                                     __size_of___wmul 0066  
+                                           ___ftmul 13BC                                             ___fttol 1BF4  
+                                   __size_of_cf_rcv 01C0                                             ___lwdiv 2BBA  
+                                           ___lwmod 2CF8                                        __psmallconst 0600  
+                                      _feu_check_bp 1740                                       ??_check_UAlim 00D8  
+                                           __pcinit 3232                                          ??___ftpack 00BF  
+                            ecran_print_num@tempStr 00CD                                             __ramtop 0600  
+                          __size_of_ecran_raz_digit 000E                                          _micro_wait 298C  
+                                           __ptext0 2E0C                                             __ptext1 0616  
+                                           __ptext2 25C2                                             __ptext3 27C2  
+                                           __ptext4 298C                                             __ptext5 34B0  
+                                           __ptext6 302C                                             __ptext7 0F1E  
+                                           __ptext8 343E                                             __ptext9 3280  
+                                           _feu_tir 343E                                          ??___lwtoft 00C5  
+                                        ??_cf_check 00CC                           __end_of_eeprom_read_array 31E2  
+                                           cf_rcv@i 00D1                                   __end_of_hw_config 308C  
+                                        ??_ana_read 00C2                                    ___awmod@dividend 00BA  
+                              __end_of_micro_config 34E0                            __end_of_armement_process 1A7A  
+                                        ??_delay_ms 00BC                            __size_of_ecran_print_num 00D0  
+                                           main@cpt 00E4                                      __pintcode_body 1D6A  
+                           __end_of_micro_config_rs 3594                                end_of_initialization 3276  
+                               HexToAscii@character 00BA                                         ?_check_bpon 0001  
+                                           itoa@buf 00CB                                             itoa@val 00CD  
+                                     __Lmediumconst 0000                                        _eeprom_write 350C  
+                                           int_func 1D6A                        __end_of_ecran_print_one_char 33FA  
+                               __end_of_cf_checkout 2288                                 __end_of_cf_checksum 0F1E  
+                                     ??_ecran_blank 00BA                                       ??_ecran_digit 00BA  
+                                       ?_ecran_wait 0001                                             postdec1 000FE5  
+                                           postdec2 000FDD                                             postinc0 000FEE  
+                                           postinc2 000FDE                                        cf_checkout@i 00C3  
+                                      cf_checksum@i 00C7                                             utoa@buf 00C2  
+                                           utoa@val 00C4                                           _PORTAbits 000F80  
+                                         _PORTBbits 000F81                                           _PORTCbits 000F82  
+                                         _PORTEbits 000F84                                        ??_HexToAscii 00BA  
+                                         _TRISAbits 000F92                                           _TRISBbits 000F93  
+                                         _TRISCbits 000F94                                           _TRISDbits 000F95  
+                                         _TRISEbits 000F96                                 __end_of_check_UAlim 28BC  
+                                     ?_test_process 0001                                  bouton_refresh@temp 00BE  
+                                     ??_eeprom_read 00BA                                       ??_feu_process 00C1  
+                                   ??_cf_checkrange 00BA                                __end_of_Low_priority 00F2  
+                                __end_of_HexToAscii 34B0                                         ___ftmul@exp 00D0  
+                              DecToStr@compareValue 00C7                                      __end_of___wmul 2FC6  
+                                    __end_of_cf_rcv 1740                                         ?_micro_wait 0001  
+                               __size_of_check_bpon 005C                                 __end_of_ecran_blank 302C  
+                               __end_of_ecran_digit 27C2                          __size_of_eeprom_read_array 0052  
+                                  ??_register_write 00BA                                 start_initialization 3232  
+                                 __size_of_DecToStr 015A                                      ??_test_process 00DE  
+                                 ??_ecran_raz_digit 00BA                                           _ErreurTir 060B  
+                                     DecToStr@value 00C9                              eeprom_read_array@pData 00BB  
+                               __size_of_ecran_wait 0022                                    ?_micro_config_rs 0001  
+                                     ??_bouton_init 00BA                                     ecran_digit@Char 00BA  
+                                       _cf_checkout 215E                                         _cf_checksum 0BDE  
+                                 ??_ecran_print_num 00CB                                     test_process@ret 00E0  
+                            __size_of_ecran_refresh 00B2                                            ??___wmul 00BE  
+                                          ??_cf_rcv 00CE                                 __end_of_eeprom_read 35AE  
+                                         _PrintTest 00E5                                         __pdataBANK0 00E5  
+                               __end_of_feu_process 1188                                    cf_checkout@valid 00C1  
+                             __size_of_micro_config 0030                                         _check_UAlim 27C2  
+                                  cf_checksum@valid 00C6                                   __size_of___ftpack 013E  
+                                       __pbssCOMRAM 002E                                   __size_of___lwtoft 004C  
+                                     __pcstackBANK0 00BA                                   __size_of_cf_check 0044  
+                                      ana_read@temp 00C4                                   __size_of_ana_read 0068  
+                              _ecran_print_one_char 33B2                                register_write@Output 00BB  
+                                 __size_of_delay_ms 004A                                    eeprom_write@Data 00BB  
+                      __end_of_cf_check_and_display 1BF4                                    ??_bouton_refresh 00BA  
+                               __size_of_micro_wait 00C8                           ecran_print_one_char@Digit 00BC  
+                                  ___lwdiv@dividend 00BA                                        _micro_config 34B0  
+                               __end_of_bouton_init 331C                                           _ecran_dot 35AE  
+                                         __pintcode 0008                                         _ecran_blank 2FC6  
+                                       _ecran_digit 26C4                                            ?___awdiv 0001  
+                                          ?___lbdiv 00BA                                            ?___awmod 00BA  
+                                          ?___ftmul 00C7                                            ?___fttol 00BA  
+                                          ?___lwdiv 00BA                                            ?___lwmod 00BA  
+                                       __pintcodelo 0018                                            ?_feu_tir 0001  
+                                       __smallconst 0600                                    arm_UAlim_1A@temp 00DC  
+                            __size_of_High_priority 1EBE                          __end_of_eeprom_write_array 3232  
+                                 ?_armement_process 0001                               ?_ecran_print_one_char 00BB  
+                                     _ecran_refresh 2B08                                    ___lwdiv@quotient 00C0  
+                                         _hw_config 302C                                  ??_armement_process 00DE  
+                          __size_of_check_program_0 0054                                        ??_check_bpon 00BD  
+                             __size_of_Low_priority 00DA                                      ___wmul@product 00BE  
+                                       _eeprom_read 3594                                         _feu_process 0F1E  
+                            __size_of_feu_check_end 0020                                            i2u429_44 1E1C  
+                                          i2u429_45 1E16                                __end_of_test_process 0BDE  
+                                        ?_ecran_dot 0001                                        ??_ecran_wait 00BB  
+                                        _ADCON0bits 000FC2                                   ___wmul@multiplier 00BA  
+                                          _DecToStr 1EC6                                  __end_of_check_bpon 30E8  
+                         eeprom_write_array@Address 00BE                                    check_UInfla@temp 00DC  
+                                          _Feedback 00A1                                            _Decompte 0051  
+                                    ?_ecran_refresh 0001                                        _Low_priority 0018  
+                                     ?_check_UInfla 00D6                                          ?_hw_config 0001  
+                                      delay_ms@temp 00BE                                           copy_data0 326A  
+                                __end_of_ecran_wait 355A                                         _bouton_init 32CE  
+                                     ?_check_idtest 0001                                       _High_priority 0008  
+                                          _Register 00A6                                            __Hrparam 0000  
+                                          __Lrparam 0000                                     register_write@i 00BC  
+                                  __size_of___awdiv 00B4                                     _ecran_raz_digit 35C2  
+                                  __size_of___lbdiv 0086                                    __size_of___awmod 0112  
+                                  __size_of___ftmul 01C4                                    __size_of___fttol 0176  
+                                       ana_read@ANx 00C3                                    __size_of___lwdiv 00AE  
+                                  __size_of___lwmod 008E                                            ___ftpack 2020  
+                                      ??_micro_wait 00C1                                _cf_check_and_display 1A7A  
+                                          ___lwtoft 331C                                            _cf_check 33FA  
+                                      ecran_dot@Dot 00BA                                    __size_of_feu_tir 003E  
+                                     _feu_check_end 355A                                            _ana_read 2EF8  
+                           __size_of_check_comutest 0054                              ??_ecran_print_one_char 00BC  
+                                    ??_check_UInfla 00D8                                            _delay_ms 3368  
+                                   _ecran_print_num 28BC                                     ___lwdiv@divisor 00BC  
+                                   ___lwdiv@counter 00BF                                            __ptext10 355A  
+                                          __ptext11 1740                                            __ptext20 31E2  
+                                          __ptext12 28BC                                            __ptext21 350C  
+                                          __ptext13 1EC6                                            __ptext30 2F60  
+                                          __ptext22 308C                                            __ptext14 2D86  
+                                          __ptext31 347C                                            __ptext23 1A7A  
+                                          __ptext15 23A0                                            __ptext40 313C  
+                                          __ptext32 1188                                            __ptext24 3190  
+                                          __ptext16 30E8                                            __ptext41 2B08  
+                                          __ptext33 32CE                                            __ptext25 3594  
+                                          __ptext17 34E0                                            __ptext50 331C  
+                                          __ptext42 33B2                                            __ptext34 18E4  
+                                          __ptext26 33FA                                            __ptext18 357A  
+                                          __ptext51 1BF4                                            __ptext43 35C2  
+                                          __ptext35 2C68                                            __ptext27 0BDE  
+                                          __ptext19 1580                                            __ptext52 13BC  
+                                          __ptext44 26C4                                            __ptext36 2288  
+                                          __ptext28 2E88                                            __ptext53 2020  
+                                          __ptext45 35AE                                            __ptext37 2CF8  
+                                          __ptext29 215E                                            __ptext46 2FC6  
+                                          __ptext38 2BBA                                            __ptext47 24B2  
+                                          __ptext39 3538                                            __ptext56 2A54  
+                                          __ptext48 2EF8                                            __ptext49 3368  
+                                   check_UAlim@temp 00DC                       ecran_print_one_char@Character 00BB  
+                              armement_process@temp 00E0                                        ?_cf_checkout 0001  
+                                    ??_check_idtest 00D2                                        ?_cf_checksum 0001  
+                               _bouton_refresh$2134 00BC                                       __size_of_main 007C  
+                                     __size_of_itoa 0090                                      ?_High_priority 0001  
+                                     __size_of_utoa 0118                                  __end_of_micro_wait 2A54  
+                                     ?_arm_UAlim_1A 00D6                                   ??_check_program_0 00BF  
+                                       ??_ecran_dot 00BA                               __end_of_cf_checkrange 2EF8  
+                                      ?_check_UAlim 00D6                               ?_cf_check_and_display 0001  
+                                    ?_feu_check_end 0001                                     ??_ecran_refresh 00BD  
+                                        _INTCONbits 000FF2                                      cf_checkrange@i 00BC  
+                                          itoa@base 00CF                                         ??_hw_config 00BA  
+                                          intlevel1 35D6                                            intlevel2 35D6  
+                               cf_checkout@last_out 00C2                                    ___lwmod@dividend 00BA  
+                             __size_of_test_process 05C8                                      ??_arm_UAlim_1A 00D8  
+                                     cf_check@valid 00CD                             __end_of_ecran_raz_digit 35D0  
+                          __size_of_micro_config_rs 001A                                        ?_ecran_blank 0001  
+                                      ?_ecran_digit 0001                                 check_comutest@State 00C0  
+                                     ?_feu_check_bp 0001                             __end_of_ecran_print_num 298C  
+                                          utoa@base 00C6                                     ___lwmod@divisor 00BC  
+                                ecran_print_num@Num 00CC                                     HexToAscii@Value 00BB  
+                                   ___lwmod@counter 00BF                                        _test_process 0616  
+                                   ??_High_priority 000A                             __size_of_register_write 004E  
+                                     ?_eeprom_write 00BA                                        ?_eeprom_read 0001  
+                                eeprom_read@Address 00BA                                  _eeprom_write_array 31E2  
+                                      ?_feu_process 0001                           __size_of_armement_process 0196  

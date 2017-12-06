@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-                                                                                                           Wed Dec 06 22:33:38 2017
+                                                                                                           Sat Nov 25 18:59:18 2017
 
 
      1                           
@@ -3325,8 +3325,8 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-Symbol Table                                                                                               Wed Dec 06 22:33:38 2017
+Symbol Table                                                                                               Sat Nov 25 18:59:18 2017
 
-                                               loop 00F8                                                FSR0H 000FEA  
-                                              FSR0L 000FE9                                                start 0112  
-                                            powerup 00F2                                             POSTINC0 000FEE  
+                                          loop 00F8                                           FSR0H 000FEA  
+                                         FSR0L 000FE9                                           start 0112  
+                                       powerup 00F2                                        POSTINC0 000FEE  

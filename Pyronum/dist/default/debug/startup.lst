@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-                                                                                                           Wed Dec 06 22:33:42 2017
+                                                                                                           Sat Nov 25 18:59:25 2017
 
 
      1                           
@@ -13,8 +13,8 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
      7                           	;
      8                           	; Compiler options:
      9                           	;
-    10                           	; --chip=18F452 -G -mdist/default/production/Pyronum.production.map \
-    11                           	; --double=32 --float=24 --emi=wordwrite \
+    10                           	; --chip=18F452 -G -mdist/default/debug/Pyronum.debug.map -D__DEBUG=1 \
+    11                           	; --debugger=icd3 --double=32 --float=24 --emi=wordwrite \
     12                           	; --opt=default,+asm,-asmfile,+speed,-space,-debug --addrqual=ignore -P \
     13                           	; -N255 -Iinclude --warn=0 --asmlist -DXPRJ_default=default \
     14                           	; --summary=default,-psect,-class,+mem,-hex,-file \
@@ -23,106 +23,106 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
     17                           	; --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto \
     18                           	; --errformat=%f:%l: error: (%n) %s \
     19                           	; --warnformat=%f:%l: warning: (%n) %s \
-    20                           	; --msgformat=%f:%l: advisory: (%n) %s \
-    21                           	; -odist/default/production/Pyronum.production.elf \
-    22                           	; build/default/production/main.p1 build/default/production/hardware.p1 \
-    23                           	; build/default/production/ecran.p1 build/default/production/eeprom.p1 \
-    24                           	; build/default/production/config.p1 build/default/production/test.p1 \
-    25                           	; build/default/production/utils.p1 build/default/production/bouton.p1 \
-    26                           	; build/default/production/micro.p1 \
-    27                           	; build/default/production/powerup.obj build/default/production/time.p1 \
-    28                           	; build/default/production/register.p1 \
-    29                           	; build/default/production/analog.p1 \
-    30                           	; build/default/production/armement.p1 build/default/production/feu.p1
-    31                           	;
+    20                           	; --msgformat=%f:%l: advisory: (%n) %s --rom=default,-7d30-7fff \
+    21                           	; --ram=default,-5ef-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffc-ffc,-ffd-fff \
+    22                           	; -odist/default/debug/Pyronum.debug.elf build/default/debug/main.p1 \
+    23                           	; build/default/debug/hardware.p1 build/default/debug/ecran.p1 \
+    24                           	; build/default/debug/eeprom.p1 build/default/debug/config.p1 \
+    25                           	; build/default/debug/test.p1 build/default/debug/utils.p1 \
+    26                           	; build/default/debug/bouton.p1 build/default/debug/micro.p1 \
+    27                           	; build/default/debug/powerup.obj build/default/debug/time.p1 \
+    28                           	; build/default/debug/register.p1 build/default/debug/analog.p1 \
+    29                           	; build/default/debug/armement.p1 build/default/debug/feu.p1
+    30                           	;
+    31                           
     32                           
-    33                           
-    34                           	processor	18F452
-    35                           
-    36                           	GLOBAL	_main,start
-    37                           	FNROOT	_main
-    38                           
-    39  0000                     	pic18cxx	equ	1
-    40                           
-    41                           	psect	config,class=CONFIG,delta=1,noexec
-    42                           	psect	idloc,class=IDLOC,delta=1,noexec
-    43                           	psect	const,class=CODE,delta=1,reloc=2,noexec
-    44                           	psect	smallconst,class=SMALLCONST,delta=1,reloc=2,noexec
-    45                           	psect	mediumconst,class=MEDIUMCONST,delta=1,reloc=2,noexec
-    46                           	psect	rbss,class=COMRAM,space=1,noexec
-    47                           	psect	bss,class=RAM,space=1,noexec
-    48                           	psect	rdata,class=COMRAM,space=1,noexec
-    49                           	psect	irdata,class=CODE,space=0,reloc=2,noexec
-    50                           	psect	bss,class=RAM,space=1,noexec
-    51                           	psect	data,class=RAM,space=1,noexec
-    52                           	psect	idata,class=CODE,space=0,reloc=2,noexec
-    53                           	psect	nvrram,class=COMRAM,space=1,noexec
-    54                           	psect	nvbit,class=COMRAM,bit,space=1,noexec
-    55                           	psect	temp,ovrld,class=COMRAM,space=1,noexec
-    56                           	psect	struct,ovrld,class=COMRAM,space=1,noexec
-    57                           	psect	rbit,class=COMRAM,bit,space=1,noexec
-    58                           	psect	bigbss,class=BIGRAM,space=1,noexec
-    59                           	psect	bigdata,class=BIGRAM,space=1,noexec
-    60                           	psect	ibigdata,class=CODE,space=0,reloc=2,noexec
-    61                           	psect	farbss,class=FARRAM,space=0,reloc=2,delta=1,noexec
-    62                           	psect	nvFARRAM,class=FARRAM,space=0,reloc=2,delta=1,noexec
-    63                           	psect	fardata,class=FARRAM,space=0,reloc=2,delta=1,noexec
-    64                           	psect	ifardata,class=CODE,space=0,reloc=2,delta=1,noexec
-    65                           
-    66                           	psect	reset_vec,class=CODE,delta=1,reloc=2
-    67                           	psect	powerup,class=CODE,delta=1,reloc=2
-    68                           	psect	intcode,class=CODE,delta=1,reloc=2
-    69                           	psect	intcode_body,class=CODE,delta=1,reloc=2
-    70                           	psect	intcodelo,class=CODE,delta=1,reloc=2
-    71                           	psect	intret,class=CODE,delta=1,reloc=2
-    72                           	psect	intentry,class=CODE,delta=1,reloc=2
-    73                           
-    74                           	psect	intsave_regs,class=BIGRAM,space=1
-    75                           	psect	init,class=CODE,delta=1,reloc=2
-    76                           	psect	text,class=CODE,delta=1,reloc=2
-    77                           GLOBAL	intlevel0,intlevel1,intlevel2
-    78  0035D6                     intlevel0:
-    79  0035D6                     intlevel1:
-    80  0035D6                     intlevel2:
-    81                           GLOBAL	intlevel3
-    82  0035D6                     intlevel3:
-    83                           	psect	end_init,class=CODE,delta=1,reloc=2
-    84                           	psect	clrtext,class=CODE,delta=1,reloc=2
-    85                           
-    86                           	psect	eeprom_data,class=EEDATA,delta=1,noexec
-    87                           	psect	smallconst
-    88                           	GLOBAL	__smallconst
-    89  000600                     __smallconst:
-    90                           	psect	mediumconst
-    91                           	GLOBAL	__mediumconst
-    92  000000                     __mediumconst:
-    93  0000                     wreg	EQU	0FE8h
-    94  0000                     fsr0l	EQU	0FE9h
-    95  0000                     fsr0h	EQU	0FEAh
-    96  0000                     fsr1l	EQU	0FE1h
-    97  0000                     fsr1h	EQU	0FE2h
-    98  0000                     fsr2l	EQU	0FD9h
-    99  0000                     fsr2h	EQU	0FDAh
-   100  0000                     postinc0	EQU	0FEEh
-   101  0000                     postdec0	EQU	0FEDh
-   102  0000                     postinc1	EQU	0FE6h
-   103  0000                     postdec1	EQU	0FE5h
-   104  0000                     postinc2	EQU	0FDEh
-   105  0000                     postdec2	EQU	0FDDh
-   106  0000                     tblptrl	EQU	0FF6h
-   107  0000                     tblptrh	EQU	0FF7h
-   108  0000                     tblptru	EQU	0FF8h
-   109  0000                     tablat		EQU	0FF5h
-   110                           
-   111                           	PSECT	ramtop,class=RAM,noexec
-   112                           	GLOBAL	__S1			; top of RAM usage
-   113                           	GLOBAL	__ramtop
-   114                           	GLOBAL	__LRAM,__HRAM
-   115  000600                     __ramtop:
-   116                           
-   117                           	psect	reset_vec
-   118  000000                     reset_vec:
-   119  000000  F000               	nop	; NOP for reset vector (precedes GOTO instruction)
+    33                           	processor	18F452
+    34                           
+    35                           	GLOBAL	_main,start
+    36                           	FNROOT	_main
+    37                           
+    38  0000                     	pic18cxx	equ	1
+    39                           
+    40                           	psect	config,class=CONFIG,delta=1,noexec
+    41                           	psect	idloc,class=IDLOC,delta=1,noexec
+    42                           	psect	const,class=CODE,delta=1,reloc=2,noexec
+    43                           	psect	smallconst,class=SMALLCONST,delta=1,reloc=2,noexec
+    44                           	psect	mediumconst,class=MEDIUMCONST,delta=1,reloc=2,noexec
+    45                           	psect	rbss,class=COMRAM,space=1,noexec
+    46                           	psect	bss,class=RAM,space=1,noexec
+    47                           	psect	rdata,class=COMRAM,space=1,noexec
+    48                           	psect	irdata,class=CODE,space=0,reloc=2,noexec
+    49                           	psect	bss,class=RAM,space=1,noexec
+    50                           	psect	data,class=RAM,space=1,noexec
+    51                           	psect	idata,class=CODE,space=0,reloc=2,noexec
+    52                           	psect	nvrram,class=COMRAM,space=1,noexec
+    53                           	psect	nvbit,class=COMRAM,bit,space=1,noexec
+    54                           	psect	temp,ovrld,class=COMRAM,space=1,noexec
+    55                           	psect	struct,ovrld,class=COMRAM,space=1,noexec
+    56                           	psect	rbit,class=COMRAM,bit,space=1,noexec
+    57                           	psect	bigbss,class=BIGRAM,space=1,noexec
+    58                           	psect	bigdata,class=BIGRAM,space=1,noexec
+    59                           	psect	ibigdata,class=CODE,space=0,reloc=2,noexec
+    60                           	psect	farbss,class=FARRAM,space=0,reloc=2,delta=1,noexec
+    61                           	psect	nvFARRAM,class=FARRAM,space=0,reloc=2,delta=1,noexec
+    62                           	psect	fardata,class=FARRAM,space=0,reloc=2,delta=1,noexec
+    63                           	psect	ifardata,class=CODE,space=0,reloc=2,delta=1,noexec
+    64                           
+    65                           	psect	reset_vec,class=CODE,delta=1,reloc=2
+    66                           	psect	powerup,class=CODE,delta=1,reloc=2
+    67                           	psect	intcode,class=CODE,delta=1,reloc=2
+    68                           	psect	intcode_body,class=CODE,delta=1,reloc=2
+    69                           	psect	intcodelo,class=CODE,delta=1,reloc=2
+    70                           	psect	intret,class=CODE,delta=1,reloc=2
+    71                           	psect	intentry,class=CODE,delta=1,reloc=2
+    72                           
+    73                           	psect	intsave_regs,class=BIGRAM,space=1
+    74                           	psect	init,class=CODE,delta=1,reloc=2
+    75                           	psect	text,class=CODE,delta=1,reloc=2
+    76                           GLOBAL	intlevel0,intlevel1,intlevel2
+    77  0035D6                     intlevel0:
+    78  0035D6                     intlevel1:
+    79  0035D6                     intlevel2:
+    80                           GLOBAL	intlevel3
+    81  0035D6                     intlevel3:
+    82                           	psect	end_init,class=CODE,delta=1,reloc=2
+    83                           	psect	clrtext,class=CODE,delta=1,reloc=2
+    84                           
+    85                           	psect	eeprom_data,class=EEDATA,delta=1,noexec
+    86                           	psect	smallconst
+    87                           	GLOBAL	__smallconst
+    88  000600                     __smallconst:
+    89                           	psect	mediumconst
+    90                           	GLOBAL	__mediumconst
+    91  000000                     __mediumconst:
+    92  0000                     wreg	EQU	0FE8h
+    93  0000                     fsr0l	EQU	0FE9h
+    94  0000                     fsr0h	EQU	0FEAh
+    95  0000                     fsr1l	EQU	0FE1h
+    96  0000                     fsr1h	EQU	0FE2h
+    97  0000                     fsr2l	EQU	0FD9h
+    98  0000                     fsr2h	EQU	0FDAh
+    99  0000                     postinc0	EQU	0FEEh
+   100  0000                     postdec0	EQU	0FEDh
+   101  0000                     postinc1	EQU	0FE6h
+   102  0000                     postdec1	EQU	0FE5h
+   103  0000                     postinc2	EQU	0FDEh
+   104  0000                     postdec2	EQU	0FDDh
+   105  0000                     tblptrl	EQU	0FF6h
+   106  0000                     tblptrh	EQU	0FF7h
+   107  0000                     tblptru	EQU	0FF8h
+   108  0000                     tablat		EQU	0FF5h
+   109                           
+   110                           	PSECT	ramtop,class=RAM,noexec
+   111                           	GLOBAL	__S1			; top of RAM usage
+   112                           	GLOBAL	__ramtop
+   113                           	GLOBAL	__LRAM,__HRAM
+   114  000600                     __ramtop:
+   115                           
+   116                           	psect	reset_vec
+   117  000000                     reset_vec:
+   118  000000  F000               	nop	; NOP inserted due to debugger requirements
+   119                           
    120                           	global powerup
    121                           
    122                           ; Power-up routine detected. Jumping to powerup - assumes powerup will jump back to start
@@ -137,7 +137,7 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
    131                           ;Initialize the stack pointer (FSR1)
    132                           	global stacklo, stackhi
    133  0000                     	stacklo	equ	016Bh
-   134  0000                     	stackhi	equ	05FFh
+   134  0000                     	stackhi	equ	05EEh
    135                           
    136                           
    137                           	psect	stack,class=STACK,space=2,noexec
@@ -363,16 +363,16 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-Symbol Table                                                                                               Wed Dec 06 22:33:42 2017
+Symbol Table                                                                                               Sat Nov 25 18:59:25 2017
 
-                                              __S1 016B                                               ___sp 0000  
-                                             _main 2E0C                                               start 0112  
-                                            __HRAM 0000                                              __LRAM 0001  
-                                     __mediumconst 0000                                             stackhi 0005FF  
-                                           stacklo 00016B                                             powerup 00F2  
-                                       __accesstop 000080                                         ___inthi_sp 0000  
-                                       ___intlo_sp 0000                                            __ramtop 0600  
-                              start_initialization 3232                                        __smallconst 0600  
-                                         intlevel0 35D6                                           intlevel1 35D6  
-                                         intlevel2 35D6                                           intlevel3 35D6  
-                                         reset_vec 0000  
+                                         __S1 016B                                          ___sp 0000  
+                                        _main 2E0C                                          start 0112  
+                                       __HRAM 0000                                         __LRAM 0001  
+                                __mediumconst 0000                                        stackhi 0005EE  
+                                      stacklo 00016B                                        powerup 00F2  
+                                  __accesstop 000080                                    ___inthi_sp 0000  
+                                  ___intlo_sp 0000                                       __ramtop 0600  
+                         start_initialization 3232                                   __smallconst 0600  
+                                    intlevel0 35D6                                      intlevel1 35D6  
+                                    intlevel2 35D6                                      intlevel3 35D6  
+                                    reset_vec 0000  

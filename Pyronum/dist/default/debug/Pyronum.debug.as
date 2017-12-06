@@ -4036,7 +4036,7 @@ global __CFG_EBTR3$OFF
 __CFG_EBTR3$OFF equ 0x0
 global __CFG_EBTRB$OFF
 __CFG_EBTRB$OFF equ 0x0
-	file	"dist/default/production\Pyronum.production.as"
+	file	"dist/default/debug\Pyronum.debug.as"
 	line	#
 psect	cinit,class=CODE,delta=1,reloc=2
 global __pcinit
@@ -4097,7 +4097,7 @@ __pbssBANK1:
 	global	_Cf
 _Cf:
        ds      107
-	file	"dist/default/production\Pyronum.production.as"
+	file	"dist/default/debug\Pyronum.debug.as"
 	line	#
 psect	cinit
 ; Clear objects allocated to BANK1 (107 bytes)
@@ -4549,7 +4549,7 @@ ___awdiv@quotient:	; 2 bytes @ 0x7
 ;!    BANK2           256      0       0
 ;!    BANK3           256      0       0
 ;!    BANK4           256      0       0
-;!    BANK5           256      0       0
+;!    BANK5           239      0       0
 
 ;!
 ;!Pointer List with Targets:
@@ -5171,28 +5171,38 @@ ___awdiv@quotient:	; 2 bytes @ 0x7
 ;! Address spaces:
 
 ;!Name               Size   Autos  Total    Cost      Usage
-;!BIGRAM             5FF      0       0      17        0.0%
+;!BIGRAM             5EE      0       0      16        0.0%
 ;!EEDATA             100      0       0       0        0.0%
-;!BITBANK5           100      0       0      16        0.0%
-;!BANK5              100      0       0      14        0.0%
-;!BITBANK4           100      0       0      12        0.0%
-;!BANK4              100      0       0      13        0.0%
-;!BITBANK3           100      0       0      10        0.0%
-;!BANK3              100      0       0      11        0.0%
-;!BITBANK2           100      0       0       8        0.0%
-;!BANK2              100      0       0       9        0.0%
-;!BITBANK1           100      0       0       6        0.0%
-;!BANK1              100      0      6B       7       41.8%
-;!BITBANK0            80      0       0       4        0.0%
-;!BANK0               80     2B      6A       5       82.8%
+;!BITBANK4           100      0       0      11        0.0%
+;!BANK4              100      0       0      12        0.0%
+;!BITBANK3           100      0       0       9        0.0%
+;!BANK3              100      0       0      10        0.0%
+;!BITBANK2           100      0       0       7        0.0%
+;!BANK2              100      0       0       8        0.0%
+;!BITBANK1           100      0       0       5        0.0%
+;!BANK1              100      0      6B       6       41.8%
+;!BITBANK5            EF      0       0      15        0.0%
+;!BANK5               EF      0       0      13        0.0%
+;!BITBANK0            80      0       0       3        0.0%
+;!BANK0               80     2B      6A       4       82.8%
 ;!BITCOMRAM           7F      0       0       0        0.0%
 ;!COMRAM              7F     2D      57       1       68.5%
+;!BITSFR_5             0      0       0      40        0.0%
+;!SFR_5                0      0       0      40        0.0%
+;!BITSFR_4             0      0       0      40        0.0%
+;!SFR_4                0      0       0      40        0.0%
+;!BITSFR_3             0      0       0      40        0.0%
+;!SFR_3                0      0       0      40        0.0%
+;!BITSFR_2             0      0       0      40        0.0%
+;!SFR_2                0      0       0      40        0.0%
+;!BITSFR_1             0      0       0      40        0.0%
+;!SFR_1                0      0       0      40        0.0%
 ;!BITSFR               0      0       0      40        0.0%
 ;!SFR                  0      0       0      40        0.0%
 ;!STACK                0      0       0       2        0.0%
 ;!NULL                 0      0       0       0        0.0%
-;!ABS                  0      0     12C      15        0.0%
-;!DATA                 0      0     12C       3        0.0%
+;!ABS                  0      0     12C      14        0.0%
+;!DATA                 0      0     12C      17        0.0%
 ;!CODE                 0      0       0       0        0.0%
 
 	global	_main
@@ -5254,7 +5264,7 @@ psect	text0
 	
 _main:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	134
 	
@@ -5500,7 +5510,7 @@ psect	text1
 	
 _test_process:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	105
 	
@@ -7161,7 +7171,7 @@ psect	text2
 	
 _check_UInfla:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	82
 	
@@ -7365,7 +7375,7 @@ psect	text3
 	
 _check_UAlim:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	66
 	
@@ -7552,7 +7562,7 @@ psect	text4
 	
 _micro_wait:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	93
 	
@@ -7881,7 +7891,7 @@ psect	text5
 	
 _micro_config:
 ;incstack = 0
-	opt	stack 27
+	opt	stack 26
 	dw	0FFFFh
 	line	43
 	
@@ -7993,7 +8003,7 @@ psect	text6
 _hw_config:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 27
+	opt	stack 26
 	dw	0FFFFh
 	line	6
 	
@@ -8241,7 +8251,7 @@ psect	text7
 	
 _feu_process:
 ;incstack = 0
-	opt	stack 25
+	opt	stack 24
 	dw	0FFFFh
 	line	91
 	
@@ -9005,7 +9015,7 @@ psect	text8
 _feu_tir:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 25
+	opt	stack 24
 	dw	0FFFFh
 ;feu_tir@Output stored from wreg
 	movff	wreg,(feu_tir@Output)
@@ -9120,7 +9130,7 @@ psect	text9
 _register_write:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 26
+	opt	stack 25
 	dw	0FFFFh
 ;register_write@Output stored from wreg
 	movff	wreg,(register_write@Output)
@@ -9291,7 +9301,7 @@ psect	text10
 _feu_check_end:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 26
+	opt	stack 25
 	dw	0FFFFh
 	line	5
 	
@@ -9407,7 +9417,7 @@ psect	text11
 _feu_check_bp:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	29
 	
@@ -9488,7 +9498,7 @@ u6200:
 l6637:; BSR set to: 0
 
 ;feu.c: 36: {
-;feu.c: 37: if ((((unsigned short) (Cptms - Feu.TimeStart) > 5000) ? 1 : 0))
+;feu.c: 37: if ((((unsigned short) (Cptms - Feu.TimeStart) > 1000) ? 1 : 0))
 	movlb	0	; () banked
 	lfsr	2,_Feu+09h
 	movff	postinc2,??_feu_check_bp+0+0
@@ -9504,10 +9514,10 @@ l6637:; BSR set to: 0
 	movf	((c:_Cptms+1)),c,w	;volatile
 	movlb	0	; () banked
 	addwfc	(??_feu_check_bp+0+1)&0ffh
-	movlw	089h
+	movlw	0E9h
 	movlb	0	; () banked
 	subwf	(??_feu_check_bp+0+0)&0ffh,w
-	movlw	013h
+	movlw	03h
 	subwfb	(??_feu_check_bp+0+1)&0ffh,w
 	btfss	status,0
 	goto	u6211
@@ -10010,7 +10020,7 @@ psect	text12
 _ecran_print_num:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 ;ecran_print_num@Num stored from wreg
 	movff	wreg,(ecran_print_num@Num)
@@ -10237,7 +10247,7 @@ psect	text13
 _DecToStr:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 ;DecToStr@value stored from wreg
 	movff	wreg,(DecToStr@value)
@@ -10573,7 +10583,7 @@ psect	text14
 ___lbdiv:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 ;___lbdiv@dividend stored from wreg
 	movff	wreg,(___lbdiv@dividend)
@@ -10794,7 +10804,7 @@ psect	text15
 ___awmod:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	13
 	
@@ -11129,7 +11139,7 @@ psect	text16
 _check_program_0:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	21
 	
@@ -11300,7 +11310,7 @@ psect	text17
 _check_idtest:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	43
 	
@@ -11412,7 +11422,7 @@ psect	text18
 	
 _micro_config_rs:
 ;incstack = 0
-	opt	stack 26
+	opt	stack 25
 	dw	0FFFFh
 	line	5
 	
@@ -11505,7 +11515,7 @@ psect	text19
 	
 _cf_rcv:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	134
 	
@@ -11974,7 +11984,7 @@ psect	text20
 	
 _eeprom_write_array:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	56
 	
@@ -12107,7 +12117,7 @@ psect	text21
 _eeprom_write:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 ;eeprom_write@Data stored from wreg
 	movff	wreg,(eeprom_write@Data)
@@ -12232,7 +12242,7 @@ psect	text22
 	
 _check_bpon:
 ;incstack = 0
-	opt	stack 25
+	opt	stack 24
 	dw	0FFFFh
 	line	54
 	
@@ -12375,7 +12385,7 @@ psect	text23
 	
 _cf_check_and_display:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	94
 	
@@ -12745,7 +12755,7 @@ psect	text24
 	
 _eeprom_read_array:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	44
 	
@@ -12880,7 +12890,7 @@ psect	text25
 _eeprom_read:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 ;eeprom_read@Address stored from wreg
 	movff	wreg,(eeprom_read@Address)
@@ -12982,7 +12992,7 @@ psect	text26
 	
 _cf_check:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	81
 	
@@ -13112,7 +13122,7 @@ psect	text27
 _cf_checksum:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	7
 	
@@ -13731,7 +13741,7 @@ psect	text28
 _cf_checkrange:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	67
 	
@@ -13919,7 +13929,7 @@ psect	text29
 _cf_checkout:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	35
 	
@@ -14309,7 +14319,7 @@ psect	text30
 ___wmul:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	25
 	
@@ -14424,7 +14434,7 @@ psect	text31
 _HexToAscii:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 26
+	opt	stack 25
 	dw	0FFFFh
 ;HexToAscii@Value stored from wreg
 	movff	wreg,(HexToAscii@Value)
@@ -14551,7 +14561,7 @@ psect	text32
 _bouton_refresh:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 27
+	opt	stack 26
 	dw	0FFFFh
 	line	15
 	
@@ -15111,7 +15121,7 @@ psect	text33
 _bouton_init:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 27
+	opt	stack 26
 	dw	0FFFFh
 	line	5
 	
@@ -15226,7 +15236,7 @@ psect	text34
 _armement_process:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	28
 	
@@ -15720,7 +15730,7 @@ psect	text35
 	
 _itoa:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	6
 	
@@ -15877,7 +15887,7 @@ psect	text36
 	
 _utoa:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	22
 	
@@ -16139,7 +16149,7 @@ psect	text37
 ___lwmod:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	13
 	
@@ -16343,7 +16353,7 @@ psect	text38
 ___lwdiv:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	14
 	
@@ -16578,7 +16588,7 @@ psect	text39
 _ecran_wait:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 25
+	opt	stack 24
 	dw	0FFFFh
 	line	94
 	
@@ -16666,7 +16676,7 @@ psect	text40
 _check_comutest:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 ;check_comutest@State stored from wreg
 	movff	wreg,(check_comutest@State)
@@ -16829,7 +16839,7 @@ psect	text41
 _ecran_refresh:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	119
 	
@@ -17022,7 +17032,7 @@ psect	text42
 _ecran_print_one_char:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 ;ecran_print_one_char@Digit stored from wreg
 	movff	wreg,(ecran_print_one_char@Digit)
@@ -17171,7 +17181,7 @@ psect	text43
 _ecran_raz_digit:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 25
+	opt	stack 24
 	dw	0FFFFh
 	line	5
 	
@@ -17237,7 +17247,7 @@ psect	text44
 	
 _ecran_digit:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 ;ecran_digit@Char stored from wreg
 	movff	wreg,(ecran_digit@Char)
@@ -17631,7 +17641,7 @@ psect	text45
 	
 _ecran_dot:
 ;incstack = 0
-	opt	stack 25
+	opt	stack 24
 	dw	0FFFFh
 ;ecran_dot@Dot stored from wreg
 	movff	wreg,(ecran_dot@Dot)
@@ -17719,7 +17729,7 @@ psect	text46
 _ecran_blank:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 26
+	opt	stack 25
 	dw	0FFFFh
 	line	106
 	
@@ -17858,7 +17868,7 @@ psect	text47
 _arm_UAlim_1A:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	5
 	
@@ -18069,7 +18079,7 @@ psect	text48
 	
 _ana_read:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 ;ana_read@ANx stored from wreg
 	movff	wreg,(ana_read@ANx)
@@ -18234,7 +18244,7 @@ psect	text49
 _delay_ms:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	6
 	
@@ -18344,7 +18354,7 @@ psect	text50
 ___lwtoft:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	30
 	
@@ -18438,7 +18448,7 @@ psect	text51
 	
 ___fttol:
 ;incstack = 0
-	opt	stack 25
+	opt	stack 24
 	dw	0FFFFh
 	line	49
 	
@@ -18872,7 +18882,7 @@ psect	text52
 ___ftmul:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	56
 	
@@ -19311,7 +19321,7 @@ psect	text53
 	
 ___ftpack:
 ;incstack = 0
-	opt	stack 24
+	opt	stack 23
 	dw	0FFFFh
 	line	64
 	
@@ -19680,7 +19690,7 @@ psect	intcodelo
 _Low_priority:; BSR set to: 0
 
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh; errata NOP
 	movff	status+0,??_Low_priority+0
 	movff	wreg+0,??_Low_priority+1
@@ -19846,7 +19856,7 @@ psect	intcode
 	
 _High_priority:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh; errata NOP
 	movff	pclat+0,??_High_priority+5
 	movff	pclat+1,??_High_priority+6
@@ -20299,7 +20309,7 @@ psect	text56
 	
 ___awdiv:
 ;incstack = 0
-	opt	stack 23
+	opt	stack 22
 	dw	0FFFFh
 	line	14
 	

@@ -3867,7 +3867,7 @@ Ecran.Solid = 0;
 else if ( (Bouton[Bp_Start].State == 1)
 && (Feu.CanStopStart == 0))
 {
-if ((((unsigned short) (Cptms - Feu.TimeStart) > 1000) ? 1 : 0))
+if ((((unsigned short) (Cptms - Feu.TimeStart) > 5000) ? 1 : 0))
 {
 Feu.CanStopStart = 1;
 }

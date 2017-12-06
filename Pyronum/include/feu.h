@@ -5,7 +5,7 @@
 #define DefTempsTir			40
 
 // Temps d'attente minimum pour stopper la séquence automatique en cours
-#define TIME_TO_STOP		1000
+#define TIME_TO_STOP		5000
 
 // Etape du feu d'artifice
 #define FEU_ARMED			0x00
