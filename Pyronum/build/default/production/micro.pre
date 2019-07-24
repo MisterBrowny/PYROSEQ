@@ -3632,7 +3632,7 @@ char HexToAscii(unsigned char Value);
 # 5 "include\micro.h"
 const char Version[] = "0009";
 
-# 24
+# 25
 typedef struct StructState{
 unsigned Armed :1;
 unsigned Go :1;
@@ -3666,7 +3666,7 @@ void micro_config (void);
 void micro_wait (void);
 
 
-# 62
+# 63
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -3917,11 +3917,24 @@ ecran_blank();
 
 if (Bouton[Bp_Start].State == 0)
 {
+unsigned short tempTime = Cptms;
+
 ecran_blank();
 
 ecran_print_one_char(0, 'S');
 
-while (PORTBbits.RB0 == 0);
+Micro.State = 0x08;
+
+while (PORTBbits.RB0 == 0)
+{
+if ((((unsigned short) (Cptms - tempTime) > 1000) ? 1 : 0))
+{
+tempTime = Cptms;
+Micro.State = ((Micro.State == 0x08) ? 0x00 : 0x08);
+}
+};
+
+Micro.State = 0x00;
 
 ecran_wait();
 }

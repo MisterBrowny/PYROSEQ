@@ -1,15 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"24 include\micro.h
+"25 include\micro.h
 [s S327 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S327 StructState Armed Go Stop End ]
 [u S330 `uc 1 `S327 1 ]
 [n S330 . State Stat ]
-"31
+"32
 [s S328 :1 `uc 1 :1 `uc 1 ]
 [n S328 StructMod P_0 P_00 ]
 [u S331 `uc 1 `S328 1 ]
 [n S331 . Mods Mod ]
-"36
+"37
 [s S329 `us 1 `uc 1 `uc 1 `S330 1 `S331 1 ]
 [n S329 StructMicro Time Phase Step . . ]
 "13 include\bouton.h
@@ -2837,36 +2837,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;micro.h: 5: const char Version[] = "0009";
-[; ;micro.h: 24: typedef struct StructState{
-[; ;micro.h: 25: unsigned Armed :1;
-[; ;micro.h: 26: unsigned Go :1;
-[; ;micro.h: 27: unsigned Stop :1;
-[; ;micro.h: 28: unsigned End :1;
-[; ;micro.h: 29: }StruState;
-[; ;micro.h: 31: typedef struct StructMod{
-[; ;micro.h: 32: unsigned P_0 :1;
-[; ;micro.h: 33: unsigned P_00 :1;
-[; ;micro.h: 34: }StruMode;
-[; ;micro.h: 36: typedef struct StructMicro {
-[; ;micro.h: 37: unsigned short Time;
-[; ;micro.h: 38: unsigned char Phase;
-[; ;micro.h: 39: unsigned char Step;
-[; ;micro.h: 40: union {
-[; ;micro.h: 41: unsigned char State;
-[; ;micro.h: 42: struct StructState Stat;
-[; ;micro.h: 43: };
-[; ;micro.h: 44: union {
-[; ;micro.h: 45: unsigned char Mods;
-[; ;micro.h: 46: struct StructMod Mod;
-[; ;micro.h: 47: };
-[; ;micro.h: 48: }struMicro;
-"50
+[; ;micro.h: 25: typedef struct StructState{
+[; ;micro.h: 26: unsigned Armed :1;
+[; ;micro.h: 27: unsigned Go :1;
+[; ;micro.h: 28: unsigned Stop :1;
+[; ;micro.h: 29: unsigned End :1;
+[; ;micro.h: 30: }StruState;
+[; ;micro.h: 32: typedef struct StructMod{
+[; ;micro.h: 33: unsigned P_0 :1;
+[; ;micro.h: 34: unsigned P_00 :1;
+[; ;micro.h: 35: }StruMode;
+[; ;micro.h: 37: typedef struct StructMicro {
+[; ;micro.h: 38: unsigned short Time;
+[; ;micro.h: 39: unsigned char Phase;
+[; ;micro.h: 40: unsigned char Step;
+[; ;micro.h: 41: union {
+[; ;micro.h: 42: unsigned char State;
+[; ;micro.h: 43: struct StructState Stat;
+[; ;micro.h: 44: };
+[; ;micro.h: 45: union {
+[; ;micro.h: 46: unsigned char Mods;
+[; ;micro.h: 47: struct StructMod Mod;
+[; ;micro.h: 48: };
+[; ;micro.h: 49: }struMicro;
+"51
 [v _Micro `S329 ~T0 @X0 1 e ]
-[; ;micro.h: 50: struMicro Micro;
-[; ;micro.h: 52: void micro_config_rs (void);
-[; ;micro.h: 53: void micro_config (void);
-[; ;micro.h: 54: void micro_wait (void);
-[; ;micro.h: 63: extern void __nop(void);
+[; ;micro.h: 51: struMicro Micro;
+[; ;micro.h: 53: void micro_config_rs (void);
+[; ;micro.h: 54: void micro_config (void);
+[; ;micro.h: 55: void micro_wait (void);
+[; ;micro.h: 64: extern void __nop(void);
 [; ;analog.h: 15: unsigned short ana_read (unsigned char ANx);
 [; ;hardware.h: 15: void hw_config(void);
 [; ;eeprom.h: 4: unsigned char eeprom_read (unsigned char Address);

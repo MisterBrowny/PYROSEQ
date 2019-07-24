@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-                                                                                                           Sat Dec 09 19:42:16 2017
+                                                                                                           Thu Jul 25 01:06:58 2019
 
 
      1                           
@@ -81,11 +81,11 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
     75                           	psect	init,class=CODE,delta=1,reloc=2
     76                           	psect	text,class=CODE,delta=1,reloc=2
     77                           GLOBAL	intlevel0,intlevel1,intlevel2
-    78  0035D6                     intlevel0:
-    79  0035D6                     intlevel1:
-    80  0035D6                     intlevel2:
+    78  003656                     intlevel0:
+    79  003656                     intlevel1:
+    80  003656                     intlevel2:
     81                           GLOBAL	intlevel3
-    82  0035D6                     intlevel3:
+    82  003656                     intlevel3:
     83                           	psect	end_init,class=CODE,delta=1,reloc=2
     84                           	psect	clrtext,class=CODE,delta=1,reloc=2
     85                           
@@ -148,7 +148,7 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
    142                           
    143                           	psect	end_init
    144                           	global start_initialization
-   145  000112  EF19  F019         	goto start_initialization	;jump to C runtime clear & initialization
+   145  000112  EF59  F019         	goto start_initialization	;jump to C runtime clear & initialization
    146                           
    147                           ; Config register IDLOC0 @ 0x200000
    148                           ;	unspecified using default value
@@ -359,20 +359,20 @@ Microchip Technology PIC18 Macro Assembler V1.31 build 56723
    353                           psect sfr,class=SFR,space=1
    354                           
    355                           
-   356  0035D6  FFFF               
+   356  003656  FFFF               
 
 
 Microchip Technology PIC18 Macro Assembler V1.31 build 56723 
-Symbol Table                                                                                               Sat Dec 09 19:42:16 2017
+Symbol Table                                                                                               Thu Jul 25 01:06:58 2019
 
                                               __S1 016B                                               ___sp 0000  
-                                             _main 2E0C                                               start 0112  
+                                             _main 2E8C                                               start 0112  
                                             __HRAM 0000                                              __LRAM 0001  
                                      __mediumconst 0000                                             stackhi 0005FF  
                                            stacklo 00016B                                             powerup 00F2  
                                        __accesstop 000080                                         ___inthi_sp 0000  
                                        ___intlo_sp 0000                                            __ramtop 0600  
-                              start_initialization 3232                                        __smallconst 0600  
-                                         intlevel0 35D6                                           intlevel1 35D6  
-                                         intlevel2 35D6                                           intlevel3 35D6  
+                              start_initialization 32B2                                        __smallconst 0600  
+                                         intlevel0 3656                                           intlevel1 3656  
+                                         intlevel2 3656                                           intlevel3 3656  
                                          reset_vec 0000  

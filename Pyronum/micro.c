@@ -123,12 +123,25 @@ void micro_wait (void)
 
 			if (Bouton[Bp_Start].State == 0)
 			{
+				word tempTime = Cptms;
+				
 				ecran_blank();
 				
 				ecran_print_one_char(0, 'S');
-
-				while (START == 0);
-								
+				
+				Micro.State = END;
+				
+				while (START == 0)
+				{
+					if (TempsSup(tempTime, TDef1sec))
+					{
+						tempTime = Cptms;
+						Micro.State = ((Micro.State == END) ? UNDEFINED : END);
+					}
+				};
+				
+				Micro.State = UNDEFINED;
+				
 				ecran_wait();
 			}
 

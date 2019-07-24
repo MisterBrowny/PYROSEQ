@@ -3632,7 +3632,7 @@ char HexToAscii(unsigned char Value);
 # 5 "include\micro.h"
 const char Version[] = "0009";
 
-# 24
+# 25
 typedef struct StructState{
 unsigned Armed :1;
 unsigned Go :1;
@@ -3666,7 +3666,7 @@ void micro_config (void);
 void micro_wait (void);
 
 
-# 62
+# 63
 #pragma intrinsic(__nop)
 extern void __nop(void);
 

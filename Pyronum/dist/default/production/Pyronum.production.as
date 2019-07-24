@@ -4346,6 +4346,8 @@ cf_checkout@i:	; 1 bytes @ 0x9
 ana_read@ANx:	; 1 bytes @ 0x9
 	global	___fttol@sign1
 ___fttol@sign1:	; 1 bytes @ 0x9
+	global	micro_wait@tempTime
+micro_wait@tempTime:	; 2 bytes @ 0x9
 	ds   1
 	global	ana_read@temp
 ana_read@temp:	; 2 bytes @ 0xA
@@ -4355,6 +4357,8 @@ utoa@val:	; 2 bytes @ 0xA
 ___fttol@lval:	; 4 bytes @ 0xA
 	ds   1
 ??___lwtoft:	; 0 bytes @ 0xB
+	global	_micro_wait$2387
+_micro_wait$2387:	; 2 bytes @ 0xB
 	ds   1
 	global	cf_checksum@valid
 cf_checksum@valid:	; 1 bytes @ 0xC
@@ -4724,7 +4728,7 @@ ___awdiv@quotient:	; 2 bytes @ 0x7
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (0) _main                                                 4     4      0   54325
+;! (0) _main                                                 4     4      0   54399
 ;!                                             41 BANK0      2     2      0
 ;!                   _armement_process
 ;!                        _bouton_init
@@ -4767,8 +4771,8 @@ ___awdiv@quotient:	; 2 bytes @ 0x7
 ;!                           ___lwtoft
 ;!                           _ana_read
 ;! ---------------------------------------------------------------------------------
-;! (1) _micro_wait                                           1     1      0    2127
-;!                                              7 BANK0      1     1      0
+;! (1) _micro_wait                                           6     6      0    2201
+;!                                              7 BANK0      6     6      0
 ;!                     _check_comutest
 ;!                        _ecran_blank
 ;!               _ecran_print_one_char
@@ -5258,7 +5262,7 @@ _main:
 	dw	0FFFFh
 	line	134
 	
-l6679:
+l6744:
 ;main.c: 134: unsigned char i, temp, cpt = 0;
 	movlb	0	; () banked
 	movwf	(??_main+0+0)&0ffh
@@ -5270,79 +5274,79 @@ l6679:
 	movf	(??_main+0+0)&0ffh,w
 	line	137
 	
-l6681:; BSR set to: 0
+l6746:; BSR set to: 0
 
 ;main.c: 137: hw_config();
 	call	_hw_config	;wreg free
 	line	138
 	
-l6683:
+l6748:
 ;main.c: 138: micro_config();
 	call	_micro_config	;wreg free
 	line	141
 	
-l6685:
+l6750:
 ;main.c: 141: check_comutest(0);
 	movlw	(0)&0ffh
 	
 	call	_check_comutest
 	line	144
 	
-l6687:
+l6752:
 ;main.c: 144: if (check_program_0() == 0)
 	call	_check_program_0	;wreg free
 	iorlw	0
 	btfss	status,2
-	goto	u6341
-	goto	u6340
-u6341:
-	goto	l6695
-u6340:
+	goto	u6401
+	goto	u6400
+u6401:
+	goto	l6760
+u6400:
 	line	147
 	
-l6689:
+l6754:
 ;main.c: 145: {
 ;main.c: 147: check_idtest();
 	call	_check_idtest	;wreg free
 	line	150
 	
-l6691:
+l6756:
 ;main.c: 150: check_bpon();
 	call	_check_bpon	;wreg free
 	line	153
 	
-l6693:
+l6758:
 ;main.c: 153: cf_check_and_display();
 	call	_cf_check_and_display	;wreg free
-	goto	l6695
+	goto	l6760
 	line	154
 	
 l105:
 	line	156
 	
-l6695:
+l6760:
 ;main.c: 154: }
 ;main.c: 156: bouton_init();
 	call	_bouton_init	;wreg free
-	goto	l6697
+	goto	l6762
 	line	158
 ;main.c: 158: while (1)
 	
 l106:
 	line	160
 	
-l6697:
+l6762:
 ;main.c: 159: {
 ;main.c: 160: bouton_refresh();
 	call	_bouton_refresh	;wreg free
 	line	161
 	
-l6699:
+l6764:
 ;main.c: 161: ecran_refresh();
 	call	_ecran_refresh	;wreg free
 	line	163
 ;main.c: 163: switch (Micro.Phase)
-	goto	l6711
+	goto	l6776
 	line	165
 ;main.c: 164: {
 ;main.c: 165: case 0x00:
@@ -5350,43 +5354,43 @@ l6699:
 l108:
 	line	166
 	
-l6701:
+l6766:
 ;main.c: 166: micro_wait();
 	call	_micro_wait	;wreg free
 	line	167
 ;main.c: 167: break;
-	goto	l6697
+	goto	l6762
 	line	168
 ;main.c: 168: case 0x01:
 	
 l110:
 	line	169
 	
-l6703:
+l6768:
 ;main.c: 169: test_process();
 	call	_test_process	;wreg free
 	line	170
 ;main.c: 170: break;
-	goto	l6697
+	goto	l6762
 	line	171
 ;main.c: 171: case 0x02:
 	
 l111:
 	line	172
 	
-l6705:
+l6770:
 ;main.c: 172: armement_process();
 	call	_armement_process	;wreg free
 	line	173
 ;main.c: 173: break;
-	goto	l6697
+	goto	l6762
 	line	174
 ;main.c: 174: case 0x03:
 	
 l112:
 	line	175
 	
-l6707:
+l6772:
 ;main.c: 175: feu_process();
 	call	_feu_process	;wreg free
 	line	176
@@ -5394,17 +5398,17 @@ l6707:
 	call	_feu_check_bp	;wreg free
 	line	177
 ;main.c: 177: break;
-	goto	l6697
+	goto	l6762
 	line	178
 	
-l6709:
+l6774:
 ;main.c: 178: }
-	goto	l6697
+	goto	l6762
 	line	163
 	
 l107:
 	
-l6711:
+l6776:
 	movf	(0+((c:_Micro)+02h)),c,w
 	; Switch size 1, requested type "space"
 ; Number of cases is 4, Range of values is 0 to 3
@@ -5415,27 +5419,27 @@ l6711:
 
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l6701
+	goto	l6766
 	xorlw	1^0	; case 1
 	skipnz
-	goto	l6703
+	goto	l6768
 	xorlw	2^1	; case 2
 	skipnz
-	goto	l6705
+	goto	l6770
 	xorlw	3^2	; case 3
 	skipnz
-	goto	l6707
-	goto	l6697
+	goto	l6772
+	goto	l6762
 
 	line	178
 	
 l109:
-	goto	l6697
+	goto	l6762
 	line	179
 	
 l113:
 	line	158
-	goto	l6697
+	goto	l6762
 	
 l114:
 	line	180
@@ -5504,7 +5508,7 @@ _test_process:
 	dw	0FFFFh
 	line	105
 	
-l6341:
+l6406:
 ;test.c: 104: unsigned short temp;
 ;test.c: 105: unsigned char i, ret = 0;
 	movlb	0	; () banked
@@ -5517,7 +5521,7 @@ l6341:
 	movf	(??_test_process+0+0)&0ffh,w
 	line	107
 ;test.c: 107: switch(Test.Step)
-	goto	l6515
+	goto	l6580
 	line	109
 ;test.c: 108: {
 ;test.c: 109: case 0x01 :
@@ -5528,14 +5532,14 @@ l564:; BSR set to: 0
 ;test.c: 110: if (Bouton[Bp_IdTest].State == 1)
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+05h))&0ffh,1
-	goto	u5741
-	goto	u5740
-u5741:
+	goto	u5801
+	goto	u5800
+u5801:
 	goto	l616
-u5740:
+u5800:
 	line	112
 	
-l6343:; BSR set to: 0
+l6408:; BSR set to: 0
 
 ;test.c: 111: {
 ;test.c: 112: Test.Step = 0x02;
@@ -5561,7 +5565,7 @@ l567:; BSR set to: 0
 
 	line	117
 	
-l6345:; BSR set to: 0
+l6410:; BSR set to: 0
 
 ;test.c: 117: check_comutest(0);
 	movlw	(0)&0ffh
@@ -5569,7 +5573,7 @@ l6345:; BSR set to: 0
 	call	_check_comutest
 	line	119
 	
-l6347:
+l6412:
 ;test.c: 119: Test.Cpt = 0;
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -5579,7 +5583,7 @@ l6347:
 	movf	(??_test_process+0+0)&0ffh,w
 	line	121
 	
-l6349:; BSR set to: 0
+l6414:; BSR set to: 0
 
 ;test.c: 121: temp = check_UAlim();
 	call	_check_UAlim	;wreg free
@@ -5589,7 +5593,7 @@ l6349:; BSR set to: 0
 	movff	1+?_check_UAlim,(test_process@temp+1)
 	line	123
 	
-l6351:; BSR set to: 0
+l6416:; BSR set to: 0
 
 ;test.c: 123: Ecran.Digits = PrintTest;
 	movlb	0	; () banked
@@ -5605,7 +5609,7 @@ l6351:; BSR set to: 0
 
 	line	125
 	
-l6353:; BSR set to: 0
+l6418:; BSR set to: 0
 
 ;test.c: 125: itoa(Ecran.Digits,temp,10);
 	movlb	0	; () banked
@@ -5627,7 +5631,7 @@ l6353:; BSR set to: 0
 	call	_itoa	;wreg free
 	line	127
 	
-l6355:
+l6420:
 ;test.c: 127: Ecran.Dot[0] = 0;
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -5639,7 +5643,7 @@ l6355:
 	movf	(??_test_process+0+0)&0ffh,w
 	line	128
 	
-l6357:; BSR set to: 0
+l6422:; BSR set to: 0
 
 ;test.c: 128: Ecran.Dot[1] = 1;
 	movlb	0	; () banked
@@ -5652,7 +5656,7 @@ l6357:; BSR set to: 0
 	movf	(??_test_process+0+0)&0ffh,w
 	line	129
 	
-l6359:; BSR set to: 0
+l6424:; BSR set to: 0
 
 ;test.c: 129: Ecran.Dot[2] = 0;
 	movlb	0	; () banked
@@ -5665,7 +5669,7 @@ l6359:; BSR set to: 0
 	movf	(??_test_process+0+0)&0ffh,w
 	line	130
 	
-l6361:; BSR set to: 0
+l6426:; BSR set to: 0
 
 ;test.c: 130: Ecran.Dot[3] = 0;
 	movlb	0	; () banked
@@ -5678,7 +5682,7 @@ l6361:; BSR set to: 0
 	movf	(??_test_process+0+0)&0ffh,w
 	line	132
 	
-l6363:; BSR set to: 0
+l6428:; BSR set to: 0
 
 ;test.c: 132: Test.Step = 0x03;
 	movlb	0	; () banked
@@ -5699,25 +5703,25 @@ l568:; BSR set to: 0
 ;test.c: 135: if (Bouton[Bp_IdTest].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u5751
-	goto	u5750
-u5751:
+	goto	u5811
+	goto	u5810
+u5811:
 	goto	l616
-u5750:
+u5810:
 	line	137
 	
-l6365:; BSR set to: 0
+l6430:; BSR set to: 0
 
 ;test.c: 136: {
 ;test.c: 137: if (Micro.Mod.P_0 == 0) {Test.Step = 0x04;}
 	btfsc	(0+((c:_Micro)+05h)),c,0
-	goto	u5761
-	goto	u5760
-u5761:
-	goto	l6369
-u5760:
+	goto	u5821
+	goto	u5820
+u5821:
+	goto	l6434
+u5820:
 	
-l6367:; BSR set to: 0
+l6432:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -5725,13 +5729,13 @@ l6367:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6371
+	goto	l6436
 	line	138
 	
 l570:; BSR set to: 0
 
 	
-l6369:; BSR set to: 0
+l6434:; BSR set to: 0
 
 ;test.c: 138: else {Test.Step = 0x0A;}
 	movlb	0	; () banked
@@ -5740,26 +5744,26 @@ l6369:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6371
+	goto	l6436
 	
 l571:; BSR set to: 0
 
 	line	140
 	
-l6371:; BSR set to: 0
+l6436:; BSR set to: 0
 
 ;test.c: 140: ecran_blank();
 	call	_ecran_blank	;wreg free
 	line	141
 	
-l6373:
+l6438:
 ;test.c: 141: check_comutest(0);
 	movlw	(0)&0ffh
 	
 	call	_check_comutest
 	line	142
 	
-l6375:
+l6440:
 ;test.c: 142: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
@@ -5777,7 +5781,7 @@ l569:
 l572:
 	line	146
 	
-l6377:
+l6442:
 ;test.c: 146: if (Cf.Data[Test.Cpt*3] == 0)
 	movf	(0+((c:_Test)+01h)),c,w
 	mullw	03h
@@ -5791,14 +5795,14 @@ l6377:
 	movwf	1+c:fsr2l
 	movf	indf2,w
 	btfss	status,2
-	goto	u5771
-	goto	u5770
-u5771:
-	goto	l6381
-u5770:
+	goto	u5831
+	goto	u5830
+u5831:
+	goto	l6446
+u5830:
 	line	149
 	
-l6379:; BSR set to: 1
+l6444:; BSR set to: 1
 
 ;test.c: 147: {
 ;test.c: 149: Test.Step = 0x08;
@@ -5816,7 +5820,7 @@ l6379:; BSR set to: 1
 l573:; BSR set to: 0
 
 	
-l6381:
+l6446:
 ;test.c: 151: else if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 	lfsr	2,(c:_Test)+02h
 	movff	postinc2,??_test_process+0+0
@@ -5838,14 +5842,14 @@ l6381:
 	movlw	0
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5781
-	goto	u5780
-u5781:
+	goto	u5841
+	goto	u5840
+u5841:
 	goto	l616
-u5780:
+u5840:
 	line	153
 	
-l6383:; BSR set to: 0
+l6448:; BSR set to: 0
 
 ;test.c: 152: {
 ;test.c: 153: register_write(Cf.Data[Test.Cpt*3]);
@@ -5864,7 +5868,7 @@ l6383:; BSR set to: 0
 	call	_register_write
 	line	154
 	
-l6385:
+l6450:
 ;test.c: 154: Test.Step = 0x05;
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -5874,7 +5878,7 @@ l6385:
 	movf	(??_test_process+0+0)&0ffh,w
 	line	155
 	
-l6387:; BSR set to: 0
+l6452:; BSR set to: 0
 
 ;test.c: 155: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
@@ -5899,7 +5903,7 @@ l576:; BSR set to: 0
 
 	line	159
 	
-l6389:; BSR set to: 0
+l6454:; BSR set to: 0
 
 ;test.c: 159: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 	lfsr	2,(c:_Test)+02h
@@ -5922,14 +5926,14 @@ l6389:; BSR set to: 0
 	movlw	0
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5791
-	goto	u5790
-u5791:
+	goto	u5851
+	goto	u5850
+u5851:
 	goto	l616
-u5790:
+u5850:
 	line	161
 	
-l6391:; BSR set to: 0
+l6456:; BSR set to: 0
 
 ;test.c: 160: {
 ;test.c: 161: temp = check_UInfla();
@@ -5940,7 +5944,7 @@ l6391:; BSR set to: 0
 	movff	1+?_check_UInfla,(test_process@temp+1)
 	line	163
 	
-l6393:; BSR set to: 0
+l6458:; BSR set to: 0
 
 ;test.c: 163: if (temp > 85) {Test.Step = 0x07;}
 	movlw	056h
@@ -5951,13 +5955,13 @@ l6393:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((test_process@temp+1))&0ffh,w
 	btfss	status,0
-	goto	u5801
-	goto	u5800
-u5801:
-	goto	l6397
-u5800:
+	goto	u5861
+	goto	u5860
+u5861:
+	goto	l6462
+u5860:
 	
-l6395:; BSR set to: 0
+l6460:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -5965,13 +5969,13 @@ l6395:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6399
+	goto	l6464
 	line	164
 	
 l578:; BSR set to: 0
 
 	
-l6397:; BSR set to: 0
+l6462:; BSR set to: 0
 
 ;test.c: 164: else {Test.Step = 0x06;}
 	movlb	0	; () banked
@@ -5980,13 +5984,13 @@ l6397:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6399
+	goto	l6464
 	
 l579:; BSR set to: 0
 
 	line	167
 	
-l6399:; BSR set to: 0
+l6464:; BSR set to: 0
 
 ;test.c: 167: ecran_print_num(Cf.Data[Test.Cpt*3]);
 	movf	(0+((c:_Test)+01h)),c,w
@@ -6004,14 +6008,14 @@ l6399:; BSR set to: 0
 	call	_ecran_print_num
 	line	168
 	
-l6401:
+l6466:
 ;test.c: 168: register_write(0);
 	movlw	(0)&0ffh
 	
 	call	_register_write
 	line	170
 	
-l6403:
+l6468:
 ;test.c: 170: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
@@ -6029,7 +6033,7 @@ l577:
 l580:
 	line	174
 	
-l6405:
+l6470:
 ;test.c: 174: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 	lfsr	2,(c:_Test)+02h
 	movff	postinc2,??_test_process+0+0
@@ -6051,14 +6055,14 @@ l6405:
 	movlw	0
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5811
-	goto	u5810
-u5811:
+	goto	u5871
+	goto	u5870
+u5871:
 	goto	l616
-u5810:
+u5870:
 	line	176
 	
-l6407:; BSR set to: 0
+l6472:; BSR set to: 0
 
 ;test.c: 175: {
 ;test.c: 176: if (++Test.Cpt > 31) {Test.Step = 0x08;}
@@ -6067,13 +6071,13 @@ l6407:; BSR set to: 0
 
 	movlw	(020h-1)
 	cpfsgt	indf2
-	goto	u5821
-	goto	u5820
-u5821:
-	goto	l6411
-u5820:
+	goto	u5881
+	goto	u5880
+u5881:
+	goto	l6476
+u5880:
 	
-l6409:; BSR set to: 0
+l6474:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -6081,13 +6085,13 @@ l6409:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6413
+	goto	l6478
 	line	177
 	
 l582:; BSR set to: 0
 
 	
-l6411:; BSR set to: 0
+l6476:; BSR set to: 0
 
 ;test.c: 177: else {Test.Step = 0x04;}
 	movlb	0	; () banked
@@ -6096,13 +6100,13 @@ l6411:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6413
+	goto	l6478
 	
 l583:; BSR set to: 0
 
 	line	178
 	
-l6413:; BSR set to: 0
+l6478:; BSR set to: 0
 
 ;test.c: 178: check_comutest(0);
 	movlw	(0)&0ffh
@@ -6110,7 +6114,7 @@ l6413:; BSR set to: 0
 	call	_check_comutest
 	line	179
 	
-l6415:
+l6480:
 ;test.c: 179: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
@@ -6132,13 +6136,13 @@ l584:; BSR set to: 0
 ;test.c: 184: && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u5831
-	goto	u5830
-u5831:
+	goto	u5891
+	goto	u5890
+u5891:
 	goto	l616
-u5830:
+u5890:
 	
-l6417:; BSR set to: 0
+l6482:; BSR set to: 0
 
 	lfsr	2,(c:_Test)+02h
 	movff	postinc2,??_test_process+0+0
@@ -6160,14 +6164,14 @@ l6417:; BSR set to: 0
 	movlw	01h
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5841
-	goto	u5840
-u5841:
+	goto	u5901
+	goto	u5900
+u5901:
 	goto	l616
-u5840:
+u5900:
 	line	186
 	
-l6419:; BSR set to: 0
+l6484:; BSR set to: 0
 
 ;test.c: 185: {
 ;test.c: 186: if (++Test.Cpt > 31) {Test.Step = 0x08;}
@@ -6176,13 +6180,13 @@ l6419:; BSR set to: 0
 
 	movlw	(020h-1)
 	cpfsgt	indf2
-	goto	u5851
-	goto	u5850
-u5851:
-	goto	l6423
-u5850:
+	goto	u5911
+	goto	u5910
+u5911:
+	goto	l6488
+u5910:
 	
-l6421:; BSR set to: 0
+l6486:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -6190,13 +6194,13 @@ l6421:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6425
+	goto	l6490
 	line	187
 	
 l586:; BSR set to: 0
 
 	
-l6423:; BSR set to: 0
+l6488:; BSR set to: 0
 
 ;test.c: 187: else {Test.Step = 0x04;}
 	movlb	0	; () banked
@@ -6205,13 +6209,13 @@ l6423:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6425
+	goto	l6490
 	
 l587:; BSR set to: 0
 
 	line	188
 	
-l6425:; BSR set to: 0
+l6490:; BSR set to: 0
 
 ;test.c: 188: check_comutest(0);
 	movlw	(0)&0ffh
@@ -6219,7 +6223,7 @@ l6425:; BSR set to: 0
 	call	_check_comutest
 	line	189
 	
-l6427:
+l6492:
 ;test.c: 189: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
@@ -6237,18 +6241,18 @@ l585:
 l588:
 	line	193
 	
-l6429:
+l6494:
 ;test.c: 193: if (Test.Cpt != 0)
 	movf	(0+((c:_Test)+01h)),c,w
 	btfsc	status,2
-	goto	u5861
-	goto	u5860
-u5861:
-	goto	l6433
-u5860:
+	goto	u5921
+	goto	u5920
+u5921:
+	goto	l6498
+u5920:
 	line	195
 	
-l6431:
+l6496:
 ;test.c: 194: {
 ;test.c: 195: ecran_print_num(Cf.Data[96]);
 	movlb	1	; () banked
@@ -6264,7 +6268,7 @@ l6431:
 l589:
 	line	199
 	
-l6433:
+l6498:
 ;test.c: 197: else
 ;test.c: 198: {
 ;test.c: 199: Ecran.Digit[2] = 0;
@@ -6312,7 +6316,7 @@ l590:
 	movf	(??_test_process+0+0)&0ffh,w
 	line	206
 	
-l6435:; BSR set to: 0
+l6500:; BSR set to: 0
 
 ;test.c: 206: Ecran.Digits = Ecran.Digit;
 	movlb	0	; () banked
@@ -6328,7 +6332,7 @@ l6435:; BSR set to: 0
 
 	line	207
 	
-l6437:; BSR set to: 0
+l6502:; BSR set to: 0
 
 ;test.c: 207: Test.Step = 0x09;
 	movlb	0	; () banked
@@ -6349,14 +6353,14 @@ l591:; BSR set to: 0
 ;test.c: 210: if (Bouton[Bp_IdTest].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u5871
-	goto	u5870
-u5871:
+	goto	u5931
+	goto	u5930
+u5931:
 	goto	l616
-u5870:
+u5930:
 	line	212
 	
-l6439:; BSR set to: 0
+l6504:; BSR set to: 0
 
 ;test.c: 211: {
 ;test.c: 212: Test.Step = 0x10;
@@ -6368,7 +6372,7 @@ l6439:; BSR set to: 0
 	movf	(??_test_process+0+0)&0ffh,w
 	line	214
 	
-l6441:; BSR set to: 0
+l6506:; BSR set to: 0
 
 ;test.c: 214: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
@@ -6389,7 +6393,7 @@ l593:; BSR set to: 0
 
 	line	218
 	
-l6443:; BSR set to: 0
+l6508:; BSR set to: 0
 
 ;test.c: 218: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 	lfsr	2,(c:_Test)+02h
@@ -6412,14 +6416,14 @@ l6443:; BSR set to: 0
 	movlw	0
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5881
-	goto	u5880
-u5881:
+	goto	u5941
+	goto	u5940
+u5941:
 	goto	l616
-u5880:
+u5940:
 	line	220
 	
-l6445:; BSR set to: 0
+l6510:; BSR set to: 0
 
 ;test.c: 219: {
 ;test.c: 220: register_write((unsigned char) (Test.Cpt + 1));
@@ -6428,7 +6432,7 @@ l6445:; BSR set to: 0
 	call	_register_write
 	line	221
 	
-l6447:
+l6512:
 ;test.c: 221: Test.Step = 0x0B;
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -6438,7 +6442,7 @@ l6447:
 	movf	(??_test_process+0+0)&0ffh,w
 	line	222
 	
-l6449:; BSR set to: 0
+l6514:; BSR set to: 0
 
 ;test.c: 222: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
@@ -6459,7 +6463,7 @@ l595:; BSR set to: 0
 
 	line	226
 	
-l6451:; BSR set to: 0
+l6516:; BSR set to: 0
 
 ;test.c: 226: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 	lfsr	2,(c:_Test)+02h
@@ -6482,14 +6486,14 @@ l6451:; BSR set to: 0
 	movlw	0
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5891
-	goto	u5890
-u5891:
+	goto	u5951
+	goto	u5950
+u5951:
 	goto	l616
-u5890:
+u5950:
 	line	228
 	
-l6453:; BSR set to: 0
+l6518:; BSR set to: 0
 
 ;test.c: 227: {
 ;test.c: 228: temp = check_UInfla();
@@ -6500,7 +6504,7 @@ l6453:; BSR set to: 0
 	movff	1+?_check_UInfla,(test_process@temp+1)
 	line	231
 	
-l6455:; BSR set to: 0
+l6520:; BSR set to: 0
 
 ;test.c: 231: if (temp > 85) {Test.Step = 0x0D;}
 	movlw	056h
@@ -6511,13 +6515,13 @@ l6455:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((test_process@temp+1))&0ffh,w
 	btfss	status,0
-	goto	u5901
-	goto	u5900
-u5901:
-	goto	l6459
-u5900:
+	goto	u5961
+	goto	u5960
+u5961:
+	goto	l6524
+u5960:
 	
-l6457:; BSR set to: 0
+l6522:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -6525,13 +6529,13 @@ l6457:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6461
+	goto	l6526
 	line	232
 	
 l597:; BSR set to: 0
 
 	
-l6459:; BSR set to: 0
+l6524:; BSR set to: 0
 
 ;test.c: 232: else {Test.Step = 0x0C;}
 	movlb	0	; () banked
@@ -6540,13 +6544,13 @@ l6459:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6461
+	goto	l6526
 	
 l598:; BSR set to: 0
 
 	line	235
 	
-l6461:; BSR set to: 0
+l6526:; BSR set to: 0
 
 ;test.c: 235: ecran_print_num((unsigned char) (Test.Cpt + 1));
 	incf	(0+((c:_Test)+01h)),c,w
@@ -6554,14 +6558,14 @@ l6461:; BSR set to: 0
 	call	_ecran_print_num
 	line	236
 	
-l6463:
+l6528:
 ;test.c: 236: register_write(0);
 	movlw	(0)&0ffh
 	
 	call	_register_write
 	line	238
 	
-l6465:
+l6530:
 ;test.c: 238: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
@@ -6579,7 +6583,7 @@ l596:
 l599:
 	line	242
 	
-l6467:
+l6532:
 ;test.c: 242: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 	lfsr	2,(c:_Test)+02h
 	movff	postinc2,??_test_process+0+0
@@ -6601,14 +6605,14 @@ l6467:
 	movlw	0
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5911
-	goto	u5910
-u5911:
+	goto	u5971
+	goto	u5970
+u5971:
 	goto	l616
-u5910:
+u5970:
 	line	244
 	
-l6469:; BSR set to: 0
+l6534:; BSR set to: 0
 
 ;test.c: 243: {
 ;test.c: 244: if (++Test.Cpt > 31) {Test.Step = 0x0E;}
@@ -6617,13 +6621,13 @@ l6469:; BSR set to: 0
 
 	movlw	(020h-1)
 	cpfsgt	indf2
-	goto	u5921
-	goto	u5920
-u5921:
-	goto	l6473
-u5920:
+	goto	u5981
+	goto	u5980
+u5981:
+	goto	l6538
+u5980:
 	
-l6471:; BSR set to: 0
+l6536:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -6631,13 +6635,13 @@ l6471:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6475
+	goto	l6540
 	line	245
 	
 l601:; BSR set to: 0
 
 	
-l6473:; BSR set to: 0
+l6538:; BSR set to: 0
 
 ;test.c: 245: else {Test.Step = 0x0A;}
 	movlb	0	; () banked
@@ -6646,13 +6650,13 @@ l6473:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6475
+	goto	l6540
 	
 l602:; BSR set to: 0
 
 	line	246
 	
-l6475:; BSR set to: 0
+l6540:; BSR set to: 0
 
 ;test.c: 246: check_comutest(0);
 	movlw	(0)&0ffh
@@ -6660,7 +6664,7 @@ l6475:; BSR set to: 0
 	call	_check_comutest
 	line	247
 	
-l6477:
+l6542:
 ;test.c: 247: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
@@ -6682,13 +6686,13 @@ l603:; BSR set to: 0
 ;test.c: 252: && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u5931
-	goto	u5930
-u5931:
+	goto	u5991
+	goto	u5990
+u5991:
 	goto	l616
-u5930:
+u5990:
 	
-l6479:; BSR set to: 0
+l6544:; BSR set to: 0
 
 	lfsr	2,(c:_Test)+02h
 	movff	postinc2,??_test_process+0+0
@@ -6710,14 +6714,14 @@ l6479:; BSR set to: 0
 	movlw	01h
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5941
-	goto	u5940
-u5941:
+	goto	u6001
+	goto	u6000
+u6001:
 	goto	l616
-u5940:
+u6000:
 	line	254
 	
-l6481:; BSR set to: 0
+l6546:; BSR set to: 0
 
 ;test.c: 253: {
 ;test.c: 254: if (++Test.Cpt > 31) {Test.Step = 0x0E;}
@@ -6726,13 +6730,13 @@ l6481:; BSR set to: 0
 
 	movlw	(020h-1)
 	cpfsgt	indf2
-	goto	u5951
-	goto	u5950
-u5951:
-	goto	l6485
-u5950:
+	goto	u6011
+	goto	u6010
+u6011:
+	goto	l6550
+u6010:
 	
-l6483:; BSR set to: 0
+l6548:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_test_process+0+0)&0ffh
@@ -6740,13 +6744,13 @@ l6483:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6487
+	goto	l6552
 	line	255
 	
 l605:; BSR set to: 0
 
 	
-l6485:; BSR set to: 0
+l6550:; BSR set to: 0
 
 ;test.c: 255: else {Test.Step = 0x0A;}
 	movlb	0	; () banked
@@ -6755,13 +6759,13 @@ l6485:; BSR set to: 0
 	movwf	((c:_Test)),c
 	movlb	0	; () banked
 	movf	(??_test_process+0+0)&0ffh,w
-	goto	l6487
+	goto	l6552
 	
 l606:; BSR set to: 0
 
 	line	256
 	
-l6487:; BSR set to: 0
+l6552:; BSR set to: 0
 
 ;test.c: 256: check_comutest(0);
 	movlw	(0)&0ffh
@@ -6769,7 +6773,7 @@ l6487:; BSR set to: 0
 	call	_check_comutest
 	line	257
 	
-l6489:
+l6554:
 ;test.c: 257: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
@@ -6787,18 +6791,18 @@ l604:
 l607:
 	line	261
 	
-l6491:
+l6556:
 ;test.c: 261: if (Test.Cpt != 0)
 	movf	(0+((c:_Test)+01h)),c,w
 	btfsc	status,2
-	goto	u5961
-	goto	u5960
-u5961:
-	goto	l6495
-u5960:
+	goto	u6021
+	goto	u6020
+u6021:
+	goto	l6560
+u6020:
 	line	263
 	
-l6493:
+l6558:
 ;test.c: 262: {
 ;test.c: 263: ecran_print_num(Test.Cpt);
 	movf	(0+((c:_Test)+01h)),c,w
@@ -6812,7 +6816,7 @@ l6493:
 l608:
 	line	267
 	
-l6495:
+l6560:
 ;test.c: 265: else
 ;test.c: 266: {
 ;test.c: 267: Ecran.Digit[2] = 0;
@@ -6860,7 +6864,7 @@ l609:
 	movf	(??_test_process+0+0)&0ffh,w
 	line	274
 	
-l6497:; BSR set to: 0
+l6562:; BSR set to: 0
 
 ;test.c: 274: Ecran.Digits = Ecran.Digit;
 	movlb	0	; () banked
@@ -6876,7 +6880,7 @@ l6497:; BSR set to: 0
 
 	line	275
 	
-l6499:; BSR set to: 0
+l6564:; BSR set to: 0
 
 ;test.c: 275: Test.Step = 0x0F;
 	movlb	0	; () banked
@@ -6897,14 +6901,14 @@ l610:; BSR set to: 0
 ;test.c: 278: if (Bouton[Bp_IdTest].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u5971
-	goto	u5970
-u5971:
+	goto	u6031
+	goto	u6030
+u6031:
 	goto	l616
-u5970:
+u6030:
 	line	280
 	
-l6501:; BSR set to: 0
+l6566:; BSR set to: 0
 
 ;test.c: 279: {
 ;test.c: 280: Test.Step = 0x10;
@@ -6916,7 +6920,7 @@ l6501:; BSR set to: 0
 	movf	(??_test_process+0+0)&0ffh,w
 	line	282
 	
-l6503:; BSR set to: 0
+l6568:; BSR set to: 0
 
 ;test.c: 282: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
@@ -6937,7 +6941,7 @@ l612:; BSR set to: 0
 
 	line	286
 	
-l6505:; BSR set to: 0
+l6570:; BSR set to: 0
 
 ;test.c: 286: if ((((unsigned short) (Cptms - Test.Time) > 1000) ? 1 : 0))
 	lfsr	2,(c:_Test)+02h
@@ -6960,14 +6964,14 @@ l6505:; BSR set to: 0
 	movlw	03h
 	subwfb	(??_test_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5981
-	goto	u5980
-u5981:
+	goto	u6041
+	goto	u6040
+u6041:
 	goto	l616
-u5980:
+u6040:
 	line	288
 	
-l6507:; BSR set to: 0
+l6572:; BSR set to: 0
 
 ;test.c: 287: {
 ;test.c: 288: Test.Step = 0x11;
@@ -6979,7 +6983,7 @@ l6507:; BSR set to: 0
 	movf	(??_test_process+0+0)&0ffh,w
 	line	290
 	
-l6509:; BSR set to: 0
+l6574:; BSR set to: 0
 
 ;test.c: 290: ecran_wait();
 	call	_ecran_wait	;wreg free
@@ -7000,14 +7004,14 @@ l614:; BSR set to: 0
 ;test.c: 294: if (Bouton[Bp_IdTest].State == 1)
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+05h))&0ffh,1
-	goto	u5991
-	goto	u5990
-u5991:
+	goto	u6051
+	goto	u6050
+u6051:
 	goto	l616
-u5990:
+u6050:
 	line	296
 	
-l6511:; BSR set to: 0
+l6576:; BSR set to: 0
 
 ;test.c: 295: {
 ;test.c: 296: Micro.Phase = 0x00;
@@ -7028,7 +7032,7 @@ l615:; BSR set to: 0
 	goto	l616
 	line	299
 	
-l6513:; BSR set to: 0
+l6578:; BSR set to: 0
 
 ;test.c: 299: }
 	goto	l616
@@ -7037,7 +7041,7 @@ l6513:; BSR set to: 0
 l563:; BSR set to: 0
 
 	
-l6515:; BSR set to: 0
+l6580:; BSR set to: 0
 
 	movf	((c:_Test)),c,w
 	; Switch size 1, requested type "space"
@@ -7052,49 +7056,49 @@ l6515:; BSR set to: 0
 	goto	l564
 	xorlw	2^1	; case 2
 	skipnz
-	goto	l6345
+	goto	l6410
 	xorlw	3^2	; case 3
 	skipnz
 	goto	l568
 	xorlw	4^3	; case 4
 	skipnz
-	goto	l6377
+	goto	l6442
 	xorlw	5^4	; case 5
 	skipnz
-	goto	l6389
+	goto	l6454
 	xorlw	6^5	; case 6
 	skipnz
-	goto	l6405
+	goto	l6470
 	xorlw	7^6	; case 7
 	skipnz
 	goto	l584
 	xorlw	8^7	; case 8
 	skipnz
-	goto	l6429
+	goto	l6494
 	xorlw	9^8	; case 9
 	skipnz
 	goto	l591
 	xorlw	10^9	; case 10
 	skipnz
-	goto	l6443
+	goto	l6508
 	xorlw	11^10	; case 11
 	skipnz
-	goto	l6451
+	goto	l6516
 	xorlw	12^11	; case 12
 	skipnz
-	goto	l6467
+	goto	l6532
 	xorlw	13^12	; case 13
 	skipnz
 	goto	l603
 	xorlw	14^13	; case 14
 	skipnz
-	goto	l6491
+	goto	l6556
 	xorlw	15^14	; case 15
 	skipnz
 	goto	l610
 	xorlw	16^15	; case 16
 	skipnz
-	goto	l6505
+	goto	l6570
 	xorlw	17^16	; case 17
 	skipnz
 	goto	l614
@@ -7165,7 +7169,7 @@ _check_UInfla:
 	dw	0FFFFh
 	line	82
 	
-l6041:
+l6086:
 ;test.c: 82: unsigned short temp = 0;
 	movlw	high(0)
 	movlb	0	; () banked
@@ -7176,18 +7180,18 @@ l6041:
 	movwf	((check_UInfla@temp))&0ffh
 	line	84
 	
-l6043:; BSR set to: 0
+l6088:; BSR set to: 0
 
 ;test.c: 84: if (PORTCbits.RC5 == 1)
 	btfss	((c:3970)),c,5	;volatile
-	goto	u5351
-	goto	u5350
-u5351:
-	goto	l6047
-u5350:
+	goto	u5391
+	goto	u5390
+u5391:
+	goto	l6092
+u5390:
 	line	86
 	
-l6045:; BSR set to: 0
+l6090:; BSR set to: 0
 
 ;test.c: 85: {
 ;test.c: 86: PORTBbits.RB1 = 1;
@@ -7195,14 +7199,14 @@ l6045:; BSR set to: 0
 	line	87
 ;test.c: 87: PORTAbits.RA5 = 1;
 	bsf	((c:3968)),c,5	;volatile
-	goto	l6047
+	goto	l6092
 	line	88
 	
 l559:; BSR set to: 0
 
 	line	90
 	
-l6047:; BSR set to: 0
+l6092:; BSR set to: 0
 
 ;test.c: 88: }
 ;test.c: 90: temp = ana_read(1);
@@ -7215,13 +7219,13 @@ l6047:; BSR set to: 0
 	movff	1+?_ana_read,(check_UInfla@temp+1)
 	line	92
 	
-l6049:; BSR set to: 0
+l6094:; BSR set to: 0
 
 ;test.c: 92: PORTBbits.RB1 = 0;
 	bcf	((c:3969)),c,1	;volatile
 	line	93
 	
-l6051:; BSR set to: 0
+l6096:; BSR set to: 0
 
 ;test.c: 93: PORTAbits.RA5 = 0;
 	bcf	((c:3968)),c,5	;volatile
@@ -7309,7 +7313,7 @@ l6051:; BSR set to: 0
 	movff	??_check_UInfla+0+1,(?_check_UInfla+1)
 	goto	l560
 	
-l6053:
+l6098:
 	line	100
 	
 l560:
@@ -7369,7 +7373,7 @@ _check_UAlim:
 	dw	0FFFFh
 	line	66
 	
-l6023:
+l6068:
 ;test.c: 66: unsigned short temp = 0;
 	movlw	high(0)
 	movlb	0	; () banked
@@ -7380,19 +7384,19 @@ l6023:
 	movwf	((check_UAlim@temp))&0ffh
 	line	68
 	
-l6025:; BSR set to: 0
+l6070:; BSR set to: 0
 
 ;test.c: 68: PORTBbits.RB1 = 0;
 	bcf	((c:3969)),c,1	;volatile
 	line	69
 	
-l6027:; BSR set to: 0
+l6072:; BSR set to: 0
 
 ;test.c: 69: PORTAbits.RA5 = 0;
 	bcf	((c:3968)),c,5	;volatile
 	line	71
 	
-l6029:; BSR set to: 0
+l6074:; BSR set to: 0
 
 ;test.c: 71: temp = ana_read(0);
 	movlw	(0)&0ffh
@@ -7404,7 +7408,7 @@ l6029:; BSR set to: 0
 	movff	1+?_ana_read,(check_UAlim@temp+1)
 	line	73
 	
-l6031:; BSR set to: 0
+l6076:; BSR set to: 0
 
 ;test.c: 73: Test.U_Alim = (float) temp * 0.0049f;
 	movff	(check_UAlim@temp),(___lwtoft@c)
@@ -7432,7 +7436,7 @@ l6031:; BSR set to: 0
 	movff	2+?___ftmul,2+((c:_Test)+04h)
 	line	74
 	
-l6033:
+l6078:
 ;test.c: 74: Test.U_Alim = Test.U_Alim * 11.62f;
 	movff	0+((c:_Test)+04h),(___ftmul@f1)
 	movff	1+((c:_Test)+04h),(___ftmul@f1+1)
@@ -7456,7 +7460,7 @@ l6033:
 	movff	2+?___ftmul,2+((c:_Test)+04h)
 	line	75
 	
-l6035:
+l6080:
 ;test.c: 75: Test.U_Alim = Test.U_Alim * 100.0f;
 	movff	0+((c:_Test)+04h),(___ftmul@f1)
 	movff	1+((c:_Test)+04h),(___ftmul@f1+1)
@@ -7480,7 +7484,7 @@ l6035:
 	movff	2+?___ftmul,2+((c:_Test)+04h)
 	line	77
 	
-l6037:
+l6082:
 ;test.c: 77: return (unsigned short) Test.U_Alim;
 	movff	0+((c:_Test)+04h),(___fttol@f1)
 	movff	1+((c:_Test)+04h),(___fttol@f1+1)
@@ -7495,7 +7499,7 @@ l6037:
 	movff	??_check_UAlim+0+1,(?_check_UAlim+1)
 	goto	l556
 	
-l6039:
+l6084:
 	line	78
 	
 l556:
@@ -7513,7 +7517,7 @@ GLOBAL	__end_of_check_UAlim
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
-;;		None
+;;  tempTime        2    9[BANK0 ] unsigned short 
 ;; Return value:  Size  Location     Type
 ;;		None               void
 ;; Registers used:
@@ -7524,10 +7528,10 @@ GLOBAL	__end_of_check_UAlim
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
 ;;      Params:         0       0       0       0       0       0       0
-;;      Locals:         0       0       0       0       0       0       0
-;;      Temps:          0       1       0       0       0       0       0
-;;      Totals:         0       1       0       0       0       0       0
-;;Total ram usage:        1 bytes
+;;      Locals:         0       4       0       0       0       0       0
+;;      Temps:          0       2       0       0       0       0       0
+;;      Totals:         0       6       0       0       0       0       0
+;;Total ram usage:        6 bytes
 ;; Hardware stack levels used:    1
 ;; Hardware stack levels required when called:    7
 ;; This function calls:
@@ -7556,9 +7560,9 @@ _micro_wait:
 	dw	0FFFFh
 	line	93
 	
-l6311:
+l6356:
 ;micro.c: 93: switch (Micro.Step)
-	goto	l6339
+	goto	l6404
 	line	95
 ;micro.c: 94: {
 ;micro.c: 95: case 0x00:
@@ -7568,14 +7572,14 @@ l815:
 ;micro.c: 96: if (Bouton[Bp_IdTest].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u5681
-	goto	u5680
-u5681:
-	goto	l828
-u5680:
+	goto	u5721
+	goto	u5720
+u5721:
+	goto	l833
+u5720:
 	line	98
 	
-l6313:; BSR set to: 0
+l6358:; BSR set to: 0
 
 ;micro.c: 97: {
 ;micro.c: 98: Micro.Step = 0x01;
@@ -7587,18 +7591,18 @@ l6313:; BSR set to: 0
 	movf	(??_micro_wait+0+0)&0ffh,w
 	line	99
 	
-l6315:; BSR set to: 0
+l6360:; BSR set to: 0
 
 ;micro.c: 99: ecran_wait();
 	call	_ecran_wait	;wreg free
-	goto	l828
+	goto	l833
 	line	100
 	
 l816:
 	line	101
 ;micro.c: 100: }
 ;micro.c: 101: break;
-	goto	l828
+	goto	l833
 	line	102
 ;micro.c: 102: case 0x01:
 	
@@ -7607,14 +7611,14 @@ l818:
 ;micro.c: 103: if (Bouton[Bp_IdTest].State == 1)
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+05h))&0ffh,1
-	goto	u5691
-	goto	u5690
-u5691:
-	goto	l828
-u5690:
+	goto	u5731
+	goto	u5730
+u5731:
+	goto	l833
+u5730:
 	line	105
 	
-l6317:; BSR set to: 0
+l6362:; BSR set to: 0
 
 ;micro.c: 104: {
 ;micro.c: 105: Micro.Step = 0x03;
@@ -7624,7 +7628,7 @@ l6317:; BSR set to: 0
 	movwf	(0+((c:_Micro)+03h)),c
 	movlb	0	; () banked
 	movf	(??_micro_wait+0+0)&0ffh,w
-	goto	l828
+	goto	l833
 	line	106
 	
 l819:; BSR set to: 0
@@ -7632,7 +7636,7 @@ l819:; BSR set to: 0
 	line	107
 ;micro.c: 106: }
 ;micro.c: 107: break;
-	goto	l828
+	goto	l833
 	line	108
 ;micro.c: 108: case 0x03:
 	
@@ -7641,14 +7645,14 @@ l820:
 ;micro.c: 109: if (Bouton[Bp_IdTest].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u5701
-	goto	u5700
-u5701:
+	goto	u5741
+	goto	u5740
+u5741:
 	goto	l821
-u5700:
+u5740:
 	line	111
 	
-l6319:; BSR set to: 0
+l6364:; BSR set to: 0
 
 ;micro.c: 110: {
 ;micro.c: 111: Micro.Phase = 0x01;
@@ -7668,7 +7672,7 @@ l6319:; BSR set to: 0
 	movf	(??_micro_wait+0+0)&0ffh,w
 	line	113
 	
-l6321:; BSR set to: 0
+l6366:; BSR set to: 0
 
 ;micro.c: 113: check_comutest(0);
 	movlw	(0)&0ffh
@@ -7676,12 +7680,12 @@ l6321:; BSR set to: 0
 	call	_check_comutest
 	line	114
 	
-l6323:
+l6368:
 ;micro.c: 114: ecran_blank();
 	call	_ecran_blank	;wreg free
 	line	115
 ;micro.c: 115: }
-	goto	l6331
+	goto	l6376
 	line	116
 	
 l821:; BSR set to: 0
@@ -7689,14 +7693,14 @@ l821:; BSR set to: 0
 ;micro.c: 116: else if (Bouton[Bp_On].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+02h))&0ffh,1
-	goto	u5711
-	goto	u5710
-u5711:
-	goto	l6331
-u5710:
+	goto	u5751
+	goto	u5750
+u5751:
+	goto	l6376
+u5750:
 	line	118
 	
-l6325:; BSR set to: 0
+l6370:; BSR set to: 0
 
 ;micro.c: 117: {
 ;micro.c: 118: Micro.Phase = 0x02;
@@ -7718,7 +7722,7 @@ l6325:; BSR set to: 0
 	movf	(??_micro_wait+0+0)&0ffh,w
 	line	120
 	
-l6327:; BSR set to: 0
+l6372:; BSR set to: 0
 
 ;micro.c: 120: check_comutest(1);
 	movlw	(01h)&0ffh
@@ -7726,37 +7730,44 @@ l6327:; BSR set to: 0
 	call	_check_comutest
 	line	121
 	
-l6329:
+l6374:
 ;micro.c: 121: ecran_blank();
 	call	_ecran_blank	;wreg free
-	goto	l6331
+	goto	l6376
 	line	122
 	
 l823:
-	goto	l6331
+	goto	l6376
 	line	124
 	
 l822:
 	
-l6331:
+l6376:
 ;micro.c: 122: }
 ;micro.c: 124: if (Bouton[Bp_Start].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+0Bh))&0ffh,1
-	goto	u5721
-	goto	u5720
-u5721:
-	goto	l828
-u5720:
+	goto	u5761
+	goto	u5760
+u5761:
+	goto	l833
+u5760:
 	line	126
 	
-l6333:; BSR set to: 0
+l6378:; BSR set to: 0
 
 ;micro.c: 125: {
-;micro.c: 126: ecran_blank();
-	call	_ecran_blank	;wreg free
+;micro.c: 126: unsigned short tempTime = Cptms;
+	movff	(c:_Cptms),(micro_wait@tempTime)	;volatile
+	movff	(c:_Cptms+1),(micro_wait@tempTime+1)	;volatile
 	line	128
-;micro.c: 128: ecran_print_one_char(0, 'S');
+	
+l6380:; BSR set to: 0
+
+;micro.c: 128: ecran_blank();
+	call	_ecran_blank	;wreg free
+	line	130
+;micro.c: 130: ecran_print_one_char(0, 'S');
 	movlb	0	; () banked
 	movwf	(??_micro_wait+0+0)&0ffh
 	movlw	low(053h)
@@ -7768,45 +7779,169 @@ l6333:; BSR set to: 0
 	movlw	(0)&0ffh
 	
 	call	_ecran_print_one_char
-	line	130
-;micro.c: 130: while (PORTBbits.RB0 == 0);
-	goto	l825
-	
-l826:
-	
-l825:
-	btfss	((c:3969)),c,0	;volatile
-	goto	u5731
-	goto	u5730
-u5731:
-	goto	l825
-u5730:
-	goto	l6335
-	
-l827:
 	line	132
 	
-l6335:
-;micro.c: 132: ecran_wait();
-	call	_ecran_wait	;wreg free
-	goto	l828
-	line	133
+l6382:
+;micro.c: 132: Micro.State = 0x08;
+	movlb	0	; () banked
+	movwf	(??_micro_wait+0+0)&0ffh
+	movlw	low(08h)
+	movwf	(0+((c:_Micro)+04h)),c
+	movlb	0	; () banked
+	movf	(??_micro_wait+0+0)&0ffh,w
+	line	134
+;micro.c: 134: while (PORTBbits.RB0 == 0)
+	goto	l6396
 	
-l824:
-	line	135
-;micro.c: 133: }
-;micro.c: 135: break;
-	goto	l828
+l826:; BSR set to: 0
+
 	line	136
 	
-l6337:
-;micro.c: 136: }
-	goto	l828
+l6384:; BSR set to: 0
+
+;micro.c: 135: {
+;micro.c: 136: if ((((unsigned short) (Cptms - tempTime) > 1000) ? 1 : 0))
+	movlb	0	; () banked
+	movff	(micro_wait@tempTime),??_micro_wait+0+0
+	movlb	0	; () banked
+	movff	(micro_wait@tempTime+1),??_micro_wait+0+0+1
+	movlb	0	; () banked
+	comf	(??_micro_wait+0+0)&0ffh
+	comf	(??_micro_wait+0+1)&0ffh
+	infsnz	(??_micro_wait+0+0)&0ffh
+	incf	(??_micro_wait+0+1)&0ffh
+	movf	((c:_Cptms)),c,w	;volatile
+	movlb	0	; () banked
+	addwf	(??_micro_wait+0+0)&0ffh
+	movf	((c:_Cptms+1)),c,w	;volatile
+	movlb	0	; () banked
+	addwfc	(??_micro_wait+0+1)&0ffh
+	movlw	0E9h
+	movlb	0	; () banked
+	subwf	(??_micro_wait+0+0)&0ffh,w
+	movlw	03h
+	subwfb	(??_micro_wait+0+1)&0ffh,w
+	btfss	status,0
+	goto	u5771
+	goto	u5770
+u5771:
+	goto	l6396
+u5770:
+	line	138
+	
+l6386:; BSR set to: 0
+
+;micro.c: 137: {
+;micro.c: 138: tempTime = Cptms;
+	movff	(c:_Cptms),(micro_wait@tempTime)	;volatile
+	movff	(c:_Cptms+1),(micro_wait@tempTime+1)	;volatile
+	line	139
+	
+l6388:; BSR set to: 0
+
+;micro.c: 139: Micro.State = ((Micro.State == 0x08) ? 0x00 : 0x08);
+	movf	(0+((c:_Micro)+04h)),c,w
+	xorlw	8
+
+	btfsc	status,2
+	goto	u5781
+	goto	u5780
+u5781:
+	goto	l6392
+u5780:
+	
+l6390:; BSR set to: 0
+
+	movlw	high(08h)
+	movlb	0	; () banked
+	movlb	0	; () banked
+	movwf	((_micro_wait$2387+1))&0ffh
+	movlw	low(08h)
+	movlb	0	; () banked
+	movwf	((_micro_wait$2387))&0ffh
+	goto	l6394
+	
+l829:; BSR set to: 0
+
+	
+l6392:; BSR set to: 0
+
+	movlw	high(0)
+	movlb	0	; () banked
+	movlb	0	; () banked
+	movwf	((_micro_wait$2387+1))&0ffh
+	movlw	low(0)
+	movlb	0	; () banked
+	movwf	((_micro_wait$2387))&0ffh
+	goto	l6394
+	
+l831:; BSR set to: 0
+
+	
+l6394:; BSR set to: 0
+
+	movff	(_micro_wait$2387),0+((c:_Micro)+04h)
+	goto	l6396
+	line	140
+	
+l827:; BSR set to: 0
+
+	goto	l6396
+	line	141
+	
+l825:; BSR set to: 0
+
+	line	134
+	
+l6396:; BSR set to: 0
+
+	btfss	((c:3969)),c,0	;volatile
+	goto	u5791
+	goto	u5790
+u5791:
+	goto	l6384
+u5790:
+	goto	l6398
+	
+l832:; BSR set to: 0
+
+	line	143
+	
+l6398:; BSR set to: 0
+
+;micro.c: 140: }
+;micro.c: 141: };
+;micro.c: 143: Micro.State = 0x00;
+	movlb	0	; () banked
+	movwf	(??_micro_wait+0+0)&0ffh
+	movlw	low(0)
+	movwf	(0+((c:_Micro)+04h)),c
+	movlb	0	; () banked
+	movf	(??_micro_wait+0+0)&0ffh,w
+	line	145
+	
+l6400:; BSR set to: 0
+
+;micro.c: 145: ecran_wait();
+	call	_ecran_wait	;wreg free
+	goto	l833
+	line	146
+	
+l824:
+	line	148
+;micro.c: 146: }
+;micro.c: 148: break;
+	goto	l833
+	line	149
+	
+l6402:
+;micro.c: 149: }
+	goto	l833
 	line	93
 	
 l814:
 	
-l6339:
+l6404:
 	movf	(0+((c:_Micro)+03h)),c,w
 	; Switch size 1, requested type "space"
 ; Number of cases is 3, Range of values is 0 to 3
@@ -7824,14 +7959,14 @@ l6339:
 	xorlw	3^1	; case 3
 	skipnz
 	goto	l820
-	goto	l828
+	goto	l833
 
-	line	136
+	line	149
 	
 l817:
-	line	137
+	line	150
 	
-l828:
+l833:
 	return
 	dw	0FFFFh; errata NOP
 	opt stack 0
@@ -7885,7 +8020,7 @@ _micro_config:
 	dw	0FFFFh
 	line	43
 	
-l6187:
+l6232:
 ;micro.c: 43: T0CON = 0x88;
 	movlw	low(088h)
 	movwf	((c:4053)),c	;volatile
@@ -7907,33 +8042,33 @@ l6187:
 	movwf	((c:4033)),c	;volatile
 	line	82
 	
-l6189:
+l6234:
 ;micro.c: 82: TMR0IP = 1;
 	bsf	c:(32650/8),(32650)&7	;volatile
 	line	83
 	
-l6191:
+l6236:
 ;micro.c: 83: TMR0IE = 1;
 	bsf	c:(32661/8),(32661)&7	;volatile
 	line	84
 	
-l6193:
+l6238:
 ;micro.c: 84: IPEN = 1;
 	bsf	c:(32391/8),(32391)&7	;volatile
 	line	85
 	
-l6195:
+l6240:
 ;micro.c: 85: GIE = 1;
 	bsf	c:(32663/8),(32663)&7	;volatile
 	line	87
 	
-l6197:
+l6242:
 ;micro.c: 87: Micro.Time = Cptms;
 	movff	(c:_Cptms),(c:_Micro)	;volatile
 	movff	(c:_Cptms+1),(c:_Micro+1)	;volatile
 	line	88
 	
-l6199:
+l6244:
 ;micro.c: 88: Ecran.tRate = 255;
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -7997,7 +8132,7 @@ _hw_config:; BSR set to: 0
 	dw	0FFFFh
 	line	6
 	
-l6119:
+l6164:
 ;hardware.c: 6: ADCON1 = 0x07;
 	movlw	low(07h)
 	movwf	((c:4033)),c	;volatile
@@ -8007,32 +8142,32 @@ l6119:
 	movwf	((c:3968)),c	;volatile
 	line	12
 	
-l6121:
+l6166:
 ;hardware.c: 12: TRISAbits.TRISA0 = 1;
 	bsf	((c:3986)),c,0	;volatile
 	line	13
 	
-l6123:
+l6168:
 ;hardware.c: 13: TRISAbits.TRISA1 = 1;
 	bsf	((c:3986)),c,1	;volatile
 	line	14
 	
-l6125:
+l6170:
 ;hardware.c: 14: TRISAbits.TRISA2 = 0;
 	bcf	((c:3986)),c,2	;volatile
 	line	15
 	
-l6127:
+l6172:
 ;hardware.c: 15: TRISAbits.TRISA3 = 1;
 	bsf	((c:3986)),c,3	;volatile
 	line	16
 	
-l6129:
+l6174:
 ;hardware.c: 16: TRISAbits.TRISA4 = 1;
 	bsf	((c:3986)),c,4	;volatile
 	line	17
 	
-l6131:
+l6176:
 ;hardware.c: 17: TRISAbits.TRISA5 = 0;
 	bcf	((c:3986)),c,5	;volatile
 	line	20
@@ -8041,42 +8176,42 @@ l6131:
 	movwf	((c:3969)),c	;volatile
 	line	22
 	
-l6133:
+l6178:
 ;hardware.c: 22: TRISBbits.TRISB0 = 1;
 	bsf	((c:3987)),c,0	;volatile
 	line	23
 	
-l6135:
+l6180:
 ;hardware.c: 23: TRISBbits.TRISB1 = 0;
 	bcf	((c:3987)),c,1	;volatile
 	line	24
 	
-l6137:
+l6182:
 ;hardware.c: 24: TRISBbits.TRISB2 = 0;
 	bcf	((c:3987)),c,2	;volatile
 	line	25
 	
-l6139:
+l6184:
 ;hardware.c: 25: TRISBbits.TRISB3 = 0;
 	bcf	((c:3987)),c,3	;volatile
 	line	26
 	
-l6141:
+l6186:
 ;hardware.c: 26: TRISBbits.TRISB4 = 0;
 	bcf	((c:3987)),c,4	;volatile
 	line	27
 	
-l6143:
+l6188:
 ;hardware.c: 27: TRISBbits.TRISB5 = 0;
 	bcf	((c:3987)),c,5	;volatile
 	line	28
 	
-l6145:
+l6190:
 ;hardware.c: 28: TRISBbits.TRISB6 = 1;
 	bsf	((c:3987)),c,6	;volatile
 	line	29
 	
-l6147:
+l6192:
 ;hardware.c: 29: TRISBbits.TRISB7 = 1;
 	bsf	((c:3987)),c,7	;volatile
 	line	32
@@ -8085,42 +8220,42 @@ l6147:
 	movwf	((c:3970)),c	;volatile
 	line	34
 	
-l6149:
+l6194:
 ;hardware.c: 34: TRISCbits.TRISC0 = 0;
 	bcf	((c:3988)),c,0	;volatile
 	line	35
 	
-l6151:
+l6196:
 ;hardware.c: 35: TRISCbits.TRISC1 = 0;
 	bcf	((c:3988)),c,1	;volatile
 	line	36
 	
-l6153:
+l6198:
 ;hardware.c: 36: TRISCbits.TRISC2 = 0;
 	bcf	((c:3988)),c,2	;volatile
 	line	37
 	
-l6155:
+l6200:
 ;hardware.c: 37: TRISCbits.TRISC3 = 0;
 	bcf	((c:3988)),c,3	;volatile
 	line	38
 	
-l6157:
+l6202:
 ;hardware.c: 38: TRISCbits.TRISC4 = 0;
 	bcf	((c:3988)),c,4	;volatile
 	line	39
 	
-l6159:
+l6204:
 ;hardware.c: 39: TRISCbits.TRISC5 = 1;
 	bsf	((c:3988)),c,5	;volatile
 	line	40
 	
-l6161:
+l6206:
 ;hardware.c: 40: TRISCbits.TRISC6 = 0;
 	bcf	((c:3988)),c,6	;volatile
 	line	41
 	
-l6163:
+l6208:
 ;hardware.c: 41: TRISCbits.TRISC7 = 1;
 	bsf	((c:3988)),c,7	;volatile
 	line	44
@@ -8129,42 +8264,42 @@ l6163:
 	movwf	((c:3971)),c	;volatile
 	line	46
 	
-l6165:
+l6210:
 ;hardware.c: 46: TRISDbits.TRISD0 = 0;
 	bcf	((c:3989)),c,0	;volatile
 	line	47
 	
-l6167:
+l6212:
 ;hardware.c: 47: TRISDbits.TRISD1 = 0;
 	bcf	((c:3989)),c,1	;volatile
 	line	48
 	
-l6169:
+l6214:
 ;hardware.c: 48: TRISDbits.TRISD2 = 0;
 	bcf	((c:3989)),c,2	;volatile
 	line	49
 	
-l6171:
+l6216:
 ;hardware.c: 49: TRISDbits.TRISD3 = 0;
 	bcf	((c:3989)),c,3	;volatile
 	line	50
 	
-l6173:
+l6218:
 ;hardware.c: 50: TRISDbits.TRISD4 = 0;
 	bcf	((c:3989)),c,4	;volatile
 	line	51
 	
-l6175:
+l6220:
 ;hardware.c: 51: TRISDbits.TRISD5 = 0;
 	bcf	((c:3989)),c,5	;volatile
 	line	52
 	
-l6177:
+l6222:
 ;hardware.c: 52: TRISDbits.TRISD6 = 0;
 	bcf	((c:3989)),c,6	;volatile
 	line	53
 	
-l6179:
+l6224:
 ;hardware.c: 53: TRISDbits.TRISD7 = 0;
 	bcf	((c:3989)),c,7	;volatile
 	line	56
@@ -8173,17 +8308,17 @@ l6179:
 	movwf	((c:3972)),c	;volatile
 	line	58
 	
-l6181:
+l6226:
 ;hardware.c: 58: TRISEbits.TRISE0 = 1;
 	bsf	((c:3990)),c,0	;volatile
 	line	59
 	
-l6183:
+l6228:
 ;hardware.c: 59: TRISEbits.TRISE1 = 1;
 	bsf	((c:3990)),c,1	;volatile
 	line	60
 	
-l6185:
+l6230:
 ;hardware.c: 60: TRISEbits.TRISE2 = 0;
 	bcf	((c:3990)),c,2	;volatile
 	line	61
@@ -8245,38 +8380,38 @@ _feu_process:
 	dw	0FFFFh
 	line	91
 	
-l6563:
+l6628:
 ;feu.c: 91: switch (Feu.Step)
-	goto	l6625
+	goto	l6690
 	line	93
 ;feu.c: 92: {
 ;feu.c: 93: case 0x00:
 	
-l1126:; BSR set to: 0
+l1131:; BSR set to: 0
 
 	line	95
 ;feu.c: 95: if (Bouton[Bp_Start].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+0Bh))&0ffh,1
-	goto	u6061
-	goto	u6060
-u6061:
-	goto	l1151
-u6060:
+	goto	u6121
+	goto	u6120
+u6121:
+	goto	l1156
+u6120:
 	line	97
 	
-l6565:; BSR set to: 0
+l6630:; BSR set to: 0
 
 ;feu.c: 96: {
 ;feu.c: 97: if (Micro.Mods == 0) {Feu.Step = 0x01;}
 	tstfsz	(0+((c:_Micro)+05h)),c
-	goto	u6071
-	goto	u6070
-u6071:
-	goto	l6569
-u6070:
+	goto	u6131
+	goto	u6130
+u6131:
+	goto	l6634
+u6130:
 	
-l6567:; BSR set to: 0
+l6632:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_process+0+0)&0ffh
@@ -8286,13 +8421,13 @@ l6567:; BSR set to: 0
 	movwf	((_Feu))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
-	goto	l1129
+	goto	l1134
 	line	98
 	
-l1128:; BSR set to: 0
+l1133:; BSR set to: 0
 
 	
-l6569:; BSR set to: 0
+l6634:; BSR set to: 0
 
 ;feu.c: 98: else {Feu.Step = 0x03;}
 	movlb	0	; () banked
@@ -8304,7 +8439,7 @@ l6569:; BSR set to: 0
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
 	
-l1129:; BSR set to: 0
+l1134:; BSR set to: 0
 
 	line	100
 ;feu.c: 100: Micro.State = 0x02;
@@ -8316,14 +8451,14 @@ l1129:; BSR set to: 0
 	movf	(??_feu_process+0+0)&0ffh,w
 	line	102
 	
-l6571:; BSR set to: 0
+l6636:; BSR set to: 0
 
 ;feu.c: 102: Decompte = 50;
 	movlw	low(032h)
 	movwf	((c:_Decompte)),c	;volatile
 	line	103
 	
-l6573:; BSR set to: 0
+l6638:; BSR set to: 0
 
 ;feu.c: 103: Cpt1Sur20s = 0;
 	movlw	high(0)
@@ -8342,7 +8477,7 @@ l6573:; BSR set to: 0
 	movf	(??_feu_process+0+0)&0ffh,w
 	line	107
 	
-l6575:; BSR set to: 0
+l6640:; BSR set to: 0
 
 ;feu.c: 107: Feu.CanStopStart = 0;
 	movlb	0	; () banked
@@ -8350,28 +8485,28 @@ l6575:; BSR set to: 0
 	bcf	(0+(_Feu+0Dh))&0ffh,0
 	line	108
 	
-l6577:; BSR set to: 0
+l6642:; BSR set to: 0
 
 ;feu.c: 108: Feu.TimeStart = Cptms;
 	movff	(c:_Cptms),0+(_Feu+09h)	;volatile
 	movff	(c:_Cptms+1),1+(_Feu+09h)	;volatile
-	goto	l1151
+	goto	l1156
 	line	109
 	
-l1127:; BSR set to: 0
+l1132:; BSR set to: 0
 
 	line	110
 ;feu.c: 109: }
 ;feu.c: 110: break;
-	goto	l1151
+	goto	l1156
 	line	111
 ;feu.c: 111: case 0x01 :
 	
-l1131:; BSR set to: 0
+l1136:; BSR set to: 0
 
 	line	113
 	
-l6579:; BSR set to: 0
+l6644:; BSR set to: 0
 
 ;feu.c: 113: Feu.NextOutput = Cf.Data[Feu.Cpt*3];
 	movlb	0	; () banked
@@ -8392,7 +8527,7 @@ l6579:; BSR set to: 0
 	movwf	(0+(_Feu+0Ch))&0ffh
 	line	115
 	
-l6581:; BSR set to: 0
+l6646:; BSR set to: 0
 
 ;feu.c: 115: if (feu_check_end() == 1) {Feu.Step = 0x08;}
 	call	_feu_check_end	;wreg free
@@ -8401,13 +8536,13 @@ l6581:; BSR set to: 0
 	movlb	0	; () banked
 	decf	((??_feu_process+0+0))&0ffh,w
 	btfss	status,2
-	goto	u6081
-	goto	u6080
-u6081:
-	goto	l6585
-u6080:
+	goto	u6141
+	goto	u6140
+u6141:
+	goto	l6650
+u6140:
 	
-l6583:; BSR set to: 0
+l6648:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_process+0+0)&0ffh
@@ -8417,14 +8552,14 @@ l6583:; BSR set to: 0
 	movwf	((_Feu))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
-	goto	l1151
+	goto	l1156
 	line	116
 	
-l1132:; BSR set to: 0
+l1137:; BSR set to: 0
 
 	line	119
 	
-l6585:; BSR set to: 0
+l6650:; BSR set to: 0
 
 ;feu.c: 116: else
 ;feu.c: 117: {
@@ -8479,7 +8614,7 @@ l6585:; BSR set to: 0
 	iorwf	(0+(_Feu+05h))&0ffh
 	line	122
 	
-l6587:; BSR set to: 0
+l6652:; BSR set to: 0
 
 ;feu.c: 122: Feu.Step = 0x02;
 	movlb	0	; () banked
@@ -8490,23 +8625,23 @@ l6587:; BSR set to: 0
 	movwf	((_Feu))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
-	goto	l1151
+	goto	l1156
 	line	123
 	
-l1133:; BSR set to: 0
+l1138:; BSR set to: 0
 
 	line	124
 ;feu.c: 123: }
 ;feu.c: 124: break;
-	goto	l1151
+	goto	l1156
 	line	125
 ;feu.c: 125: case 0x02:
 	
-l1134:; BSR set to: 0
+l1139:; BSR set to: 0
 
 	line	126
 	
-l6589:; BSR set to: 0
+l6654:; BSR set to: 0
 
 ;feu.c: 126: if (Cpt1Sur20s == Feu.TimeToFire)
 	movlb	0	; () banked
@@ -8519,14 +8654,14 @@ l6589:; BSR set to: 0
 	xorwf	indf2,w
 
 	btfss	status,2
-	goto	u6091
-	goto	u6090
-u6091:
-	goto	l1151
-u6090:
+	goto	u6151
+	goto	u6150
+u6151:
+	goto	l1156
+u6150:
 	line	128
 	
-l6591:; BSR set to: 0
+l6656:; BSR set to: 0
 
 ;feu.c: 127: {
 ;feu.c: 128: feu_tir(Feu.NextOutput);
@@ -8537,7 +8672,7 @@ l6591:; BSR set to: 0
 	call	_feu_tir
 	line	130
 	
-l6593:
+l6658:
 ;feu.c: 130: Feu.Step = 0x01;
 	movlb	0	; () banked
 	movwf	(??_feu_process+0+0)&0ffh
@@ -8547,30 +8682,30 @@ l6593:
 	movwf	((_Feu))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
-	goto	l1151
+	goto	l1156
 	line	131
 	
-l1135:; BSR set to: 0
+l1140:; BSR set to: 0
 
 	line	132
 ;feu.c: 131: }
 ;feu.c: 132: break;
-	goto	l1151
+	goto	l1156
 	line	133
 ;feu.c: 133: case 0x03:
 	
-l1136:; BSR set to: 0
+l1141:; BSR set to: 0
 
 	line	134
 ;feu.c: 134: if (Micro.Mod.P_0 == 1) {Feu.NextOutput = Feu.Cpt+1;}
 	btfss	(0+((c:_Micro)+05h)),c,0
-	goto	u6101
-	goto	u6100
-u6101:
-	goto	l1137
-u6100:
+	goto	u6161
+	goto	u6160
+u6161:
+	goto	l1142
+u6160:
 	
-l6595:; BSR set to: 0
+l6660:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -8578,20 +8713,20 @@ l6595:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	(0+(_Feu+0Ch))&0ffh
-	goto	l6599
+	goto	l6664
 	line	135
 	
-l1137:; BSR set to: 0
+l1142:; BSR set to: 0
 
 ;feu.c: 135: else if (Micro.Mod.P_00 == 1) {Feu.NextOutput = Cf.Data[Feu.Cpt*3];}
 	btfss	(0+((c:_Micro)+05h)),c,1
-	goto	u6111
-	goto	u6110
-u6111:
-	goto	l6599
-u6110:
+	goto	u6171
+	goto	u6170
+u6171:
+	goto	l6664
+u6170:
 	
-l6597:; BSR set to: 0
+l6662:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -8609,17 +8744,17 @@ l6597:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	(0+(_Feu+0Ch))&0ffh
-	goto	l6599
+	goto	l6664
 	
-l1139:; BSR set to: 0
+l1144:; BSR set to: 0
 
-	goto	l6599
+	goto	l6664
 	line	137
 	
-l1138:; BSR set to: 0
+l1143:; BSR set to: 0
 
 	
-l6599:; BSR set to: 0
+l6664:; BSR set to: 0
 
 ;feu.c: 137: if (feu_check_end() == 1) {Feu.Step = 0x08;}
 	call	_feu_check_end	;wreg free
@@ -8628,13 +8763,13 @@ l6599:; BSR set to: 0
 	movlb	0	; () banked
 	decf	((??_feu_process+0+0))&0ffh,w
 	btfss	status,2
-	goto	u6121
-	goto	u6120
-u6121:
-	goto	l6603
-u6120:
+	goto	u6181
+	goto	u6180
+u6181:
+	goto	l6668
+u6180:
 	
-l6601:; BSR set to: 0
+l6666:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_process+0+0)&0ffh
@@ -8644,13 +8779,13 @@ l6601:; BSR set to: 0
 	movwf	((_Feu))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
-	goto	l1151
+	goto	l1156
 	line	138
 	
-l1140:; BSR set to: 0
+l1145:; BSR set to: 0
 
 	
-l6603:; BSR set to: 0
+l6668:; BSR set to: 0
 
 ;feu.c: 138: else {Feu.Step = 0x04;}
 	movlb	0	; () banked
@@ -8661,30 +8796,30 @@ l6603:; BSR set to: 0
 	movwf	((_Feu))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
-	goto	l1151
+	goto	l1156
 	
-l1141:; BSR set to: 0
+l1146:; BSR set to: 0
 
 	line	139
 ;feu.c: 139: break;
-	goto	l1151
+	goto	l1156
 	line	140
 ;feu.c: 140: case 0x04:
 	
-l1142:; BSR set to: 0
+l1147:; BSR set to: 0
 
 	line	141
 ;feu.c: 141: if (Bouton[Bp_Start].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+0Bh))&0ffh,1
-	goto	u6131
-	goto	u6130
-u6131:
-	goto	l1151
-u6130:
+	goto	u6191
+	goto	u6190
+u6191:
+	goto	l1156
+u6190:
 	line	143
 	
-l6605:; BSR set to: 0
+l6670:; BSR set to: 0
 
 ;feu.c: 142: {
 ;feu.c: 143: delay_ms(15);
@@ -8705,7 +8840,7 @@ l6605:; BSR set to: 0
 	call	_feu_tir
 	line	147
 	
-l6607:
+l6672:
 ;feu.c: 147: Feu.Step = 0x05;
 	movlb	0	; () banked
 	movwf	(??_feu_process+0+0)&0ffh
@@ -8717,28 +8852,28 @@ l6607:
 	movf	(??_feu_process+0+0)&0ffh,w
 	line	148
 	
-l6609:; BSR set to: 0
+l6674:; BSR set to: 0
 
 ;feu.c: 148: Feu.Time = Cptms;
 	movff	(c:_Cptms),0+(_Feu+07h)	;volatile
 	movff	(c:_Cptms+1),1+(_Feu+07h)	;volatile
-	goto	l1151
+	goto	l1156
 	line	149
 	
-l1143:; BSR set to: 0
+l1148:; BSR set to: 0
 
 	line	150
 ;feu.c: 149: }
 ;feu.c: 150: break;
-	goto	l1151
+	goto	l1156
 	line	151
 ;feu.c: 151: case 0x05:
 	
-l1144:; BSR set to: 0
+l1149:; BSR set to: 0
 
 	line	152
 	
-l6611:; BSR set to: 0
+l6676:; BSR set to: 0
 
 ;feu.c: 152: if ((((unsigned short) (Cptms - Feu.Time) > 200) ? 1 : 0))
 	movlb	0	; () banked
@@ -8762,26 +8897,26 @@ l6611:; BSR set to: 0
 	movlw	0
 	subwfb	(??_feu_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u6141
-	goto	u6140
-u6141:
-	goto	l1151
-u6140:
+	goto	u6201
+	goto	u6200
+u6201:
+	goto	l1156
+u6200:
 	line	154
 	
-l6613:; BSR set to: 0
+l6678:; BSR set to: 0
 
 ;feu.c: 153: {
 ;feu.c: 154: if (Bouton[Bp_Start].State == 1) {Feu.Step = 0x03;}
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+0Bh))&0ffh,1
-	goto	u6151
-	goto	u6150
-u6151:
-	goto	l1151
-u6150:
+	goto	u6211
+	goto	u6210
+u6211:
+	goto	l1156
+u6210:
 	
-l6615:; BSR set to: 0
+l6680:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_process+0+0)&0ffh
@@ -8791,36 +8926,36 @@ l6615:; BSR set to: 0
 	movwf	((_Feu))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_process+0+0)&0ffh,w
-	goto	l1151
+	goto	l1156
 	
-l1146:; BSR set to: 0
+l1151:; BSR set to: 0
 
-	goto	l1151
+	goto	l1156
 	line	155
 	
-l1145:; BSR set to: 0
+l1150:; BSR set to: 0
 
 	line	156
 ;feu.c: 155: }
 ;feu.c: 156: break;
-	goto	l1151
+	goto	l1156
 	line	157
 ;feu.c: 157: case 0x06:
 	
-l1147:; BSR set to: 0
+l1152:; BSR set to: 0
 
 	line	158
 ;feu.c: 158: if (Feu.SaveTime == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Feu+0Dh))&0ffh,1
-	goto	u6161
-	goto	u6160
-u6161:
-	goto	l1151
-u6160:
+	goto	u6221
+	goto	u6220
+u6221:
+	goto	l1156
+u6220:
 	line	160
 	
-l6617:; BSR set to: 0
+l6682:; BSR set to: 0
 
 ;feu.c: 159: {
 ;feu.c: 160: Feu.Decompte = Decompte;
@@ -8834,19 +8969,19 @@ l6617:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(_Feu+0Dh))&0ffh,1
-	goto	l1151
+	goto	l1156
 	line	164
 	
-l1148:; BSR set to: 0
+l1153:; BSR set to: 0
 
 	line	165
 ;feu.c: 164: }
 ;feu.c: 165: break;
-	goto	l1151
+	goto	l1156
 	line	166
 ;feu.c: 166: case 0x07:
 	
-l1149:; BSR set to: 0
+l1154:; BSR set to: 0
 
 	line	167
 ;feu.c: 167: Decompte = Feu.Decompte;
@@ -8862,7 +8997,7 @@ l1149:; BSR set to: 0
 	bcf	(0+(_Feu+0Dh))&0ffh,1
 	line	172
 	
-l6619:; BSR set to: 0
+l6684:; BSR set to: 0
 
 ;feu.c: 172: Feu.Step = 0x01;
 	movlb	0	; () banked
@@ -8875,15 +9010,15 @@ l6619:; BSR set to: 0
 	movf	(??_feu_process+0+0)&0ffh,w
 	line	173
 ;feu.c: 173: break;
-	goto	l1151
+	goto	l1156
 	line	174
 ;feu.c: 174: case 0x08:
 	
-l1150:; BSR set to: 0
+l1155:; BSR set to: 0
 
 	line	175
 	
-l6621:; BSR set to: 0
+l6686:; BSR set to: 0
 
 ;feu.c: 175: Micro.State = 0x08;
 	movlb	0	; () banked
@@ -8894,19 +9029,19 @@ l6621:; BSR set to: 0
 	movf	(??_feu_process+0+0)&0ffh,w
 	line	176
 ;feu.c: 176: break;
-	goto	l1151
+	goto	l1156
 	line	177
 	
-l6623:; BSR set to: 0
+l6688:; BSR set to: 0
 
 ;feu.c: 177: }
-	goto	l1151
+	goto	l1156
 	line	91
 	
-l1125:; BSR set to: 0
+l1130:; BSR set to: 0
 
 	
-l6625:
+l6690:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((_Feu))&0ffh,w
@@ -8919,40 +9054,40 @@ l6625:
 
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l1126
+	goto	l1131
 	xorlw	1^0	; case 1
 	skipnz
-	goto	l6579
+	goto	l6644
 	xorlw	2^1	; case 2
 	skipnz
-	goto	l6589
+	goto	l6654
 	xorlw	3^2	; case 3
 	skipnz
-	goto	l1136
+	goto	l1141
 	xorlw	4^3	; case 4
 	skipnz
-	goto	l1142
+	goto	l1147
 	xorlw	5^4	; case 5
 	skipnz
-	goto	l6611
+	goto	l6676
 	xorlw	6^5	; case 6
 	skipnz
-	goto	l1147
+	goto	l1152
 	xorlw	7^6	; case 7
 	skipnz
-	goto	l1149
+	goto	l1154
 	xorlw	8^7	; case 8
 	skipnz
-	goto	l6621
-	goto	l1151
+	goto	l6686
+	goto	l1156
 
 	line	177
 	
-l1130:; BSR set to: 0
+l1135:; BSR set to: 0
 
 	line	178
 	
-l1151:; BSR set to: 0
+l1156:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -9011,7 +9146,7 @@ _feu_tir:; BSR set to: 0
 	movff	wreg,(feu_tir@Output)
 	line	11
 	
-l6107:
+l6152:
 ;feu.c: 11: PORTAbits.RA5 = 1;
 	bsf	((c:3968)),c,5	;volatile
 	line	12
@@ -9019,7 +9154,7 @@ l6107:
 	bsf	((c:3969)),c,1	;volatile
 	line	14
 	
-l6109:
+l6154:
 ;feu.c: 14: register_write(Output);
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -9043,29 +9178,29 @@ l6109:
 	call	_register_write
 	line	18
 	
-l6111:
+l6156:
 ;feu.c: 18: PORTBbits.RB1 = 0;
 	bcf	((c:3969)),c,1	;volatile
 	line	19
 	
-l6113:
+l6158:
 ;feu.c: 19: PORTAbits.RA5 = 0;
 	bcf	((c:3968)),c,5	;volatile
 	line	22
 	
-l6115:
+l6160:
 ;feu.c: 22: Feu.LastOutput = Feu.NextOutput;
 	movff	0+(_Feu+0Ch),0+(_Feu+0Bh)
 	line	23
 	
-l6117:
+l6162:
 ;feu.c: 23: Feu.Cpt ++;
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	(0+(_Feu+01h))&0ffh
 	line	24
 	
-l1097:; BSR set to: 0
+l1102:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -9126,7 +9261,7 @@ _register_write:; BSR set to: 0
 	movff	wreg,(register_write@Output)
 	line	8
 	
-l5767:
+l5812:
 ;register.c: 5: unsigned char i;
 ;register.c: 8: PORTAbits.RA2 = 0;
 	bcf	((c:3968)),c,2	;volatile
@@ -9141,7 +9276,7 @@ l5767:
 	bcf	((c:3969)),c,3	;volatile
 	line	16
 	
-l5769:
+l5814:
 ;register.c: 16: for (i = 32; i > 0; i --)
 	movlb	0	; () banked
 	movwf	(??_register_write+0+0)&0ffh
@@ -9152,24 +9287,24 @@ l5769:
 	movlb	0	; () banked
 	movf	(??_register_write+0+0)&0ffh,w
 	
-l5771:; BSR set to: 0
+l5816:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((register_write@i))&0ffh
-	goto	u5001
-	goto	u5000
-u5001:
-	goto	l915
-u5000:
-	goto	l916
+	goto	u5041
+	goto	u5040
+u5041:
+	goto	l920
+u5040:
+	goto	l921
 	
-l5773:; BSR set to: 0
+l5818:; BSR set to: 0
 
-	goto	l916
+	goto	l921
 	line	17
 	
-l915:; BSR set to: 0
+l920:; BSR set to: 0
 
 	line	18
 ;register.c: 17: {
@@ -9177,7 +9312,7 @@ l915:; BSR set to: 0
 	bcf	((c:3969)),c,4	;volatile
 	line	20
 	
-l5775:; BSR set to: 0
+l5820:; BSR set to: 0
 
 ;register.c: 20: if (Output == i) {PORTBbits.RB5 = 1;}
 	movlb	0	; () banked
@@ -9186,48 +9321,48 @@ l5775:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfseq	((register_write@Output))&0ffh
-	goto	u5011
-	goto	u5010
-u5011:
-	goto	l917
-u5010:
+	goto	u5051
+	goto	u5050
+u5051:
+	goto	l922
+u5050:
 	
-l5777:; BSR set to: 0
+l5822:; BSR set to: 0
 
 	bsf	((c:3969)),c,5	;volatile
-	goto	l918
+	goto	l923
 	line	21
 	
-l917:; BSR set to: 0
+l922:; BSR set to: 0
 
 ;register.c: 21: else {PORTBbits.RB5 = 0;}
 	bcf	((c:3969)),c,5	;volatile
 	
-l918:; BSR set to: 0
+l923:; BSR set to: 0
 
 	line	23
 ;register.c: 23: PORTBbits.RB4 = 1;
 	bsf	((c:3969)),c,4	;volatile
 	line	16
 	
-l5779:; BSR set to: 0
+l5824:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decf	((register_write@i))&0ffh
 	
-l5781:; BSR set to: 0
+l5826:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((register_write@i))&0ffh
-	goto	u5021
-	goto	u5020
-u5021:
-	goto	l915
-u5020:
+	goto	u5061
+	goto	u5060
+u5061:
+	goto	l920
+u5060:
 	
-l916:; BSR set to: 0
+l921:; BSR set to: 0
 
 	line	26
 ;register.c: 24: }
@@ -9238,7 +9373,7 @@ l916:; BSR set to: 0
 	bsf	((c:3968)),c,2	;volatile
 	line	30
 	
-l919:; BSR set to: 0
+l924:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -9295,66 +9430,66 @@ _feu_check_end:; BSR set to: 0
 	dw	0FFFFh
 	line	5
 	
-l6093:
+l6138:
 ;feu.c: 5: if ((Feu.Cpt >= 32) || (Feu.NextOutput == 0)) {return 1;}
 	movlw	(020h)&0ffh
 	movlb	0	; () banked
 	movlb	0	; () banked
 	subwf	(0+(_Feu+01h))&0ffh,w
 	btfsc	status,0
-	goto	u5381
-	goto	u5380
-u5381:
-	goto	l6097
-u5380:
+	goto	u5421
+	goto	u5420
+u5421:
+	goto	l6142
+u5420:
 	
-l6095:; BSR set to: 0
+l6140:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	(0+(_Feu+0Ch))&0ffh
-	goto	u5391
-	goto	u5390
-u5391:
-	goto	l6103
-u5390:
-	goto	l6097
+	goto	u5431
+	goto	u5430
+u5431:
+	goto	l6148
+u5430:
+	goto	l6142
 	
-l1092:; BSR set to: 0
+l1097:; BSR set to: 0
 
 	
-l6097:; BSR set to: 0
+l6142:; BSR set to: 0
 
 	movlw	(01h)&0ffh
-	goto	l1093
+	goto	l1098
 	
-l6099:; BSR set to: 0
+l6144:; BSR set to: 0
 
-	goto	l1093
+	goto	l1098
 	
-l6101:; BSR set to: 0
+l6146:; BSR set to: 0
 
-	goto	l1093
+	goto	l1098
 	line	6
 	
-l1090:; BSR set to: 0
+l1095:; BSR set to: 0
 
 	
-l6103:; BSR set to: 0
+l6148:; BSR set to: 0
 
 ;feu.c: 6: else {return 0;}
 	movlw	(0)&0ffh
-	goto	l1093
+	goto	l1098
 	
-l6105:; BSR set to: 0
+l6150:; BSR set to: 0
 
-	goto	l1093
+	goto	l1098
 	
-l1094:; BSR set to: 0
+l1099:; BSR set to: 0
 
 	line	7
 	
-l1093:; BSR set to: 0
+l1098:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -9411,27 +9546,27 @@ _feu_check_bp:; BSR set to: 0
 	dw	0FFFFh
 	line	29
 	
-l6627:
+l6692:
 ;feu.c: 28: if ( (Micro.Stat.End == 1)
 ;feu.c: 29: && (Bouton[Bp_On].State == 0))
 	btfss	(0+((c:_Micro)+04h)),c,3
-	goto	u6171
-	goto	u6170
-u6171:
-	goto	l1100
-u6170:
+	goto	u6231
+	goto	u6230
+u6231:
+	goto	l1105
+u6230:
 	
-l6629:
+l6694:
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+02h))&0ffh,1
-	goto	u6181
-	goto	u6180
-u6181:
-	goto	l1100
-u6180:
+	goto	u6241
+	goto	u6240
+u6241:
+	goto	l1105
+u6240:
 	line	31
 	
-l6631:; BSR set to: 0
+l6696:; BSR set to: 0
 
 ;feu.c: 30: {
 ;feu.c: 31: Ecran.Digits = (char *) Version;
@@ -9446,7 +9581,7 @@ l6631:; BSR set to: 0
 
 	line	32
 	
-l6633:; BSR set to: 0
+l6698:; BSR set to: 0
 
 ;feu.c: 32: Ecran.Solid = 0;
 	movlb	0	; () banked
@@ -9459,33 +9594,33 @@ l6633:; BSR set to: 0
 	movf	(??_feu_check_bp+0+0)&0ffh,w
 	line	33
 ;feu.c: 33: }
-	goto	l1122
+	goto	l1127
 	line	34
 	
-l1100:
+l1105:
 	line	35
 ;feu.c: 34: else if ( (Bouton[Bp_Start].State == 1)
 ;feu.c: 35: && (Feu.CanStopStart == 0))
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+0Bh))&0ffh,1
-	goto	u6191
-	goto	u6190
-u6191:
-	goto	l1102
-u6190:
+	goto	u6251
+	goto	u6250
+u6251:
+	goto	l1107
+u6250:
 	
-l6635:; BSR set to: 0
+l6700:; BSR set to: 0
 
 	movlb	0	; () banked
 	btfsc	(0+(_Feu+0Dh))&0ffh,0
-	goto	u6201
-	goto	u6200
-u6201:
-	goto	l1102
-u6200:
+	goto	u6261
+	goto	u6260
+u6261:
+	goto	l1107
+u6260:
 	line	37
 	
-l6637:; BSR set to: 0
+l6702:; BSR set to: 0
 
 ;feu.c: 36: {
 ;feu.c: 37: if ((((unsigned short) (Cptms - Feu.TimeStart) > 5000) ? 1 : 0))
@@ -9510,78 +9645,78 @@ l6637:; BSR set to: 0
 	movlw	013h
 	subwfb	(??_feu_check_bp+0+1)&0ffh,w
 	btfss	status,0
-	goto	u6211
-	goto	u6210
-u6211:
-	goto	l1122
-u6210:
+	goto	u6271
+	goto	u6270
+u6271:
+	goto	l1127
+u6270:
 	line	39
 	
-l6639:; BSR set to: 0
+l6704:; BSR set to: 0
 
 ;feu.c: 38: {
 ;feu.c: 39: Feu.CanStopStart = 1;
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(_Feu+0Dh))&0ffh,0
-	goto	l1122
+	goto	l1127
 	line	40
 	
-l1103:; BSR set to: 0
+l1108:; BSR set to: 0
 
 	line	41
 ;feu.c: 40: }
 ;feu.c: 41: }
-	goto	l1122
+	goto	l1127
 	line	42
 	
-l1102:; BSR set to: 0
+l1107:; BSR set to: 0
 
 	line	44
 ;feu.c: 42: else if ( (Micro.Mods == 0)
 ;feu.c: 43: && (Feu.CanStopStart == 1)
 ;feu.c: 44: && (Bouton[Bp_Start].State == 0))
 	tstfsz	(0+((c:_Micro)+05h)),c
-	goto	u6221
-	goto	u6220
-u6221:
-	goto	l1105
-u6220:
+	goto	u6281
+	goto	u6280
+u6281:
+	goto	l1110
+u6280:
 	
-l6641:; BSR set to: 0
+l6706:; BSR set to: 0
 
 	movlb	0	; () banked
 	btfss	(0+(_Feu+0Dh))&0ffh,0
-	goto	u6231
-	goto	u6230
-u6231:
-	goto	l1105
-u6230:
+	goto	u6291
+	goto	u6290
+u6291:
+	goto	l1110
+u6290:
 	
-l6643:; BSR set to: 0
+l6708:; BSR set to: 0
 
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+0Bh))&0ffh,1
-	goto	u6241
-	goto	u6240
-u6241:
-	goto	l1105
-u6240:
+	goto	u6301
+	goto	u6300
+u6301:
+	goto	l1110
+u6300:
 	line	46
 	
-l6645:; BSR set to: 0
+l6710:; BSR set to: 0
 
 ;feu.c: 45: {
 ;feu.c: 46: if (Micro.Stat.Go == 1)
 	btfss	(0+((c:_Micro)+04h)),c,1
-	goto	u6251
-	goto	u6250
-u6251:
-	goto	l1106
-u6250:
+	goto	u6311
+	goto	u6310
+u6311:
+	goto	l1111
+u6310:
 	line	48
 	
-l6647:; BSR set to: 0
+l6712:; BSR set to: 0
 
 ;feu.c: 47: {
 ;feu.c: 48: Feu.Step = 0x06;
@@ -9603,21 +9738,21 @@ l6647:; BSR set to: 0
 	movf	(??_feu_check_bp+0+0)&0ffh,w
 	line	50
 ;feu.c: 50: }
-	goto	l6653
+	goto	l6718
 	line	51
 	
-l1106:; BSR set to: 0
+l1111:; BSR set to: 0
 
 ;feu.c: 51: else if (Micro.Stat.Stop == 1)
 	btfss	(0+((c:_Micro)+04h)),c,2
-	goto	u6261
-	goto	u6260
-u6261:
-	goto	l6653
-u6260:
+	goto	u6321
+	goto	u6320
+u6321:
+	goto	l6718
+u6320:
 	line	53
 	
-l6649:; BSR set to: 0
+l6714:; BSR set to: 0
 
 ;feu.c: 52: {
 ;feu.c: 53: Feu.Step = 0x07;
@@ -9639,23 +9774,23 @@ l6649:; BSR set to: 0
 	movf	(??_feu_check_bp+0+0)&0ffh,w
 	line	55
 	
-l6651:; BSR set to: 0
+l6716:; BSR set to: 0
 
 ;feu.c: 55: Feu.TimeStart = Cptms;
 	movff	(c:_Cptms),0+(_Feu+09h)	;volatile
 	movff	(c:_Cptms+1),1+(_Feu+09h)	;volatile
-	goto	l6653
+	goto	l6718
 	line	56
 	
-l1108:; BSR set to: 0
+l1113:; BSR set to: 0
 
-	goto	l6653
+	goto	l6718
 	line	58
 	
-l1107:; BSR set to: 0
+l1112:; BSR set to: 0
 
 	
-l6653:; BSR set to: 0
+l6718:; BSR set to: 0
 
 ;feu.c: 56: }
 ;feu.c: 58: Feu.CanStopStart = 0;
@@ -9664,22 +9799,22 @@ l6653:; BSR set to: 0
 	bcf	(0+(_Feu+0Dh))&0ffh,0
 	line	59
 ;feu.c: 59: }
-	goto	l1122
+	goto	l1127
 	line	60
 	
-l1105:; BSR set to: 0
+l1110:; BSR set to: 0
 
 ;feu.c: 60: else if (Bouton[Comu_Test].State == 1)
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+08h))&0ffh,1
-	goto	u6271
-	goto	u6270
-u6271:
-	goto	l1110
-u6270:
+	goto	u6331
+	goto	u6330
+u6331:
+	goto	l1115
+u6330:
 	line	62
 	
-l6655:; BSR set to: 0
+l6720:; BSR set to: 0
 
 ;feu.c: 61: {
 ;feu.c: 62: Ecran.Digits = (char *) ErreurTir;
@@ -9694,7 +9829,7 @@ l6655:; BSR set to: 0
 
 	line	63
 	
-l6657:; BSR set to: 0
+l6722:; BSR set to: 0
 
 ;feu.c: 63: Ecran.Solid = 0;
 	movlb	0	; () banked
@@ -9707,22 +9842,22 @@ l6657:; BSR set to: 0
 	movf	(??_feu_check_bp+0+0)&0ffh,w
 	line	64
 ;feu.c: 64: }
-	goto	l1122
+	goto	l1127
 	line	65
 	
-l1110:; BSR set to: 0
+l1115:; BSR set to: 0
 
 ;feu.c: 65: else if (Bouton[Bp_IdTest].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+05h))&0ffh,1
-	goto	u6281
-	goto	u6280
-u6281:
-	goto	l1112
-u6280:
+	goto	u6341
+	goto	u6340
+u6341:
+	goto	l1117
+u6340:
 	line	67
 	
-l6659:; BSR set to: 0
+l6724:; BSR set to: 0
 
 ;feu.c: 66: {
 ;feu.c: 67: ecran_print_num(Feu.LastOutput);
@@ -9733,17 +9868,17 @@ l6659:; BSR set to: 0
 	call	_ecran_print_num
 	line	69
 	
-l6661:
+l6726:
 ;feu.c: 69: if (Micro.Stat.Stop == 1)
 	btfss	(0+((c:_Micro)+04h)),c,2
-	goto	u6291
-	goto	u6290
-u6291:
-	goto	l6667
-u6290:
+	goto	u6351
+	goto	u6350
+u6351:
+	goto	l6732
+u6350:
 	line	71
 	
-l6663:
+l6728:
 ;feu.c: 70: {
 ;feu.c: 71: Ecran.Digit[0] = '-';
 	movlb	0	; () banked
@@ -9766,7 +9901,7 @@ l6663:
 	movf	(??_feu_check_bp+0+0)&0ffh,w
 	line	74
 	
-l6665:; BSR set to: 0
+l6730:; BSR set to: 0
 
 ;feu.c: 74: Ecran.Digits = Ecran.Digit;
 	movlb	0	; () banked
@@ -9780,14 +9915,14 @@ l6665:; BSR set to: 0
 	movlb	0	; () banked
 	movwf	(0+(_Ecran+04h))&0ffh
 
-	goto	l6667
+	goto	l6732
 	line	75
 	
-l1113:; BSR set to: 0
+l1118:; BSR set to: 0
 
 	line	76
 	
-l6667:
+l6732:
 ;feu.c: 75: }
 ;feu.c: 76: Ecran.Solid = 0;
 	movlb	0	; () banked
@@ -9800,23 +9935,23 @@ l6667:
 	movf	(??_feu_check_bp+0+0)&0ffh,w
 	line	77
 ;feu.c: 77: }
-	goto	l1122
+	goto	l1127
 	line	78
 	
-l1112:; BSR set to: 0
+l1117:; BSR set to: 0
 
 	line	80
 ;feu.c: 78: else
 ;feu.c: 79: {
 ;feu.c: 80: if (Micro.Stat.Armed == 1) {ecran_print_one_char(0,'-');}
 	btfss	(0+((c:_Micro)+04h)),c,0
-	goto	u6301
-	goto	u6300
-u6301:
-	goto	l1115
-u6300:
+	goto	u6361
+	goto	u6360
+u6361:
+	goto	l1120
+u6360:
 	
-l6669:; BSR set to: 0
+l6734:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_check_bp+0+0)&0ffh
@@ -9829,20 +9964,20 @@ l6669:; BSR set to: 0
 	movlw	(0)&0ffh
 	
 	call	_ecran_print_one_char
-	goto	l6677
+	goto	l6742
 	line	81
 	
-l1115:; BSR set to: 0
+l1120:; BSR set to: 0
 
 ;feu.c: 81: else if (Micro.Stat.Go == 1) {ecran_print_one_char(1,'-');}
 	btfss	(0+((c:_Micro)+04h)),c,1
-	goto	u6311
-	goto	u6310
-u6311:
-	goto	l1117
-u6310:
+	goto	u6371
+	goto	u6370
+u6371:
+	goto	l1122
+u6370:
 	
-l6671:; BSR set to: 0
+l6736:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_check_bp+0+0)&0ffh
@@ -9855,20 +9990,20 @@ l6671:; BSR set to: 0
 	movlw	(01h)&0ffh
 	
 	call	_ecran_print_one_char
-	goto	l6677
+	goto	l6742
 	line	82
 	
-l1117:; BSR set to: 0
+l1122:; BSR set to: 0
 
 ;feu.c: 82: else if (Micro.Stat.Stop == 1) {ecran_print_one_char(2,'-');}
 	btfss	(0+((c:_Micro)+04h)),c,2
-	goto	u6321
-	goto	u6320
-u6321:
-	goto	l1119
-u6320:
+	goto	u6381
+	goto	u6380
+u6381:
+	goto	l1124
+u6380:
 	
-l6673:; BSR set to: 0
+l6738:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_check_bp+0+0)&0ffh
@@ -9881,20 +10016,20 @@ l6673:; BSR set to: 0
 	movlw	(02h)&0ffh
 	
 	call	_ecran_print_one_char
-	goto	l6677
+	goto	l6742
 	line	83
 	
-l1119:; BSR set to: 0
+l1124:; BSR set to: 0
 
 ;feu.c: 83: else if (Micro.Stat.End == 1) {ecran_print_one_char(3,'-');}
 	btfss	(0+((c:_Micro)+04h)),c,3
-	goto	u6331
-	goto	u6330
-u6331:
-	goto	l6677
-u6330:
+	goto	u6391
+	goto	u6390
+u6391:
+	goto	l6742
+u6390:
 	
-l6675:; BSR set to: 0
+l6740:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_feu_check_bp+0+0)&0ffh
@@ -9907,21 +10042,21 @@ l6675:; BSR set to: 0
 	movlw	(03h)&0ffh
 	
 	call	_ecran_print_one_char
-	goto	l6677
+	goto	l6742
 	
-l1121:
-	goto	l6677
+l1126:
+	goto	l6742
 	line	85
 	
-l1120:
-	goto	l6677
+l1125:
+	goto	l6742
 	
-l1118:
-	goto	l6677
+l1123:
+	goto	l6742
 	
-l1116:
+l1121:
 	
-l6677:
+l6742:
 ;feu.c: 85: Ecran.Solid = 1;
 	movlb	0	; () banked
 	movwf	(??_feu_check_bp+0+0)&0ffh
@@ -9931,30 +10066,30 @@ l6677:
 	movwf	(0+(_Ecran+0Fh))&0ffh
 	movlb	0	; () banked
 	movf	(??_feu_check_bp+0+0)&0ffh,w
-	goto	l1122
+	goto	l1127
 	line	86
+	
+l1119:; BSR set to: 0
+
+	goto	l1127
+	
+l1116:; BSR set to: 0
+
+	goto	l1127
 	
 l1114:; BSR set to: 0
 
-	goto	l1122
-	
-l1111:; BSR set to: 0
-
-	goto	l1122
+	goto	l1127
 	
 l1109:; BSR set to: 0
 
-	goto	l1122
+	goto	l1127
 	
-l1104:; BSR set to: 0
-
-	goto	l1122
-	
-l1101:; BSR set to: 0
+l1106:; BSR set to: 0
 
 	line	87
 	
-l1122:; BSR set to: 0
+l1127:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -10016,7 +10151,7 @@ _ecran_print_num:; BSR set to: 0
 	movff	wreg,(ecran_print_num@Num)
 	line	70
 	
-l5927:
+l5972:
 ;ecran.c: 68: char * tempStr;
 ;ecran.c: 70: tempStr = PrintTest;
 	movlb	0	; () banked
@@ -10032,7 +10167,7 @@ l5927:
 
 	line	72
 	
-l5929:; BSR set to: 0
+l5974:; BSR set to: 0
 
 ;ecran.c: 72: tempStr = DecToStr(Num, tempStr);
 	movlb	0	; () banked
@@ -10053,7 +10188,7 @@ l5929:; BSR set to: 0
 	movff	1+?_DecToStr,(ecran_print_num@tempStr+1)
 	line	74
 	
-l5931:; BSR set to: 0
+l5976:; BSR set to: 0
 
 ;ecran.c: 74: Ecran.Digit[0] = ' ';
 	movlb	0	; () banked
@@ -10066,7 +10201,7 @@ l5931:; BSR set to: 0
 	movf	(??_ecran_print_num+0+0)&0ffh,w
 	line	75
 	
-l5933:; BSR set to: 0
+l5978:; BSR set to: 0
 
 ;ecran.c: 75: Ecran.Digit[1] = ' ';
 	movlb	0	; () banked
@@ -10079,7 +10214,7 @@ l5933:; BSR set to: 0
 	movf	(??_ecran_print_num+0+0)&0ffh,w
 	line	77
 	
-l5935:; BSR set to: 0
+l5980:; BSR set to: 0
 
 ;ecran.c: 77: if (Num < 10)
 	movlw	(0Ah)&0ffh
@@ -10087,14 +10222,14 @@ l5935:; BSR set to: 0
 	movlb	0	; () banked
 	subwf	((ecran_print_num@Num))&0ffh,w
 	btfsc	status,0
-	goto	u5261
-	goto	u5260
-u5261:
-	goto	l5941
-u5260:
+	goto	u5301
+	goto	u5300
+u5301:
+	goto	l5986
+u5300:
 	line	79
 	
-l5937:; BSR set to: 0
+l5982:; BSR set to: 0
 
 ;ecran.c: 78: {
 ;ecran.c: 79: Ecran.Digit[3] = tempStr[0];
@@ -10106,7 +10241,7 @@ l5937:; BSR set to: 0
 	movwf	(0+(_Ecran+03h))&0ffh
 	line	80
 	
-l5939:; BSR set to: 0
+l5984:; BSR set to: 0
 
 ;ecran.c: 80: Ecran.Digit[2] = '0';
 	movlb	0	; () banked
@@ -10119,14 +10254,14 @@ l5939:; BSR set to: 0
 	movf	(??_ecran_print_num+0+0)&0ffh,w
 	line	81
 ;ecran.c: 81: }
-	goto	l5945
+	goto	l5990
 	line	82
 	
 l267:; BSR set to: 0
 
 	line	84
 	
-l5941:; BSR set to: 0
+l5986:; BSR set to: 0
 
 ;ecran.c: 82: else
 ;ecran.c: 83: {
@@ -10145,7 +10280,7 @@ l5941:; BSR set to: 0
 	movwf	(0+(_Ecran+03h))&0ffh
 	line	85
 	
-l5943:; BSR set to: 0
+l5988:; BSR set to: 0
 
 ;ecran.c: 85: Ecran.Digit[2] = tempStr[0];
 	movff	(ecran_print_num@tempStr),fsr2l
@@ -10154,14 +10289,14 @@ l5943:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	(0+(_Ecran+02h))&0ffh
-	goto	l5945
+	goto	l5990
 	line	86
 	
 l268:; BSR set to: 0
 
 	line	88
 	
-l5945:; BSR set to: 0
+l5990:; BSR set to: 0
 
 ;ecran.c: 86: }
 ;ecran.c: 88: Ecran.Digits = Ecran.Digit;
@@ -10243,7 +10378,7 @@ _DecToStr:; BSR set to: 0
 	movff	wreg,(DecToStr@value)
 	line	8
 	
-l5669:
+l5714:
 ;utils.c: 5: unsigned char power10;
 ;utils.c: 6: unsigned short compareValue;
 ;utils.c: 8: compareValue = 1;
@@ -10264,14 +10399,14 @@ l5669:
 	movwf	((DecToStr@power10))&0ffh
 	movlb	0	; () banked
 	movf	(??_DecToStr+0+0)&0ffh,w
-	goto	l5675
+	goto	l5720
 	line	11
 	
 l654:; BSR set to: 0
 
 	line	12
 	
-l5671:; BSR set to: 0
+l5716:; BSR set to: 0
 
 ;utils.c: 11: {
 ;utils.c: 12: compareValue *= 10;
@@ -10291,17 +10426,17 @@ l5671:; BSR set to: 0
 	movff	1+?___wmul,(DecToStr@compareValue+1)
 	line	10
 	
-l5673:; BSR set to: 0
+l5718:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((DecToStr@power10))&0ffh
-	goto	l5675
+	goto	l5720
 	
 l653:; BSR set to: 0
 
 	
-l5675:; BSR set to: 0
+l5720:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10321,11 +10456,11 @@ l5675:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	(??_DecToStr+0+1)&0ffh,w
 	btfsc	status,0
-	goto	u4901
-	goto	u4900
-u4901:
-	goto	l5671
-u4900:
+	goto	u4941
+	goto	u4940
+u4941:
+	goto	l5716
+u4940:
 	
 l655:; BSR set to: 0
 
@@ -10335,13 +10470,13 @@ l655:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((DecToStr@value))&0ffh
-	goto	u4911
-	goto	u4910
-u4911:
-	goto	l5679
-u4910:
+	goto	u4951
+	goto	u4950
+u4951:
+	goto	l5724
+u4950:
 	
-l5677:; BSR set to: 0
+l5722:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_DecToStr+0+0)&0ffh
@@ -10351,13 +10486,13 @@ l5677:; BSR set to: 0
 	movwf	((DecToStr@power10))&0ffh
 	movlb	0	; () banked
 	movf	(??_DecToStr+0+0)&0ffh,w
-	goto	l5679
+	goto	l5724
 	
 l656:; BSR set to: 0
 
 	line	17
 	
-l5679:; BSR set to: 0
+l5724:; BSR set to: 0
 
 ;utils.c: 17: result[power10] = '\0';
 	movlb	0	; () banked
@@ -10378,28 +10513,28 @@ l5679:; BSR set to: 0
 	movwf	indf2
 	line	19
 	
-l5681:; BSR set to: 0
+l5726:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((DecToStr@power10))&0ffh
-	goto	u4921
-	goto	u4920
-u4921:
-	goto	l5685
-u4920:
-	goto	l5693
+	goto	u4961
+	goto	u4960
+u4961:
+	goto	l5730
+u4960:
+	goto	l5738
 	
-l5683:; BSR set to: 0
+l5728:; BSR set to: 0
 
-	goto	l5693
+	goto	l5738
 	line	20
 	
 l657:; BSR set to: 0
 
 	line	21
 	
-l5685:; BSR set to: 0
+l5730:; BSR set to: 0
 
 ;utils.c: 20: {
 ;utils.c: 21: result[power10 - 1] = (value % 10) + '0';
@@ -10457,7 +10592,7 @@ l5685:; BSR set to: 0
 
 	line	22
 	
-l5687:; BSR set to: 0
+l5732:; BSR set to: 0
 
 ;utils.c: 22: value /= 10;
 	movlb	0	; () banked
@@ -10478,29 +10613,29 @@ l5687:; BSR set to: 0
 	movwf	((DecToStr@value))&0ffh
 	line	19
 	
-l5689:; BSR set to: 0
+l5734:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decf	((DecToStr@power10))&0ffh
 	
-l5691:; BSR set to: 0
+l5736:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((DecToStr@power10))&0ffh
-	goto	u4931
-	goto	u4930
-u4931:
-	goto	l5685
-u4930:
-	goto	l5693
+	goto	u4971
+	goto	u4970
+u4971:
+	goto	l5730
+u4970:
+	goto	l5738
 	
 l658:; BSR set to: 0
 
 	line	25
 	
-l5693:; BSR set to: 0
+l5738:; BSR set to: 0
 
 ;utils.c: 23: }
 ;utils.c: 25: return result;
@@ -10513,7 +10648,7 @@ l5693:; BSR set to: 0
 
 	goto	l659
 	
-l5695:; BSR set to: 0
+l5740:; BSR set to: 0
 
 	line	26
 	
@@ -10579,7 +10714,7 @@ ___lbdiv:; BSR set to: 0
 	movff	wreg,(___lbdiv@dividend)
 	line	9
 	
-l5595:
+l5640:
 	movlb	0	; () banked
 	movwf	(??___lbdiv+0+0)&0ffh
 	movlw	low(0)
@@ -10593,14 +10728,14 @@ l5595:
 	movlb	0	; () banked
 	movf	((___lbdiv@divisor))&0ffh,w
 	btfsc	status,2
-	goto	u4771
-	goto	u4770
-u4771:
-	goto	l5615
-u4770:
+	goto	u4811
+	goto	u4810
+u4811:
+	goto	l5660
+u4810:
 	line	11
 	
-l5597:; BSR set to: 0
+l5642:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??___lbdiv+0+0)&0ffh
@@ -10611,13 +10746,13 @@ l5597:; BSR set to: 0
 	movlb	0	; () banked
 	movf	(??___lbdiv+0+0)&0ffh,w
 	line	12
-	goto	l5603
+	goto	l5648
 	
-l1578:; BSR set to: 0
+l1583:; BSR set to: 0
 
 	line	13
 	
-l5599:; BSR set to: 0
+l5644:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf status,0
@@ -10625,41 +10760,41 @@ l5599:; BSR set to: 0
 
 	line	14
 	
-l5601:; BSR set to: 0
+l5646:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((___lbdiv@counter))&0ffh
-	goto	l5603
+	goto	l5648
 	line	15
 	
-l1577:; BSR set to: 0
+l1582:; BSR set to: 0
 
 	line	12
 	
-l5603:; BSR set to: 0
+l5648:; BSR set to: 0
 
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfss	((___lbdiv@divisor))&0ffh,(7)&7
-	goto	u4781
-	goto	u4780
-u4781:
-	goto	l5599
-u4780:
-	goto	l5605
+	goto	u4821
+	goto	u4820
+u4821:
+	goto	l5644
+u4820:
+	goto	l5650
 	
-l1579:; BSR set to: 0
+l1584:; BSR set to: 0
 
-	goto	l5605
+	goto	l5650
 	line	16
 	
-l1580:; BSR set to: 0
+l1585:; BSR set to: 0
 
 	line	17
 	
-l5605:; BSR set to: 0
+l5650:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf status,0
@@ -10673,14 +10808,14 @@ l5605:; BSR set to: 0
 	movlb	0	; () banked
 	subwf	((___lbdiv@dividend))&0ffh,w
 	btfss	status,0
-	goto	u4791
-	goto	u4790
-u4791:
-	goto	l5611
-u4790:
+	goto	u4831
+	goto	u4830
+u4831:
+	goto	l5656
+u4830:
 	line	19
 	
-l5607:; BSR set to: 0
+l5652:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10690,19 +10825,19 @@ l5607:; BSR set to: 0
 	subwf	((___lbdiv@dividend))&0ffh
 	line	20
 	
-l5609:; BSR set to: 0
+l5654:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(0/8)+(___lbdiv@quotient))&0ffh,(0)&7
-	goto	l5611
+	goto	l5656
 	line	21
 	
-l1581:; BSR set to: 0
+l1586:; BSR set to: 0
 
 	line	22
 	
-l5611:; BSR set to: 0
+l5656:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf status,0
@@ -10710,36 +10845,36 @@ l5611:; BSR set to: 0
 
 	line	23
 	
-l5613:; BSR set to: 0
+l5658:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decfsz	((___lbdiv@counter))&0ffh
 	
-	goto	l5605
-	goto	l5615
+	goto	l5650
+	goto	l5660
 	
-l1582:; BSR set to: 0
+l1587:; BSR set to: 0
 
-	goto	l5615
+	goto	l5660
 	line	24
 	
-l1576:; BSR set to: 0
+l1581:; BSR set to: 0
 
 	line	25
 	
-l5615:; BSR set to: 0
+l5660:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((___lbdiv@quotient))&0ffh,w
-	goto	l1583
+	goto	l1588
 	
-l5617:; BSR set to: 0
+l5662:; BSR set to: 0
 
 	line	26
 	
-l1583:; BSR set to: 0
+l1588:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -10798,7 +10933,7 @@ ___awmod:; BSR set to: 0
 	dw	0FFFFh
 	line	13
 	
-l5559:
+l5604:
 	movlb	0	; () banked
 	movwf	(??___awmod+0+0)&0ffh
 	movlw	low(0)
@@ -10809,7 +10944,7 @@ l5559:
 	movf	(??___awmod+0+0)&0ffh,w
 	line	14
 	
-l5561:; BSR set to: 0
+l5606:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10822,14 +10957,14 @@ l5561:; BSR set to: 0
 	btfsc	status,2
 	subwf	((___awmod@dividend))&0ffh,w
 	btfsc	status,0
-	goto	u4711
-	goto	u4710
-u4711:
-	goto	l5567
-u4710:
+	goto	u4751
+	goto	u4750
+u4751:
+	goto	l5612
+u4750:
 	line	15
 	
-l5563:; BSR set to: 0
+l5608:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10840,7 +10975,7 @@ l5563:; BSR set to: 0
 	incf	((___awmod@dividend+1))&0ffh
 	line	16
 	
-l5565:; BSR set to: 0
+l5610:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??___awmod+0+0)&0ffh
@@ -10850,14 +10985,14 @@ l5565:; BSR set to: 0
 	movwf	((___awmod@sign))&0ffh
 	movlb	0	; () banked
 	movf	(??___awmod+0+0)&0ffh,w
-	goto	l5567
+	goto	l5612
 	line	17
 	
-l1329:; BSR set to: 0
+l1334:; BSR set to: 0
 
 	line	18
 	
-l5567:; BSR set to: 0
+l5612:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10870,14 +11005,14 @@ l5567:; BSR set to: 0
 	btfsc	status,2
 	subwf	((___awmod@divisor))&0ffh,w
 	btfsc	status,0
-	goto	u4721
-	goto	u4720
-u4721:
-	goto	l5571
-u4720:
+	goto	u4761
+	goto	u4760
+u4761:
+	goto	l5616
+u4760:
 	line	19
 	
-l5569:; BSR set to: 0
+l5614:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10886,13 +11021,13 @@ l5569:; BSR set to: 0
 	comf	((___awmod@divisor+1))&0ffh
 	btfsc	status,0
 	incf	((___awmod@divisor+1))&0ffh
-	goto	l5571
+	goto	l5616
 	
-l1330:; BSR set to: 0
+l1335:; BSR set to: 0
 
 	line	20
 	
-l5571:; BSR set to: 0
+l5616:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10900,14 +11035,14 @@ l5571:; BSR set to: 0
 	iorwf ((___awmod@divisor))&0ffh,w
 
 	btfsc	status,2
-	goto	u4731
-	goto	u4730
-u4731:
-	goto	l5587
-u4730:
+	goto	u4771
+	goto	u4770
+u4771:
+	goto	l5632
+u4770:
 	line	21
 	
-l5573:; BSR set to: 0
+l5618:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??___awmod+0+0)&0ffh
@@ -10918,13 +11053,13 @@ l5573:; BSR set to: 0
 	movlb	0	; () banked
 	movf	(??___awmod+0+0)&0ffh,w
 	line	22
-	goto	l5577
+	goto	l5622
 	
-l1333:; BSR set to: 0
+l1338:; BSR set to: 0
 
 	line	23
 	
-l5575:; BSR set to: 0
+l5620:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10936,36 +11071,36 @@ l5575:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((___awmod@counter))&0ffh
-	goto	l5577
+	goto	l5622
 	line	25
 	
-l1332:; BSR set to: 0
+l1337:; BSR set to: 0
 
 	line	22
 	
-l5577:; BSR set to: 0
+l5622:; BSR set to: 0
 
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfss	((___awmod@divisor+1))&0ffh,(15)&7
-	goto	u4741
-	goto	u4740
-u4741:
-	goto	l5575
-u4740:
-	goto	l5579
+	goto	u4781
+	goto	u4780
+u4781:
+	goto	l5620
+u4780:
+	goto	l5624
 	
-l1334:; BSR set to: 0
+l1339:; BSR set to: 0
 
-	goto	l5579
+	goto	l5624
 	line	26
 	
-l1335:; BSR set to: 0
+l1340:; BSR set to: 0
 
 	line	27
 	
-l5579:; BSR set to: 0
+l5624:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -10980,14 +11115,14 @@ l5579:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((___awmod@dividend+1))&0ffh,w
 	btfss	status,0
-	goto	u4751
-	goto	u4750
-u4751:
-	goto	l5583
-u4750:
+	goto	u4791
+	goto	u4790
+u4791:
+	goto	l5628
+u4790:
 	line	28
 	
-l5581:; BSR set to: 0
+l5626:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -11002,13 +11137,13 @@ l5581:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((___awmod@dividend+1))&0ffh
 
-	goto	l5583
+	goto	l5628
 	
-l1336:; BSR set to: 0
+l1341:; BSR set to: 0
 
 	line	29
 	
-l5583:; BSR set to: 0
+l5628:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -11018,38 +11153,38 @@ l5583:; BSR set to: 0
 	rrcf	((___awmod@divisor))&0ffh
 	line	30
 	
-l5585:; BSR set to: 0
+l5630:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decfsz	((___awmod@counter))&0ffh
 	
-	goto	l5579
-	goto	l5587
+	goto	l5624
+	goto	l5632
 	
-l1337:; BSR set to: 0
+l1342:; BSR set to: 0
 
-	goto	l5587
+	goto	l5632
 	line	31
 	
-l1331:; BSR set to: 0
+l1336:; BSR set to: 0
 
 	line	32
 	
-l5587:; BSR set to: 0
+l5632:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((___awmod@sign))&0ffh,w
 	btfsc	status,2
-	goto	u4761
-	goto	u4760
-u4761:
-	goto	l5591
-u4760:
+	goto	u4801
+	goto	u4800
+u4801:
+	goto	l5636
+u4800:
 	line	33
 	
-l5589:; BSR set to: 0
+l5634:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -11058,23 +11193,23 @@ l5589:; BSR set to: 0
 	comf	((___awmod@dividend+1))&0ffh
 	btfsc	status,0
 	incf	((___awmod@dividend+1))&0ffh
-	goto	l5591
+	goto	l5636
 	
-l1338:; BSR set to: 0
+l1343:; BSR set to: 0
 
 	line	34
 	
-l5591:; BSR set to: 0
+l5636:; BSR set to: 0
 
 	movff	(___awmod@dividend),(?___awmod)
 	movff	(___awmod@dividend+1),(?___awmod+1)
-	goto	l1339
+	goto	l1344
 	
-l5593:; BSR set to: 0
+l5638:; BSR set to: 0
 
 	line	35
 	
-l1339:; BSR set to: 0
+l1344:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -11133,7 +11268,7 @@ _check_program_0:; BSR set to: 0
 	dw	0FFFFh
 	line	21
 	
-l6201:
+l6246:
 ;test.c: 21: unsigned char ret = 0;
 	movlb	0	; () banked
 	movwf	(??_check_program_0+0+0)&0ffh
@@ -11145,58 +11280,58 @@ l6201:
 	movf	(??_check_program_0+0+0)&0ffh,w
 	line	23
 	
-l6203:; BSR set to: 0
+l6248:; BSR set to: 0
 
 ;test.c: 23: if ((PORTEbits.RE1 == 0) && (PORTEbits.RE0 == 0))
 	btfsc	((c:3972)),c,1	;volatile
-	goto	u5401
-	goto	u5400
-u5401:
-	goto	l6219
-u5400:
+	goto	u5441
+	goto	u5440
+u5441:
+	goto	l6264
+u5440:
 	
-l6205:; BSR set to: 0
+l6250:; BSR set to: 0
 
 	btfsc	((c:3972)),c,0	;volatile
-	goto	u5411
-	goto	u5410
-u5411:
-	goto	l6219
-u5410:
+	goto	u5451
+	goto	u5450
+u5451:
+	goto	l6264
+u5450:
 	line	25
 	
-l6207:; BSR set to: 0
+l6252:; BSR set to: 0
 
 ;test.c: 24: {
 ;test.c: 25: ecran_blank();
 	call	_ecran_blank	;wreg free
 	line	26
 ;test.c: 26: while ((PORTEbits.RE1 == 0) || (PORTEbits.RE0 == 0)) {ecran_refresh();}
-	goto	l6211
+	goto	l6256
 	
 l535:
 	
-l6209:
+l6254:
 	call	_ecran_refresh	;wreg free
-	goto	l6211
+	goto	l6256
 	
 l534:
 	
-l6211:
+l6256:
 	btfss	((c:3972)),c,1	;volatile
-	goto	u5421
-	goto	u5420
-u5421:
-	goto	l6209
-u5420:
+	goto	u5461
+	goto	u5460
+u5461:
+	goto	l6254
+u5460:
 	
-l6213:
+l6258:
 	btfss	((c:3972)),c,0	;volatile
-	goto	u5431
-	goto	u5430
-u5431:
-	goto	l6209
-u5430:
+	goto	u5471
+	goto	u5470
+u5471:
+	goto	l6254
+u5470:
 	
 l536:
 	line	28
@@ -11204,7 +11339,7 @@ l536:
 	bsf	(0+((c:_Micro)+05h)),c,0
 	line	30
 	
-l6215:
+l6260:
 ;test.c: 30: ret = 1;
 	movlb	0	; () banked
 	movwf	(??_check_program_0+0+0)&0ffh
@@ -11224,17 +11359,17 @@ l6215:
 	movf	(??_check_program_0+0+0)&0ffh,w
 	line	34
 	
-l6217:; BSR set to: 0
+l6262:; BSR set to: 0
 
 ;test.c: 34: ecran_wait();
 	call	_ecran_wait	;wreg free
-	goto	l6219
+	goto	l6264
 	line	35
 	
 l533:
 	line	37
 	
-l6219:
+l6264:
 ;test.c: 35: }
 ;test.c: 37: return ret;
 	movlb	0	; () banked
@@ -11242,7 +11377,7 @@ l6219:
 	movf	((check_program_0@ret))&0ffh,w
 	goto	l537
 	
-l6221:; BSR set to: 0
+l6266:; BSR set to: 0
 
 	line	38
 	
@@ -11304,31 +11439,31 @@ _check_idtest:; BSR set to: 0
 	dw	0FFFFh
 	line	43
 	
-l6223:
+l6268:
 ;test.c: 43: if ((PORTEbits.RE1 == 0) && (PORTEbits.RE0 == 1))
 	btfsc	((c:3972)),c,1	;volatile
-	goto	u5441
-	goto	u5440
-u5441:
+	goto	u5481
+	goto	u5480
+u5481:
 	goto	l544
-u5440:
+u5480:
 	
-l6225:
+l6270:
 	btfss	((c:3972)),c,0	;volatile
-	goto	u5451
-	goto	u5450
-u5451:
+	goto	u5491
+	goto	u5490
+u5491:
 	goto	l544
-u5450:
+u5490:
 	line	45
 	
-l6227:
+l6272:
 ;test.c: 44: {
 ;test.c: 45: micro_config_rs();
 	call	_micro_config_rs	;wreg free
 	line	46
 	
-l6229:
+l6274:
 ;test.c: 46: ecran_print_one_char(3, 'P');
 	movlb	0	; () banked
 	movwf	(??_check_idtest+0+0)&0ffh
@@ -11341,18 +11476,18 @@ l6229:
 	movlw	(03h)&0ffh
 	
 	call	_ecran_print_one_char
-	goto	l6231
+	goto	l6276
 	line	48
 ;test.c: 48: while(1) {cf_rcv();}
 	
 l541:
 	
-l6231:
+l6276:
 	call	_cf_rcv	;wreg free
-	goto	l6231
+	goto	l6276
 	
 l542:
-	goto	l6231
+	goto	l6276
 	
 l543:
 	goto	l544
@@ -11416,12 +11551,12 @@ _micro_config_rs:
 	dw	0FFFFh
 	line	5
 	
-l6013:
+l6058:
 ;micro.c: 5: PORTEbits.RE2 = 0;
 	bcf	((c:3972)),c,2	;volatile
 	line	9
 	
-l6015:
+l6060:
 ;micro.c: 9: SPBRG = 207;
 	movlw	low(0CFh)
 	movwf	((c:4015)),c	;volatile
@@ -11435,17 +11570,17 @@ l6015:
 	movwf	((c:4011)),c	;volatile
 	line	34
 	
-l6017:
+l6062:
 ;micro.c: 34: RCIP = 0;
 	bcf	c:(31997/8),(31997)&7	;volatile
 	line	35
 	
-l6019:
+l6064:
 ;micro.c: 35: RCIE = 1;
 	bsf	c:(31981/8),(31981)&7	;volatile
 	line	36
 	
-l6021:
+l6066:
 ;micro.c: 36: PEIE = 1;
 	bsf	c:(32662/8),(32662)&7	;volatile
 	line	37
@@ -11509,7 +11644,7 @@ _cf_rcv:
 	dw	0FFFFh
 	line	134
 	
-l5963:
+l6008:
 ;config.c: 134: unsigned char i, temp = 0;
 	movlb	0	; () banked
 	movwf	(??_cf_rcv+0+0)&0ffh
@@ -11521,7 +11656,7 @@ l5963:
 	movf	(??_cf_rcv+0+0)&0ffh,w
 	line	136
 	
-l5965:; BSR set to: 0
+l6010:; BSR set to: 0
 
 ;config.c: 136: if ((((unsigned short) (Cptms - Cf.Time2) > 100) ? 1 : 0))
 	movlb	1	; () banked
@@ -11545,14 +11680,14 @@ l5965:; BSR set to: 0
 	movlw	0
 	subwfb	(??_cf_rcv+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5281
-	goto	u5280
-u5281:
-	goto	l5975
-u5280:
+	goto	u5321
+	goto	u5320
+u5321:
+	goto	l6020
+u5320:
 	line	138
 	
-l5967:; BSR set to: 0
+l6012:; BSR set to: 0
 
 ;config.c: 137: {
 ;config.c: 138: Cf.Time2 = Cptms;
@@ -11563,7 +11698,7 @@ l5967:; BSR set to: 0
 	bcf	((c:4082)),c,7	;volatile
 	line	141
 	
-l5969:; BSR set to: 0
+l6014:; BSR set to: 0
 
 ;config.c: 141: if ((((unsigned short) (Cptms - Cf.Time1) > 100) ? 1 : 0)) {Cf.Index = 0;}
 	movlb	1	; () banked
@@ -11587,25 +11722,25 @@ l5969:; BSR set to: 0
 	movlw	0
 	subwfb	(??_cf_rcv+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5291
-	goto	u5290
-u5291:
-	goto	l5973
-u5290:
+	goto	u5331
+	goto	u5330
+u5331:
+	goto	l6018
+u5330:
 	
-l5971:; BSR set to: 0
+l6016:; BSR set to: 0
 
 	movlw	low(0)
 	movlb	1	; () banked
 	movlb	1	; () banked
 	movwf	(0+(_Cf+065h))&0ffh	;volatile
-	goto	l5973
+	goto	l6018
 	
 l452:; BSR set to: 1
 
 	line	142
 	
-l5973:
+l6018:
 ;config.c: 142: (INTCONbits.GIE = 1);
 	bsf	((c:4082)),c,7	;volatile
 	line	143
@@ -11615,7 +11750,7 @@ l5973:
 	
 l451:
 	
-l5975:
+l6020:
 ;config.c: 144: else if (Cf.Index == (32 * 3 + 5))
 	movlb	1	; () banked
 	movlb	1	; () banked
@@ -11623,21 +11758,21 @@ l5975:
 	xorlw	101
 
 	btfss	status,2
-	goto	u5301
-	goto	u5300
-u5301:
+	goto	u5341
+	goto	u5340
+u5341:
 	goto	l461
-u5300:
+u5340:
 	line	146
 	
-l5977:; BSR set to: 1
+l6022:; BSR set to: 1
 
 ;config.c: 145: {
 ;config.c: 146: RCIE = 0;
 	bcf	c:(31981/8),(31981)&7	;volatile
 	line	148
 	
-l5979:; BSR set to: 1
+l6024:; BSR set to: 1
 
 ;config.c: 148: temp = cf_check();
 	call	_cf_check	;wreg free
@@ -11646,20 +11781,20 @@ l5979:; BSR set to: 1
 	movwf	((cf_rcv@temp))&0ffh
 	line	150
 	
-l5981:; BSR set to: 0
+l6026:; BSR set to: 0
 
 ;config.c: 150: if (temp == 0)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((cf_rcv@temp))&0ffh
-	goto	u5311
-	goto	u5310
-u5311:
-	goto	l5985
-u5310:
+	goto	u5351
+	goto	u5350
+u5351:
+	goto	l6030
+u5350:
 	line	152
 	
-l5983:; BSR set to: 0
+l6028:; BSR set to: 0
 
 ;config.c: 151: {
 ;config.c: 152: ecran_print_one_char(3, 'E');
@@ -11676,13 +11811,13 @@ l5983:; BSR set to: 0
 	call	_ecran_print_one_char
 	line	153
 ;config.c: 153: }
-	goto	l6009
+	goto	l6054
 	line	154
 	
 l455:
 	line	157
 	
-l5985:
+l6030:
 ;config.c: 154: else
 ;config.c: 155: {
 ;config.c: 157: eeprom_write_array(&Cf.Data[0], 0, (32 * 3 + 5));
@@ -11716,7 +11851,7 @@ l5985:
 	call	_eeprom_write_array	;wreg free
 	line	159
 	
-l5987:
+l6032:
 ;config.c: 159: for (i = 0; i < (32 * 3 + 5); i ++)
 	movlb	0	; () banked
 	movwf	(??_cf_rcv+0+0)&0ffh
@@ -11727,29 +11862,29 @@ l5987:
 	movlb	0	; () banked
 	movf	(??_cf_rcv+0+0)&0ffh,w
 	
-l5989:; BSR set to: 0
+l6034:; BSR set to: 0
 
 	movlw	(065h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_rcv@i))&0ffh
-	goto	u5321
-	goto	u5320
-u5321:
-	goto	l5993
-u5320:
-	goto	l5999
+	goto	u5361
+	goto	u5360
+u5361:
+	goto	l6038
+u5360:
+	goto	l6044
 	
-l5991:; BSR set to: 0
+l6036:; BSR set to: 0
 
-	goto	l5999
+	goto	l6044
 	line	160
 	
 l457:; BSR set to: 0
 
 	line	161
 	
-l5993:; BSR set to: 0
+l6038:; BSR set to: 0
 
 ;config.c: 160: {
 ;config.c: 161: Cf.Data[i] = 0;
@@ -11769,30 +11904,30 @@ l5993:; BSR set to: 0
 	movwf	indf2
 	line	159
 	
-l5995:; BSR set to: 1
+l6040:; BSR set to: 1
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((cf_rcv@i))&0ffh
 	
-l5997:; BSR set to: 0
+l6042:; BSR set to: 0
 
 	movlw	(065h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_rcv@i))&0ffh
-	goto	u5331
-	goto	u5330
-u5331:
-	goto	l5993
-u5330:
-	goto	l5999
+	goto	u5371
+	goto	u5370
+u5371:
+	goto	l6038
+u5370:
+	goto	l6044
 	
 l458:; BSR set to: 0
 
 	line	164
 	
-l5999:; BSR set to: 0
+l6044:; BSR set to: 0
 
 ;config.c: 162: }
 ;config.c: 164: eeprom_read_array(&Cf.Data[0], 0, (32 * 3 + 5));
@@ -11826,7 +11961,7 @@ l5999:; BSR set to: 0
 	call	_eeprom_read_array	;wreg free
 	line	166
 	
-l6001:
+l6046:
 ;config.c: 166: temp = cf_check();
 	call	_cf_check	;wreg free
 	movlb	0	; () banked
@@ -11834,20 +11969,20 @@ l6001:
 	movwf	((cf_rcv@temp))&0ffh
 	line	168
 	
-l6003:; BSR set to: 0
+l6048:; BSR set to: 0
 
 ;config.c: 168: if (temp == 0)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((cf_rcv@temp))&0ffh
-	goto	u5341
-	goto	u5340
-u5341:
-	goto	l6007
-u5340:
+	goto	u5381
+	goto	u5380
+u5381:
+	goto	l6052
+u5380:
 	line	170
 	
-l6005:; BSR set to: 0
+l6050:; BSR set to: 0
 
 ;config.c: 169: {
 ;config.c: 170: ecran_print_one_char(3, 'E');
@@ -11864,13 +11999,13 @@ l6005:; BSR set to: 0
 	call	_ecran_print_one_char
 	line	171
 ;config.c: 171: }
-	goto	l6009
+	goto	l6054
 	line	172
 	
 l459:
 	line	174
 	
-l6007:
+l6052:
 ;config.c: 172: else
 ;config.c: 173: {
 ;config.c: 174: ecran_print_one_char(3, 'P');
@@ -11885,17 +12020,17 @@ l6007:
 	movlw	(03h)&0ffh
 	
 	call	_ecran_print_one_char
-	goto	l6009
+	goto	l6054
 	line	175
 	
 l460:
-	goto	l6009
+	goto	l6054
 	line	176
 	
 l456:
 	line	178
 	
-l6009:
+l6054:
 ;config.c: 175: }
 ;config.c: 176: }
 ;config.c: 178: Cf.Index = 0;
@@ -11905,7 +12040,7 @@ l6009:
 	movwf	(0+(_Cf+065h))&0ffh	;volatile
 	line	180
 	
-l6011:; BSR set to: 1
+l6056:; BSR set to: 1
 
 ;config.c: 180: RCIE = 1;
 	bsf	c:(31981/8),(31981)&7	;volatile
@@ -11978,7 +12113,7 @@ _eeprom_write_array:
 	dw	0FFFFh
 	line	56
 	
-l5721:
+l5766:
 ;eeprom.c: 54: unsigned char i;
 ;eeprom.c: 56: for (i = 0; i < NbData; i ++)
 	movlb	0	; () banked
@@ -11989,14 +12124,14 @@ l5721:
 	movwf	((eeprom_write_array@i))&0ffh
 	movlb	0	; () banked
 	movf	(??_eeprom_write_array+0+0)&0ffh,w
-	goto	l5731
+	goto	l5776
 	line	57
 	
 l353:; BSR set to: 0
 
 	line	58
 	
-l5723:; BSR set to: 0
+l5768:; BSR set to: 0
 
 ;eeprom.c: 57: {
 ;eeprom.c: 58: eeprom_write(*pData, Address);
@@ -12008,7 +12143,7 @@ l5723:; BSR set to: 0
 	call	_eeprom_write
 	line	59
 	
-l5725:
+l5770:
 ;eeprom.c: 59: pData ++;
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -12016,7 +12151,7 @@ l5725:
 	incf	((eeprom_write_array@pData+1))&0ffh
 	line	60
 	
-l5727:; BSR set to: 0
+l5772:; BSR set to: 0
 
 ;eeprom.c: 60: Address ++;
 	movlb	0	; () banked
@@ -12024,17 +12159,17 @@ l5727:; BSR set to: 0
 	incf	((eeprom_write_array@Address))&0ffh
 	line	56
 	
-l5729:; BSR set to: 0
+l5774:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((eeprom_write_array@i))&0ffh
-	goto	l5731
+	goto	l5776
 	
 l352:; BSR set to: 0
 
 	
-l5731:; BSR set to: 0
+l5776:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -12043,11 +12178,11 @@ l5731:; BSR set to: 0
 	movlb	0	; () banked
 	subwf	((eeprom_write_array@i))&0ffh,w
 	btfss	status,0
-	goto	u4951
-	goto	u4950
-u4951:
-	goto	l5723
-u4950:
+	goto	u4991
+	goto	u4990
+u4991:
+	goto	l5768
+u4990:
 	goto	l355
 	
 l354:; BSR set to: 0
@@ -12113,49 +12248,49 @@ _eeprom_write:; BSR set to: 0
 	movff	wreg,(eeprom_write@Data)
 	line	20
 	
-l5403:
+l5448:
 ;eeprom.c: 20: EEADR = Address;
 	movff	(eeprom_write@Address),(c:4009)	;volatile
 	line	21
 	
-l5405:
+l5450:
 ;eeprom.c: 21: EEDATA = Data;
 	movff	(eeprom_write@Data),(c:4008)	;volatile
 	line	23
 	
-l5407:
+l5452:
 ;eeprom.c: 23: EEPGD = 0;
 	bcf	c:(32055/8),(32055)&7	;volatile
 	line	24
 	
-l5409:
+l5454:
 ;eeprom.c: 24: CFGS = 0;
 	bcf	c:(32054/8),(32054)&7	;volatile
 	line	25
 	
-l5411:
+l5456:
 ;eeprom.c: 25: WREN = 1;
 	bsf	c:(32050/8),(32050)&7	;volatile
 	line	27
 	
-l5413:
+l5458:
 ;eeprom.c: 27: (INTCONbits.GIE = 0);
 	bcf	((c:4082)),c,7	;volatile
 	line	29
 	
-l5415:
+l5460:
 ;eeprom.c: 29: EECON2 = 0x55;
 	movlw	low(055h)
 	movwf	((c:4007)),c	;volatile
 	line	30
 	
-l5417:
+l5462:
 ;eeprom.c: 30: EECON2 = 0xAA;
 	movlw	low(0AAh)
 	movwf	((c:4007)),c	;volatile
 	line	32
 	
-l5419:
+l5464:
 ;eeprom.c: 32: WR = 1;
 	bsf	c:(32049/8),(32049)&7	;volatile
 	line	33
@@ -12166,11 +12301,11 @@ l341:
 	
 l340:
 	btfsc	c:(32049/8),(32049)&7	;volatile
-	goto	u4361
-	goto	u4360
-u4361:
+	goto	u4401
+	goto	u4400
+u4401:
 	goto	l340
-u4360:
+u4400:
 	
 l342:
 	line	35
@@ -12236,21 +12371,21 @@ _check_bpon:
 	dw	0FFFFh
 	line	54
 	
-l6233:
+l6278:
 ;test.c: 54: Test.Time = Cptms;
 	movff	(c:_Cptms),0+((c:_Test)+02h)	;volatile
 	movff	(c:_Cptms+1),1+((c:_Test)+02h)	;volatile
 	line	56
 ;test.c: 56: if (PORTEbits.RE0 == 0)
 	btfsc	((c:3972)),c,0	;volatile
-	goto	u5461
-	goto	u5460
-u5461:
+	goto	u5501
+	goto	u5500
+u5501:
 	goto	l553
-u5460:
+u5500:
 	line	58
 	
-l6235:
+l6280:
 ;test.c: 57: {
 ;test.c: 58: ecran_print_one_char(3, 'A');
 	movlb	0	; () banked
@@ -12272,13 +12407,13 @@ l549:
 	
 l548:
 	btfsc	((c:3972)),c,0	;volatile
-	goto	u5471
-	goto	u5470
-u5471:
+	goto	u5511
+	goto	u5510
+u5511:
 	goto	l553
-u5470:
+u5510:
 	
-l6237:
+l6282:
 	lfsr	2,(c:_Test)+02h
 	movff	postinc2,??_check_bpon+0+0
 	movff	postdec2,??_check_bpon+0+0+1
@@ -12299,11 +12434,11 @@ l6237:
 	movlw	03h
 	subwfb	(??_check_bpon+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5481
-	goto	u5480
-u5481:
+	goto	u5521
+	goto	u5520
+u5521:
 	goto	l548
-u5480:
+u5520:
 	goto	l553
 	
 l551:; BSR set to: 0
@@ -12379,7 +12514,7 @@ _cf_check_and_display:
 	dw	0FFFFh
 	line	94
 	
-l6239:
+l6284:
 ;config.c: 94: unsigned char configOk = 0;
 	movlb	0	; () banked
 	movwf	(??_cf_check_and_display+0+0)&0ffh
@@ -12391,7 +12526,7 @@ l6239:
 	movf	(??_cf_check_and_display+0+0)&0ffh,w
 	line	97
 	
-l6241:; BSR set to: 0
+l6286:; BSR set to: 0
 
 ;config.c: 95: unsigned short temp;
 ;config.c: 97: eeprom_read_array(&Cf.Data[0], 0, (32 * 3 + 5));
@@ -12425,7 +12560,7 @@ l6241:; BSR set to: 0
 	call	_eeprom_read_array	;wreg free
 	line	99
 	
-l6243:
+l6288:
 ;config.c: 99: configOk = cf_check();
 	call	_cf_check	;wreg free
 	movlb	0	; () banked
@@ -12433,7 +12568,7 @@ l6243:
 	movwf	((cf_check_and_display@configOk))&0ffh
 	line	101
 	
-l6245:; BSR set to: 0
+l6290:; BSR set to: 0
 
 ;config.c: 101: if (configOk == 1)
 	movlb	0	; () banked
@@ -12441,27 +12576,27 @@ l6245:; BSR set to: 0
 	decf	((cf_check_and_display@configOk))&0ffh,w
 
 	btfss	status,2
-	goto	u5491
-	goto	u5490
-u5491:
-	goto	l6267
-u5490:
+	goto	u5531
+	goto	u5530
+u5531:
+	goto	l6312
+u5530:
 	line	104
 	
-l6247:; BSR set to: 0
+l6292:; BSR set to: 0
 
 ;config.c: 102: {
 ;config.c: 104: if (Cf.IsLong == 1)
 	movlb	1	; () banked
 	btfss	(0+(_Cf+06Ah))&0ffh,0	;volatile
-	goto	u5501
-	goto	u5500
-u5501:
-	goto	l6263
-u5500:
+	goto	u5541
+	goto	u5540
+u5541:
+	goto	l6308
+u5540:
 	line	106
 	
-l6249:; BSR set to: 1
+l6294:; BSR set to: 1
 
 ;config.c: 105: {
 ;config.c: 106: Ecran.Digit[0] = ' ';
@@ -12485,7 +12620,7 @@ l6249:; BSR set to: 1
 	movf	(??_cf_check_and_display+0+0)&0ffh,w
 	line	108
 	
-l6251:; BSR set to: 0
+l6296:; BSR set to: 0
 
 ;config.c: 108: Ecran.Digit[2] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[98]) & 0xF0) >> 4)));
 	movlb	1	; () banked
@@ -12500,7 +12635,7 @@ l6251:; BSR set to: 0
 	movwf	(0+(_Ecran+02h))&0ffh
 	line	109
 	
-l6253:; BSR set to: 0
+l6298:; BSR set to: 0
 
 ;config.c: 109: Ecran.Digit[3] = HexToAscii(((unsigned char) ((Cf.Data[98]) & 0x0F)));
 	movlb	1	; () banked
@@ -12514,7 +12649,7 @@ l6253:; BSR set to: 0
 	movwf	(0+(_Ecran+03h))&0ffh
 	line	111
 	
-l6255:; BSR set to: 0
+l6300:; BSR set to: 0
 
 ;config.c: 111: Ecran.Digits = Ecran.Digit;
 	movlb	0	; () banked
@@ -12530,26 +12665,26 @@ l6255:; BSR set to: 0
 
 	line	113
 	
-l6257:; BSR set to: 0
+l6302:; BSR set to: 0
 
 ;config.c: 113: temp = Cptms;
 	movff	(c:_Cptms),(cf_check_and_display@temp)	;volatile
 	movff	(c:_Cptms+1),(cf_check_and_display@temp+1)	;volatile
 	line	115
 ;config.c: 115: while((((unsigned short) (Cptms - temp) < 1000) ? 1 : 0)) {ecran_refresh();}
-	goto	l6261
+	goto	l6306
 	
 l442:; BSR set to: 0
 
 	
-l6259:; BSR set to: 0
+l6304:; BSR set to: 0
 
 	call	_ecran_refresh	;wreg free
-	goto	l6261
+	goto	l6306
 	
 l441:
 	
-l6261:
+l6306:
 	movlb	0	; () banked
 	movff	(cf_check_and_display@temp),??_cf_check_and_display+0+0
 	movlb	0	; () banked
@@ -12571,23 +12706,23 @@ l6261:
 	movlw	03h
 	subwfb	(??_cf_check_and_display+0+1)&0ffh,w
 	btfss	status,0
-	goto	u5511
-	goto	u5510
-u5511:
-	goto	l6259
-u5510:
-	goto	l6263
+	goto	u5551
+	goto	u5550
+u5551:
+	goto	l6304
+u5550:
+	goto	l6308
 	
 l443:; BSR set to: 0
 
-	goto	l6263
+	goto	l6308
 	line	116
 	
 l440:; BSR set to: 0
 
 	line	118
 	
-l6263:
+l6308:
 ;config.c: 116: }
 ;config.c: 118: Ecran.Digit[0] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[99]) & 0xF0) >> 4)));
 	movlb	1	; () banked
@@ -12636,7 +12771,7 @@ l6263:
 	movwf	(0+(_Ecran+03h))&0ffh
 	line	123
 	
-l6265:; BSR set to: 0
+l6310:; BSR set to: 0
 
 ;config.c: 123: Ecran.Digits = Ecran.Digit;
 	movlb	0	; () banked
@@ -12659,7 +12794,7 @@ l439:; BSR set to: 0
 
 	line	127
 	
-l6267:; BSR set to: 0
+l6312:; BSR set to: 0
 
 ;config.c: 125: else
 ;config.c: 126: {
@@ -12749,7 +12884,7 @@ _eeprom_read_array:
 	dw	0FFFFh
 	line	44
 	
-l5709:
+l5754:
 ;eeprom.c: 42: unsigned char i;
 ;eeprom.c: 44: for (i = 0; i < NbData; i ++)
 	movlb	0	; () banked
@@ -12760,14 +12895,14 @@ l5709:
 	movwf	((eeprom_read_array@i))&0ffh
 	movlb	0	; () banked
 	movf	(??_eeprom_read_array+0+0)&0ffh,w
-	goto	l5719
+	goto	l5764
 	line	45
 	
 l347:; BSR set to: 0
 
 	line	46
 	
-l5711:; BSR set to: 0
+l5756:; BSR set to: 0
 
 ;eeprom.c: 45: {
 ;eeprom.c: 46: *pData = eeprom_read(Address);
@@ -12782,7 +12917,7 @@ l5711:; BSR set to: 0
 
 	line	47
 	
-l5713:
+l5758:
 ;eeprom.c: 47: pData ++;
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -12790,7 +12925,7 @@ l5713:
 	incf	((eeprom_read_array@pData+1))&0ffh
 	line	48
 	
-l5715:; BSR set to: 0
+l5760:; BSR set to: 0
 
 ;eeprom.c: 48: Address ++;
 	movlb	0	; () banked
@@ -12798,17 +12933,17 @@ l5715:; BSR set to: 0
 	incf	((eeprom_read_array@Address))&0ffh
 	line	44
 	
-l5717:; BSR set to: 0
+l5762:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((eeprom_read_array@i))&0ffh
-	goto	l5719
+	goto	l5764
 	
 l346:; BSR set to: 0
 
 	
-l5719:; BSR set to: 0
+l5764:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -12817,11 +12952,11 @@ l5719:; BSR set to: 0
 	movlb	0	; () banked
 	subwf	((eeprom_read_array@i))&0ffh,w
 	btfss	status,0
-	goto	u4941
-	goto	u4940
-u4941:
-	goto	l5711
-u4940:
+	goto	u4981
+	goto	u4980
+u4981:
+	goto	l5756
+u4980:
 	goto	l349
 	
 l348:; BSR set to: 0
@@ -12886,46 +13021,46 @@ _eeprom_read:; BSR set to: 0
 	movff	wreg,(eeprom_read@Address)
 	line	5
 	
-l5387:
+l5432:
 ;eeprom.c: 5: EEADR = Address;
 	movff	(eeprom_read@Address),(c:4009)	;volatile
 	line	7
 	
-l5389:
+l5434:
 ;eeprom.c: 7: EEPGD = 0;
 	bcf	c:(32055/8),(32055)&7	;volatile
 	line	8
 	
-l5391:
+l5436:
 ;eeprom.c: 8: CFGS = 0;
 	bcf	c:(32054/8),(32054)&7	;volatile
 	line	9
 	
-l5393:
+l5438:
 ;eeprom.c: 9: RD = 1;
 	bsf	c:(32048/8),(32048)&7	;volatile
 	line	11
 	
-l5395:
+l5440:
 ;eeprom.c: 11: __nop();
 	opt	asmopt_off
 	nop
 	opt	asmopt_on
 	line	12
 	
-l5397:
+l5442:
 ;eeprom.c: 12: __nop();
 	opt	asmopt_off
 	nop
 	opt	asmopt_on
 	line	14
 	
-l5399:
+l5444:
 ;eeprom.c: 14: return EEDATA;
 	movf	((c:4008)),c,w	;volatile
 	goto	l337
 	
-l5401:
+l5446:
 	line	15
 	
 l337:
@@ -12986,7 +13121,7 @@ _cf_check:
 	dw	0FFFFh
 	line	81
 	
-l5733:
+l5778:
 ;config.c: 81: unsigned char valid = 0;
 	movlb	0	; () banked
 	movwf	(??_cf_check+0+0)&0ffh
@@ -12998,37 +13133,37 @@ l5733:
 	movf	(??_cf_check+0+0)&0ffh,w
 	line	83
 	
-l5735:; BSR set to: 0
+l5780:; BSR set to: 0
 
 ;config.c: 83: if (cf_checksum() && cf_checkout() && cf_checkrange())
 	call	_cf_checksum	;wreg free
 	btfss	status,0
-	goto	u4961
-	goto	u4960
-u4961:
-	goto	l5743
-u4960:
+	goto	u5001
+	goto	u5000
+u5001:
+	goto	l5788
+u5000:
 	
-l5737:
+l5782:
 	call	_cf_checkout	;wreg free
 	btfss	status,0
-	goto	u4971
-	goto	u4970
-u4971:
-	goto	l5743
-u4970:
+	goto	u5011
+	goto	u5010
+u5011:
+	goto	l5788
+u5010:
 	
-l5739:
+l5784:
 	call	_cf_checkrange	;wreg free
 	btfss	status,0
-	goto	u4981
-	goto	u4980
-u4981:
-	goto	l5743
-u4980:
+	goto	u5021
+	goto	u5020
+u5021:
+	goto	l5788
+u5020:
 	line	85
 	
-l5741:
+l5786:
 ;config.c: 84: {
 ;config.c: 85: valid = 1;
 	movlb	0	; () banked
@@ -13039,14 +13174,14 @@ l5741:
 	movwf	((cf_check@valid))&0ffh
 	movlb	0	; () banked
 	movf	(??_cf_check+0+0)&0ffh,w
-	goto	l5743
+	goto	l5788
 	line	86
 	
 l435:; BSR set to: 0
 
 	line	88
 	
-l5743:
+l5788:
 ;config.c: 86: }
 ;config.c: 88: return valid;
 	movlb	0	; () banked
@@ -13054,7 +13189,7 @@ l5743:
 	movf	((cf_check@valid))&0ffh,w
 	goto	l436
 	
-l5745:; BSR set to: 0
+l5790:; BSR set to: 0
 
 	line	89
 	
@@ -13116,7 +13251,7 @@ _cf_checksum:; BSR set to: 0
 	dw	0FFFFh
 	line	7
 	
-l5421:
+l5466:
 ;config.c: 6: unsigned long calcul;
 ;config.c: 7: unsigned char i, valid = 0;
 	movlb	0	; () banked
@@ -13138,7 +13273,7 @@ l5421:
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+0)&0ffh,w
 	
-l5423:; BSR set to: 0
+l5468:; BSR set to: 0
 
 	movlw	low(0)
 	movlb	0	; () banked
@@ -13157,23 +13292,23 @@ l5423:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_checksum@i))&0ffh
-	goto	u4371
-	goto	u4370
-u4371:
-	goto	l5427
-u4370:
-	goto	l5433
+	goto	u4411
+	goto	u4410
+u4411:
+	goto	l5472
+u4410:
+	goto	l5478
 	
-l5425:; BSR set to: 0
+l5470:; BSR set to: 0
 
-	goto	l5433
+	goto	l5478
 	line	10
 	
 l406:; BSR set to: 0
 
 	line	11
 	
-l5427:; BSR set to: 0
+l5472:; BSR set to: 0
 
 ;config.c: 10: {
 ;config.c: 11: calcul += (unsigned long) ((unsigned short) (Cf.Data[i*3+1] << 8) + Cf.Data[i*3+2]);
@@ -13247,30 +13382,30 @@ l5427:; BSR set to: 0
 
 	line	9
 	
-l5429:; BSR set to: 0
+l5474:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((cf_checksum@i))&0ffh
 	
-l5431:; BSR set to: 0
+l5476:; BSR set to: 0
 
 	movlw	(020h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_checksum@i))&0ffh
-	goto	u4381
-	goto	u4380
-u4381:
-	goto	l5427
-u4380:
-	goto	l5433
+	goto	u4421
+	goto	u4420
+u4421:
+	goto	l5472
+u4420:
+	goto	l5478
 	
 l407:; BSR set to: 0
 
 	line	17
 	
-l5433:; BSR set to: 0
+l5478:; BSR set to: 0
 
 ;config.c: 12: }
 ;config.c: 14: if ( (((calcul >> 24) & 0x000000FF) == Cf.Data[97])
@@ -13292,17 +13427,17 @@ l5433:; BSR set to: 0
 	movlb	0	; () banked
 	movff	(cf_checksum@calcul+3),??_cf_checksum+4+0+3
 	movlw	018h+1
-	goto	u4390
-u4395:
+	goto	u4430
+u4435:
 	movlb	0	; () banked
 	bcf	status,0
 	rrcf	(??_cf_checksum+4+3)&0ffh
 	rrcf	(??_cf_checksum+4+2)&0ffh
 	rrcf	(??_cf_checksum+4+1)&0ffh
 	rrcf	(??_cf_checksum+4+0)&0ffh
-u4390:
+u4430:
 	decfsz	wreg
-	goto	u4395
+	goto	u4435
 	movlw	0FFh
 	movlb	0	; () banked
 	andwf	(??_cf_checksum+4+0)&0ffh,w
@@ -13327,30 +13462,30 @@ u4390:
 	movf	(??_cf_checksum+0+3)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+3)&0ffh,w
-	bnz	u4405
+	bnz	u4445
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+2)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+2)&0ffh,w
-	bnz	u4405
+	bnz	u4445
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+1)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+1)&0ffh,w
-	bnz	u4405
+	bnz	u4445
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+0)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+0)&0ffh,w
-u4405:
+u4445:
 	btfss	status,2
-	goto	u4401
-	goto	u4400
-u4401:
-	goto	l5443
-u4400:
+	goto	u4441
+	goto	u4440
+u4441:
+	goto	l5488
+u4440:
 	
-l5435:; BSR set to: 0
+l5480:; BSR set to: 0
 
 	movlb	1	; () banked
 	movff	0+(_Cf+062h),??_cf_checksum+0+0	;volatile
@@ -13367,17 +13502,17 @@ l5435:; BSR set to: 0
 	movlb	0	; () banked
 	movff	(cf_checksum@calcul+3),??_cf_checksum+4+0+3
 	movlw	010h+1
-	goto	u4410
-u4415:
+	goto	u4450
+u4455:
 	movlb	0	; () banked
 	bcf	status,0
 	rrcf	(??_cf_checksum+4+3)&0ffh
 	rrcf	(??_cf_checksum+4+2)&0ffh
 	rrcf	(??_cf_checksum+4+1)&0ffh
 	rrcf	(??_cf_checksum+4+0)&0ffh
-u4410:
+u4450:
 	decfsz	wreg
-	goto	u4415
+	goto	u4455
 	movlw	0FFh
 	movlb	0	; () banked
 	andwf	(??_cf_checksum+4+0)&0ffh,w
@@ -13402,30 +13537,30 @@ u4410:
 	movf	(??_cf_checksum+0+3)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+3)&0ffh,w
-	bnz	u4425
+	bnz	u4465
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+2)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+2)&0ffh,w
-	bnz	u4425
+	bnz	u4465
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+1)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+1)&0ffh,w
-	bnz	u4425
+	bnz	u4465
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+0)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+0)&0ffh,w
-u4425:
+u4465:
 	btfss	status,2
-	goto	u4421
-	goto	u4420
-u4421:
-	goto	l5443
-u4420:
+	goto	u4461
+	goto	u4460
+u4461:
+	goto	l5488
+u4460:
 	
-l5437:; BSR set to: 0
+l5482:; BSR set to: 0
 
 	movlb	1	; () banked
 	movff	0+(_Cf+063h),??_cf_checksum+0+0	;volatile
@@ -13470,30 +13605,30 @@ l5437:; BSR set to: 0
 	movf	(??_cf_checksum+0+3)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+3)&0ffh,w
-	bnz	u4435
+	bnz	u4475
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+2)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+2)&0ffh,w
-	bnz	u4435
+	bnz	u4475
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+1)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+1)&0ffh,w
-	bnz	u4435
+	bnz	u4475
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+0)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+8+0)&0ffh,w
-u4435:
+u4475:
 	btfss	status,2
-	goto	u4431
-	goto	u4430
-u4431:
-	goto	l5443
-u4430:
+	goto	u4471
+	goto	u4470
+u4471:
+	goto	l5488
+u4470:
 	
-l5439:; BSR set to: 0
+l5484:; BSR set to: 0
 
 	movlb	1	; () banked
 	movff	0+(_Cf+064h),??_cf_checksum+0+0	;volatile
@@ -13529,31 +13664,31 @@ l5439:; BSR set to: 0
 	movf	(??_cf_checksum+0+3)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+4+3)&0ffh,w
-	bnz	u4445
+	bnz	u4485
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+2)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+4+2)&0ffh,w
-	bnz	u4445
+	bnz	u4485
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+1)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+4+1)&0ffh,w
-	bnz	u4445
+	bnz	u4485
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+0)&0ffh,w
 	movlb	0	; () banked
 	xorwf	(??_cf_checksum+4+0)&0ffh,w
-u4445:
+u4485:
 	btfss	status,2
-	goto	u4441
-	goto	u4440
-u4441:
-	goto	l5443
-u4440:
+	goto	u4481
+	goto	u4480
+u4481:
+	goto	l5488
+u4480:
 	line	19
 	
-l5441:; BSR set to: 0
+l5486:; BSR set to: 0
 
 ;config.c: 18: {
 ;config.c: 19: valid = 1;
@@ -13565,73 +13700,73 @@ l5441:; BSR set to: 0
 	movwf	((cf_checksum@valid))&0ffh
 	movlb	0	; () banked
 	movf	(??_cf_checksum+0+0)&0ffh,w
-	goto	l5443
+	goto	l5488
 	line	20
 	
 l408:; BSR set to: 0
 
 	line	22
 	
-l5443:; BSR set to: 0
+l5488:; BSR set to: 0
 
 ;config.c: 20: }
 ;config.c: 22: if ((Cf.Data[97] == 0) && (Cf.Data[98] == 0) && (Cf.Data[99] == 0) && (Cf.Data[100] == 0))
 	movlb	1	; () banked
 	movlb	1	; () banked
 	tstfsz	(0+(_Cf+061h))&0ffh	;volatile
-	goto	u4451
-	goto	u4450
-u4451:
-	goto	l5453
-u4450:
+	goto	u4491
+	goto	u4490
+u4491:
+	goto	l5498
+u4490:
 	
-l5445:; BSR set to: 1
+l5490:; BSR set to: 1
 
 	movlb	1	; () banked
 	movlb	1	; () banked
 	tstfsz	(0+(_Cf+062h))&0ffh	;volatile
-	goto	u4461
-	goto	u4460
-u4461:
-	goto	l5453
-u4460:
+	goto	u4501
+	goto	u4500
+u4501:
+	goto	l5498
+u4500:
 	
-l5447:; BSR set to: 1
+l5492:; BSR set to: 1
 
 	movlb	1	; () banked
 	movlb	1	; () banked
 	tstfsz	(0+(_Cf+063h))&0ffh	;volatile
-	goto	u4471
-	goto	u4470
-u4471:
-	goto	l5453
-u4470:
+	goto	u4511
+	goto	u4510
+u4511:
+	goto	l5498
+u4510:
 	
-l5449:; BSR set to: 1
+l5494:; BSR set to: 1
 
 	movlb	1	; () banked
 	movlb	1	; () banked
 	tstfsz	(0+(_Cf+064h))&0ffh	;volatile
-	goto	u4481
-	goto	u4480
-u4481:
-	goto	l5453
-u4480:
+	goto	u4521
+	goto	u4520
+u4521:
+	goto	l5498
+u4520:
 	line	24
 	
-l5451:; BSR set to: 1
+l5496:; BSR set to: 1
 
 ;config.c: 23: {
 ;config.c: 24: Micro.Mod.P_00 = 1;
 	bsf	(0+((c:_Micro)+05h)),c,1
-	goto	l5453
+	goto	l5498
 	line	25
 	
 l409:; BSR set to: 1
 
 	line	27
 	
-l5453:; BSR set to: 1
+l5498:; BSR set to: 1
 
 ;config.c: 25: }
 ;config.c: 27: if (calcul > 0x0000FFFF) {Cf.IsLong = 1;}
@@ -13650,31 +13785,31 @@ l5453:; BSR set to: 1
 	movlb	0	; () banked
 	subwfb	((cf_checksum@calcul+3))&0ffh,w
 	btfss	status,0
-	goto	u4491
-	goto	u4490
-u4491:
-	goto	l5457
-u4490:
+	goto	u4531
+	goto	u4530
+u4531:
+	goto	l5502
+u4530:
 	
-l5455:; BSR set to: 0
+l5500:; BSR set to: 0
 
 	movlb	1	; () banked
 	movlb	1	; () banked
 	bsf	(0+(_Cf+06Ah))&0ffh,0	;volatile
-	goto	l5457
+	goto	l5502
 	
 l410:; BSR set to: 1
 
 	line	29
 	
-l5457:
+l5502:
 ;config.c: 29: return valid;
 	movff	(cf_checksum@valid),??_cf_checksum+0+0
 	movlb	0	; () banked
 	rrcf	(??_cf_checksum+0+0)&0ffh,w
 	goto	l411
 	
-l5459:; BSR set to: 0
+l5504:; BSR set to: 0
 
 	line	30
 	
@@ -13735,7 +13870,7 @@ _cf_checkrange:; BSR set to: 0
 	dw	0FFFFh
 	line	67
 	
-l5499:
+l5544:
 ;config.c: 67: unsigned char i, valid = 0;
 	movlb	0	; () banked
 	movwf	(??_cf_checkrange+0+0)&0ffh
@@ -13756,29 +13891,29 @@ l5499:
 	movlb	0	; () banked
 	movf	(??_cf_checkrange+0+0)&0ffh,w
 	
-l5501:; BSR set to: 0
+l5546:; BSR set to: 0
 
 	movlw	(020h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_checkrange@i))&0ffh
-	goto	u4601
-	goto	u4600
-u4601:
-	goto	l5505
-u4600:
-	goto	l5515
+	goto	u4641
+	goto	u4640
+u4641:
+	goto	l5550
+u4640:
+	goto	l5560
 	
-l5503:; BSR set to: 0
+l5548:; BSR set to: 0
 
-	goto	l5515
+	goto	l5560
 	line	70
 	
 l429:; BSR set to: 0
 
 	line	71
 	
-l5505:; BSR set to: 0
+l5550:; BSR set to: 0
 
 ;config.c: 70: {
 ;config.c: 71: if (Cf.Data[i*3] > 32) {return valid;}
@@ -13796,20 +13931,20 @@ l5505:; BSR set to: 0
 	movwf	1+c:fsr2l
 	movlw	(021h-1)
 	cpfsgt	indf2
-	goto	u4611
-	goto	u4610
-u4611:
-	goto	l5511
-u4610:
+	goto	u4651
+	goto	u4650
+u4651:
+	goto	l5556
+u4650:
 	
-l5507:; BSR set to: 1
+l5552:; BSR set to: 1
 
 	movff	(cf_checkrange@valid),??_cf_checkrange+0+0
 	movlb	0	; () banked
 	rrcf	(??_cf_checkrange+0+0)&0ffh,w
 	goto	l432
 	
-l5509:; BSR set to: 0
+l5554:; BSR set to: 0
 
 	goto	l432
 	
@@ -13817,29 +13952,29 @@ l431:; BSR set to: 0
 
 	line	69
 	
-l5511:
+l5556:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((cf_checkrange@i))&0ffh
 	
-l5513:; BSR set to: 0
+l5558:; BSR set to: 0
 
 	movlw	(020h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_checkrange@i))&0ffh
-	goto	u4621
-	goto	u4620
-u4621:
-	goto	l5505
-u4620:
-	goto	l5515
+	goto	u4661
+	goto	u4660
+u4661:
+	goto	l5550
+u4660:
+	goto	l5560
 	
 l430:; BSR set to: 0
 
 	line	74
 	
-l5515:; BSR set to: 0
+l5560:; BSR set to: 0
 
 ;config.c: 72: }
 ;config.c: 74: valid = 1;
@@ -13853,7 +13988,7 @@ l5515:; BSR set to: 0
 	movf	(??_cf_checkrange+0+0)&0ffh,w
 	line	76
 	
-l5517:; BSR set to: 0
+l5562:; BSR set to: 0
 
 ;config.c: 76: return valid;
 	movff	(cf_checkrange@valid),??_cf_checkrange+0+0
@@ -13861,7 +13996,7 @@ l5517:; BSR set to: 0
 	rrcf	(??_cf_checkrange+0+0)&0ffh,w
 	goto	l432
 	
-l5519:; BSR set to: 0
+l5564:; BSR set to: 0
 
 	line	77
 	
@@ -13923,7 +14058,7 @@ _cf_checkout:; BSR set to: 0
 	dw	0FFFFh
 	line	35
 	
-l5461:
+l5506:
 ;config.c: 35: unsigned char i, valid = 0;
 	movlb	0	; () banked
 	movwf	(??_cf_checkout+0+0)&0ffh
@@ -13954,29 +14089,29 @@ l5461:
 	movlb	0	; () banked
 	movf	(??_cf_checkout+0+0)&0ffh,w
 	
-l5463:; BSR set to: 0
+l5508:; BSR set to: 0
 
 	movlw	(020h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_checkout@i))&0ffh
-	goto	u4501
-	goto	u4500
-u4501:
-	goto	l5467
-u4500:
-	goto	l5487
+	goto	u4541
+	goto	u4540
+u4541:
+	goto	l5512
+u4540:
+	goto	l5532
 	
-l5465:; BSR set to: 0
+l5510:; BSR set to: 0
 
-	goto	l5487
+	goto	l5532
 	line	39
 	
 l414:; BSR set to: 0
 
 	line	40
 	
-l5467:; BSR set to: 0
+l5512:; BSR set to: 0
 
 ;config.c: 39: {
 ;config.c: 40: if (Cf.Data[i*3] == 0)
@@ -13994,34 +14129,34 @@ l5467:; BSR set to: 0
 	movwf	1+c:fsr2l
 	movf	indf2,w
 	btfss	status,2
-	goto	u4511
-	goto	u4510
-u4511:
-	goto	l5477
-u4510:
+	goto	u4551
+	goto	u4550
+u4551:
+	goto	l5522
+u4550:
 	line	42
 	
-l5469:; BSR set to: 1
+l5514:; BSR set to: 1
 
 ;config.c: 41: {
 ;config.c: 42: if (i == 0) {return valid;}
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((cf_checkout@i))&0ffh
-	goto	u4521
-	goto	u4520
-u4521:
+	goto	u4561
+	goto	u4560
+u4561:
 	goto	l417
-u4520:
+u4560:
 	
-l5471:; BSR set to: 0
+l5516:; BSR set to: 0
 
 	movff	(cf_checkout@valid),??_cf_checkout+0+0
 	movlb	0	; () banked
 	rrcf	(??_cf_checkout+0+0)&0ffh,w
 	goto	l418
 	
-l5473:; BSR set to: 0
+l5518:; BSR set to: 0
 
 	goto	l418
 	
@@ -14032,14 +14167,14 @@ l417:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((cf_checkout@last_out))&0ffh
-	goto	u4531
-	goto	u4530
-u4531:
-	goto	l5483
-u4530:
+	goto	u4571
+	goto	u4570
+u4571:
+	goto	l5528
+u4570:
 	line	46
 	
-l5475:; BSR set to: 0
+l5520:; BSR set to: 0
 
 ;config.c: 45: {
 ;config.c: 46: last_out = Cf.Data[(i - 1) * 3];
@@ -14080,7 +14215,7 @@ l5475:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	((cf_checkout@last_out))&0ffh
-	goto	l5483
+	goto	l5528
 	line	47
 	
 l419:; BSR set to: 0
@@ -14088,14 +14223,14 @@ l419:; BSR set to: 0
 	line	48
 ;config.c: 47: }
 ;config.c: 48: }
-	goto	l5483
+	goto	l5528
 	line	49
 	
 l416:; BSR set to: 0
 
 	line	51
 	
-l5477:
+l5522:
 ;config.c: 49: else
 ;config.c: 50: {
 ;config.c: 51: if (last_out != 0) {return valid;}
@@ -14103,56 +14238,56 @@ l5477:
 	movlb	0	; () banked
 	movf	((cf_checkout@last_out))&0ffh,w
 	btfsc	status,2
-	goto	u4541
-	goto	u4540
-u4541:
-	goto	l5483
-u4540:
+	goto	u4581
+	goto	u4580
+u4581:
+	goto	l5528
+u4580:
 	
-l5479:; BSR set to: 0
+l5524:; BSR set to: 0
 
 	movff	(cf_checkout@valid),??_cf_checkout+0+0
 	movlb	0	; () banked
 	rrcf	(??_cf_checkout+0+0)&0ffh,w
 	goto	l418
 	
-l5481:; BSR set to: 0
+l5526:; BSR set to: 0
 
 	goto	l418
 	
 l421:; BSR set to: 0
 
-	goto	l5483
+	goto	l5528
 	line	52
 	
 l420:; BSR set to: 0
 
 	line	38
 	
-l5483:; BSR set to: 0
+l5528:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((cf_checkout@i))&0ffh
 	
-l5485:; BSR set to: 0
+l5530:; BSR set to: 0
 
 	movlw	(020h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((cf_checkout@i))&0ffh
-	goto	u4551
-	goto	u4550
-u4551:
-	goto	l5467
-u4550:
-	goto	l5487
+	goto	u4591
+	goto	u4590
+u4591:
+	goto	l5512
+u4590:
+	goto	l5532
 	
 l415:; BSR set to: 0
 
 	line	56
 	
-l5487:; BSR set to: 0
+l5532:; BSR set to: 0
 
 ;config.c: 52: }
 ;config.c: 53: }
@@ -14162,13 +14297,13 @@ l5487:; BSR set to: 0
 	movlb	0	; () banked
 	movf	((cf_checkout@last_out))&0ffh,w
 	btfsc	status,2
-	goto	u4561
-	goto	u4560
-u4561:
+	goto	u4601
+	goto	u4600
+u4601:
 	goto	l426
-u4560:
+u4600:
 	
-l5489:; BSR set to: 0
+l5534:; BSR set to: 0
 
 	movlb	1	; () banked
 	movlb	1	; () banked
@@ -14177,24 +14312,24 @@ l5489:; BSR set to: 0
 	movlb	0	; () banked
 	xorwf	((cf_checkout@last_out))&0ffh,w
 	btfsc	status,2
-	goto	u4571
-	goto	u4570
-u4571:
-	goto	l5493
-u4570:
+	goto	u4611
+	goto	u4610
+u4611:
+	goto	l5538
+u4610:
 	
 l426:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((cf_checkout@last_out))&0ffh
-	goto	u4581
-	goto	u4580
-u4581:
-	goto	l5495
-u4580:
+	goto	u4621
+	goto	u4620
+u4621:
+	goto	l5540
+u4620:
 	
-l5491:; BSR set to: 0
+l5536:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -14212,18 +14347,18 @@ l5491:; BSR set to: 0
 	movlb	1	; () banked
 	movf	(0+(_Cf+060h))&0ffh,w	;volatile
 	cpfseq	indf2
-	goto	u4591
-	goto	u4590
-u4591:
-	goto	l5495
-u4590:
-	goto	l5493
+	goto	u4631
+	goto	u4630
+u4631:
+	goto	l5540
+u4630:
+	goto	l5538
 	
 l424:; BSR set to: 1
 
 	line	58
 	
-l5493:
+l5538:
 ;config.c: 57: {
 ;config.c: 58: valid = 1;
 	movlb	0	; () banked
@@ -14234,14 +14369,14 @@ l5493:
 	movwf	((cf_checkout@valid))&0ffh
 	movlb	0	; () banked
 	movf	(??_cf_checkout+0+0)&0ffh,w
-	goto	l5495
+	goto	l5540
 	line	59
 	
 l422:; BSR set to: 0
 
 	line	61
 	
-l5495:
+l5540:
 ;config.c: 59: }
 ;config.c: 61: return valid;
 	movff	(cf_checkout@valid),??_cf_checkout+0+0
@@ -14249,7 +14384,7 @@ l5495:
 	rrcf	(??_cf_checkout+0+0)&0ffh,w
 	goto	l418
 	
-l5497:; BSR set to: 0
+l5542:; BSR set to: 0
 
 	line	62
 	
@@ -14313,7 +14448,7 @@ ___wmul:; BSR set to: 0
 	dw	0FFFFh
 	line	25
 	
-l5371:
+l5416:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((___wmul@multiplier))&0ffh,w
@@ -14360,17 +14495,17 @@ l5371:
 
 	line	40
 	
-l5373:; BSR set to: 0
+l5418:; BSR set to: 0
 
 	movff	(___wmul@product),(?___wmul)
 	movff	(___wmul@product+1),(?___wmul+1)
-	goto	l1707
+	goto	l1712
 	
-l5375:; BSR set to: 0
+l5420:; BSR set to: 0
 
 	line	41
 	
-l1707:; BSR set to: 0
+l1712:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -14430,7 +14565,7 @@ _HexToAscii:; BSR set to: 0
 	movff	wreg,(HexToAscii@Value)
 	line	32
 	
-l5953:
+l5998:
 ;utils.c: 30: char character;
 ;utils.c: 32: if (Value < 10)
 	movlw	(0Ah)&0ffh
@@ -14438,14 +14573,14 @@ l5953:
 	movlb	0	; () banked
 	subwf	((HexToAscii@Value))&0ffh,w
 	btfsc	status,0
-	goto	u5271
-	goto	u5270
-u5271:
-	goto	l5957
-u5270:
+	goto	u5311
+	goto	u5310
+u5311:
+	goto	l6002
+u5310:
 	line	34
 	
-l5955:; BSR set to: 0
+l6000:; BSR set to: 0
 
 ;utils.c: 33: {
 ;utils.c: 34: character = Value + 0x30;
@@ -14458,14 +14593,14 @@ l5955:; BSR set to: 0
 	movwf	((HexToAscii@character))&0ffh
 	line	35
 ;utils.c: 35: }
-	goto	l5959
+	goto	l6004
 	line	36
 	
 l662:; BSR set to: 0
 
 	line	38
 	
-l5957:; BSR set to: 0
+l6002:; BSR set to: 0
 
 ;utils.c: 36: else
 ;utils.c: 37: {
@@ -14477,14 +14612,14 @@ l5957:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	((HexToAscii@character))&0ffh
-	goto	l5959
+	goto	l6004
 	line	39
 	
 l663:; BSR set to: 0
 
 	line	41
 	
-l5959:; BSR set to: 0
+l6004:; BSR set to: 0
 
 ;utils.c: 39: }
 ;utils.c: 41: return character;
@@ -14493,7 +14628,7 @@ l5959:; BSR set to: 0
 	movf	((HexToAscii@character))&0ffh,w
 	goto	l664
 	
-l5961:; BSR set to: 0
+l6006:; BSR set to: 0
 
 	line	42
 	
@@ -14555,7 +14690,7 @@ _bouton_refresh:; BSR set to: 0
 	dw	0FFFFh
 	line	15
 	
-l6271:
+l6316:
 ;bouton.c: 13: unsigned char i;
 ;bouton.c: 15: for (i = 0; i < Bp_Max; i++)
 	movlb	0	; () banked
@@ -14567,20 +14702,20 @@ l6271:
 	movlb	0	; () banked
 	movf	(??_bouton_refresh+0+0)&0ffh,w
 	
-l6273:; BSR set to: 0
+l6318:; BSR set to: 0
 
 	movlw	(04h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((bouton_refresh@i))&0ffh
-	goto	u5561
-	goto	u5560
-u5561:
-	goto	l6287
-u5560:
+	goto	u5601
+	goto	u5600
+u5601:
+	goto	l6332
+u5600:
 	goto	l729
 	
-l6275:; BSR set to: 0
+l6320:; BSR set to: 0
 
 	goto	l729
 	line	16
@@ -14591,7 +14726,7 @@ l710:; BSR set to: 0
 ;bouton.c: 16: {
 ;bouton.c: 17: unsigned char temp;
 ;bouton.c: 19: switch (i)
-	goto	l6287
+	goto	l6332
 	line	21
 ;bouton.c: 20: {
 ;bouton.c: 21: case Bp_On: temp = PORTEbits.RE0; break;
@@ -14599,7 +14734,7 @@ l710:; BSR set to: 0
 l713:; BSR set to: 0
 
 	
-l6277:; BSR set to: 0
+l6322:; BSR set to: 0
 
 	movlw	0
 	btfsc	((c:3972)),c,0	;volatile
@@ -14607,14 +14742,14 @@ l6277:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	((bouton_refresh@temp))&0ffh
-	goto	l6289
+	goto	l6334
 	line	22
 ;bouton.c: 22: case Bp_IdTest: temp = PORTEbits.RE1; break;
 	
 l715:; BSR set to: 0
 
 	
-l6279:; BSR set to: 0
+l6324:; BSR set to: 0
 
 	movlw	0
 	btfsc	((c:3972)),c,1	;volatile
@@ -14622,14 +14757,14 @@ l6279:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	((bouton_refresh@temp))&0ffh
-	goto	l6289
+	goto	l6334
 	line	23
 ;bouton.c: 23: case Comu_Test: temp = PORTCbits.RC5; break;
 	
 l716:; BSR set to: 0
 
 	
-l6281:; BSR set to: 0
+l6326:; BSR set to: 0
 
 	movlw	0
 	btfsc	((c:3970)),c,5	;volatile
@@ -14637,14 +14772,14 @@ l6281:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	((bouton_refresh@temp))&0ffh
-	goto	l6289
+	goto	l6334
 	line	24
 ;bouton.c: 24: case Bp_Start: temp = PORTBbits.RB0; break;
 	
 l717:; BSR set to: 0
 
 	
-l6283:; BSR set to: 0
+l6328:; BSR set to: 0
 
 	movlw	0
 	btfsc	((c:3969)),c,0	;volatile
@@ -14652,25 +14787,25 @@ l6283:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	((bouton_refresh@temp))&0ffh
-	goto	l6289
+	goto	l6334
 	line	25
 ;bouton.c: 25: default: break;
 	
 l718:; BSR set to: 0
 
-	goto	l6289
+	goto	l6334
 	line	26
 	
-l6285:; BSR set to: 0
+l6330:; BSR set to: 0
 
 ;bouton.c: 26: }
-	goto	l6289
+	goto	l6334
 	line	19
 	
 l712:; BSR set to: 0
 
 	
-l6287:; BSR set to: 0
+l6332:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -14684,17 +14819,17 @@ l6287:; BSR set to: 0
 
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l6277
+	goto	l6322
 	xorlw	1^0	; case 1
 	skipnz
-	goto	l6279
+	goto	l6324
 	xorlw	2^1	; case 2
 	skipnz
-	goto	l6281
+	goto	l6326
 	xorlw	3^2	; case 3
 	skipnz
-	goto	l6283
-	goto	l6289
+	goto	l6328
+	goto	l6334
 
 	line	26
 	
@@ -14702,7 +14837,7 @@ l714:; BSR set to: 0
 
 	line	28
 	
-l6289:; BSR set to: 0
+l6334:; BSR set to: 0
 
 ;bouton.c: 28: if (temp == Bouton[i].Memo)
 	movlb	0	; () banked
@@ -14722,26 +14857,26 @@ l6289:; BSR set to: 0
 	addwfc	(prodh),c,w
 	movwf	1+c:fsr2l
 	btfsc	indf2,0
-	goto	u5571
-	goto	u5570
-u5571:
+	goto	u5611
+	goto	u5610
+u5611:
 	movlw	1
-	goto	u5576
-u5570:
+	goto	u5616
+u5610:
 	movlw	0
-u5576:
+u5616:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	xorwf	((bouton_refresh@temp))&0ffh,w
 	btfss	status,2
-	goto	u5581
-	goto	u5580
-u5581:
-	goto	l6305
-u5580:
+	goto	u5621
+	goto	u5620
+u5621:
+	goto	l6350
+u5620:
 	line	30
 	
-l6291:; BSR set to: 0
+l6336:; BSR set to: 0
 
 ;bouton.c: 29: {
 ;bouton.c: 30: if (Bouton[i].State != Bouton[i].Memo)
@@ -14762,14 +14897,14 @@ l6291:; BSR set to: 0
 	addwfc	(prodh),c,w
 	movwf	1+c:fsr2l
 	btfsc	indf2,0
-	goto	u5591
-	goto	u5590
-u5591:
+	goto	u5631
+	goto	u5630
+u5631:
 	movlw	1
-	goto	u5592
-u5590:
+	goto	u5632
+u5630:
 	movlw	0
-u5592:
+u5632:
 	movlb	0	; () banked
 	movwf	(??_bouton_refresh+0+0)&0ffh
 	movlb	0	; () banked
@@ -14789,25 +14924,25 @@ u5592:
 	addwfc	(prodh),c,w
 	movwf	1+c:fsr2l
 	btfsc	indf2,1
-	goto	u5601
-	goto	u5600
-u5601:
+	goto	u5641
+	goto	u5640
+u5641:
 	movlw	1
-	goto	u5602
-u5600:
+	goto	u5642
+u5640:
 	movlw	0
-u5602:
+u5642:
 	movlb	0	; () banked
 	xorwf	(??_bouton_refresh+0+0)&0ffh
 	btfsc	status,2
-	goto	u5611
-	goto	u5610
-u5611:
-	goto	l6307
-u5610:
+	goto	u5651
+	goto	u5650
+u5651:
+	goto	l6352
+u5650:
 	line	32
 	
-l6293:; BSR set to: 0
+l6338:; BSR set to: 0
 
 ;bouton.c: 31: {
 ;bouton.c: 32: if ((((unsigned short) (Cptms - Bouton[i].Time) > (((i == Bp_Start) && (Micro.Mods == 1)) ? 5 : 100)) ? 1 : 0))
@@ -14817,28 +14952,28 @@ l6293:; BSR set to: 0
 	xorlw	3
 
 	btfss	status,2
-	goto	u5621
-	goto	u5620
-u5621:
-	goto	l6297
-u5620:
+	goto	u5661
+	goto	u5660
+u5661:
+	goto	l6342
+u5660:
 	
-l6295:; BSR set to: 0
+l6340:; BSR set to: 0
 
 	decf	(0+((c:_Micro)+05h)),c,w
 
 	btfsc	status,2
-	goto	u5631
-	goto	u5630
-u5631:
-	goto	l6299
-u5630:
-	goto	l6297
+	goto	u5671
+	goto	u5670
+u5671:
+	goto	l6344
+u5670:
+	goto	l6342
 	
 l727:; BSR set to: 0
 
 	
-l6297:; BSR set to: 0
+l6342:; BSR set to: 0
 
 	movlw	high(064h)
 	movlb	0	; () banked
@@ -14847,12 +14982,12 @@ l6297:; BSR set to: 0
 	movlw	low(064h)
 	movlb	0	; () banked
 	movwf	((_bouton_refresh$2134))&0ffh
-	goto	l6301
+	goto	l6346
 	
 l723:; BSR set to: 0
 
 	
-l6299:; BSR set to: 0
+l6344:; BSR set to: 0
 
 	movlw	high(05h)
 	movlb	0	; () banked
@@ -14861,12 +14996,12 @@ l6299:; BSR set to: 0
 	movlw	low(05h)
 	movlb	0	; () banked
 	movwf	((_bouton_refresh$2134))&0ffh
-	goto	l6301
+	goto	l6346
 	
 l725:; BSR set to: 0
 
 	
-l6301:; BSR set to: 0
+l6346:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -14904,14 +15039,14 @@ l6301:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((_bouton_refresh$2134+1))&0ffh,w
 	btfsc	status,0
-	goto	u5641
-	goto	u5640
-u5641:
-	goto	l6307
-u5640:
+	goto	u5681
+	goto	u5680
+u5681:
+	goto	l6352
+u5680:
 	line	34
 	
-l6303:; BSR set to: 0
+l6348:; BSR set to: 0
 
 ;bouton.c: 33: {
 ;bouton.c: 34: Bouton[i].State = Bouton[i].Memo;
@@ -14949,22 +15084,22 @@ l6303:; BSR set to: 0
 	movwf	1+c:fsr1l
 	movlb	0	; () banked
 	btfss	indf2,0
-	bra	u5655
+	bra	u5695
 	movlb	0	; () banked
 	bsf	indf1,1
-	u5655:
+	u5695:
 	movlb	0	; () banked
 	btfsc	indf2,0
-	bra	u5656
+	bra	u5696
 	movlb	0	; () banked
 	bcf	indf1,1
-	u5656:
-	goto	l6307
+	u5696:
+	goto	l6352
 	line	35
 	
 l721:; BSR set to: 0
 
-	goto	l6307
+	goto	l6352
 	line	36
 	
 l720:; BSR set to: 0
@@ -14973,14 +15108,14 @@ l720:; BSR set to: 0
 ;bouton.c: 35: }
 ;bouton.c: 36: }
 ;bouton.c: 37: }
-	goto	l6307
+	goto	l6352
 	line	38
 	
 l719:; BSR set to: 0
 
 	line	40
 	
-l6305:; BSR set to: 0
+l6350:; BSR set to: 0
 
 ;bouton.c: 38: else
 ;bouton.c: 39: {
@@ -15004,14 +15139,14 @@ l6305:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	btfsc	(bouton_refresh@temp)&0ffh,0
-	bra	u5665
+	bra	u5705
 	movlb	0	; () banked
 	bcf	indf2,0
-	bra	u5666
-	u5665:
+	bra	u5706
+	u5705:
 	movlb	0	; () banked
 	bsf	indf2,0
-	u5666:
+	u5706:
 
 	line	41
 ;bouton.c: 41: Bouton[i].Time = Cptms;
@@ -15029,30 +15164,30 @@ l6305:; BSR set to: 0
 	movwf	1+c:fsr2l
 	movff	(c:_Cptms),postinc2	;volatile
 	movff	(c:_Cptms+1),postdec2	;volatile
-	goto	l6307
+	goto	l6352
 	line	42
 	
 l728:; BSR set to: 0
 
 	line	15
 	
-l6307:; BSR set to: 0
+l6352:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((bouton_refresh@i))&0ffh
 	
-l6309:; BSR set to: 0
+l6354:; BSR set to: 0
 
 	movlw	(04h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((bouton_refresh@i))&0ffh
-	goto	u5671
-	goto	u5670
-u5671:
-	goto	l6287
-u5670:
+	goto	u5711
+	goto	u5710
+u5711:
+	goto	l6332
+u5710:
 	goto	l729
 	
 l711:; BSR set to: 0
@@ -15115,58 +15250,58 @@ _bouton_init:; BSR set to: 0
 	dw	0FFFFh
 	line	5
 	
-l6269:
+l6314:
 ;bouton.c: 5: Bouton[Bp_On].State = PORTEbits.RE0;
 	btfss	((c:3972)),c,0	;volatile
-	bra	u5525
+	bra	u5565
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(_Bouton+02h))&0ffh,1
-	bra	u5527
-	u5525:	
+	bra	u5567
+	u5565:	
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bcf	(0+(_Bouton+02h))&0ffh,1
-	u5527:
+	u5567:
 	line	6
 ;bouton.c: 6: Bouton[Bp_IdTest].State = PORTEbits.RE1;
 	btfss	((c:3972)),c,1	;volatile
-	bra	u5535
+	bra	u5575
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(_Bouton+05h))&0ffh,1
-	bra	u5537
-	u5535:	
+	bra	u5577
+	u5575:	
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bcf	(0+(_Bouton+05h))&0ffh,1
-	u5537:
+	u5577:
 	line	7
 ;bouton.c: 7: Bouton[Comu_Test].State = PORTCbits.RC5;
 	btfss	((c:3970)),c,5	;volatile
-	bra	u5545
+	bra	u5585
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(_Bouton+08h))&0ffh,1
-	bra	u5547
-	u5545:	
+	bra	u5587
+	u5585:	
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bcf	(0+(_Bouton+08h))&0ffh,1
-	u5547:
+	u5587:
 	line	8
 ;bouton.c: 8: Bouton[Bp_Start].State = PORTBbits.RB0;
 	btfss	((c:3969)),c,0	;volatile
-	bra	u5555
+	bra	u5595
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(_Bouton+0Bh))&0ffh,1
-	bra	u5557
-	u5555:	
+	bra	u5597
+	u5595:	
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bcf	(0+(_Bouton+0Bh))&0ffh,1
-	u5557:
+	u5597:
 	line	9
 	
 l707:; BSR set to: 0
@@ -15230,28 +15365,28 @@ _armement_process:; BSR set to: 0
 	dw	0FFFFh
 	line	28
 	
-l6517:
+l6582:
 ;armement.c: 26: unsigned short temp;
 ;armement.c: 28: switch(Arm.Step)
-	goto	l6561
+	goto	l6626
 	line	30
 ;armement.c: 29: {
 ;armement.c: 30: case 0x01:
 	
-l1027:; BSR set to: 0
+l1032:; BSR set to: 0
 
 	line	31
 ;armement.c: 31: if (Bouton[Bp_On].State == 1)
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+02h))&0ffh,1
-	goto	u6001
-	goto	u6000
-u6001:
-	goto	l1041
-u6000:
+	goto	u6061
+	goto	u6060
+u6061:
+	goto	l1046
+u6060:
 	line	33
 	
-l6519:; BSR set to: 0
+l6584:; BSR set to: 0
 
 ;armement.c: 32: {
 ;armement.c: 33: Arm.Step = 0x00;
@@ -15263,23 +15398,23 @@ l6519:; BSR set to: 0
 	movwf	((_Arm))&0ffh
 	movlb	0	; () banked
 	movf	(??_armement_process+0+0)&0ffh,w
-	goto	l1041
+	goto	l1046
 	line	34
 	
-l1028:; BSR set to: 0
+l1033:; BSR set to: 0
 
 	line	35
 ;armement.c: 34: }
 ;armement.c: 35: break;
-	goto	l1041
+	goto	l1046
 	line	36
 ;armement.c: 36: case 0x00:
 	
-l1030:; BSR set to: 0
+l1035:; BSR set to: 0
 
 	line	37
 	
-l6521:; BSR set to: 0
+l6586:; BSR set to: 0
 
 ;armement.c: 37: check_comutest(1);
 	movlw	(01h)&0ffh
@@ -15287,7 +15422,7 @@ l6521:; BSR set to: 0
 	call	_check_comutest
 	line	39
 	
-l6523:
+l6588:
 ;armement.c: 39: temp = arm_UAlim_1A();
 	call	_arm_UAlim_1A	;wreg free
 	movlb	0	; () banked
@@ -15296,7 +15431,7 @@ l6523:
 	movff	1+?_arm_UAlim_1A,(armement_process@temp+1)
 	line	41
 	
-l6525:; BSR set to: 0
+l6590:; BSR set to: 0
 
 ;armement.c: 41: Ecran.Digits = PrintTest;
 	movlb	0	; () banked
@@ -15312,7 +15447,7 @@ l6525:; BSR set to: 0
 
 	line	43
 	
-l6527:; BSR set to: 0
+l6592:; BSR set to: 0
 
 ;armement.c: 43: itoa(Ecran.Digits,temp,10);
 	movlb	0	; () banked
@@ -15334,7 +15469,7 @@ l6527:; BSR set to: 0
 	call	_itoa	;wreg free
 	line	45
 	
-l6529:
+l6594:
 ;armement.c: 45: Ecran.Dot[0] = 0;
 	movlb	0	; () banked
 	movwf	(??_armement_process+0+0)&0ffh
@@ -15346,7 +15481,7 @@ l6529:
 	movf	(??_armement_process+0+0)&0ffh,w
 	line	46
 	
-l6531:; BSR set to: 0
+l6596:; BSR set to: 0
 
 ;armement.c: 46: Ecran.Dot[1] = 1;
 	movlb	0	; () banked
@@ -15359,7 +15494,7 @@ l6531:; BSR set to: 0
 	movf	(??_armement_process+0+0)&0ffh,w
 	line	47
 	
-l6533:; BSR set to: 0
+l6598:; BSR set to: 0
 
 ;armement.c: 47: Ecran.Dot[2] = 0;
 	movlb	0	; () banked
@@ -15372,7 +15507,7 @@ l6533:; BSR set to: 0
 	movf	(??_armement_process+0+0)&0ffh,w
 	line	48
 	
-l6535:; BSR set to: 0
+l6600:; BSR set to: 0
 
 ;armement.c: 48: Ecran.Dot[3] = 0;
 	movlb	0	; () banked
@@ -15385,7 +15520,7 @@ l6535:; BSR set to: 0
 	movf	(??_armement_process+0+0)&0ffh,w
 	line	50
 	
-l6537:; BSR set to: 0
+l6602:; BSR set to: 0
 
 ;armement.c: 50: Arm.Step = 0x02;
 	movlb	0	; () banked
@@ -15398,24 +15533,24 @@ l6537:; BSR set to: 0
 	movf	(??_armement_process+0+0)&0ffh,w
 	line	51
 ;armement.c: 51: break;
-	goto	l1041
+	goto	l1046
 	line	52
 ;armement.c: 52: case 0x02:
 	
-l1031:; BSR set to: 0
+l1036:; BSR set to: 0
 
 	line	53
 ;armement.c: 53: if (Bouton[Bp_On].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+02h))&0ffh,1
-	goto	u6011
-	goto	u6010
-u6011:
-	goto	l1041
-u6010:
+	goto	u6071
+	goto	u6070
+u6071:
+	goto	l1046
+u6070:
 	line	55
 	
-l6539:; BSR set to: 0
+l6604:; BSR set to: 0
 
 ;armement.c: 54: {
 ;armement.c: 55: Arm.Time = Cptms;
@@ -15423,7 +15558,7 @@ l6539:; BSR set to: 0
 	movff	(c:_Cptms+1),1+(_Arm+02h)	;volatile
 	line	56
 	
-l6541:; BSR set to: 0
+l6606:; BSR set to: 0
 
 ;armement.c: 56: Arm.Step = 0x03;
 	movlb	0	; () banked
@@ -15436,35 +15571,35 @@ l6541:; BSR set to: 0
 	movf	(??_armement_process+0+0)&0ffh,w
 	line	58
 	
-l6543:; BSR set to: 0
+l6608:; BSR set to: 0
 
 ;armement.c: 58: ecran_blank();
 	call	_ecran_blank	;wreg free
-	goto	l1041
+	goto	l1046
 	line	59
 	
-l1032:
+l1037:
 	line	60
 ;armement.c: 59: }
 ;armement.c: 60: break;
-	goto	l1041
+	goto	l1046
 	line	61
 ;armement.c: 61: case 0x03:
 	
-l1033:; BSR set to: 0
+l1038:; BSR set to: 0
 
 	line	62
 ;armement.c: 62: if (Bouton[Bp_On].State == 1)
 	movlb	0	; () banked
 	btfss	(0+(_Bouton+02h))&0ffh,1
-	goto	u6021
-	goto	u6020
-u6021:
-	goto	l1034
-u6020:
+	goto	u6081
+	goto	u6080
+u6081:
+	goto	l1039
+u6080:
 	line	64
 	
-l6545:; BSR set to: 0
+l6610:; BSR set to: 0
 
 ;armement.c: 63: {
 ;armement.c: 64: Micro.Phase = 0x00;
@@ -15476,39 +15611,39 @@ l6545:; BSR set to: 0
 	movf	(??_armement_process+0+0)&0ffh,w
 	line	66
 	
-l6547:; BSR set to: 0
+l6612:; BSR set to: 0
 
 ;armement.c: 66: ecran_wait();
 	call	_ecran_wait	;wreg free
 	line	67
 ;armement.c: 67: }
-	goto	l1041
+	goto	l1046
 	line	68
 	
-l1034:; BSR set to: 0
+l1039:; BSR set to: 0
 
 ;armement.c: 68: else if (Bouton[Bp_Start].State == 0)
 	movlb	0	; () banked
 	btfsc	(0+(_Bouton+0Bh))&0ffh,1
-	goto	u6031
-	goto	u6030
-u6031:
-	goto	l6551
-u6030:
-	goto	l1041
+	goto	u6091
+	goto	u6090
+u6091:
+	goto	l6616
+u6090:
+	goto	l1046
 	line	71
 	
-l6549:; BSR set to: 0
+l6614:; BSR set to: 0
 
 ;armement.c: 69: {
 ;armement.c: 71: }
-	goto	l1041
+	goto	l1046
 	line	72
 	
-l1036:; BSR set to: 0
+l1041:; BSR set to: 0
 
 	
-l6551:; BSR set to: 0
+l6616:; BSR set to: 0
 
 ;armement.c: 72: else if ((((unsigned short) (Cptms - Arm.Time) > 4000) ? 1 : 0))
 	movlb	0	; () banked
@@ -15532,25 +15667,25 @@ l6551:; BSR set to: 0
 	movlw	0Fh
 	subwfb	(??_armement_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u6041
-	goto	u6040
-u6041:
-	goto	l6555
-u6040:
-	goto	l1041
+	goto	u6101
+	goto	u6100
+u6101:
+	goto	l6620
+u6100:
+	goto	l1046
 	line	75
 	
-l6553:; BSR set to: 0
+l6618:; BSR set to: 0
 
 ;armement.c: 73: {
 ;armement.c: 75: }
-	goto	l1041
+	goto	l1046
 	line	76
 	
-l1038:; BSR set to: 0
+l1043:; BSR set to: 0
 
 	
-l6555:; BSR set to: 0
+l6620:; BSR set to: 0
 
 ;armement.c: 76: else if ((((unsigned short) (Cptms - Arm.Time) > 3000) ? 1 : 0))
 	movlb	0	; () banked
@@ -15574,14 +15709,14 @@ l6555:; BSR set to: 0
 	movlw	0Bh
 	subwfb	(??_armement_process+0+1)&0ffh,w
 	btfss	status,0
-	goto	u6051
-	goto	u6050
-u6051:
-	goto	l1041
-u6050:
+	goto	u6111
+	goto	u6110
+u6111:
+	goto	l1046
+u6110:
 	line	78
 	
-l6557:; BSR set to: 0
+l6622:; BSR set to: 0
 
 ;armement.c: 77: {
 ;armement.c: 78: Micro.Phase = 0x03;
@@ -15599,39 +15734,39 @@ l6557:; BSR set to: 0
 	movwf	(0+((c:_Micro)+04h)),c
 	movlb	0	; () banked
 	movf	(??_armement_process+0+0)&0ffh,w
-	goto	l1041
+	goto	l1046
 	line	80
+	
+l1045:; BSR set to: 0
+
+	goto	l1046
+	line	81
+	
+l1044:; BSR set to: 0
+
+	goto	l1046
+	
+l1042:; BSR set to: 0
+
+	goto	l1046
 	
 l1040:; BSR set to: 0
 
-	goto	l1041
-	line	81
-	
-l1039:; BSR set to: 0
-
-	goto	l1041
-	
-l1037:; BSR set to: 0
-
-	goto	l1041
-	
-l1035:; BSR set to: 0
-
 ;armement.c: 80: }
 ;armement.c: 81: break;
-	goto	l1041
+	goto	l1046
 	line	82
 	
-l6559:; BSR set to: 0
+l6624:; BSR set to: 0
 
 ;armement.c: 82: }
-	goto	l1041
+	goto	l1046
 	line	28
 	
-l1026:; BSR set to: 0
+l1031:; BSR set to: 0
 
 	
-l6561:
+l6626:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((_Arm))&0ffh,w
@@ -15644,25 +15779,25 @@ l6561:
 
 	xorlw	0^0	; case 0
 	skipnz
-	goto	l6521
+	goto	l6586
 	xorlw	1^0	; case 1
 	skipnz
-	goto	l1027
+	goto	l1032
 	xorlw	2^1	; case 2
 	skipnz
-	goto	l1031
+	goto	l1036
 	xorlw	3^2	; case 3
 	skipnz
-	goto	l1033
-	goto	l1041
+	goto	l1038
+	goto	l1046
 
 	line	82
 	
-l1029:; BSR set to: 0
+l1034:; BSR set to: 0
 
 	line	83
 	
-l1041:
+l1046:
 	return
 	dw	0FFFFh; errata NOP
 	opt stack 0
@@ -15724,7 +15859,7 @@ _itoa:
 	dw	0FFFFh
 	line	6
 	
-l6055:
+l6100:
 	movlb	0	; () banked
 	movlb	0	; () banked
 		movff	(itoa@buf+1),(itoa@cp+1)
@@ -15734,7 +15869,7 @@ l6055:
 
 	line	8
 	
-l6057:; BSR set to: 0
+l6102:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -15747,14 +15882,14 @@ l6057:; BSR set to: 0
 	btfsc	status,2
 	subwf	((itoa@val))&0ffh,w
 	btfsc	status,0
-	goto	u5361
-	goto	u5360
-u5361:
-	goto	l6065
-u5360:
+	goto	u5401
+	goto	u5400
+u5401:
+	goto	l6110
+u5400:
 	line	9
 	
-l6059:; BSR set to: 0
+l6104:; BSR set to: 0
 
 	movlb	0	; () banked
 	movff	(itoa@buf),tblptrl
@@ -15764,27 +15899,27 @@ l6059:; BSR set to: 0
 	
 	movlw	high __ramtop-1
 	cpfsgt	tblptrh
-	bra	u5377
+	bra	u5417
 	movlw	02Dh
 	movwf	tablat
 	tblwt*
-	bra	u5370
-u5377:
+	bra	u5410
+u5417:
 	movff	tblptrl,fsr1l
 	movff	tblptrh,fsr1h
 	movlw	02Dh
 	movwf	indf1
-u5370:
+u5410:
 	
 	
-l6061:
+l6106:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	infsnz	((itoa@buf))&0ffh
 	incf	((itoa@buf+1))&0ffh
 	line	10
 	
-l6063:; BSR set to: 0
+l6108:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -15793,14 +15928,14 @@ l6063:; BSR set to: 0
 	comf	((itoa@val+1))&0ffh
 	btfsc	status,0
 	incf	((itoa@val+1))&0ffh
-	goto	l6065
+	goto	l6110
 	line	11
 	
-l1564:; BSR set to: 0
+l1569:; BSR set to: 0
 
 	line	12
 	
-l6065:; BSR set to: 0
+l6110:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -15814,14 +15949,14 @@ l6065:; BSR set to: 0
 	movff	(itoa@base),(utoa@base)
 	movff	(itoa@base+1),(utoa@base+1)
 	call	_utoa	;wreg free
-	goto	l1565
+	goto	l1570
 	line	13
 	
-l6067:
+l6112:
 	line	14
 ;	Return value of _itoa is never used
 	
-l1565:
+l1570:
 	return
 	dw	0FFFFh; errata NOP
 	opt stack 0
@@ -15881,16 +16016,16 @@ _utoa:
 	dw	0FFFFh
 	line	22
 	
-l5877:
+l5922:
 	movff	(utoa@val),(utoa@v)
 	movff	(utoa@val+1),(utoa@v+1)
-	goto	l5879
+	goto	l5924
 	line	23
 	
-l1568:
+l1573:
 	line	24
 	
-l5879:
+l5924:
 	movff	(utoa@v),(___lwdiv@dividend)
 	movff	(utoa@v+1),(___lwdiv@dividend+1)
 	movff	(utoa@base),(___lwdiv@divisor)
@@ -15902,7 +16037,7 @@ l5879:
 	movff	1+?___lwdiv,(utoa@v+1)
 	line	25
 	
-l5881:; BSR set to: 0
+l5926:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -15910,7 +16045,7 @@ l5881:; BSR set to: 0
 	incf	((utoa@buf+1))&0ffh
 	line	26
 	
-l5883:; BSR set to: 0
+l5928:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -15918,18 +16053,18 @@ l5883:; BSR set to: 0
 	iorwf ((utoa@v))&0ffh,w
 
 	btfss	status,2
-	goto	u5171
-	goto	u5170
-u5171:
-	goto	l5879
-u5170:
-	goto	l5885
+	goto	u5211
+	goto	u5210
+u5211:
+	goto	l5924
+u5210:
+	goto	l5930
 	
-l1569:; BSR set to: 0
+l1574:; BSR set to: 0
 
 	line	27
 	
-l5885:; BSR set to: 0
+l5930:; BSR set to: 0
 
 	movlb	0	; () banked
 	movff	(utoa@buf),tblptrl
@@ -15939,33 +16074,33 @@ l5885:; BSR set to: 0
 	
 	movlw	high __ramtop-1
 	cpfsgt	tblptrh
-	bra	u5187
+	bra	u5227
 	movlw	0
 	movwf	tablat
 	tblwt*
-	bra	u5180
-u5187:
+	bra	u5220
+u5227:
 	movff	tblptrl,fsr1l
 	movff	tblptrh,fsr1h
 	movlw	0
 	movwf	indf1
-u5180:
+u5220:
 	
 	
-l5887:
+l5932:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decf	((utoa@buf))&0ffh
 	btfss	status,0
 	decf	((utoa@buf+1))&0ffh
-	goto	l5889
+	goto	l5934
 	line	28
 	
-l1570:; BSR set to: 0
+l1575:; BSR set to: 0
 
 	line	29
 	
-l5889:; BSR set to: 0
+l5934:; BSR set to: 0
 
 	movff	(utoa@val),(___lwmod@dividend)
 	movff	(utoa@val+1),(___lwmod@dividend+1)
@@ -15980,7 +16115,7 @@ l5889:; BSR set to: 0
 	movwf	((utoa@c))&0ffh
 	line	30
 	
-l5891:; BSR set to: 0
+l5936:; BSR set to: 0
 
 	movff	(utoa@val),(___lwdiv@dividend)
 	movff	(utoa@val+1),(___lwdiv@dividend+1)
@@ -15993,27 +16128,27 @@ l5891:; BSR set to: 0
 	movff	1+?___lwdiv,(utoa@val+1)
 	line	31
 	
-l5893:; BSR set to: 0
+l5938:; BSR set to: 0
 
 	movlw	(0Ah-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((utoa@c))&0ffh
-	goto	u5191
-	goto	u5190
-u5191:
-	goto	l1571
-u5190:
+	goto	u5231
+	goto	u5230
+u5231:
+	goto	l1576
+u5230:
 	line	32
 	
-l5895:; BSR set to: 0
+l5940:; BSR set to: 0
 
 	movlw	(07h)&0ffh
 	movlb	0	; () banked
 	movlb	0	; () banked
 	addwf	((utoa@c))&0ffh
 	
-l1571:; BSR set to: 0
+l1576:; BSR set to: 0
 
 	line	33
 	movlw	(030h)&0ffh
@@ -16022,7 +16157,7 @@ l1571:; BSR set to: 0
 	addwf	((utoa@c))&0ffh
 	line	34
 	
-l5897:; BSR set to: 0
+l5942:; BSR set to: 0
 
 	movlb	0	; () banked
 	movff	(utoa@buf),tblptrl
@@ -16032,20 +16167,20 @@ l5897:; BSR set to: 0
 	
 	movlw	high __ramtop-1
 	cpfsgt	tblptrh
-	bra	u5207
+	bra	u5247
 	movlb	0	; () banked
 	movff	(utoa@c),tablat
 	tblwt*
-	bra	u5200
-u5207:
+	bra	u5240
+u5247:
 	movff	tblptrl,fsr1l
 	movff	tblptrh,fsr1h
 	movlb	0	; () banked
 	movff	(utoa@c),indf1
-u5200:
+u5240:
 	
 	
-l5899:
+l5944:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decf	((utoa@buf))&0ffh
@@ -16053,7 +16188,7 @@ l5899:
 	decf	((utoa@buf+1))&0ffh
 	line	35
 	
-l5901:; BSR set to: 0
+l5946:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16061,31 +16196,31 @@ l5901:; BSR set to: 0
 	iorwf ((utoa@val))&0ffh,w
 
 	btfss	status,2
-	goto	u5211
-	goto	u5210
-u5211:
-	goto	l5889
-u5210:
-	goto	l5903
+	goto	u5251
+	goto	u5250
+u5251:
+	goto	l5934
+u5250:
+	goto	l5948
 	
-l1572:; BSR set to: 0
+l1577:; BSR set to: 0
 
 	line	36
 	
-l5903:; BSR set to: 0
+l5948:; BSR set to: 0
 
 ;	Return value of _utoa is never used
 	movlb	0	; () banked
 	movlb	0	; () banked
 	infsnz	((utoa@buf))&0ffh
 	incf	((utoa@buf+1))&0ffh
-	goto	l1573
+	goto	l1578
 	
-l5905:; BSR set to: 0
+l5950:; BSR set to: 0
 
 	line	37
 	
-l1573:; BSR set to: 0
+l1578:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -16143,21 +16278,21 @@ ___lwmod:; BSR set to: 0
 	dw	0FFFFh
 	line	13
 	
-l5641:
+l5686:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((___lwmod@divisor+1))&0ffh,w
 	iorwf ((___lwmod@divisor))&0ffh,w
 
 	btfsc	status,2
-	goto	u4831
-	goto	u4830
-u4831:
-	goto	l1681
-u4830:
+	goto	u4871
+	goto	u4870
+u4871:
+	goto	l1686
+u4870:
 	line	14
 	
-l5643:; BSR set to: 0
+l5688:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??___lwmod+0+0)&0ffh
@@ -16168,13 +16303,13 @@ l5643:; BSR set to: 0
 	movlb	0	; () banked
 	movf	(??___lwmod+0+0)&0ffh,w
 	line	15
-	goto	l5647
+	goto	l5692
 	
-l1683:; BSR set to: 0
+l1688:; BSR set to: 0
 
 	line	16
 	
-l5645:; BSR set to: 0
+l5690:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16186,36 +16321,36 @@ l5645:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((___lwmod@counter))&0ffh
-	goto	l5647
+	goto	l5692
 	line	18
 	
-l1682:; BSR set to: 0
+l1687:; BSR set to: 0
 
 	line	15
 	
-l5647:; BSR set to: 0
+l5692:; BSR set to: 0
 
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfss	((___lwmod@divisor+1))&0ffh,(15)&7
-	goto	u4841
-	goto	u4840
-u4841:
-	goto	l5645
-u4840:
-	goto	l5649
+	goto	u4881
+	goto	u4880
+u4881:
+	goto	l5690
+u4880:
+	goto	l5694
 	
-l1684:; BSR set to: 0
+l1689:; BSR set to: 0
 
-	goto	l5649
+	goto	l5694
 	line	19
 	
-l1685:; BSR set to: 0
+l1690:; BSR set to: 0
 
 	line	20
 	
-l5649:; BSR set to: 0
+l5694:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16230,14 +16365,14 @@ l5649:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((___lwmod@dividend+1))&0ffh,w
 	btfss	status,0
-	goto	u4851
-	goto	u4850
-u4851:
-	goto	l5653
-u4850:
+	goto	u4891
+	goto	u4890
+u4891:
+	goto	l5698
+u4890:
 	line	21
 	
-l5651:; BSR set to: 0
+l5696:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16252,13 +16387,13 @@ l5651:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((___lwmod@dividend+1))&0ffh
 
-	goto	l5653
+	goto	l5698
 	
-l1686:; BSR set to: 0
+l1691:; BSR set to: 0
 
 	line	22
 	
-l5653:; BSR set to: 0
+l5698:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16268,27 +16403,27 @@ l5653:; BSR set to: 0
 	rrcf	((___lwmod@divisor))&0ffh
 	line	23
 	
-l5655:; BSR set to: 0
+l5700:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decfsz	((___lwmod@counter))&0ffh
 	
-	goto	l5649
-	goto	l1681
+	goto	l5694
+	goto	l1686
 	
-l1687:; BSR set to: 0
+l1692:; BSR set to: 0
 
 	line	24
 	
-l1681:; BSR set to: 0
+l1686:; BSR set to: 0
 
 	line	25
 	movff	(___lwmod@dividend),(?___lwmod)
 	movff	(___lwmod@dividend+1),(?___lwmod+1)
 	line	26
 	
-l1688:; BSR set to: 0
+l1693:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -16347,7 +16482,7 @@ ___lwdiv:; BSR set to: 0
 	dw	0FFFFh
 	line	14
 	
-l5619:
+l5664:
 	movlw	high(0)
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16357,7 +16492,7 @@ l5619:
 	movwf	((___lwdiv@quotient))&0ffh
 	line	15
 	
-l5621:; BSR set to: 0
+l5666:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16365,14 +16500,14 @@ l5621:; BSR set to: 0
 	iorwf ((___lwdiv@divisor))&0ffh,w
 
 	btfsc	status,2
-	goto	u4801
-	goto	u4800
-u4801:
-	goto	l1671
-u4800:
+	goto	u4841
+	goto	u4840
+u4841:
+	goto	l1676
+u4840:
 	line	16
 	
-l5623:; BSR set to: 0
+l5668:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??___lwdiv+0+0)&0ffh
@@ -16383,13 +16518,13 @@ l5623:; BSR set to: 0
 	movlb	0	; () banked
 	movf	(??___lwdiv+0+0)&0ffh,w
 	line	17
-	goto	l5627
+	goto	l5672
 	
-l1673:; BSR set to: 0
+l1678:; BSR set to: 0
 
 	line	18
 	
-l5625:; BSR set to: 0
+l5670:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16401,36 +16536,36 @@ l5625:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((___lwdiv@counter))&0ffh
-	goto	l5627
+	goto	l5672
 	line	20
 	
-l1672:; BSR set to: 0
+l1677:; BSR set to: 0
 
 	line	17
 	
-l5627:; BSR set to: 0
+l5672:; BSR set to: 0
 
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfss	((___lwdiv@divisor+1))&0ffh,(15)&7
-	goto	u4811
-	goto	u4810
-u4811:
-	goto	l5625
-u4810:
-	goto	l5629
+	goto	u4851
+	goto	u4850
+u4851:
+	goto	l5670
+u4850:
+	goto	l5674
 	
-l1674:; BSR set to: 0
+l1679:; BSR set to: 0
 
-	goto	l5629
+	goto	l5674
 	line	21
 	
-l1675:; BSR set to: 0
+l1680:; BSR set to: 0
 
 	line	22
 	
-l5629:; BSR set to: 0
+l5674:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16440,7 +16575,7 @@ l5629:; BSR set to: 0
 	rlcf	((___lwdiv@quotient+1))&0ffh
 	line	23
 	
-l5631:; BSR set to: 0
+l5676:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16455,14 +16590,14 @@ l5631:; BSR set to: 0
 	movlb	0	; () banked
 	subwfb	((___lwdiv@dividend+1))&0ffh,w
 	btfss	status,0
-	goto	u4821
-	goto	u4820
-u4821:
-	goto	l5637
-u4820:
+	goto	u4861
+	goto	u4860
+u4861:
+	goto	l5682
+u4860:
 	line	24
 	
-l5633:; BSR set to: 0
+l5678:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16479,19 +16614,19 @@ l5633:; BSR set to: 0
 
 	line	25
 	
-l5635:; BSR set to: 0
+l5680:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(0/8)+(___lwdiv@quotient))&0ffh,(0)&7
-	goto	l5637
+	goto	l5682
 	line	26
 	
-l1676:; BSR set to: 0
+l1681:; BSR set to: 0
 
 	line	27
 	
-l5637:; BSR set to: 0
+l5682:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16501,27 +16636,27 @@ l5637:; BSR set to: 0
 	rrcf	((___lwdiv@divisor))&0ffh
 	line	28
 	
-l5639:; BSR set to: 0
+l5684:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decfsz	((___lwdiv@counter))&0ffh
 	
-	goto	l5629
-	goto	l1671
+	goto	l5674
+	goto	l1676
 	
-l1677:; BSR set to: 0
+l1682:; BSR set to: 0
 
 	line	29
 	
-l1671:; BSR set to: 0
+l1676:; BSR set to: 0
 
 	line	30
 	movff	(___lwdiv@quotient),(?___lwdiv)
 	movff	(___lwdiv@quotient+1),(?___lwdiv+1)
 	line	31
 	
-l1678:; BSR set to: 0
+l1683:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -16582,7 +16717,7 @@ _ecran_wait:; BSR set to: 0
 	dw	0FFFFh
 	line	94
 	
-l5947:
+l5992:
 ;ecran.c: 94: ecran_raz_digit();
 	call	_ecran_raz_digit	;wreg free
 	line	96
@@ -16592,12 +16727,12 @@ l5947:
 	call	_ecran_dot
 	line	98
 	
-l5949:
+l5994:
 ;ecran.c: 98: PORTCbits.RC2 = 1;
 	bsf	((c:3970)),c,2	;volatile
 	line	100
 	
-l5951:
+l5996:
 ;ecran.c: 100: Ecran.Solid = 1;
 	movlb	0	; () banked
 	movwf	(??_ecran_wait+0+0)&0ffh
@@ -16672,17 +16807,17 @@ _check_comutest:; BSR set to: 0
 	movff	wreg,(check_comutest@State)
 	line	5
 	
-l5911:
+l5956:
 ;test.c: 5: ecran_blank();
 	call	_ecran_blank	;wreg free
 	line	6
 ;test.c: 6: while(PORTCbits.RC5 == State)
-	goto	l5925
+	goto	l5970
 	
 l527:
 	line	8
 	
-l5913:
+l5958:
 ;test.c: 7: {
 ;test.c: 8: Ecran.Digits = (char *) ErreurTir;
 		movlw	high(_ErreurTir)
@@ -16696,33 +16831,33 @@ l5913:
 
 	line	9
 	
-l5915:; BSR set to: 0
+l5960:; BSR set to: 0
 
 ;test.c: 9: ecran_refresh();
 	call	_ecran_refresh	;wreg free
 	line	11
 	
-l5917:
+l5962:
 ;test.c: 11: if ((PORTCbits.RC5 == 0) && (Micro.Phase == 0x01))
 	btfsc	((c:3970)),c,5	;volatile
-	goto	u5221
-	goto	u5220
-u5221:
-	goto	l5925
-u5220:
+	goto	u5261
+	goto	u5260
+u5261:
+	goto	l5970
+u5260:
 	
-l5919:
+l5964:
 	decf	(0+((c:_Micro)+02h)),c,w
 
 	btfss	status,2
-	goto	u5231
-	goto	u5230
-u5231:
-	goto	l5925
-u5230:
+	goto	u5271
+	goto	u5270
+u5271:
+	goto	l5970
+u5270:
 	line	13
 	
-l5921:
+l5966:
 ;test.c: 12: {
 ;test.c: 13: Test.Step = 0x01;
 	movlb	0	; () banked
@@ -16733,39 +16868,39 @@ l5921:
 	movf	(??_check_comutest+0+0)&0ffh,w
 	line	14
 	
-l5923:; BSR set to: 0
+l5968:; BSR set to: 0
 
 ;test.c: 14: ecran_blank();
 	call	_ecran_blank	;wreg free
-	goto	l5925
+	goto	l5970
 	line	15
 	
 l528:
-	goto	l5925
+	goto	l5970
 	line	16
 	
 l526:
 	line	6
 	
-l5925:
+l5970:
 	btfsc	((c:3970)),c,5	;volatile
-	goto	u5241
-	goto	u5240
-u5241:
+	goto	u5281
+	goto	u5280
+u5281:
 	movlw	1
-	goto	u5246
-u5240:
+	goto	u5286
+u5280:
 	movlw	0
-u5246:
+u5286:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	xorwf	((check_comutest@State))&0ffh,w
 	btfsc	status,2
-	goto	u5251
-	goto	u5250
-u5251:
-	goto	l5913
-u5250:
+	goto	u5291
+	goto	u5290
+u5291:
+	goto	l5958
+u5290:
 	goto	l530
 	
 l529:; BSR set to: 0
@@ -16833,19 +16968,19 @@ _ecran_refresh:; BSR set to: 0
 	dw	0FFFFh
 	line	119
 	
-l5657:
+l5702:
 ;ecran.c: 118: if ( (Ecran.Solid == 0)
 ;ecran.c: 119: && ((++ Ecran.Cpt) <= Ecran.tRate))
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	(0+(_Ecran+0Fh))&0ffh
-	goto	u4861
-	goto	u4860
-u4861:
+	goto	u4901
+	goto	u4900
+u4901:
 	goto	l280
-u4860:
+u4900:
 	
-l5659:; BSR set to: 0
+l5704:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16856,14 +16991,14 @@ l5659:; BSR set to: 0
 	movlb	0	; () banked
 	subwf	(0+(_Ecran+0Ch))&0ffh,w
 	btfss	status,0
-	goto	u4871
-	goto	u4870
-u4871:
+	goto	u4911
+	goto	u4910
+u4911:
 	goto	l280
-u4870:
+u4910:
 	line	121
 	
-l5661:; BSR set to: 0
+l5706:; BSR set to: 0
 
 ;ecran.c: 120: {
 ;ecran.c: 121: ecran_print_one_char(Ecran.Index, Ecran.Digits[Ecran.Index]);
@@ -16887,17 +17022,17 @@ l5661:; BSR set to: 0
 	
 	movlw	high __ramtop-1
 	cpfsgt	tblptrh
-	bra	u4887
+	bra	u4927
 	tblrd	*
 		dw	0FFFFh; errata NOP
 
 	movf	tablat,w
-	bra	u4880
-u4887:
+	bra	u4920
+u4927:
 	movff	tblptrl,fsr1l
 	movff	tblptrh,fsr1h
 	movf	indf1,w
-u4880:
+u4920:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movwf	((ecran_print_one_char@Character))&0ffh
@@ -16908,7 +17043,7 @@ u4880:
 	call	_ecran_print_one_char
 	line	123
 	
-l5663:
+l5708:
 ;ecran.c: 123: ecran_dot(Ecran.Dot[Ecran.Index]);
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -16927,7 +17062,7 @@ l5663:
 	call	_ecran_dot
 	line	125
 	
-l5665:
+l5710:
 ;ecran.c: 125: if (++ Ecran.Index > 3) {Ecran.Index = 0;}
 	movlb	0	; () banked
 	lfsr	2,_Ecran+0Ah
@@ -16935,13 +17070,13 @@ l5665:
 
 	movlw	(04h-1)
 	cpfsgt	indf2
-	goto	u4891
-	goto	u4890
-u4891:
+	goto	u4931
+	goto	u4930
+u4931:
 	goto	l280
-u4890:
+u4930:
 	
-l5667:; BSR set to: 0
+l5712:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??_ecran_refresh+0+0)&0ffh
@@ -17028,7 +17163,7 @@ _ecran_print_one_char:; BSR set to: 0
 	movff	wreg,(ecran_print_one_char@Digit)
 	line	52
 	
-l5381:
+l5426:
 ;ecran.c: 52: ecran_raz_digit();
 	call	_ecran_raz_digit	;wreg free
 	line	54
@@ -17040,7 +17175,7 @@ l5381:
 	call	_ecran_digit
 	line	56
 ;ecran.c: 56: switch (Digit)
-	goto	l5385
+	goto	l5430
 	line	58
 ;ecran.c: 57: {
 ;ecran.c: 58: case 0: PORTCbits.RC1 = 1; break;
@@ -17078,7 +17213,7 @@ l263:; BSR set to: 0
 	goto	l264
 	line	63
 	
-l5383:; BSR set to: 0
+l5428:; BSR set to: 0
 
 ;ecran.c: 63: }
 	goto	l264
@@ -17087,7 +17222,7 @@ l5383:; BSR set to: 0
 l257:; BSR set to: 0
 
 	
-l5385:
+l5430:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((ecran_print_one_char@Digit))&0ffh,w
@@ -17175,13 +17310,13 @@ _ecran_raz_digit:; BSR set to: 0
 	dw	0FFFFh
 	line	5
 	
-l5311:
+l5356:
 ;ecran.c: 5: PORTD = 0;
 	movlw	low(0)
 	movwf	((c:3971)),c	;volatile
 	line	6
 	
-l5313:
+l5358:
 ;ecran.c: 6: PORTC &= 0xF0;
 	movlw	(0F0h)&0ffh
 	andwf	((c:3970)),c	;volatile
@@ -17243,16 +17378,16 @@ _ecran_digit:
 	movff	wreg,(ecran_digit@Char)
 	line	11
 	
-l5315:
+l5360:
 ;ecran.c: 11: switch (Char)
-	goto	l5369
+	goto	l5414
 	line	13
 ;ecran.c: 12: {
 ;ecran.c: 13: case ' ': PORTD = 0x00; break;
 	
 l223:
 	
-l5317:
+l5362:
 	movlw	low(0)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17261,7 +17396,7 @@ l5317:
 	
 l225:
 	
-l5319:
+l5364:
 	movlw	low(0B7h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17270,7 +17405,7 @@ l5319:
 	
 l226:
 	
-l5321:
+l5366:
 	movlw	low(0F2h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17279,7 +17414,7 @@ l5321:
 	
 l227:
 	
-l5323:
+l5368:
 	movlw	low(0D0h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17288,7 +17423,7 @@ l5323:
 	
 l228:
 	
-l5325:
+l5370:
 	movlw	low(0F1h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17297,7 +17432,7 @@ l5325:
 	
 l229:
 	
-l5327:
+l5372:
 	movlw	low(0D6h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17306,7 +17441,7 @@ l5327:
 	
 l230:
 	
-l5329:
+l5374:
 	movlw	low(096h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17315,7 +17450,7 @@ l5329:
 	
 l231:
 	
-l5331:
+l5376:
 	movlw	low(097h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17324,7 +17459,7 @@ l5331:
 	
 l232:
 	
-l5333:
+l5378:
 	movlw	low(0F2h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17333,7 +17468,7 @@ l5333:
 	
 l233:
 	
-l5335:
+l5380:
 	movlw	low(0D0h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17342,7 +17477,7 @@ l5335:
 	
 l234:
 	
-l5337:
+l5382:
 	movlw	low(0F1h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17351,7 +17486,7 @@ l5337:
 	
 l235:
 	
-l5339:
+l5384:
 	movlw	low(076h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17360,7 +17495,7 @@ l5339:
 	
 l236:
 	
-l5341:
+l5386:
 	movlw	low(0D2h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17369,7 +17504,7 @@ l5341:
 	
 l237:
 	
-l5343:
+l5388:
 	movlw	low(040h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17378,7 +17513,7 @@ l5343:
 	
 l238:
 	
-l5345:
+l5390:
 	movlw	low(010h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17387,7 +17522,7 @@ l5345:
 	
 l239:
 	
-l5347:
+l5392:
 	movlw	low(0E7h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17396,7 +17531,7 @@ l5347:
 	
 l240:
 	
-l5349:
+l5394:
 	movlw	low(021h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17405,7 +17540,7 @@ l5349:
 	
 l241:
 	
-l5351:
+l5396:
 	movlw	low(0D5h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17414,7 +17549,7 @@ l5351:
 	
 l242:
 	
-l5353:
+l5398:
 	movlw	low(075h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17423,7 +17558,7 @@ l5353:
 	
 l243:
 	
-l5355:
+l5400:
 	movlw	low(033h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17432,7 +17567,7 @@ l5355:
 	
 l244:
 	
-l5357:
+l5402:
 	movlw	low(076h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17441,7 +17576,7 @@ l5357:
 	
 l245:
 	
-l5359:
+l5404:
 	movlw	low(0F6h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17450,7 +17585,7 @@ l5359:
 	
 l246:
 	
-l5361:
+l5406:
 	movlw	low(025h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17459,7 +17594,7 @@ l5361:
 	
 l247:
 	
-l5363:
+l5408:
 	movlw	low(0F7h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17468,7 +17603,7 @@ l5363:
 	
 l248:
 	
-l5365:
+l5410:
 	movlw	low(077h)
 	movwf	((c:3971)),c	;volatile
 	goto	l250
@@ -17479,14 +17614,14 @@ l249:
 	goto	l250
 	line	39
 	
-l5367:
+l5412:
 ;ecran.c: 39: }
 	goto	l250
 	line	11
 	
 l222:
 	
-l5369:
+l5414:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((ecran_digit@Char))&0ffh,w
@@ -17499,79 +17634,79 @@ l5369:
 
 	xorlw	32^0	; case 32
 	skipnz
-	goto	l5317
+	goto	l5362
 	xorlw	45^32	; case 45
 	skipnz
-	goto	l5345
+	goto	l5390
 	xorlw	48^45	; case 48
 	skipnz
-	goto	l5347
+	goto	l5392
 	xorlw	49^48	; case 49
 	skipnz
-	goto	l5349
+	goto	l5394
 	xorlw	50^49	; case 50
 	skipnz
-	goto	l5351
+	goto	l5396
 	xorlw	51^50	; case 51
 	skipnz
-	goto	l5353
+	goto	l5398
 	xorlw	52^51	; case 52
 	skipnz
-	goto	l5355
+	goto	l5400
 	xorlw	53^52	; case 53
 	skipnz
-	goto	l5357
+	goto	l5402
 	xorlw	54^53	; case 54
 	skipnz
-	goto	l5359
+	goto	l5404
 	xorlw	55^54	; case 55
 	skipnz
-	goto	l5361
+	goto	l5406
 	xorlw	56^55	; case 56
 	skipnz
-	goto	l5363
+	goto	l5408
 	xorlw	57^56	; case 57
 	skipnz
-	goto	l5365
+	goto	l5410
 	xorlw	65^57	; case 65
 	skipnz
-	goto	l5319
+	goto	l5364
 	xorlw	66^65	; case 66
 	skipnz
-	goto	l5321
+	goto	l5366
 	xorlw	67^66	; case 67
 	skipnz
-	goto	l5323
+	goto	l5368
 	xorlw	68^67	; case 68
 	skipnz
-	goto	l5325
+	goto	l5370
 	xorlw	69^68	; case 69
 	skipnz
-	goto	l5327
+	goto	l5372
 	xorlw	70^69	; case 70
 	skipnz
-	goto	l5329
+	goto	l5374
 	xorlw	80^70	; case 80
 	skipnz
-	goto	l5331
+	goto	l5376
 	xorlw	83^80	; case 83
 	skipnz
-	goto	l5339
+	goto	l5384
 	xorlw	95^83	; case 95
 	skipnz
-	goto	l5343
+	goto	l5388
 	xorlw	98^95	; case 98
 	skipnz
-	goto	l5333
+	goto	l5378
 	xorlw	99^98	; case 99
 	skipnz
-	goto	l5335
+	goto	l5380
 	xorlw	100^99	; case 100
 	skipnz
-	goto	l5337
+	goto	l5382
 	xorlw	116^100	; case 116
 	skipnz
-	goto	l5341
+	goto	l5386
 	goto	l250
 
 	line	39
@@ -17637,21 +17772,21 @@ _ecran_dot:
 	movff	wreg,(ecran_dot@Dot)
 	line	44
 	
-l5377:
+l5422:
 ;ecran.c: 44: if (Dot == 1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decf	((ecran_dot@Dot))&0ffh,w
 
 	btfss	status,2
-	goto	u4351
-	goto	u4350
-u4351:
+	goto	u4391
+	goto	u4390
+u4391:
 	goto	l254
-u4350:
+u4390:
 	line	46
 	
-l5379:; BSR set to: 0
+l5424:; BSR set to: 0
 
 ;ecran.c: 45: {
 ;ecran.c: 46: PORTD |= 0x08;
@@ -17723,7 +17858,7 @@ _ecran_blank:; BSR set to: 0
 	dw	0FFFFh
 	line	106
 	
-l5697:
+l5742:
 ;ecran.c: 106: Ecran.Digits = (char *) Blank;
 		movlw	high(_Blank)
 	movlb	0	; () banked
@@ -17736,7 +17871,7 @@ l5697:
 
 	line	108
 	
-l5699:; BSR set to: 0
+l5744:; BSR set to: 0
 
 ;ecran.c: 108: Ecran.Dot[0] = 0;
 	movlb	0	; () banked
@@ -17749,7 +17884,7 @@ l5699:; BSR set to: 0
 	movf	(??_ecran_blank+0+0)&0ffh,w
 	line	109
 	
-l5701:; BSR set to: 0
+l5746:; BSR set to: 0
 
 ;ecran.c: 109: Ecran.Dot[1] = 0;
 	movlb	0	; () banked
@@ -17762,7 +17897,7 @@ l5701:; BSR set to: 0
 	movf	(??_ecran_blank+0+0)&0ffh,w
 	line	110
 	
-l5703:; BSR set to: 0
+l5748:; BSR set to: 0
 
 ;ecran.c: 110: Ecran.Dot[2] = 0;
 	movlb	0	; () banked
@@ -17775,7 +17910,7 @@ l5703:; BSR set to: 0
 	movf	(??_ecran_blank+0+0)&0ffh,w
 	line	111
 	
-l5705:; BSR set to: 0
+l5750:; BSR set to: 0
 
 ;ecran.c: 111: Ecran.Dot[3] = 0;
 	movlb	0	; () banked
@@ -17788,7 +17923,7 @@ l5705:; BSR set to: 0
 	movf	(??_ecran_blank+0+0)&0ffh,w
 	line	113
 	
-l5707:; BSR set to: 0
+l5752:; BSR set to: 0
 
 ;ecran.c: 113: Ecran.Solid = 0;
 	movlb	0	; () banked
@@ -17862,7 +17997,7 @@ _arm_UAlim_1A:; BSR set to: 0
 	dw	0FFFFh
 	line	5
 	
-l6069:
+l6114:
 ;armement.c: 5: unsigned short temp = 0;
 	movlw	high(0)
 	movlb	0	; () banked
@@ -17873,19 +18008,19 @@ l6069:
 	movwf	((arm_UAlim_1A@temp))&0ffh
 	line	7
 	
-l6071:; BSR set to: 0
+l6116:; BSR set to: 0
 
 ;armement.c: 7: PORTAbits.RA5 = 0;
 	bcf	((c:3968)),c,5	;volatile
 	line	8
 	
-l6073:; BSR set to: 0
+l6118:; BSR set to: 0
 
 ;armement.c: 8: PORTBbits.RB1 = 1;
 	bsf	((c:3969)),c,1	;volatile
 	line	10
 	
-l6075:; BSR set to: 0
+l6120:; BSR set to: 0
 
 ;armement.c: 10: delay_ms(10);
 	movlw	high(0Ah)
@@ -17898,7 +18033,7 @@ l6075:; BSR set to: 0
 	call	_delay_ms	;wreg free
 	line	12
 	
-l6077:
+l6122:
 ;armement.c: 12: temp = ana_read(0);
 	movlw	(0)&0ffh
 	
@@ -17909,19 +18044,19 @@ l6077:
 	movff	1+?_ana_read,(arm_UAlim_1A@temp+1)
 	line	14
 	
-l6079:; BSR set to: 0
+l6124:; BSR set to: 0
 
 ;armement.c: 14: PORTAbits.RA5 = 0;
 	bcf	((c:3968)),c,5	;volatile
 	line	15
 	
-l6081:; BSR set to: 0
+l6126:; BSR set to: 0
 
 ;armement.c: 15: PORTBbits.RB1 = 0;
 	bcf	((c:3969)),c,1	;volatile
 	line	17
 	
-l6083:; BSR set to: 0
+l6128:; BSR set to: 0
 
 ;armement.c: 17: Arm.U_Alim_1A = (float) temp * 0.0049f;
 	movff	(arm_UAlim_1A@temp),(___lwtoft@c)
@@ -17949,7 +18084,7 @@ l6083:; BSR set to: 0
 	movff	2+?___ftmul,2+(_Arm+04h)
 	line	18
 	
-l6085:
+l6130:
 ;armement.c: 18: Arm.U_Alim_1A = Arm.U_Alim_1A * 11.62f;
 	movff	0+(_Arm+04h),(___ftmul@f1)
 	movff	1+(_Arm+04h),(___ftmul@f1+1)
@@ -17973,7 +18108,7 @@ l6085:
 	movff	2+?___ftmul,2+(_Arm+04h)
 	line	19
 	
-l6087:
+l6132:
 ;armement.c: 19: Arm.U_Alim_1A = Arm.U_Alim_1A * 100.0f;
 	movff	0+(_Arm+04h),(___ftmul@f1)
 	movff	1+(_Arm+04h),(___ftmul@f1+1)
@@ -17997,7 +18132,7 @@ l6087:
 	movff	2+?___ftmul,2+(_Arm+04h)
 	line	21
 	
-l6089:
+l6134:
 ;armement.c: 21: return (unsigned short) Arm.U_Alim_1A;
 	movff	0+(_Arm+04h),(___fttol@f1)
 	movff	1+(_Arm+04h),(___fttol@f1+1)
@@ -18010,12 +18145,12 @@ l6089:
 	
 	movff	??_arm_UAlim_1A+0+0,(?_arm_UAlim_1A)
 	movff	??_arm_UAlim_1A+0+1,(?_arm_UAlim_1A+1)
-	goto	l1023
+	goto	l1028
 	
-l6091:
+l6136:
 	line	22
 	
-l1023:
+l1028:
 	return
 	dw	0FFFFh; errata NOP
 	opt stack 0
@@ -18075,7 +18210,7 @@ _ana_read:
 	movff	wreg,(ana_read@ANx)
 	line	6
 	
-l5747:
+l5792:
 ;analog.c: 6: unsigned short temp = 0;
 	movlw	high(0)
 	movlb	0	; () banked
@@ -18086,7 +18221,7 @@ l5747:
 	movwf	((ana_read@temp))&0ffh
 	line	8
 	
-l5749:; BSR set to: 0
+l5794:; BSR set to: 0
 
 ;analog.c: 8: ADCON0bits.CHS = ANx;
 	movff	(ana_read@ANx),??_ana_read+0+0
@@ -18102,13 +18237,13 @@ l5749:; BSR set to: 0
 	movwf	((c:4034)),c	;volatile
 	line	9
 	
-l5751:; BSR set to: 0
+l5796:; BSR set to: 0
 
 ;analog.c: 9: ADCON0bits.ADON = 1;
 	bsf	((c:4034)),c,0	;volatile
 	line	11
 	
-l5753:; BSR set to: 0
+l5798:; BSR set to: 0
 
 ;analog.c: 11: delay_ms(5);
 	movlw	high(05h)
@@ -18121,28 +18256,28 @@ l5753:; BSR set to: 0
 	call	_delay_ms	;wreg free
 	line	13
 	
-l5755:
+l5800:
 ;analog.c: 13: ADCON0bits.GO_nDONE = 1;
 	bsf	((c:4034)),c,2	;volatile
 	line	14
 ;analog.c: 14: while (ADCON0bits.GO_nDONE);
-	goto	l967
+	goto	l972
 	
-l968:
+l973:
 	
-l967:
+l972:
 	btfsc	((c:4034)),c,2	;volatile
-	goto	u4991
-	goto	u4990
-u4991:
-	goto	l967
-u4990:
-	goto	l5757
+	goto	u5031
+	goto	u5030
+u5031:
+	goto	l972
+u5030:
+	goto	l5802
 	
-l969:
+l974:
 	line	16
 	
-l5757:
+l5802:
 ;analog.c: 16: temp = ADRESH << 8;
 	movf	((c:4036)),c,w	;volatile
 	movlb	0	; () banked
@@ -18152,7 +18287,7 @@ l5757:
 	clrf	((ana_read@temp))&0ffh
 	line	17
 	
-l5759:; BSR set to: 0
+l5804:; BSR set to: 0
 
 ;analog.c: 17: temp |= ADRESL;
 	movf	((c:4035)),c,w	;volatile
@@ -18161,24 +18296,24 @@ l5759:; BSR set to: 0
 	iorwf	((ana_read@temp))&0ffh
 	line	19
 	
-l5761:; BSR set to: 0
+l5806:; BSR set to: 0
 
 ;analog.c: 19: ADCON0bits.ADON = 0;
 	bcf	((c:4034)),c,0	;volatile
 	line	21
 	
-l5763:; BSR set to: 0
+l5808:; BSR set to: 0
 
 ;analog.c: 21: return temp;
 	movff	(ana_read@temp),(?_ana_read)
 	movff	(ana_read@temp+1),(?_ana_read+1)
-	goto	l970
+	goto	l975
 	
-l5765:; BSR set to: 0
+l5810:; BSR set to: 0
 
 	line	22
 	
-l970:; BSR set to: 0
+l975:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -18238,20 +18373,20 @@ _delay_ms:; BSR set to: 0
 	dw	0FFFFh
 	line	6
 	
-l5521:
+l5566:
 ;time.c: 6: unsigned short temp = Cptms;
 	movff	(c:_Cptms),(delay_ms@temp)	;volatile
 	movff	(c:_Cptms+1),(delay_ms@temp+1)	;volatile
 	line	8
 ;time.c: 8: while((((unsigned short) (Cptms - temp) < TimeToWait) ? 1 : 0));
-	goto	l5523
+	goto	l5568
 	
-l866:
-	goto	l5523
+l871:
+	goto	l5568
 	
-l865:
+l870:
 	
-l5523:
+l5568:
 	movlb	0	; () banked
 	movff	(delay_ms@temp),??_delay_ms+0+0
 	movlb	0	; () banked
@@ -18278,18 +18413,18 @@ l5523:
 	movlb	0	; () banked
 	subwfb	(??_delay_ms+0+1)&0ffh,w
 	btfss	status,0
-	goto	u4631
-	goto	u4630
-u4631:
-	goto	l5523
-u4630:
-	goto	l868
+	goto	u4671
+	goto	u4670
+u4671:
+	goto	l5568
+u4670:
+	goto	l873
 	
-l867:; BSR set to: 0
+l872:; BSR set to: 0
 
 	line	9
 	
-l868:; BSR set to: 0
+l873:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -18348,7 +18483,7 @@ ___lwtoft:; BSR set to: 0
 	dw	0FFFFh
 	line	30
 	
-l5907:
+l5952:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movff	(___lwtoft@c),(___ftpack@arg)
@@ -18378,12 +18513,12 @@ l5907:
 	movff	0+?___ftpack,(?___lwtoft)
 	movff	1+?___ftpack,(?___lwtoft+1)
 	movff	2+?___ftpack,(?___lwtoft+2)
-	goto	l1698
+	goto	l1703
 	
-l5909:
+l5954:
 	line	31
 	
-l1698:
+l1703:
 	return
 	dw	0FFFFh; errata NOP
 	opt stack 0
@@ -18442,7 +18577,7 @@ ___fttol:
 	dw	0FFFFh
 	line	49
 	
-l5831:
+l5876:
 	movlb	0	; () banked
 	movff	(___fttol@f1+2),??___fttol+0+0
 	movlb	0	; () banked
@@ -18453,9 +18588,9 @@ l5831:
 	rlcf	((___fttol@f1+1))&0ffh,w
 	movlb	0	; () banked
 	rlcf	(??___fttol+0+0)&0ffh
-	bnc	u5091
+	bnc	u5131
 	bsf	(??___fttol+0+0+1)&0ffh,0
-u5091:
+u5131:
 	movlb	0	; () banked
 	movf	(??___fttol+0+0)&0ffh,w
 	movlb	0	; () banked
@@ -18463,14 +18598,14 @@ u5091:
 	movwf	((___fttol@exp1))&0ffh
 	movlb	0	; () banked
 	tstfsz	((___fttol@exp1))&0ffh
-	goto	u5101
-	goto	u5100
-u5101:
-	goto	l5837
-u5100:
+	goto	u5141
+	goto	u5140
+u5141:
+	goto	l5882
+u5140:
 	line	50
 	
-l5833:; BSR set to: 0
+l5878:; BSR set to: 0
 
 	movlw	low(0)
 	movlb	0	; () banked
@@ -18485,17 +18620,17 @@ l5833:; BSR set to: 0
 	movlw	high highword(0)
 	movlb	0	; () banked
 	movwf	((?___fttol+3))&0ffh
-	goto	l1549
+	goto	l1554
 	
-l5835:; BSR set to: 0
+l5880:; BSR set to: 0
 
-	goto	l1549
+	goto	l1554
 	
-l1548:; BSR set to: 0
+l1553:; BSR set to: 0
 
 	line	51
 	
-l5837:; BSR set to: 0
+l5882:; BSR set to: 0
 
 	movlw	(017h)&0ffh
 	movlb	0	; () banked
@@ -18510,17 +18645,17 @@ l5837:; BSR set to: 0
 	incf	((??___fttol+0+0))&0ffh,w
 	movlb	0	; () banked
 	movwf	(??___fttol+4+0)&0ffh
-	goto	u5110
-u5115:
+	goto	u5150
+u5155:
 	movlb	0	; () banked
 	bcf	status,0
 	rrcf	(??___fttol+1+2)&0ffh
 	rrcf	(??___fttol+1+1)&0ffh
 	rrcf	(??___fttol+1+0)&0ffh
-u5110:
+u5150:
 	movlb	0	; () banked
 	decfsz	(??___fttol+4+0)&0ffh
-	goto	u5115
+	goto	u5155
 	movlb	0	; () banked
 	movf	(??___fttol+1+0)&0ffh,w
 	movlb	0	; () banked
@@ -18528,14 +18663,14 @@ u5110:
 	movwf	((___fttol@sign1))&0ffh
 	line	52
 	
-l5839:; BSR set to: 0
+l5884:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(15/8)+(___fttol@f1))&0ffh,(15)&7
 	line	53
 	
-l5841:; BSR set to: 0
+l5886:; BSR set to: 0
 
 	movlw	low(0FFFFh)
 	movlb	0	; () banked
@@ -18552,7 +18687,7 @@ l5841:; BSR set to: 0
 
 	line	54
 	
-l5843:; BSR set to: 0
+l5888:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -18575,7 +18710,7 @@ l5843:; BSR set to: 0
 	clrf	3+((___fttol@lval))&0ffh
 	line	55
 	
-l5845:; BSR set to: 0
+l5890:; BSR set to: 0
 
 	movlw	(08Eh)&0ffh
 	movlb	0	; () banked
@@ -18583,19 +18718,19 @@ l5845:; BSR set to: 0
 	subwf	((___fttol@exp1))&0ffh
 	line	56
 	
-l5847:; BSR set to: 0
+l5892:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	btfss	((___fttol@exp1))&0ffh,7
-	goto	u5121
-	goto	u5120
-u5121:
-	goto	l5859
-u5120:
+	goto	u5161
+	goto	u5160
+u5161:
+	goto	l5904
+u5160:
 	line	57
 	
-l5849:; BSR set to: 0
+l5894:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -18608,14 +18743,14 @@ l5849:; BSR set to: 0
 	movlb	0	; () banked
 	subwf	(??___fttol+0+0)&0ffh,w
 	btfsc	status,0
-	goto	u5131
-	goto	u5130
-u5131:
-	goto	l5855
-u5130:
+	goto	u5171
+	goto	u5170
+u5171:
+	goto	l5900
+u5170:
 	line	58
 	
-l5851:; BSR set to: 0
+l5896:; BSR set to: 0
 
 	movlw	low(0)
 	movlb	0	; () banked
@@ -18630,22 +18765,22 @@ l5851:; BSR set to: 0
 	movlw	high highword(0)
 	movlb	0	; () banked
 	movwf	((?___fttol+3))&0ffh
-	goto	l1549
+	goto	l1554
 	
-l5853:; BSR set to: 0
+l5898:; BSR set to: 0
 
-	goto	l1549
+	goto	l1554
 	
-l1551:; BSR set to: 0
+l1556:; BSR set to: 0
 
-	goto	l5855
+	goto	l5900
 	line	59
 	
-l1552:; BSR set to: 0
+l1557:; BSR set to: 0
 
 	line	60
 	
-l5855:; BSR set to: 0
+l5900:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf	status,0
@@ -18659,38 +18794,38 @@ l5855:; BSR set to: 0
 	rrcf	((___fttol@lval))&0ffh
 	line	61
 	
-l5857:; BSR set to: 0
+l5902:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incfsz	((___fttol@exp1))&0ffh
 	
-	goto	l5855
-	goto	l5869
+	goto	l5900
+	goto	l5914
 	
-l1553:; BSR set to: 0
+l1558:; BSR set to: 0
 
 	line	62
-	goto	l5869
+	goto	l5914
 	
-l1550:; BSR set to: 0
+l1555:; BSR set to: 0
 
 	line	63
 	
-l5859:; BSR set to: 0
+l5904:; BSR set to: 0
 
 	movlw	(018h-1)
 	movlb	0	; () banked
 	movlb	0	; () banked
 	cpfsgt	((___fttol@exp1))&0ffh
-	goto	u5141
-	goto	u5140
-u5141:
-	goto	l5867
-u5140:
+	goto	u5181
+	goto	u5180
+u5181:
+	goto	l5912
+u5180:
 	line	64
 	
-l5861:; BSR set to: 0
+l5906:; BSR set to: 0
 
 	movlw	low(0)
 	movlb	0	; () banked
@@ -18705,22 +18840,22 @@ l5861:; BSR set to: 0
 	movlw	high highword(0)
 	movlb	0	; () banked
 	movwf	((?___fttol+3))&0ffh
-	goto	l1549
+	goto	l1554
 	
-l5863:; BSR set to: 0
+l5908:; BSR set to: 0
 
-	goto	l1549
+	goto	l1554
 	
-l1555:; BSR set to: 0
+l1560:; BSR set to: 0
 
 	line	65
-	goto	l5867
+	goto	l5912
 	
-l1557:; BSR set to: 0
+l1562:; BSR set to: 0
 
 	line	66
 	
-l5865:; BSR set to: 0
+l5910:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf	status,0
@@ -18736,48 +18871,48 @@ l5865:; BSR set to: 0
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decf	((___fttol@exp1))&0ffh
-	goto	l5867
+	goto	l5912
 	line	68
 	
-l1556:; BSR set to: 0
+l1561:; BSR set to: 0
 
 	line	65
 	
-l5867:; BSR set to: 0
+l5912:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	tstfsz	((___fttol@exp1))&0ffh
-	goto	u5151
-	goto	u5150
-u5151:
-	goto	l5865
-u5150:
-	goto	l5869
+	goto	u5191
+	goto	u5190
+u5191:
+	goto	l5910
+u5190:
+	goto	l5914
 	
-l1558:; BSR set to: 0
+l1563:; BSR set to: 0
 
-	goto	l5869
+	goto	l5914
 	line	69
 	
-l1554:; BSR set to: 0
+l1559:; BSR set to: 0
 
 	line	70
 	
-l5869:; BSR set to: 0
+l5914:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((___fttol@sign1))&0ffh,w
 	btfsc	status,2
-	goto	u5161
-	goto	u5160
-u5161:
-	goto	l5873
-u5160:
+	goto	u5201
+	goto	u5200
+u5201:
+	goto	l5918
+u5200:
 	line	71
 	
-l5871:; BSR set to: 0
+l5916:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -18795,25 +18930,25 @@ l5871:; BSR set to: 0
 	addwfc	((___fttol@lval+2))&0ffh
 	movlb	0	; () banked
 	addwfc	((___fttol@lval+3))&0ffh
-	goto	l5873
+	goto	l5918
 	
-l1559:; BSR set to: 0
+l1564:; BSR set to: 0
 
 	line	72
 	
-l5873:; BSR set to: 0
+l5918:; BSR set to: 0
 
 	movff	(___fttol@lval),(?___fttol)
 	movff	(___fttol@lval+1),(?___fttol+1)
 	movff	(___fttol@lval+2),(?___fttol+2)
 	movff	(___fttol@lval+3),(?___fttol+3)
-	goto	l1549
+	goto	l1554
 	
-l5875:; BSR set to: 0
+l5920:; BSR set to: 0
 
 	line	73
 	
-l1549:; BSR set to: 0
+l1554:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -18876,7 +19011,7 @@ ___ftmul:; BSR set to: 0
 	dw	0FFFFh
 	line	56
 	
-l5783:
+l5828:
 	movlb	0	; () banked
 	movff	(___ftmul@f1+2),??___ftmul+0+0
 	movlb	0	; () banked
@@ -18887,9 +19022,9 @@ l5783:
 	rlcf	((___ftmul@f1+1))&0ffh,w
 	movlb	0	; () banked
 	rlcf	(??___ftmul+0+0)&0ffh
-	bnc	u5031
+	bnc	u5071
 	bsf	(??___ftmul+0+0+1)&0ffh,0
-u5031:
+u5071:
 	movlb	0	; () banked
 	movf	(??___ftmul+0+0)&0ffh,w
 	movlb	0	; () banked
@@ -18897,14 +19032,14 @@ u5031:
 	movwf	((___ftmul@exp))&0ffh
 	movlb	0	; () banked
 	tstfsz	((___ftmul@exp))&0ffh
-	goto	u5041
-	goto	u5040
-u5041:
-	goto	l5789
-u5040:
+	goto	u5081
+	goto	u5080
+u5081:
+	goto	l5834
+u5080:
 	line	57
 	
-l5785:; BSR set to: 0
+l5830:; BSR set to: 0
 
 	movlw	low(float24(0.0000000000000000))
 	movlb	0	; () banked
@@ -18919,17 +19054,17 @@ l5785:; BSR set to: 0
 	movlb	0	; () banked
 	movwf	((?___ftmul+2))&0ffh
 
-	goto	l1529
+	goto	l1534
 	
-l5787:; BSR set to: 0
+l5832:; BSR set to: 0
 
-	goto	l1529
+	goto	l1534
 	
-l1528:; BSR set to: 0
+l1533:; BSR set to: 0
 
 	line	58
 	
-l5789:; BSR set to: 0
+l5834:; BSR set to: 0
 
 	movlb	0	; () banked
 	movff	(___ftmul@f2+2),??___ftmul+0+0
@@ -18941,9 +19076,9 @@ l5789:; BSR set to: 0
 	rlcf	((___ftmul@f2+1))&0ffh,w
 	movlb	0	; () banked
 	rlcf	(??___ftmul+0+0)&0ffh
-	bnc	u5051
+	bnc	u5091
 	bsf	(??___ftmul+0+0+1)&0ffh,0
-u5051:
+u5091:
 	movlb	0	; () banked
 	movf	(??___ftmul+0+0)&0ffh,w
 	movlb	0	; () banked
@@ -18951,14 +19086,14 @@ u5051:
 	movwf	((___ftmul@sign))&0ffh
 	movlb	0	; () banked
 	tstfsz	((___ftmul@sign))&0ffh
-	goto	u5061
-	goto	u5060
-u5061:
-	goto	l5795
-u5060:
+	goto	u5101
+	goto	u5100
+u5101:
+	goto	l5840
+u5100:
 	line	59
 	
-l5791:; BSR set to: 0
+l5836:; BSR set to: 0
 
 	movlw	low(float24(0.0000000000000000))
 	movlb	0	; () banked
@@ -18973,17 +19108,17 @@ l5791:; BSR set to: 0
 	movlb	0	; () banked
 	movwf	((?___ftmul+2))&0ffh
 
-	goto	l1529
+	goto	l1534
 	
-l5793:; BSR set to: 0
+l5838:; BSR set to: 0
 
-	goto	l1529
+	goto	l1534
 	
-l1530:; BSR set to: 0
+l1535:; BSR set to: 0
 
 	line	60
 	
-l5795:; BSR set to: 0
+l5840:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -18994,7 +19129,7 @@ l5795:; BSR set to: 0
 	addwf	((___ftmul@exp))&0ffh
 	line	61
 	
-l5797:; BSR set to: 0
+l5842:; BSR set to: 0
 
 	movff	0+2+(___ftmul@f1),(___ftmul@sign)
 	line	62
@@ -19011,21 +19146,21 @@ l5797:; BSR set to: 0
 	andwf	((___ftmul@sign))&0ffh
 	line	64
 	
-l5799:; BSR set to: 0
+l5844:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(15/8)+(___ftmul@f1))&0ffh,(15)&7
 	line	66
 	
-l5801:; BSR set to: 0
+l5846:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(15/8)+(___ftmul@f2))&0ffh,(15)&7
 	line	67
 	
-l5803:; BSR set to: 0
+l5848:; BSR set to: 0
 
 	movlw	low(0FFFFh)
 	movlb	0	; () banked
@@ -19042,7 +19177,7 @@ l5803:; BSR set to: 0
 
 	line	68
 	
-l5805:; BSR set to: 0
+l5850:; BSR set to: 0
 
 	movlw	low(0)
 	movlb	0	; () banked
@@ -19059,7 +19194,7 @@ l5805:; BSR set to: 0
 
 	line	69
 	
-l5807:; BSR set to: 0
+l5852:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??___ftmul+0+0)&0ffh
@@ -19069,27 +19204,27 @@ l5807:; BSR set to: 0
 	movwf	((___ftmul@cntr))&0ffh
 	movlb	0	; () banked
 	movf	(??___ftmul+0+0)&0ffh,w
-	goto	l5809
+	goto	l5854
 	line	70
 	
-l1531:; BSR set to: 0
+l1536:; BSR set to: 0
 
 	line	71
 	
-l5809:; BSR set to: 0
+l5854:; BSR set to: 0
 
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfss	((___ftmul@f1))&0ffh,(0)&7
-	goto	u5071
-	goto	u5070
-u5071:
-	goto	l5813
-u5070:
+	goto	u5111
+	goto	u5110
+u5111:
+	goto	l5858
+u5110:
 	line	72
 	
-l5811:; BSR set to: 0
+l5856:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -19110,13 +19245,13 @@ l5811:; BSR set to: 0
 	movlb	0	; () banked
 	addwfc	((___ftmul@f3_as_product+2))&0ffh
 
-	goto	l5813
+	goto	l5858
 	
-l1532:; BSR set to: 0
+l1537:; BSR set to: 0
 
 	line	73
 	
-l5813:; BSR set to: 0
+l5858:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf	status,0
@@ -19137,20 +19272,20 @@ l5813:; BSR set to: 0
 	rlcf	((___ftmul@f2+2))&0ffh
 	line	75
 	
-l5815:; BSR set to: 0
+l5860:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decfsz	((___ftmul@cntr))&0ffh
 	
-	goto	l5809
-	goto	l5817
+	goto	l5854
+	goto	l5862
 	
-l1533:; BSR set to: 0
+l1538:; BSR set to: 0
 
 	line	76
 	
-l5817:; BSR set to: 0
+l5862:; BSR set to: 0
 
 	movlb	0	; () banked
 	movwf	(??___ftmul+0+0)&0ffh
@@ -19160,27 +19295,27 @@ l5817:; BSR set to: 0
 	movwf	((___ftmul@cntr))&0ffh
 	movlb	0	; () banked
 	movf	(??___ftmul+0+0)&0ffh,w
-	goto	l5819
+	goto	l5864
 	line	77
 	
-l1534:; BSR set to: 0
+l1539:; BSR set to: 0
 
 	line	78
 	
-l5819:; BSR set to: 0
+l5864:; BSR set to: 0
 
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfss	((___ftmul@f1))&0ffh,(0)&7
-	goto	u5081
-	goto	u5080
-u5081:
-	goto	l5823
-u5080:
+	goto	u5121
+	goto	u5120
+u5121:
+	goto	l5868
+u5120:
 	line	79
 	
-l5821:; BSR set to: 0
+l5866:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -19201,13 +19336,13 @@ l5821:; BSR set to: 0
 	movlb	0	; () banked
 	addwfc	((___ftmul@f3_as_product+2))&0ffh
 
-	goto	l5823
+	goto	l5868
 	
-l1535:; BSR set to: 0
+l1540:; BSR set to: 0
 
 	line	80
 	
-l5823:; BSR set to: 0
+l5868:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf	status,0
@@ -19228,20 +19363,20 @@ l5823:; BSR set to: 0
 	rrcf	((___ftmul@f3_as_product))&0ffh
 	line	82
 	
-l5825:; BSR set to: 0
+l5870:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	decfsz	((___ftmul@cntr))&0ffh
 	
-	goto	l5819
-	goto	l5827
+	goto	l5864
+	goto	l5872
 	
-l1536:; BSR set to: 0
+l1541:; BSR set to: 0
 
 	line	83
 	
-l5827:; BSR set to: 0
+l5872:; BSR set to: 0
 
 	movff	(___ftmul@f3_as_product),(___ftpack@arg)
 	movff	(___ftmul@f3_as_product+1),(___ftpack@arg+1)
@@ -19252,12 +19387,12 @@ l5827:; BSR set to: 0
 	movff	0+?___ftpack,(?___ftmul)
 	movff	1+?___ftpack,(?___ftmul+1)
 	movff	2+?___ftpack,(?___ftmul+2)
-	goto	l1529
+	goto	l1534
 	
-l5829:
+l5874:
 	line	84
 	
-l1529:
+l1534:
 	return
 	dw	0FFFFh; errata NOP
 	opt stack 0
@@ -19315,18 +19450,18 @@ ___ftpack:
 	dw	0FFFFh
 	line	64
 	
-l5525:
+l5570:
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((___ftpack@exp))&0ffh,w
 	btfsc	status,2
-	goto	u4641
-	goto	u4640
-u4641:
-	goto	l5529
-u4640:
+	goto	u4681
+	goto	u4680
+u4681:
+	goto	l5574
+u4680:
 	
-l5527:; BSR set to: 0
+l5572:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -19336,18 +19471,18 @@ l5527:; BSR set to: 0
 	movlb	0	; () banked
 	iorwf	((___ftpack@arg+2))&0ffh,w
 	btfss	status,2
-	goto	u4651
-	goto	u4650
-u4651:
-	goto	l5535
-u4650:
-	goto	l5529
+	goto	u4691
+	goto	u4690
+u4691:
+	goto	l5580
+u4690:
+	goto	l5574
 	
-l1444:; BSR set to: 0
+l1449:; BSR set to: 0
 
 	line	65
 	
-l5529:; BSR set to: 0
+l5574:; BSR set to: 0
 
 	movlw	low(float24(0.0000000000000000))
 	movlb	0	; () banked
@@ -19362,22 +19497,22 @@ l5529:; BSR set to: 0
 	movlb	0	; () banked
 	movwf	((?___ftpack+2))&0ffh
 
-	goto	l1445
+	goto	l1450
 	
-l5531:; BSR set to: 0
+l5576:; BSR set to: 0
 
-	goto	l1445
-	
-l1442:; BSR set to: 0
-
-	line	66
-	goto	l5535
+	goto	l1450
 	
 l1447:; BSR set to: 0
 
+	line	66
+	goto	l5580
+	
+l1452:; BSR set to: 0
+
 	line	67
 	
-l5533:; BSR set to: 0
+l5578:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -19391,14 +19526,14 @@ l5533:; BSR set to: 0
 	rrcf	((___ftpack@arg+1))&0ffh
 	movlb	0	; () banked
 	rrcf	((___ftpack@arg))&0ffh
-	goto	l5535
+	goto	l5580
 	line	69
 	
-l1446:; BSR set to: 0
+l1451:; BSR set to: 0
 
 	line	66
 	
-l5535:; BSR set to: 0
+l5580:; BSR set to: 0
 
 	movlw	low(0FE0000h)
 	movlb	0	; () banked
@@ -19424,30 +19559,30 @@ l5535:; BSR set to: 0
 	iorwf	(??___ftpack+0+1)&0ffh,w
 	iorwf	(??___ftpack+0+2)&0ffh,w
 	btfss	status,2
-	goto	u4661
-	goto	u4660
-u4661:
-	goto	l5533
-u4660:
-	goto	l5541
+	goto	u4701
+	goto	u4700
+u4701:
+	goto	l5578
+u4700:
+	goto	l5586
 	
-l1448:; BSR set to: 0
+l1453:; BSR set to: 0
 
 	line	70
-	goto	l5541
+	goto	l5586
 	
-l1450:; BSR set to: 0
+l1455:; BSR set to: 0
 
 	line	71
 	
-l5537:; BSR set to: 0
+l5582:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	incf	((___ftpack@exp))&0ffh
 	line	72
 	
-l5539:; BSR set to: 0
+l5584:; BSR set to: 0
 
 	movlw	low(01h)
 	movlb	0	; () banked
@@ -19471,14 +19606,14 @@ l5539:; BSR set to: 0
 	rrcf	((___ftpack@arg+1))&0ffh
 	movlb	0	; () banked
 	rrcf	((___ftpack@arg))&0ffh
-	goto	l5541
+	goto	l5586
 	line	74
 	
-l1449:; BSR set to: 0
+l1454:; BSR set to: 0
 
 	line	70
 	
-l5541:; BSR set to: 0
+l5586:; BSR set to: 0
 
 	movlw	low(0FF0000h)
 	movlb	0	; () banked
@@ -19504,23 +19639,23 @@ l5541:; BSR set to: 0
 	iorwf	(??___ftpack+0+1)&0ffh,w
 	iorwf	(??___ftpack+0+2)&0ffh,w
 	btfss	status,2
-	goto	u4671
-	goto	u4670
-u4671:
-	goto	l5537
-u4670:
-	goto	l5545
+	goto	u4711
+	goto	u4710
+u4711:
+	goto	l5582
+u4710:
+	goto	l5590
 	
-l1451:; BSR set to: 0
+l1456:; BSR set to: 0
 
 	line	75
-	goto	l5545
+	goto	l5590
 	
-l1453:; BSR set to: 0
+l1458:; BSR set to: 0
 
 	line	76
 	
-l5543:; BSR set to: 0
+l5588:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -19534,51 +19669,51 @@ l5543:; BSR set to: 0
 	rlcf	((___ftpack@arg+1))&0ffh
 	movlb	0	; () banked
 	rlcf	((___ftpack@arg+2))&0ffh
-	goto	l5545
+	goto	l5590
 	line	78
 	
-l1452:; BSR set to: 0
+l1457:; BSR set to: 0
 
 	line	75
 	
-l5545:; BSR set to: 0
+l5590:; BSR set to: 0
 
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfss	((___ftpack@arg+1))&0ffh,(15)&7
-	goto	u4681
-	goto	u4680
-u4681:
-	goto	l5543
-u4680:
+	goto	u4721
+	goto	u4720
+u4721:
+	goto	l5588
+u4720:
 	
-l1454:; BSR set to: 0
+l1459:; BSR set to: 0
 
 	line	79
 	movlb	0	; () banked
 	
 	movlb	0	; () banked
 	btfsc	((___ftpack@exp))&0ffh,(0)&7
-	goto	u4691
-	goto	u4690
-u4691:
-	goto	l5549
-u4690:
+	goto	u4731
+	goto	u4730
+u4731:
+	goto	l5594
+u4730:
 	line	80
 	
-l5547:; BSR set to: 0
+l5592:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bcf	(0+(15/8)+(___ftpack@arg))&0ffh,(15)&7
-	goto	l5549
+	goto	l5594
 	
-l1455:; BSR set to: 0
+l1460:; BSR set to: 0
 
 	line	81
 	
-l5549:; BSR set to: 0
+l5594:; BSR set to: 0
 
 	movlb	0	; () banked
 	bcf status,0
@@ -19594,42 +19729,42 @@ l5549:; BSR set to: 0
 
 	line	83
 	
-l5551:; BSR set to: 0
+l5596:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	((___ftpack@sign))&0ffh,w
 	btfsc	status,2
-	goto	u4701
-	goto	u4700
-u4701:
-	goto	l5555
-u4700:
+	goto	u4741
+	goto	u4740
+u4741:
+	goto	l5600
+u4740:
 	line	84
 	
-l5553:; BSR set to: 0
+l5598:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
 	bsf	(0+(23/8)+(___ftpack@arg))&0ffh,(23)&7
-	goto	l5555
+	goto	l5600
 	
-l1456:; BSR set to: 0
+l1461:; BSR set to: 0
 
 	line	85
 	
-l5555:; BSR set to: 0
+l5600:; BSR set to: 0
 
 	movff	(___ftpack@arg),(?___ftpack)
 	movff	(___ftpack@arg+1),(?___ftpack+1)
 	movff	(___ftpack@arg+2),(?___ftpack+2)
-	goto	l1445
+	goto	l1450
 	
-l5557:; BSR set to: 0
+l5602:; BSR set to: 0
 
 	line	86
 	
-l1445:; BSR set to: 0
+l1450:; BSR set to: 0
 
 	return
 	dw	0FFFFh; errata NOP
@@ -19701,25 +19836,25 @@ _Low_priority:; BSR set to: 0
 	movff	tablat+0,??_Low_priority+16
 	line	53
 	
-i1l5163:
+i1l5208:
 ;main.c: 53: if (RCIE && RCIF)
 	btfss	c:(31981/8),(31981)&7	;volatile
-	goto	i1u423_21
-	goto	i1u423_20
-i1u423_21:
+	goto	i1u427_21
+	goto	i1u427_20
+i1u427_21:
 	goto	i1l86
-i1u423_20:
+i1u427_20:
 	
-i1l5165:
+i1l5210:
 	btfss	c:(31989/8),(31989)&7	;volatile
-	goto	i1u424_21
-	goto	i1u424_20
-i1u424_21:
+	goto	i1u428_21
+	goto	i1u428_20
+i1u428_21:
 	goto	i1l86
-i1u424_20:
+i1u428_20:
 	line	55
 	
-i1l5167:
+i1l5212:
 ;main.c: 54: {
 ;main.c: 55: Cf.Data[Cf.Index] = RCREG;
 	movlb	1	; () banked
@@ -19754,7 +19889,7 @@ i1l5167:
 	movwf	((c:4013)),c	;volatile
 	line	58
 	
-i1l5169:; BSR set to: 1
+i1l5214:; BSR set to: 1
 
 ;main.c: 58: Cf.Index ++;
 	movlb	1	; () banked
@@ -19762,7 +19897,7 @@ i1l5169:; BSR set to: 1
 	incf	(0+(_Cf+065h))&0ffh	;volatile
 	line	60
 	
-i1l5171:; BSR set to: 1
+i1l5216:; BSR set to: 1
 
 ;main.c: 60: Cf.Time1 = Cptms;
 	movff	(c:_Cptms),0+(_Cf+066h)	;volatile
@@ -19770,7 +19905,7 @@ i1l5171:; BSR set to: 1
 	goto	i1l86
 	line	62
 	
-i1l5173:; BSR set to: 1
+i1l5218:; BSR set to: 1
 
 ;main.c: 62: return;
 	goto	i1l86
@@ -19871,31 +20006,31 @@ int_func:
 	movff	tablat+0,??_High_priority+18
 	line	68
 	
-i2l5175:
+i2l5220:
 ;main.c: 68: if (TMR0IE && TMR0IF)
 	btfss	c:(32661/8),(32661)&7	;volatile
-	goto	i2u425_41
-	goto	i2u425_40
-i2u425_41:
+	goto	i2u429_41
+	goto	i2u429_40
+i2u429_41:
 	goto	i2l102
-i2u425_40:
+i2u429_40:
 	
-i2l5177:
+i2l5222:
 	btfss	c:(32658/8),(32658)&7	;volatile
-	goto	i2u426_41
-	goto	i2u426_40
-i2u426_41:
+	goto	i2u430_41
+	goto	i2u430_40
+i2u430_41:
 	goto	i2l102
-i2u426_40:
+i2u430_40:
 	line	70
 	
-i2l5179:
+i2l5224:
 ;main.c: 69: {
 ;main.c: 70: TMR0IF = 0;
 	bcf	c:(32658/8),(32658)&7	;volatile
 	line	72
 	
-i2l5181:
+i2l5226:
 ;main.c: 72: TMR0H = 0xF0;
 	movlw	low(0F0h)
 	movwf	((c:4055)),c	;volatile
@@ -19905,49 +20040,49 @@ i2l5181:
 	movwf	((c:4054)),c	;volatile
 	line	75
 	
-i2l5183:
+i2l5228:
 ;main.c: 75: Cptms ++;
 	infsnz	((c:_Cptms)),c	;volatile
 	incf	((c:_Cptms+1)),c	;volatile
 	line	77
 	
-i2l5185:
+i2l5230:
 ;main.c: 77: if (-- Decompte == 0)
 	decfsz	((c:_Decompte)),c	;volatile
 	
-	goto	i2l5191
+	goto	i2l5236
 	line	79
 	
-i2l5187:
+i2l5232:
 ;main.c: 78: {
 ;main.c: 79: Decompte = 50;
 	movlw	low(032h)
 	movwf	((c:_Decompte)),c	;volatile
 	line	80
 	
-i2l5189:
+i2l5234:
 ;main.c: 80: Cpt1Sur20s ++;
 	infsnz	((c:_Cpt1Sur20s)),c	;volatile
 	incf	((c:_Cpt1Sur20s+1)),c	;volatile
-	goto	i2l5191
+	goto	i2l5236
 	line	81
 	
 i2l90:
 	line	83
 	
-i2l5191:
+i2l5236:
 ;main.c: 81: }
 ;main.c: 83: if (Micro.State)
 	movf	(0+((c:_Micro)+04h)),c,w
 	btfsc	status,2
-	goto	i2u427_41
-	goto	i2u427_40
-i2u427_41:
+	goto	i2u431_41
+	goto	i2u431_40
+i2u431_41:
 	goto	i2l91
-i2u427_40:
+i2u431_40:
 	line	85
 	
-i2l5193:
+i2l5238:
 ;main.c: 84: {
 ;main.c: 85: if (Feedback.Period == 0)
 	movlb	0	; () banked
@@ -19956,21 +20091,21 @@ i2l5193:
 	iorwf ((_Feedback))&0ffh,w
 
 	btfss	status,2
-	goto	i2u428_41
-	goto	i2u428_40
-i2u428_41:
-	goto	i2l5201
-i2u428_40:
+	goto	i2u432_41
+	goto	i2u432_40
+i2u432_41:
+	goto	i2l5246
+i2u432_40:
 	line	87
 	
-i2l5195:; BSR set to: 0
+i2l5240:; BSR set to: 0
 
 ;main.c: 86: {
 ;main.c: 87: Feedback.State = Micro.State;
 	movff	0+((c:_Micro)+04h),0+(_Feedback+03h)
 	line	88
 	
-i2l5197:; BSR set to: 0
+i2l5242:; BSR set to: 0
 
 ;main.c: 88: Feedback.Period = 500;
 	movlw	high(01F4h)
@@ -19982,7 +20117,7 @@ i2l5197:; BSR set to: 0
 	movwf	((_Feedback))&0ffh
 	line	89
 	
-i2l5199:; BSR set to: 0
+i2l5244:; BSR set to: 0
 
 ;main.c: 89: Feedback.Step = 0;
 	movwf	(??_High_priority+0+0)&0ffh,c
@@ -19993,14 +20128,14 @@ i2l5199:; BSR set to: 0
 	movf	(??_High_priority+0+0)&0ffh,c,w
 	line	90
 ;main.c: 90: }
-	goto	i2l5203
+	goto	i2l5248
 	line	91
 	
 i2l92:; BSR set to: 0
 
 	line	93
 	
-i2l5201:; BSR set to: 0
+i2l5246:; BSR set to: 0
 
 ;main.c: 91: else
 ;main.c: 92: {
@@ -20010,14 +20145,14 @@ i2l5201:; BSR set to: 0
 	decf	((_Feedback))&0ffh
 	btfss	status,0
 	decf	((_Feedback+1))&0ffh
-	goto	i2l5203
+	goto	i2l5248
 	line	94
 	
 i2l93:; BSR set to: 0
 
 	line	96
 	
-i2l5203:; BSR set to: 0
+i2l5248:; BSR set to: 0
 
 ;main.c: 94: }
 ;main.c: 96: if ((0x01 << (unsigned char) (Feedback.Step / 2)) <= Feedback.State)
@@ -20033,14 +20168,14 @@ i2l5203:; BSR set to: 0
 	movwf	(??_High_priority+0+0)&0ffh,c
 	clrf	(??_High_priority+0+0+1)&0ffh,c
 	incf	(0+?___awdiv),c
-	goto	i2u429_44
-i2u429_45:
+	goto	i2u433_44
+i2u433_45:
 	bcf	status,0
 	rlcf	(??_High_priority+0+0),c
 	rlcf	(??_High_priority+0+1),c
-i2u429_44:
+i2u433_44:
 	decfsz	(0+?___awdiv),c
-	goto	i2u429_45
+	goto	i2u433_45
 	movlb	0	; () banked
 	movlb	0	; () banked
 	movf	(0+(_Feedback+03h))&0ffh,w
@@ -20056,14 +20191,14 @@ i2u429_44:
 	xorlw	80h
 	subwfb	(??_High_priority+4+0)&0ffh,c,w
 	btfss	status,0
-	goto	i2u430_41
-	goto	i2u430_40
-i2u430_41:
+	goto	i2u434_41
+	goto	i2u434_40
+i2u434_41:
 	goto	i2l102
-i2u430_40:
+i2u434_40:
 	line	98
 	
-i2l5205:; BSR set to: 0
+i2l5250:; BSR set to: 0
 
 ;main.c: 97: {
 ;main.c: 98: if ((Feedback.Step & 0x01) == 0)
@@ -20071,14 +20206,14 @@ i2l5205:; BSR set to: 0
 	
 	movlb	0	; () banked
 	btfsc	(0+(_Feedback+04h))&0ffh,(0)&7
-	goto	i2u431_41
-	goto	i2u431_40
-i2u431_41:
+	goto	i2u435_41
+	goto	i2u435_40
+i2u435_41:
 	goto	i2l95
-i2u431_40:
+i2u435_40:
 	line	100
 	
-i2l5207:; BSR set to: 0
+i2l5252:; BSR set to: 0
 
 ;main.c: 99: {
 ;main.c: 100: if ((Feedback.Step == 0) || (-- Feedback.Pulse == 0))
@@ -20086,13 +20221,13 @@ i2l5207:; BSR set to: 0
 	movlb	0	; () banked
 	movf	(0+(_Feedback+04h))&0ffh,w
 	btfsc	status,2
-	goto	i2u432_41
-	goto	i2u432_40
-i2u432_41:
+	goto	i2u436_41
+	goto	i2u436_40
+i2u436_41:
 	goto	i2l98
-i2u432_40:
+i2u436_40:
 	
-i2l5209:; BSR set to: 0
+i2l5254:; BSR set to: 0
 
 	movlb	0	; () banked
 	movlb	0	; () banked
@@ -20108,7 +20243,7 @@ i2l98:; BSR set to: 0
 	bsf	((c:3970)),c,4	;volatile
 	line	103
 	
-i2l5211:; BSR set to: 0
+i2l5256:; BSR set to: 0
 
 ;main.c: 103: Feedback.Pulse = 50;
 	movwf	(??_High_priority+0+0)&0ffh,c
@@ -20119,7 +20254,7 @@ i2l5211:; BSR set to: 0
 	movf	(??_High_priority+0+0)&0ffh,c,w
 	line	104
 	
-i2l5213:; BSR set to: 0
+i2l5258:; BSR set to: 0
 
 ;main.c: 104: Feedback.Step ++;
 	movlb	0	; () banked
@@ -20149,14 +20284,14 @@ i2l95:; BSR set to: 0
 	goto	i2l102
 	line	111
 	
-i2l5215:; BSR set to: 0
+i2l5260:; BSR set to: 0
 
 ;main.c: 110: {
 ;main.c: 111: PORTCbits.RC4 = 0;
 	bcf	((c:3970)),c,4	;volatile
 	line	112
 	
-i2l5217:; BSR set to: 0
+i2l5262:; BSR set to: 0
 
 ;main.c: 112: Feedback.Pulse = 50;
 	movwf	(??_High_priority+0+0)&0ffh,c
@@ -20167,7 +20302,7 @@ i2l5217:; BSR set to: 0
 	movf	(??_High_priority+0+0)&0ffh,c,w
 	line	113
 	
-i2l5219:; BSR set to: 0
+i2l5264:; BSR set to: 0
 
 ;main.c: 113: Feedback.Step ++;
 	movlb	0	; () banked
@@ -20204,7 +20339,7 @@ i2l91:
 	bcf	((c:3970)),c,4	;volatile
 	line	121
 	
-i2l5221:
+i2l5266:
 ;main.c: 121: Feedback.Period = 0;
 	movlw	high(0)
 	movlb	0	; () banked
@@ -20221,7 +20356,7 @@ i2l101:; BSR set to: 0
 	goto	i2l102
 	line	124
 	
-i2l5223:; BSR set to: 0
+i2l5268:; BSR set to: 0
 
 ;main.c: 122: }
 ;main.c: 124: return;
@@ -20303,14 +20438,14 @@ ___awdiv:
 	dw	0FFFFh
 	line	14
 	
-i2l5119:
+i2l5164:
 	movwf	(??___awdiv+0+0)&0ffh,c
 	movlw	low(0)
 	movwf	((c:___awdiv@sign)),c
 	movf	(??___awdiv+0+0)&0ffh,c,w
 	line	15
 	
-i2l5121:
+i2l5166:
 	movf	((c:___awdiv@divisor+1)),c,w
 	xorlw	80h
 	movwf	prodl
@@ -20320,32 +20455,32 @@ i2l5121:
 	btfsc	status,2
 	subwf	((c:___awdiv@divisor)),c,w
 	btfsc	status,0
-	goto	i2u417_41
-	goto	i2u417_40
-i2u417_41:
-	goto	i2l5127
-i2u417_40:
+	goto	i2u421_41
+	goto	i2u421_40
+i2u421_41:
+	goto	i2l5172
+i2u421_40:
 	line	16
 	
-i2l5123:
+i2l5168:
 	negf	((c:___awdiv@divisor)),c
 	comf	((c:___awdiv@divisor+1)),c
 	btfsc	status,0
 	incf	((c:___awdiv@divisor+1)),c
 	line	17
 	
-i2l5125:
+i2l5170:
 	movwf	(??___awdiv+0+0)&0ffh,c
 	movlw	low(01h)
 	movwf	((c:___awdiv@sign)),c
 	movf	(??___awdiv+0+0)&0ffh,c,w
-	goto	i2l5127
+	goto	i2l5172
 	line	18
 	
-i2l1316:
+i2l1321:
 	line	19
 	
-i2l5127:
+i2l5172:
 	movf	((c:___awdiv@dividend+1)),c,w
 	xorlw	80h
 	movwf	prodl
@@ -20355,108 +20490,108 @@ i2l5127:
 	btfsc	status,2
 	subwf	((c:___awdiv@dividend)),c,w
 	btfsc	status,0
-	goto	i2u418_41
-	goto	i2u418_40
-i2u418_41:
-	goto	i2l5133
-i2u418_40:
+	goto	i2u422_41
+	goto	i2u422_40
+i2u422_41:
+	goto	i2l5178
+i2u422_40:
 	line	20
 	
-i2l5129:
+i2l5174:
 	negf	((c:___awdiv@dividend)),c
 	comf	((c:___awdiv@dividend+1)),c
 	btfsc	status,0
 	incf	((c:___awdiv@dividend+1)),c
 	line	21
 	
-i2l5131:
+i2l5176:
 	movlw	(01h)&0ffh
 	xorwf	((c:___awdiv@sign)),c
-	goto	i2l5133
+	goto	i2l5178
 	line	22
 	
-i2l1317:
+i2l1322:
 	line	23
 	
-i2l5133:
+i2l5178:
 	movlw	high(0)
 	movwf	((c:___awdiv@quotient+1)),c
 	movlw	low(0)
 	movwf	((c:___awdiv@quotient)),c
 	line	24
 	
-i2l5135:
+i2l5180:
 	movf	((c:___awdiv@divisor+1)),c,w
 	iorwf ((c:___awdiv@divisor)),c,w
 
 	btfsc	status,2
-	goto	i2u419_41
-	goto	i2u419_40
-i2u419_41:
-	goto	i2l5155
-i2u419_40:
+	goto	i2u423_41
+	goto	i2u423_40
+i2u423_41:
+	goto	i2l5200
+i2u423_40:
 	line	25
 	
-i2l5137:
+i2l5182:
 	movwf	(??___awdiv+0+0)&0ffh,c
 	movlw	low(01h)
 	movwf	((c:___awdiv@counter)),c
 	movf	(??___awdiv+0+0)&0ffh,c,w
 	line	26
-	goto	i2l5141
+	goto	i2l5186
 	
-i2l1320:
+i2l1325:
 	line	27
 	
-i2l5139:
+i2l5184:
 	bcf	status,0
 	rlcf	((c:___awdiv@divisor)),c
 	rlcf	((c:___awdiv@divisor+1)),c
 	line	28
 	incf	((c:___awdiv@counter)),c
-	goto	i2l5141
+	goto	i2l5186
 	line	29
 	
-i2l1319:
+i2l1324:
 	line	26
 	
-i2l5141:
+i2l5186:
 	
 	btfss	((c:___awdiv@divisor+1)),c,(15)&7
-	goto	i2u420_41
-	goto	i2u420_40
-i2u420_41:
-	goto	i2l5139
-i2u420_40:
-	goto	i2l5143
+	goto	i2u424_41
+	goto	i2u424_40
+i2u424_41:
+	goto	i2l5184
+i2u424_40:
+	goto	i2l5188
 	
-i2l1321:
-	goto	i2l5143
+i2l1326:
+	goto	i2l5188
 	line	30
 	
-i2l1322:
+i2l1327:
 	line	31
 	
-i2l5143:
+i2l5188:
 	bcf	status,0
 	rlcf	((c:___awdiv@quotient)),c
 	rlcf	((c:___awdiv@quotient+1)),c
 	line	32
 	
-i2l5145:
+i2l5190:
 	movf	((c:___awdiv@divisor)),c,w
 	subwf	((c:___awdiv@dividend)),c,w
 	movf	((c:___awdiv@divisor+1)),c,w
 	subwfb	((c:___awdiv@dividend+1)),c,w
 	btfss	status,0
-	goto	i2u421_41
-	goto	i2u421_40
-i2u421_41:
-	goto	i2l5151
-i2u421_40:
+	goto	i2u425_41
+	goto	i2u425_40
+i2u425_41:
+	goto	i2l5196
+i2u425_40:
 	line	33
 	
-i2l5147:
+i2l5192:
 	movf	((c:___awdiv@divisor)),c,w
 	subwf	((c:___awdiv@dividend)),c
 	movf	((c:___awdiv@divisor+1)),c,w
@@ -20464,62 +20599,62 @@ i2l5147:
 
 	line	34
 	
-i2l5149:
+i2l5194:
 	bsf	(0+(0/8)+(c:___awdiv@quotient)),c,(0)&7
-	goto	i2l5151
+	goto	i2l5196
 	line	35
 	
-i2l1323:
+i2l1328:
 	line	36
 	
-i2l5151:
+i2l5196:
 	bcf	status,0
 	rrcf	((c:___awdiv@divisor+1)),c
 	rrcf	((c:___awdiv@divisor)),c
 	line	37
 	
-i2l5153:
+i2l5198:
 	decfsz	((c:___awdiv@counter)),c
 	
-	goto	i2l5143
-	goto	i2l5155
+	goto	i2l5188
+	goto	i2l5200
 	
-i2l1324:
-	goto	i2l5155
+i2l1329:
+	goto	i2l5200
 	line	38
 	
-i2l1318:
+i2l1323:
 	line	39
 	
-i2l5155:
+i2l5200:
 	movf	((c:___awdiv@sign)),c,w
 	btfsc	status,2
-	goto	i2u422_41
-	goto	i2u422_40
-i2u422_41:
-	goto	i2l5159
-i2u422_40:
+	goto	i2u426_41
+	goto	i2u426_40
+i2u426_41:
+	goto	i2l5204
+i2u426_40:
 	line	40
 	
-i2l5157:
+i2l5202:
 	negf	((c:___awdiv@quotient)),c
 	comf	((c:___awdiv@quotient+1)),c
 	btfsc	status,0
 	incf	((c:___awdiv@quotient+1)),c
-	goto	i2l5159
+	goto	i2l5204
 	
-i2l1325:
+i2l1330:
 	line	41
 	
-i2l5159:
+i2l5204:
 	movff	(c:___awdiv@quotient),(c:?___awdiv)
 	movff	(c:___awdiv@quotient+1),(c:?___awdiv+1)
-	goto	i2l1326
+	goto	i2l1331
 	
-i2l5161:
+i2l5206:
 	line	42
 	
-i2l1326:
+i2l1331:
 	return
 	dw	0FFFFh; errata NOP
 	opt stack 0

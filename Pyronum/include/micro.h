@@ -16,6 +16,7 @@ const char Version[] = "0009";
 #define MICRO_STEP_3	0x03
 
 // Micro.State
+#define UNDEFINED		0x00
 #define ARMED			0x01
 #define GO				0x02
 #define STOP			0x04
