@@ -4,13 +4,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/K:/GitHub/PYROSEQ/Pyronum/feu.c</file>
-            <file>file:/K:/GitHub/PYROSEQ/Pyronum/armement.c</file>
-            <file>file:/K:/GitHub/PYROSEQ/Pyronum/main.c</file>
-            <file>file:/K:/GitHub/PYROSEQ/Pyronum/include/micro.h</file>
-            <file>file:/K:/GitHub/PYROSEQ/Pyronum/include/feedback.h</file>
-            <file>file:/K:/GitHub/PYROSEQ/Pyronum/include/feu.h</file>
-            <file>file:/K:/GitHub/PYROSEQ/Pyronum/bouton.c</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/include/feedback.h</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/test.c</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/armement.c</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/config.c</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/micro.c</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/main.c</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/include/test.h</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/include/micro.h</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/ecran.c</file>
+            <file>file:/B:/GitHub/PYROSEQ/Pyronum/include/timer.h</file>
         </group>
     </open-files>
 </project-private>
