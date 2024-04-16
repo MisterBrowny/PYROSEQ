@@ -1,15 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"25 include\micro.h
+"34 include\micro.h
 [s S327 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S327 StructState Armed Go Stop End ]
 [u S330 `uc 1 `S327 1 ]
 [n S330 . State Stat ]
-"32
+"41
 [s S328 :1 `uc 1 :1 `uc 1 ]
 [n S328 StructMod P_0 P_00 ]
 [u S331 `uc 1 `S328 1 ]
 [n S331 . Mods Mod ]
-"37
+"46
 [s S329 `us 1 `uc 1 `uc 1 `S330 1 `S331 1 ]
 [n S329 StructMicro Time Phase Step . . ]
 "13 include\bouton.h
@@ -18,8 +18,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6
 [s S332 `us 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S332 StructBouton Time Memo State Change ]
-"9 include\config.h
-[s S333 `uc + * -> 32 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
+"17 include\config.h
+[s S333 `uc + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
 [n S333 StructConfig Data Index Time1 Time2 IsLong ]
 "32 include\ecran.h
 [s S334 `uc -> 4 `i `*uc 1 `uc -> 4 `i `uc 1 `uc 1 `uc 1 `us 1 `uc 1 ]
@@ -27,13 +27,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\register.h
 [s S335 `uc -> 4 `i ]
 [n S335 StructRelay State ]
-"27 include\test.h
+"30 include\test.h
 [s S336 `uc 1 `uc 1 `us 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
 [n S336 StructTest Step Cpt Time U_Alim U_Infla Test1 Test2 Test3 Test4 Test5 Test6 Test7 ]
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"25 include\feu.h
+"26 include\feu.h
 [s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
 "16 include\feedback.h
@@ -111,11 +111,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTEbits `VS24 ~T0 @X0 0 e@3972 ]
 "48 include\ecran.h
 [v _ecran_wait `(v ~T0 @X0 0 ef ]
-"53 include\micro.h
+"62 include\micro.h
 [v _micro_config_rs `(v ~T0 @X0 0 ef ]
 "46 include\ecran.h
 [v _ecran_print_one_char `(v ~T0 @X0 0 ef2`uc`uc ]
-"21 include\config.h
+"29 include\config.h
 [v _cf_rcv `(v ~T0 @X0 0 ef ]
 [s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S10 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -2909,42 +2909,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 :U ..
 -> 48 `c
 -> 48 `c
+-> 49 `c
 -> 48 `c
--> 57 `c
 -> 0 `c
 ..
 ]
-[; ;micro.h: 5: const char Version[] = "0009";
-[; ;micro.h: 25: typedef struct StructState{
-[; ;micro.h: 26: unsigned Armed :1;
-[; ;micro.h: 27: unsigned Go :1;
-[; ;micro.h: 28: unsigned Stop :1;
-[; ;micro.h: 29: unsigned End :1;
-[; ;micro.h: 30: }StruState;
-[; ;micro.h: 32: typedef struct StructMod{
-[; ;micro.h: 33: unsigned P_0 :1;
-[; ;micro.h: 34: unsigned P_00 :1;
-[; ;micro.h: 35: }StruMode;
-[; ;micro.h: 37: typedef struct StructMicro {
-[; ;micro.h: 38: unsigned short Time;
-[; ;micro.h: 39: unsigned char Phase;
-[; ;micro.h: 40: unsigned char Step;
-[; ;micro.h: 41: union {
-[; ;micro.h: 42: unsigned char State;
-[; ;micro.h: 43: struct StructState Stat;
-[; ;micro.h: 44: };
-[; ;micro.h: 45: union {
-[; ;micro.h: 46: unsigned char Mods;
-[; ;micro.h: 47: struct StructMod Mod;
-[; ;micro.h: 48: };
-[; ;micro.h: 49: }struMicro;
-"51
+[; ;micro.h: 5: const char Version[] = "0010";
+[; ;micro.h: 34: typedef struct StructState{
+[; ;micro.h: 35: unsigned Armed :1;
+[; ;micro.h: 36: unsigned Go :1;
+[; ;micro.h: 37: unsigned Stop :1;
+[; ;micro.h: 38: unsigned End :1;
+[; ;micro.h: 39: }StruState;
+[; ;micro.h: 41: typedef struct StructMod{
+[; ;micro.h: 42: unsigned P_0 :1;
+[; ;micro.h: 43: unsigned P_00 :1;
+[; ;micro.h: 44: }StruMode;
+[; ;micro.h: 46: typedef struct StructMicro {
+[; ;micro.h: 47: unsigned short Time;
+[; ;micro.h: 48: unsigned char Phase;
+[; ;micro.h: 49: unsigned char Step;
+[; ;micro.h: 50: union {
+[; ;micro.h: 51: unsigned char State;
+[; ;micro.h: 52: struct StructState Stat;
+[; ;micro.h: 53: };
+[; ;micro.h: 54: union {
+[; ;micro.h: 55: unsigned char Mods;
+[; ;micro.h: 56: struct StructMod Mod;
+[; ;micro.h: 57: };
+[; ;micro.h: 58: }struMicro;
+"60
 [v _Micro `S329 ~T0 @X0 1 e ]
-[; ;micro.h: 51: struMicro Micro;
-[; ;micro.h: 53: void micro_config_rs (void);
-[; ;micro.h: 54: void micro_config (void);
-[; ;micro.h: 55: void micro_wait (void);
-[; ;micro.h: 64: extern void __nop(void);
+[; ;micro.h: 60: struMicro Micro;
+[; ;micro.h: 62: void micro_config_rs (void);
+[; ;micro.h: 63: void micro_config (void);
+[; ;micro.h: 64: void micro_wait (void);
+[; ;micro.h: 73: extern void __nop(void);
 [; ;analog.h: 15: unsigned short ana_read (unsigned char ANx);
 [; ;hardware.h: 15: void hw_config(void);
 [; ;eeprom.h: 4: unsigned char eeprom_read (unsigned char Address);
@@ -2968,19 +2968,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bouton.h: 13: struBouton Bouton[Bp_Max];
 [; ;bouton.h: 15: void bouton_init (void);
 [; ;bouton.h: 16: void bouton_refresh (void);
-[; ;config.h: 9: typedef struct StructConfig {
-[; ;config.h: 10: unsigned char Data[(32 * 3 + 5)];
-[; ;config.h: 11: volatile unsigned char Index;
-[; ;config.h: 12: volatile unsigned short Time1;
-[; ;config.h: 13: unsigned short Time2;
-[; ;config.h: 14: unsigned IsLong :1;
-[; ;config.h: 15: }struConfig;
-"17 include\config.h
+[; ;config.h: 17: typedef struct StructConfig {
+[; ;config.h: 18: unsigned char Data[(32 * 3 + 5 * 3 + 5)];
+[; ;config.h: 19: volatile unsigned char Index;
+[; ;config.h: 20: volatile unsigned short Time1;
+[; ;config.h: 21: unsigned short Time2;
+[; ;config.h: 22: unsigned IsLong :1;
+[; ;config.h: 23: }struConfig;
+"25 include\config.h
 [v _Cf `S333 ~T0 @X0 1 e ]
-[; ;config.h: 17: struConfig Cf;
-[; ;config.h: 19: unsigned char cf_check (void);
-[; ;config.h: 20: void cf_check_and_display (void);
-[; ;config.h: 21: void cf_rcv (void);
+[; ;config.h: 25: struConfig Cf;
+[; ;config.h: 27: unsigned char cf_check (void);
+[; ;config.h: 28: void cf_check_and_display (void);
+[; ;config.h: 29: void cf_rcv (void);
 "27 include\ecran.h
 [v _Blank `Cuc ~T0 @X0 -> 0 `x e ]
 [i _Blank
@@ -3055,28 +3055,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;register.h: 19: struRegister Register;
 [; ;register.h: 21: void register_write (unsigned char Output);
 [; ;register.h: 22: void register_refresh (void);
-[; ;test.h: 27: typedef struct StructTest{
-[; ;test.h: 28: unsigned char Step;
-[; ;test.h: 29: unsigned char Cpt;
-[; ;test.h: 30: unsigned short Time;
-[; ;test.h: 31: float U_Alim;
-[; ;test.h: 32: float U_Infla;
-[; ;test.h: 33: float Test1;
-[; ;test.h: 34: float Test2;
-[; ;test.h: 35: float Test3;
-[; ;test.h: 36: float Test4;
-[; ;test.h: 37: float Test5;
-[; ;test.h: 38: float Test6;
-[; ;test.h: 39: float Test7;
-[; ;test.h: 40: }struTest;
-"42 include\test.h
+[; ;test.h: 30: typedef struct StructTest{
+[; ;test.h: 31: unsigned char Step;
+[; ;test.h: 32: unsigned char Cpt;
+[; ;test.h: 33: unsigned short Time;
+[; ;test.h: 34: float U_Alim;
+[; ;test.h: 35: float U_Infla;
+[; ;test.h: 36: float Test1;
+[; ;test.h: 37: float Test2;
+[; ;test.h: 38: float Test3;
+[; ;test.h: 39: float Test4;
+[; ;test.h: 40: float Test5;
+[; ;test.h: 41: float Test6;
+[; ;test.h: 42: float Test7;
+[; ;test.h: 43: }struTest;
+"45 include\test.h
 [v _Test `S336 ~T0 @X0 1 e ]
-[; ;test.h: 42: struTest Test;
-[; ;test.h: 44: void check_comutest(unsigned char State);
-[; ;test.h: 45: unsigned char check_program_0 (void);
-[; ;test.h: 46: void check_idtest (void);
-[; ;test.h: 47: void check_bpon (void);
-[; ;test.h: 48: unsigned char test_process (void);
+[; ;test.h: 45: struTest Test;
+[; ;test.h: 47: void check_comutest(unsigned char State);
+[; ;test.h: 48: unsigned char check_program_0 (void);
+[; ;test.h: 49: void check_idtest (void);
+[; ;test.h: 50: void check_bpon (void);
+[; ;test.h: 51: unsigned char test_process (void);
 [; ;armement.h: 12: typedef struct StructArm{
 [; ;armement.h: 13: unsigned char Step;
 [; ;armement.h: 14: unsigned char Cpt;
@@ -3087,30 +3087,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"21 include\feu.h
+"23 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 21: volatile unsigned char Decompte;
-"22
+[; ;feu.h: 23: volatile unsigned char Decompte;
+"24
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 25: typedef struct StructFeu{
-[; ;feu.h: 26: unsigned char Step;
-[; ;feu.h: 27: unsigned char Cpt;
-[; ;feu.h: 28: unsigned char Decompte;
-[; ;feu.h: 29: unsigned short SavedTime;
-[; ;feu.h: 30: unsigned short TimeToFire;
-[; ;feu.h: 31: unsigned short Time;
-[; ;feu.h: 32: unsigned short TimeStart;
-[; ;feu.h: 33: unsigned char LastOutput;
-[; ;feu.h: 34: unsigned char NextOutput;
-[; ;feu.h: 35: unsigned CanStopStart :1;
-[; ;feu.h: 36: unsigned SaveTime :1;
-[; ;feu.h: 37: }struFeu;
-"39
+[; ;feu.h: 24: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 26: typedef struct StructFeu{
+[; ;feu.h: 27: unsigned char Step;
+[; ;feu.h: 28: unsigned char Cpt;
+[; ;feu.h: 29: unsigned char Decompte;
+[; ;feu.h: 30: unsigned short SavedTime;
+[; ;feu.h: 31: unsigned short TimeToFire;
+[; ;feu.h: 32: unsigned short Time;
+[; ;feu.h: 33: unsigned short TimeStart;
+[; ;feu.h: 34: unsigned char LastOutput;
+[; ;feu.h: 35: unsigned char NextOutput;
+[; ;feu.h: 36: unsigned CanStopStart :1;
+[; ;feu.h: 37: unsigned SaveTime :1;
+[; ;feu.h: 38: }struFeu;
+"40
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 39: struFeu Feu;
-[; ;feu.h: 41: void feu_check_bp (void);
-[; ;feu.h: 42: void feu_process (void);
+[; ;feu.h: 40: struFeu Feu;
+[; ;feu.h: 42: void feu_check_bp (void);
+[; ;feu.h: 43: void feu_process (void);
 [; ;feedback.h: 16: typedef struct StructFeedback {
 [; ;feedback.h: 17: unsigned short Period;
 [; ;feedback.h: 18: unsigned char Pulse;
@@ -3532,460 +3532,544 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;test.c: 152: {
 "152
 {
-[; ;test.c: 153: register_write(Cf.Data[Test.Cpt*3]);
+[; ;test.c: 153: if (Cf.Data[Test.Cpt*3] == 99)
 "153
-[e ( _register_write (1 *U + &U . _Cf 0 * -> -> * -> . _Test 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
-[; ;test.c: 154: Test.Step = 0x05;
+[e $ ! == -> *U + &U . _Cf 0 * -> -> * -> . _Test 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 99 `i 377  ]
+[; ;test.c: 154: {
 "154
-[e = . _Test 0 -> -> 5 `i `uc ]
-[; ;test.c: 155: Test.Time = Cptms;
+{
+[; ;test.c: 155: Test.Step = 0x15;
 "155
-[e = . _Test 2 _Cptms ]
+[e = . _Test 0 -> -> 21 `i `uc ]
 "156
 }
-[e :U 376 ]
-"157
-[e :U 375 ]
 [; ;test.c: 156: }
-[; ;test.c: 157: break;
-[e $U 364  ]
-[; ;test.c: 158: case 0x05:
-"158
+[e $U 378  ]
+"157
 [e :U 377 ]
-[; ;test.c: 159: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
-"159
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 378  ]
-[; ;test.c: 160: {
-"160
+[; ;test.c: 157: else
+[; ;test.c: 158: {
+"158
 {
-[; ;test.c: 161: temp = check_UInfla();
+[; ;test.c: 159: register_write(Cf.Data[Test.Cpt*3]);
+"159
+[e ( _register_write (1 *U + &U . _Cf 0 * -> -> * -> . _Test 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
+[; ;test.c: 160: Test.Step = 0x05;
+"160
+[e = . _Test 0 -> -> 5 `i `uc ]
 "161
-[e = _temp ( _check_UInfla ..  ]
-[; ;test.c: 163: if (temp > 85) {Test.Step = 0x07;}
+}
+[e :U 378 ]
+[; ;test.c: 161: }
+[; ;test.c: 162: Test.Time = Cptms;
+"162
+[e = . _Test 2 _Cptms ]
 "163
-[e $ ! > -> _temp `ui -> -> 85 `i `ui 379  ]
+}
+[e :U 376 ]
+"164
+[e :U 375 ]
+[; ;test.c: 163: }
+[; ;test.c: 164: break;
+[e $U 364  ]
+[; ;test.c: 165: case 0x05:
+"165
+[e :U 379 ]
+[; ;test.c: 166: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+"166
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 380  ]
+[; ;test.c: 167: {
+"167
+{
+[; ;test.c: 168: temp = check_UInfla();
+"168
+[e = _temp ( _check_UInfla ..  ]
+[; ;test.c: 170: if (temp > 85) {Test.Step = 0x07;}
+"170
+[e $ ! > -> _temp `ui -> -> 85 `i `ui 381  ]
 {
 [e = . _Test 0 -> -> 7 `i `uc ]
 }
-[e $U 380  ]
-"164
-[e :U 379 ]
-[; ;test.c: 164: else {Test.Step = 0x06;}
+[e $U 382  ]
+"171
+[e :U 381 ]
+[; ;test.c: 171: else {Test.Step = 0x06;}
 {
 [e = . _Test 0 -> -> 6 `i `uc ]
 }
-[e :U 380 ]
-[; ;test.c: 167: ecran_print_num(Cf.Data[Test.Cpt*3]);
-"167
-[e ( _ecran_print_num (1 *U + &U . _Cf 0 * -> -> * -> . _Test 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
-[; ;test.c: 168: register_write(0);
-"168
-[e ( _register_write (1 -> -> 0 `i `uc ]
-[; ;test.c: 170: Test.Time = Cptms;
-"170
-[e = . _Test 2 _Cptms ]
-"171
-}
-[e :U 378 ]
-[; ;test.c: 171: }
-[; ;test.c: 172: break;
-"172
-[e $U 364  ]
-[; ;test.c: 173: case 0x06:
-"173
-[e :U 381 ]
-[; ;test.c: 174: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+[e :U 382 ]
+[; ;test.c: 174: ecran_print_num(Cf.Data[Test.Cpt*3]);
 "174
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 382  ]
-[; ;test.c: 175: {
+[e ( _ecran_print_num (1 *U + &U . _Cf 0 * -> -> * -> . _Test 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
+[; ;test.c: 175: register_write(0);
 "175
-{
-[; ;test.c: 176: if (++Test.Cpt > 31) {Test.Step = 0x08;}
-"176
-[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i -> 31 `i 383  ]
-{
-[e = . _Test 0 -> -> 8 `i `uc ]
-}
-[e $U 384  ]
+[e ( _register_write (1 -> -> 0 `i `uc ]
+[; ;test.c: 177: Test.Time = Cptms;
 "177
+[e = . _Test 2 _Cptms ]
+"178
+}
+[e :U 380 ]
+[; ;test.c: 178: }
+[; ;test.c: 179: break;
+"179
+[e $U 364  ]
+[; ;test.c: 181: case 0x15:
+"181
 [e :U 383 ]
-[; ;test.c: 177: else {Test.Step = 0x04;}
+[; ;test.c: 182: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+"182
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 384  ]
+[; ;test.c: 183: {
+"183
 {
-[e = . _Test 0 -> -> 4 `i `uc ]
+[; ;test.c: 184: Test.Step = 0x16;
+"184
+[e = . _Test 0 -> -> 22 `i `uc ]
+[; ;test.c: 187: ecran_print_num(Cf.Data[Test.Cpt*3]);
+"187
+[e ( _ecran_print_num (1 *U + &U . _Cf 0 * -> -> * -> . _Test 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
+[; ;test.c: 188: Test.Time = Cptms;
+"188
+[e = . _Test 2 _Cptms ]
+"189
 }
 [e :U 384 ]
-[; ;test.c: 178: check_comutest(0);
-"178
-[e ( _check_comutest (1 -> -> 0 `i `uc ]
-[; ;test.c: 179: Test.Time = Cptms;
-"179
-[e = . _Test 2 _Cptms ]
-"180
-}
-[e :U 382 ]
-[; ;test.c: 180: }
-[; ;test.c: 181: break;
-"181
+[; ;test.c: 189: }
+[; ;test.c: 190: break;
+"190
 [e $U 364  ]
-[; ;test.c: 182: case 0x07:
-"182
+[; ;test.c: 191: case 0x16:
+"191
 [e :U 385 ]
-[; ;test.c: 183: if ( (Bouton[Bp_IdTest].State == 0)
-[; ;test.c: 184: && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
-"184
-[e $ ! && == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 500 `i `ui : -> 1 `i -> 0 `i -> 0 `i 386  ]
-[; ;test.c: 185: {
-"185
+[; ;test.c: 192: if ((((unsigned short) (Cptms - Test.Time) > 100) ? 1 : 0))
+"192
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 100 `i `ui : -> 1 `i -> 0 `i -> 0 `i 386  ]
+[; ;test.c: 193: {
+"193
 {
-[; ;test.c: 186: if (++Test.Cpt > 31) {Test.Step = 0x08;}
-"186
-[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i -> 31 `i 387  ]
+[; ;test.c: 194: if (++Test.Cpt > (32 + 5 - 1)) {Test.Step = 0x08;}
+"194
+[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i - + -> 32 `i -> 5 `i -> 1 `i 387  ]
 {
 [e = . _Test 0 -> -> 8 `i `uc ]
 }
 [e $U 388  ]
-"187
+"195
 [e :U 387 ]
-[; ;test.c: 187: else {Test.Step = 0x04;}
+[; ;test.c: 195: else {Test.Step = 0x04;}
 {
 [e = . _Test 0 -> -> 4 `i `uc ]
 }
 [e :U 388 ]
-[; ;test.c: 188: check_comutest(0);
-"188
+[; ;test.c: 196: check_comutest(0);
+"196
 [e ( _check_comutest (1 -> -> 0 `i `uc ]
-[; ;test.c: 189: Test.Time = Cptms;
-"189
+[; ;test.c: 197: Test.Time = Cptms;
+"197
 [e = . _Test 2 _Cptms ]
-"190
+"198
 }
 [e :U 386 ]
-[; ;test.c: 190: }
-[; ;test.c: 191: break;
-"191
-[e $U 364  ]
-[; ;test.c: 192: case 0x08:
-"192
-[e :U 389 ]
-[; ;test.c: 193: if (Test.Cpt != 0)
-"193
-[e $ ! != -> . _Test 1 `i -> 0 `i 390  ]
-[; ;test.c: 194: {
-"194
-{
-[; ;test.c: 195: ecran_print_num(Cf.Data[96]);
-"195
-[e ( _ecran_print_num (1 *U + &U . _Cf 0 * -> -> -> 96 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
-"196
-}
-[; ;test.c: 196: }
-[e $U 391  ]
-"197
-[e :U 390 ]
-[; ;test.c: 197: else
-[; ;test.c: 198: {
-"198
-{
-[; ;test.c: 199: Ecran.Digit[2] = 0;
+[; ;test.c: 198: }
+[; ;test.c: 199: break;
 "199
-[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
-[; ;test.c: 200: Ecran.Digit[3] = 0;
-"200
-[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
+[e $U 364  ]
+[; ;test.c: 201: case 0x06:
 "201
-}
-[e :U 391 ]
-[; ;test.c: 201: }
-[; ;test.c: 203: Ecran.Digit[0] = '-';
+[e :U 389 ]
+[; ;test.c: 202: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+"202
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 390  ]
+[; ;test.c: 203: {
 "203
-[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
-[; ;test.c: 204: Ecran.Digit[1] = '-';
+{
+[; ;test.c: 204: if (++Test.Cpt > (32 + 5 - 1)) {Test.Step = 0x08;}
 "204
-[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
-[; ;test.c: 206: Ecran.Digits = Ecran.Digit;
-"206
-[e = . _Ecran 1 &U . _Ecran 0 ]
-[; ;test.c: 207: Test.Step = 0x09;
-"207
-[e = . _Test 0 -> -> 9 `i `uc ]
-[; ;test.c: 208: break;
-"208
-[e $U 364  ]
-[; ;test.c: 209: case 0x09:
-"209
+[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i - + -> 32 `i -> 5 `i -> 1 `i 391  ]
+{
+[e = . _Test 0 -> -> 8 `i `uc ]
+}
+[e $U 392  ]
+"205
+[e :U 391 ]
+[; ;test.c: 205: else {Test.Step = 0x04;}
+{
+[e = . _Test 0 -> -> 4 `i `uc ]
+}
 [e :U 392 ]
-[; ;test.c: 210: if (Bouton[Bp_IdTest].State == 0)
+[; ;test.c: 206: check_comutest(0);
+"206
+[e ( _check_comutest (1 -> -> 0 `i `uc ]
+[; ;test.c: 207: Test.Time = Cptms;
+"207
+[e = . _Test 2 _Cptms ]
+"208
+}
+[e :U 390 ]
+[; ;test.c: 208: }
+[; ;test.c: 209: break;
+"209
+[e $U 364  ]
+[; ;test.c: 210: case 0x07:
 "210
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 393  ]
-[; ;test.c: 211: {
-"211
-{
-[; ;test.c: 212: Test.Step = 0x10;
-"212
-[e = . _Test 0 -> -> 16 `i `uc ]
-[; ;test.c: 214: Test.Time = Cptms;
-"214
-[e = . _Test 2 _Cptms ]
-"215
-}
 [e :U 393 ]
-[; ;test.c: 215: }
-[; ;test.c: 216: break;
-"216
-[e $U 364  ]
-[; ;test.c: 217: case 0x0A:
-"217
-[e :U 394 ]
-[; ;test.c: 218: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
-"218
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 395  ]
-[; ;test.c: 219: {
-"219
+[; ;test.c: 211: if ( (Bouton[Bp_IdTest].State == 0)
+[; ;test.c: 212: && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
+"212
+[e $ ! && == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 500 `i `ui : -> 1 `i -> 0 `i -> 0 `i 394  ]
+[; ;test.c: 213: {
+"213
 {
-[; ;test.c: 220: register_write((unsigned char) (Test.Cpt + 1));
-"220
-[e ( _register_write (1 -> + -> . _Test 1 `i -> 1 `i `uc ]
-[; ;test.c: 221: Test.Step = 0x0B;
-"221
-[e = . _Test 0 -> -> 11 `i `uc ]
-[; ;test.c: 222: Test.Time = Cptms;
-"222
-[e = . _Test 2 _Cptms ]
-"223
+[; ;test.c: 214: if (++Test.Cpt > (32 + 5 - 1)) {Test.Step = 0x08;}
+"214
+[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i - + -> 32 `i -> 5 `i -> 1 `i 395  ]
+{
+[e = . _Test 0 -> -> 8 `i `uc ]
 }
+[e $U 396  ]
+"215
 [e :U 395 ]
-[; ;test.c: 223: }
-[; ;test.c: 224: break;
-"224
-[e $U 364  ]
-[; ;test.c: 225: case 0x0B:
-"225
-[e :U 396 ]
-[; ;test.c: 226: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
-"226
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 397  ]
-[; ;test.c: 227: {
-"227
+[; ;test.c: 215: else {Test.Step = 0x04;}
 {
-[; ;test.c: 228: temp = check_UInfla();
+[e = . _Test 0 -> -> 4 `i `uc ]
+}
+[e :U 396 ]
+[; ;test.c: 216: check_comutest(0);
+"216
+[e ( _check_comutest (1 -> -> 0 `i `uc ]
+[; ;test.c: 217: Test.Time = Cptms;
+"217
+[e = . _Test 2 _Cptms ]
+"218
+}
+[e :U 394 ]
+[; ;test.c: 218: }
+[; ;test.c: 219: break;
+"219
+[e $U 364  ]
+[; ;test.c: 220: case 0x08:
+"220
+[e :U 397 ]
+[; ;test.c: 221: if (Test.Cpt != 0)
+"221
+[e $ ! != -> . _Test 1 `i -> 0 `i 398  ]
+[; ;test.c: 222: {
+"222
+{
+[; ;test.c: 223: ecran_print_num(Cf.Data[(32 * 3 + 5 * 3)]);
+"223
+[e ( _ecran_print_num (1 *U + &U . _Cf 0 * -> -> + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
+"224
+}
+[; ;test.c: 224: }
+[e $U 399  ]
+"225
+[e :U 398 ]
+[; ;test.c: 225: else
+[; ;test.c: 226: {
+"226
+{
+[; ;test.c: 227: Ecran.Digit[2] = 0;
+"227
+[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
+[; ;test.c: 228: Ecran.Digit[3] = 0;
 "228
-[e = _temp ( _check_UInfla ..  ]
-[; ;test.c: 231: if (temp > 85) {Test.Step = 0x0D;}
+[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
+"229
+}
+[e :U 399 ]
+[; ;test.c: 229: }
+[; ;test.c: 231: Ecran.Digit[0] = '-';
 "231
-[e $ ! > -> _temp `ui -> -> 85 `i `ui 398  ]
+[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
+[; ;test.c: 232: Ecran.Digit[1] = '-';
+"232
+[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
+[; ;test.c: 234: Ecran.Digits = Ecran.Digit;
+"234
+[e = . _Ecran 1 &U . _Ecran 0 ]
+[; ;test.c: 235: Test.Step = 0x09;
+"235
+[e = . _Test 0 -> -> 9 `i `uc ]
+[; ;test.c: 236: break;
+"236
+[e $U 364  ]
+[; ;test.c: 237: case 0x09:
+"237
+[e :U 400 ]
+[; ;test.c: 238: if (Bouton[Bp_IdTest].State == 0)
+"238
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 401  ]
+[; ;test.c: 239: {
+"239
+{
+[; ;test.c: 240: Test.Step = 0x10;
+"240
+[e = . _Test 0 -> -> 16 `i `uc ]
+[; ;test.c: 242: Test.Time = Cptms;
+"242
+[e = . _Test 2 _Cptms ]
+"243
+}
+[e :U 401 ]
+[; ;test.c: 243: }
+[; ;test.c: 244: break;
+"244
+[e $U 364  ]
+[; ;test.c: 245: case 0x0A:
+"245
+[e :U 402 ]
+[; ;test.c: 246: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+"246
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 403  ]
+[; ;test.c: 247: {
+"247
+{
+[; ;test.c: 248: register_write((unsigned char) (Test.Cpt + 1));
+"248
+[e ( _register_write (1 -> + -> . _Test 1 `i -> 1 `i `uc ]
+[; ;test.c: 249: Test.Step = 0x0B;
+"249
+[e = . _Test 0 -> -> 11 `i `uc ]
+[; ;test.c: 250: Test.Time = Cptms;
+"250
+[e = . _Test 2 _Cptms ]
+"251
+}
+[e :U 403 ]
+[; ;test.c: 251: }
+[; ;test.c: 252: break;
+"252
+[e $U 364  ]
+[; ;test.c: 253: case 0x0B:
+"253
+[e :U 404 ]
+[; ;test.c: 254: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+"254
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 405  ]
+[; ;test.c: 255: {
+"255
+{
+[; ;test.c: 256: temp = check_UInfla();
+"256
+[e = _temp ( _check_UInfla ..  ]
+[; ;test.c: 259: if (temp > 85) {Test.Step = 0x0D;}
+"259
+[e $ ! > -> _temp `ui -> -> 85 `i `ui 406  ]
 {
 [e = . _Test 0 -> -> 13 `i `uc ]
 }
-[e $U 399  ]
-"232
-[e :U 398 ]
-[; ;test.c: 232: else {Test.Step = 0x0C;}
+[e $U 407  ]
+"260
+[e :U 406 ]
+[; ;test.c: 260: else {Test.Step = 0x0C;}
 {
 [e = . _Test 0 -> -> 12 `i `uc ]
 }
-[e :U 399 ]
-[; ;test.c: 235: ecran_print_num((unsigned char) (Test.Cpt + 1));
-"235
-[e ( _ecran_print_num (1 -> + -> . _Test 1 `i -> 1 `i `uc ]
-[; ;test.c: 236: register_write(0);
-"236
-[e ( _register_write (1 -> -> 0 `i `uc ]
-[; ;test.c: 238: Test.Time = Cptms;
-"238
-[e = . _Test 2 _Cptms ]
-"239
-}
-[e :U 397 ]
-[; ;test.c: 239: }
-[; ;test.c: 240: break;
-"240
-[e $U 364  ]
-[; ;test.c: 241: case 0x0C:
-"241
-[e :U 400 ]
-[; ;test.c: 242: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
-"242
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 401  ]
-[; ;test.c: 243: {
-"243
-{
-[; ;test.c: 244: if (++Test.Cpt > 31) {Test.Step = 0x0E;}
-"244
-[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i -> 31 `i 402  ]
-{
-[e = . _Test 0 -> -> 14 `i `uc ]
-}
-[e $U 403  ]
-"245
-[e :U 402 ]
-[; ;test.c: 245: else {Test.Step = 0x0A;}
-{
-[e = . _Test 0 -> -> 10 `i `uc ]
-}
-[e :U 403 ]
-[; ;test.c: 246: check_comutest(0);
-"246
-[e ( _check_comutest (1 -> -> 0 `i `uc ]
-[; ;test.c: 247: Test.Time = Cptms;
-"247
-[e = . _Test 2 _Cptms ]
-"248
-}
-[e :U 401 ]
-[; ;test.c: 248: }
-[; ;test.c: 249: break;
-"249
-[e $U 364  ]
-[; ;test.c: 250: case 0x0D:
-"250
-[e :U 404 ]
-[; ;test.c: 251: if ( (Bouton[Bp_IdTest].State == 0)
-[; ;test.c: 252: && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
-"252
-[e $ ! && == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 500 `i `ui : -> 1 `i -> 0 `i -> 0 `i 405  ]
-[; ;test.c: 253: {
-"253
-{
-[; ;test.c: 254: if (++Test.Cpt > 31) {Test.Step = 0x0E;}
-"254
-[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i -> 31 `i 406  ]
-{
-[e = . _Test 0 -> -> 14 `i `uc ]
-}
-[e $U 407  ]
-"255
-[e :U 406 ]
-[; ;test.c: 255: else {Test.Step = 0x0A;}
-{
-[e = . _Test 0 -> -> 10 `i `uc ]
-}
 [e :U 407 ]
-[; ;test.c: 256: check_comutest(0);
-"256
-[e ( _check_comutest (1 -> -> 0 `i `uc ]
-[; ;test.c: 257: Test.Time = Cptms;
-"257
+[; ;test.c: 263: ecran_print_num((unsigned char) (Test.Cpt + 1));
+"263
+[e ( _ecran_print_num (1 -> + -> . _Test 1 `i -> 1 `i `uc ]
+[; ;test.c: 264: register_write(0);
+"264
+[e ( _register_write (1 -> -> 0 `i `uc ]
+[; ;test.c: 266: Test.Time = Cptms;
+"266
 [e = . _Test 2 _Cptms ]
-"258
+"267
 }
 [e :U 405 ]
-[; ;test.c: 258: }
-[; ;test.c: 259: break;
-"259
-[e $U 364  ]
-[; ;test.c: 260: case 0x0E:
-"260
-[e :U 408 ]
-[; ;test.c: 261: if (Test.Cpt != 0)
-"261
-[e $ ! != -> . _Test 1 `i -> 0 `i 409  ]
-[; ;test.c: 262: {
-"262
-{
-[; ;test.c: 263: ecran_print_num(Test.Cpt);
-"263
-[e ( _ecran_print_num (1 . _Test 1 ]
-"264
-}
-[; ;test.c: 264: }
-[e $U 410  ]
-"265
-[e :U 409 ]
-[; ;test.c: 265: else
-[; ;test.c: 266: {
-"266
-{
-[; ;test.c: 267: Ecran.Digit[2] = 0;
-"267
-[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
-[; ;test.c: 268: Ecran.Digit[3] = 0;
+[; ;test.c: 267: }
+[; ;test.c: 268: break;
 "268
-[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
+[e $U 364  ]
+[; ;test.c: 269: case 0x0C:
 "269
-}
-[e :U 410 ]
-[; ;test.c: 269: }
-[; ;test.c: 271: Ecran.Digit[0] = '-';
+[e :U 408 ]
+[; ;test.c: 270: if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+"270
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 20 `i `ui : -> 1 `i -> 0 `i -> 0 `i 409  ]
+[; ;test.c: 271: {
 "271
-[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
-[; ;test.c: 272: Ecran.Digit[1] = '-';
+{
+[; ;test.c: 272: if (++Test.Cpt > (32 - 1)) {Test.Step = 0x0E;}
 "272
-[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
-[; ;test.c: 274: Ecran.Digits = Ecran.Digit;
-"274
-[e = . _Ecran 1 &U . _Ecran 0 ]
-[; ;test.c: 275: Test.Step = 0x0F;
-"275
-[e = . _Test 0 -> -> 15 `i `uc ]
-[; ;test.c: 276: break;
-"276
-[e $U 364  ]
-[; ;test.c: 277: case 0x0F:
-"277
+[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i - -> 32 `i -> 1 `i 410  ]
+{
+[e = . _Test 0 -> -> 14 `i `uc ]
+}
+[e $U 411  ]
+"273
+[e :U 410 ]
+[; ;test.c: 273: else {Test.Step = 0x0A;}
+{
+[e = . _Test 0 -> -> 10 `i `uc ]
+}
 [e :U 411 ]
-[; ;test.c: 278: if (Bouton[Bp_IdTest].State == 0)
-"278
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 412  ]
-[; ;test.c: 279: {
-"279
-{
-[; ;test.c: 280: Test.Step = 0x10;
-"280
-[e = . _Test 0 -> -> 16 `i `uc ]
-[; ;test.c: 282: Test.Time = Cptms;
-"282
+[; ;test.c: 274: check_comutest(0);
+"274
+[e ( _check_comutest (1 -> -> 0 `i `uc ]
+[; ;test.c: 275: Test.Time = Cptms;
+"275
 [e = . _Test 2 _Cptms ]
-"283
+"276
 }
+[e :U 409 ]
+[; ;test.c: 276: }
+[; ;test.c: 277: break;
+"277
+[e $U 364  ]
+[; ;test.c: 278: case 0x0D:
+"278
 [e :U 412 ]
-[; ;test.c: 283: }
-[; ;test.c: 284: break;
-"284
-[e $U 364  ]
-[; ;test.c: 285: case 0x10:
-"285
-[e :U 413 ]
-[; ;test.c: 286: if ((((unsigned short) (Cptms - Test.Time) > 1000) ? 1 : 0))
-"286
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 1000 `i `ui : -> 1 `i -> 0 `i -> 0 `i 414  ]
-[; ;test.c: 287: {
-"287
+[; ;test.c: 279: if ( (Bouton[Bp_IdTest].State == 0)
+[; ;test.c: 280: && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
+"280
+[e $ ! && == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 500 `i `ui : -> 1 `i -> 0 `i -> 0 `i 413  ]
+[; ;test.c: 281: {
+"281
 {
-[; ;test.c: 288: Test.Step = 0x11;
-"288
-[e = . _Test 0 -> -> 17 `i `uc ]
-[; ;test.c: 290: ecran_wait();
-"290
-[e ( _ecran_wait ..  ]
-"291
+[; ;test.c: 282: if (++Test.Cpt > (32 - 1)) {Test.Step = 0x0E;}
+"282
+[e $ ! > -> =+ . _Test 1 -> -> 1 `i `uc `i - -> 32 `i -> 1 `i 414  ]
+{
+[e = . _Test 0 -> -> 14 `i `uc ]
 }
+[e $U 415  ]
+"283
 [e :U 414 ]
-[; ;test.c: 291: }
-[; ;test.c: 292: break;
-"292
-[e $U 364  ]
-[; ;test.c: 293: case 0x11:
-"293
-[e :U 415 ]
-[; ;test.c: 294: if (Bouton[Bp_IdTest].State == 1)
-"294
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 416  ]
-[; ;test.c: 295: {
-"295
+[; ;test.c: 283: else {Test.Step = 0x0A;}
 {
-[; ;test.c: 296: Micro.Phase = 0x00;
+[e = . _Test 0 -> -> 10 `i `uc ]
+}
+[e :U 415 ]
+[; ;test.c: 284: check_comutest(0);
+"284
+[e ( _check_comutest (1 -> -> 0 `i `uc ]
+[; ;test.c: 285: Test.Time = Cptms;
+"285
+[e = . _Test 2 _Cptms ]
+"286
+}
+[e :U 413 ]
+[; ;test.c: 286: }
+[; ;test.c: 287: break;
+"287
+[e $U 364  ]
+[; ;test.c: 288: case 0x0E:
+"288
+[e :U 416 ]
+[; ;test.c: 289: if (Test.Cpt != 0)
+"289
+[e $ ! != -> . _Test 1 `i -> 0 `i 417  ]
+[; ;test.c: 290: {
+"290
+{
+[; ;test.c: 291: ecran_print_num(Test.Cpt);
+"291
+[e ( _ecran_print_num (1 . _Test 1 ]
+"292
+}
+[; ;test.c: 292: }
+[e $U 418  ]
+"293
+[e :U 417 ]
+[; ;test.c: 293: else
+[; ;test.c: 294: {
+"294
+{
+[; ;test.c: 295: Ecran.Digit[2] = 0;
+"295
+[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
+[; ;test.c: 296: Ecran.Digit[3] = 0;
 "296
-[e = . _Micro 1 -> -> 0 `i `uc ]
+[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 0 `i `uc ]
 "297
 }
-[e :U 416 ]
+[e :U 418 ]
 [; ;test.c: 297: }
-[; ;test.c: 298: break;
-"298
-[e $U 364  ]
+[; ;test.c: 299: Ecran.Digit[0] = '-';
 "299
+[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
+[; ;test.c: 300: Ecran.Digit[1] = '-';
+"300
+[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
+[; ;test.c: 302: Ecran.Digits = Ecran.Digit;
+"302
+[e = . _Ecran 1 &U . _Ecran 0 ]
+[; ;test.c: 303: Test.Step = 0x0F;
+"303
+[e = . _Test 0 -> -> 15 `i `uc ]
+[; ;test.c: 304: break;
+"304
+[e $U 364  ]
+[; ;test.c: 305: case 0x0F:
+"305
+[e :U 419 ]
+[; ;test.c: 306: if (Bouton[Bp_IdTest].State == 0)
+"306
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 420  ]
+[; ;test.c: 307: {
+"307
+{
+[; ;test.c: 308: Test.Step = 0x10;
+"308
+[e = . _Test 0 -> -> 16 `i `uc ]
+[; ;test.c: 310: Test.Time = Cptms;
+"310
+[e = . _Test 2 _Cptms ]
+"311
 }
-[; ;test.c: 299: }
+[e :U 420 ]
+[; ;test.c: 311: }
+[; ;test.c: 312: break;
+"312
+[e $U 364  ]
+[; ;test.c: 313: case 0x10:
+"313
+[e :U 421 ]
+[; ;test.c: 314: if ((((unsigned short) (Cptms - Test.Time) > 1000) ? 1 : 0))
+"314
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Test 2 `ui `us `ui -> -> 1000 `i `ui : -> 1 `i -> 0 `i -> 0 `i 422  ]
+[; ;test.c: 315: {
+"315
+{
+[; ;test.c: 316: Test.Step = 0x11;
+"316
+[e = . _Test 0 -> -> 17 `i `uc ]
+[; ;test.c: 318: ecran_wait();
+"318
+[e ( _ecran_wait ..  ]
+"319
+}
+[e :U 422 ]
+[; ;test.c: 319: }
+[; ;test.c: 320: break;
+"320
+[e $U 364  ]
+[; ;test.c: 321: case 0x11:
+"321
+[e :U 423 ]
+[; ;test.c: 322: if (Bouton[Bp_IdTest].State == 1)
+"322
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 424  ]
+[; ;test.c: 323: {
+"323
+{
+[; ;test.c: 324: Micro.Phase = 0x00;
+"324
+[e = . _Micro 1 -> -> 0 `i `uc ]
+"325
+}
+[e :U 424 ]
+[; ;test.c: 325: }
+[; ;test.c: 326: break;
+"326
+[e $U 364  ]
+"327
+}
+[; ;test.c: 327: }
 [e $U 364  ]
 "107
 [e :U 365 ]
@@ -3993,27 +4077,29 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 2 `i `uc 368
  , $ -> -> 3 `i `uc 369
  , $ -> -> 4 `i `uc 373
- , $ -> -> 5 `i `uc 377
- , $ -> -> 6 `i `uc 381
- , $ -> -> 7 `i `uc 385
- , $ -> -> 8 `i `uc 389
- , $ -> -> 9 `i `uc 392
- , $ -> -> 10 `i `uc 394
- , $ -> -> 11 `i `uc 396
- , $ -> -> 12 `i `uc 400
- , $ -> -> 13 `i `uc 404
- , $ -> -> 14 `i `uc 408
- , $ -> -> 15 `i `uc 411
- , $ -> -> 16 `i `uc 413
- , $ -> -> 17 `i `uc 415
+ , $ -> -> 5 `i `uc 379
+ , $ -> -> 21 `i `uc 383
+ , $ -> -> 22 `i `uc 385
+ , $ -> -> 6 `i `uc 389
+ , $ -> -> 7 `i `uc 393
+ , $ -> -> 8 `i `uc 397
+ , $ -> -> 9 `i `uc 400
+ , $ -> -> 10 `i `uc 402
+ , $ -> -> 11 `i `uc 404
+ , $ -> -> 12 `i `uc 408
+ , $ -> -> 13 `i `uc 412
+ , $ -> -> 14 `i `uc 416
+ , $ -> -> 15 `i `uc 419
+ , $ -> -> 16 `i `uc 421
+ , $ -> -> 17 `i `uc 423
  364 ]
-"299
+"327
 [e :U 364 ]
-[; ;test.c: 301: return ret;
-"301
+[; ;test.c: 329: return ret;
+"329
 [e ) _ret ]
 [e $UE 363  ]
-[; ;test.c: 302: }
-"302
+[; ;test.c: 330: }
+"330
 [e :UE 363 ]
 }

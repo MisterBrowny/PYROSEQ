@@ -1,25 +1,25 @@
 #include "includes.h"
 
-// on verifie que le checksum et bien le meme que la valeur en memoire 97, 98, 99 et 100 (4 octets)
+// on verifie que le checksum et bien le meme que la valeur en memoire OFFSET_CHECKSUM_1, OFFSET_CHECKSUM_2, OFFSET_CHECKSUM_3 et OFFSET_CHECKSUM_4 (4 octets)
 static bit cf_checksum (void)
 {
 	dword calcul;
 	byte i, valid = false;
 	
-	for (i = 0, calcul = 0; i < NB_RELAY; i ++)
+	for (i = 0, calcul = 0; i < (NB_RELAY + NB_PAUSE_MAX); i ++)    // MOD_V0010
 	{
 		calcul += (dword) ((word) (Cf.Data[i*CF_SECTOR_SIZE+1] << 8) + Cf.Data[i*CF_SECTOR_SIZE+2]);
 	}
 
-	if (	(((calcul >> 24) & 0x000000FF) == Cf.Data[97])
-		 &&	(((calcul >> 16) & 0x000000FF) == Cf.Data[98])
-		 &&	(((calcul >> 8) & 0x000000FF) == Cf.Data[99])	 
-		 &&	((calcul & 0x000000FF) == Cf.Data[100]))
+	if (	(((calcul >> 24) & 0x000000FF) == Cf.Data[OFFSET_CHECKSUM_1])   // MOD_V0010
+		 &&	(((calcul >> 16) & 0x000000FF) == Cf.Data[OFFSET_CHECKSUM_2])   // MOD_V0010
+		 &&	(((calcul >> 8) & 0x000000FF) == Cf.Data[OFFSET_CHECKSUM_3])    // MOD_V0010    
+		 &&	((calcul & 0x000000FF) == Cf.Data[OFFSET_CHECKSUM_4]))          // MOD_V0010
 	{
 		valid = true;
 	}
-
-	if ((Cf.Data[97] == 0) && (Cf.Data[98] == 0) && (Cf.Data[99] == 0) && (Cf.Data[100] == 0))
+        
+	if ((Cf.Data[OFFSET_CHECKSUM_1] == 0) && (Cf.Data[OFFSET_CHECKSUM_2] == 0) && (Cf.Data[OFFSET_CHECKSUM_3] == 0) && (Cf.Data[OFFSET_CHECKSUM_4] == 0))   // MOD_V0010
 	{// Program_0
 		Micro.Mod.P_00 = true;
 	}
@@ -29,13 +29,13 @@ static bit cf_checksum (void)
 	return valid;
 }
 
-// on verifie que le dernier relais programme et bien le meme que la valeur en memoire 96
+// on verifie que le dernier relais programme et bien le meme que la valeur en memoire OFFSET_LAST_OUTPUT
 static bit cf_checkout (void)
 {
 	byte i, valid = false;
 	byte last_out = 0;
 
-	for (i = 0; i < NB_RELAY; i ++)
+	for (i = 0; i < (NB_RELAY + NB_PAUSE_MAX); i ++)    // MOD_V0010
 	{
 		if (Cf.Data[i*CF_SECTOR_SIZE] == 0) 
 		{
@@ -52,8 +52,8 @@ static bit cf_checkout (void)
 		}
 	}
 
-	if (	((last_out != 0) && (last_out == Cf.Data[96]))
-		||	((last_out == 0) && (Cf.Data[i*CF_SECTOR_SIZE] == Cf.Data[96])))
+	if (	((last_out != 0) && (last_out == Cf.Data[OFFSET_LAST_OUTPUT]))
+		||	((last_out == 0) && (Cf.Data[i*CF_SECTOR_SIZE] == Cf.Data[OFFSET_LAST_OUTPUT])))
 	{
 		valid = true;
 	}
@@ -62,13 +62,18 @@ static bit cf_checkout (void)
 }
 
 // on verifie qu'il n'y a pas d'appel de relais > a 32
+// MOD_V0010 : on permet la valeur PAUSE_VALUE pour la pause
 static bit cf_checkrange (void)
 {
 	byte i, valid = false;
 
-	for (i = 0; i < NB_RELAY; i ++)
+	for (i = 0; i < (NB_RELAY + NB_PAUSE_MAX); i ++)    // MOD_V0010
 	{
-		if (Cf.Data[i*CF_SECTOR_SIZE] > 32)	{return valid;}
+		if (    (Cf.Data[i*CF_SECTOR_SIZE] > 32)
+            &&  (Cf.Data[i*CF_SECTOR_SIZE] != PAUSE_VALUE)) // MOD_V0010
+        {
+            return valid;
+        }
 	}
 
 	valid = true;
@@ -105,8 +110,8 @@ void cf_check_and_display (void)
 		{
 			Ecran.Digit[0] = ' ';
 			Ecran.Digit[1] = ' ';
-			Ecran.Digit[2] = HexToAscii(MSB_BYTE(Cf.Data[98]));
-			Ecran.Digit[3] = HexToAscii(LSB_BYTE(Cf.Data[98]));
+			Ecran.Digit[2] = HexToAscii(MSB_BYTE(Cf.Data[OFFSET_CHECKSUM_2]));
+			Ecran.Digit[3] = HexToAscii(LSB_BYTE(Cf.Data[OFFSET_CHECKSUM_2]));
 
 			Ecran.Digits = Ecran.Digit;
 
@@ -115,10 +120,10 @@ void cf_check_and_display (void)
 			while(TempsInf(temp,TDef1sec))	{ecran_refresh();}
 		}
 		
-		Ecran.Digit[0] = HexToAscii(MSB_BYTE(Cf.Data[99]));
-		Ecran.Digit[1] = HexToAscii(LSB_BYTE(Cf.Data[99]));
-		Ecran.Digit[2] = HexToAscii(MSB_BYTE(Cf.Data[100]));
-		Ecran.Digit[3] = HexToAscii(LSB_BYTE(Cf.Data[100]));
+		Ecran.Digit[0] = HexToAscii(MSB_BYTE(Cf.Data[OFFSET_CHECKSUM_3]));
+		Ecran.Digit[1] = HexToAscii(LSB_BYTE(Cf.Data[OFFSET_CHECKSUM_3]));
+		Ecran.Digit[2] = HexToAscii(MSB_BYTE(Cf.Data[OFFSET_CHECKSUM_4]));
+		Ecran.Digit[3] = HexToAscii(LSB_BYTE(Cf.Data[OFFSET_CHECKSUM_4]));
 
 		Ecran.Digits = Ecran.Digit;
 	}

@@ -112,144 +112,144 @@ Bp_Max 4
 [v _bouton_init bouton_init `(v  1 e 0 0 ]
 "11
 [v _bouton_refresh bouton_refresh `(v  1 e 0 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abdiv.c
-[v ___abdiv __abdiv `(c  1 e 1 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abmod.c
-[v ___abmod __abmod `(c  1 e 1 0 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abtofl.c
-[v ___abtofl __abtofl `(d  1 e 4 0 ]
-"33 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abtoft.c
-[v ___abtoft __abtoft `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\almod.c
-[v ___almod __almod `(l  1 e 4 0 ]
-"36 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\altofl.c
-[v ___altofl __altofl `(d  1 e 4 0 ]
-"42 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\altoft.c
-[v ___altoft __altoft `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\atdiv.c
-[v ___atdiv __atdiv `(m  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\atmod.c
-[v ___atmod __atmod `(m  1 e 3 0 ]
-"37 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\attofl.c
-[v ___attofl __attofl `(d  1 e 4 0 ]
-"37 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\attoft.c
-[v ___attoft __attoft `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awtofl.c
-[v ___awtofl __awtofl `(d  1 e 4 0 ]
-"32 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awtoft.c
-[v ___awtoft __awtoft `(f  1 e 3 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\bmul.c
-[v ___bmul __bmul `(uc  1 e 1 0 ]
-"63 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\double.c
-[v ___flpack __flpack `(d  1 e 4 0 ]
-"88 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fladd.c
-[v ___fladd __fladd `(d  1 e 4 0 ]
-"49 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fldiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-"50 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flneg.c
-[v ___flneg __flneg `(d  1 e 4 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c
-[v ___ftpack __ftpack `(f  1 e 3 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flsub.c
-[v ___flsub __flsub `(d  1 e 4 0 ]
-"43 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftadd.c
-[v ___ftadd __ftadd `(f  1 e 3 0 ]
-"49 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftdiv.c
-[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftge.c
-[v ___ftge __ftge `(b  1 e 0 0 ]
-"51 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c
-[v ___ftmul __ftmul `(f  1 e 3 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftneg.c
-[v ___ftneg __ftneg `(f  1 e 3 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftsub.c
-[v ___ftsub __ftsub `(f  1 e 3 0 ]
-"44 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c
-[v ___fttol __fttol `(l  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c
-[v _itoa itoa `(*.35uc  1 e 2 0 ]
-"17
-[v _utoa utoa `(*.35uc  1 e 2 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c
-[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbmod.c
-[v ___lbmod __lbmod `(uc  1 e 1 0 ]
-"27 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbtofl.c
-[v ___lbtofl __lbtofl `(d  1 e 4 0 ]
-"27 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbtoft.c
-[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lldiv.c
-[v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\llmod.c
-[v ___llmod __llmod `(ul  1 e 4 0 ]
-"30 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lltofl.c
-[v ___lltofl __lltofl `(d  1 e 4 0 ]
-"35 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lltoft.c
-[v ___lltoft __lltoft `(f  1 e 3 0 ]
-"9 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lmul.c
-[v ___lmul __lmul `(ul  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ltdiv.c
-[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ltmod.c
-[v ___ltmod __ltmod `(um  1 e 3 0 ]
-"30 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lttofl.c
-[v ___lttofl __lttofl `(d  1 e 4 0 ]
-"30 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lttoft.c
-[v ___lttoft __lttoft `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"28 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtofl.c
-[v ___lwtofl __lwtofl `(d  1 e 4 0 ]
-"28 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c
-[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
-"9 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\tmul.c
-[v ___tmul __tmul `(um  1 e 3 0 ]
-"3 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asfladd.c
-[v ___asfladd __asfladd `(d  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asfldiv.c
-[v ___asfldiv __asfldiv `(d  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asflmul.c
-[v ___asflmul __asflmul `(d  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asflsub.c
-[v ___asflsub __asflsub `(d  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftadd.c
-[v ___asftadd __asftadd `(f  1 e 3 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftdiv.c
-[v ___asftdiv __asftdiv `(f  1 e 3 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftmul.c
-[v ___asftmul __asftmul `(f  1 e 3 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftsub.c
-[v ___asftsub __asftsub `(f  1 e 3 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\aslmul.c
-[v ___aslmul __aslmul `(ul  1 e 4 0 ]
 "4 B:\GitHub\PYROSEQ\Pyronum\config.c
 [v _cf_checksum cf_checksum `(b  1 s 0 cf_checksum ]
 "33
 [v _cf_checkout cf_checkout `(b  1 s 0 cf_checkout ]
-"65
+"66
 [v _cf_checkrange cf_checkrange `(b  1 s 0 cf_checkrange ]
-"79
+"84
 [v _cf_check cf_check `(uc  1 e 1 0 ]
-"92
+"97
 [v _cf_check_and_display cf_check_and_display `(v  1 e 0 0 ]
-"132
+"137
 [v _cf_rcv cf_rcv `(v  1 e 0 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"31 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abtofl.c
+[v ___abtofl __abtofl `(d  1 e 4 0 ]
+"33 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"36 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\altofl.c
+[v ___altofl __altofl `(d  1 e 4 0 ]
+"42 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\attofl.c
+[v ___attofl __attofl `(d  1 e 4 0 ]
+"37 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"31 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awtofl.c
+[v ___awtofl __awtofl `(d  1 e 4 0 ]
+"32 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\bmul.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"63 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\double.c
+[v ___flpack __flpack `(d  1 e 4 0 ]
+"88 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fladd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"49 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fldiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"50 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"62 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\flsub.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"43 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"86 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"49 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"51 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"20 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c
+[v _itoa itoa `(*.35uc  1 e 2 0 ]
+"17
+[v _utoa utoa `(*.35uc  1 e 2 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbtofl.c
+[v ___lbtofl __lbtofl `(d  1 e 4 0 ]
+"27 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"30 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lltofl.c
+[v ___lltofl __lltofl `(d  1 e 4 0 ]
+"35 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"9 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lmul.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lttofl.c
+[v ___lttofl __lttofl `(d  1 e 4 0 ]
+"30 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtofl.c
+[v ___lwtofl __lwtofl `(d  1 e 4 0 ]
+"28 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"9 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\tmul.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"3 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asfladd.c
+[v ___asfladd __asfladd `(d  1 e 4 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asfldiv.c
+[v ___asfldiv __asfldiv `(d  1 e 4 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asflmul.c
+[v ___asflmul __asflmul `(d  1 e 4 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asflsub.c
+[v ___asflsub __asflsub `(d  1 e 4 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftadd.c
+[v ___asftadd __asftadd `(f  1 e 3 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftdiv.c
+[v ___asftdiv __asftdiv `(f  1 e 3 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftmul.c
+[v ___asftmul __asftmul `(f  1 e 3 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\asftsub.c
+[v ___asftsub __asftsub `(f  1 e 3 0 ]
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic18\aslmul.c
+[v ___aslmul __aslmul `(ul  1 e 4 0 ]
 "3 B:\GitHub\PYROSEQ\Pyronum\ecran.c
 [v _ecran_raz_digit ecran_raz_digit `(v  1 s 0 ecran_raz_digit ]
 "9
@@ -274,13 +274,17 @@ Bp_Max 4
 [v _eeprom_read_array eeprom_read_array `(v  1 e 0 0 ]
 "52
 [v _eeprom_write_array eeprom_write_array `(v  1 e 0 0 ]
-"3 B:\GitHub\PYROSEQ\Pyronum\feu.c
+"4 B:\GitHub\PYROSEQ\Pyronum\feu.c
+[v _feu_check_pause feu_check_pause `(uc  1 s 1 feu_check_pause ]
+"10
+[v _feu_check_end_P0 feu_check_end_P0 `(uc  1 s 1 feu_check_end_P0 ]
+"17
 [v _feu_check_end feu_check_end `(uc  1 s 1 feu_check_end ]
-"9
+"23
 [v _feu_tir feu_tir `(v  1 s 0 feu_tir ]
-"26
+"40
 [v _feu_check_bp feu_check_bp `(v  1 e 0 0 ]
-"89
+"110
 [v _feu_process feu_process `(v  1 e 0 0 ]
 "3 B:\GitHub\PYROSEQ\Pyronum\hardware.c
 [v _hw_config hw_config `(v  1 e 0 0 ]
@@ -331,10 +335,10 @@ Bp_Max 4
 ]
 "13 B:\GitHub\PYROSEQ\Pyronum\include\bouton.h
 [v _Bouton Bouton `[4]S47  1 e 12 0 ]
-[s S52 StructConfig 107 `[101]uc 1 Data 101 0 `VEuc 1 Index 1 101 `VEus 1 Time1 2 102 `us 1 Time2 2 104 `uc 1 IsLong 1 106 :1:0 
+[s S52 StructConfig 122 `[116]uc 1 Data 116 0 `VEuc 1 Index 1 116 `VEus 1 Time1 2 117 `us 1 Time2 2 119 `uc 1 IsLong 1 121 :1:0 
 ]
-"17 B:\GitHub\PYROSEQ\Pyronum\include\config.h
-[v _Cf Cf `VES52  1 e 107 0 ]
+"25 B:\GitHub\PYROSEQ\Pyronum\include\config.h
+[v _Cf Cf `VES52  1 e 122 0 ]
 "27 B:\GitHub\PYROSEQ\Pyronum\include\ecran.h
 [v _Blank Blank `C[5]uc  1 e 5 0 ]
 "28
@@ -349,14 +353,14 @@ Bp_Max 4
 [s S99 StructFeedback 5 `us 1 Period 2 0 `uc 1 Pulse 1 2 `uc 1 State 1 3 `uc 1 Step 1 4 ]
 "23 B:\GitHub\PYROSEQ\Pyronum\include\feedback.h
 [v _Feedback Feedback `S99  1 e 5 0 ]
-"21 B:\GitHub\PYROSEQ\Pyronum\include\feu.h
+"23 B:\GitHub\PYROSEQ\Pyronum\include\feu.h
 [v _Decompte Decompte `VEuc  1 e 1 0 ]
-"22
+"24
 [v _Cpt1Sur20s Cpt1Sur20s `VEus  1 e 2 0 ]
 [s S87 StructFeu 14 `uc 1 Step 1 0 `uc 1 Cpt 1 1 `uc 1 Decompte 1 2 `us 1 SavedTime 2 3 `us 1 TimeToFire 2 5 `us 1 Time 2 7 `us 1 TimeStart 2 9 `uc 1 LastOutput 1 11 `uc 1 NextOutput 1 12 `uc 1 CanStopStart 1 13 :1:0 
 `uc 1 SaveTime 1 13 :1:1 
 ]
-"39
+"40
 [v _Feu Feu `S87  1 e 14 0 ]
 "5 B:\GitHub\PYROSEQ\Pyronum\include\micro.h
 [v _Version Version `C[5]uc  1 e 5 0 ]
@@ -365,7 +369,7 @@ Bp_Max 4
 `uc 1 Stop 1 0 :1:2 
 `uc 1 End 1 0 :1:3 
 ]
-"51
+"60
 [u S26 . 1 `uc 1 State 1 0 `S21 1 Stat 1 0 ]
 [s S29 StructMod 1 `uc 1 P_0 1 0 :1:0 
 `uc 1 P_00 1 0 :1:1 
@@ -776,7 +780,7 @@ Bp_Max 4
 "19 B:\GitHub\PYROSEQ\Pyronum\include\register.h
 [v _Register Register `S67  1 e 4 0 ]
 [s S69 StructTest 31 `uc 1 Step 1 0 `uc 1 Cpt 1 1 `us 1 Time 2 2 `f 1 U_Alim 3 4 `f 1 U_Infla 3 7 `f 1 Test1 3 10 `f 1 Test2 3 13 `f 1 Test3 3 16 `f 1 Test4 3 19 `f 1 Test5 3 22 `f 1 Test6 3 25 `f 1 Test7 3 28 ]
-"42 B:\GitHub\PYROSEQ\Pyronum\include\test.h
+"45 B:\GitHub\PYROSEQ\Pyronum\include\test.h
 [v _Test Test `S69  1 e 31 0 ]
 "20 B:\GitHub\PYROSEQ\Pyronum\include\timer.h
 [v _Cptms Cptms `VEus  1 e 2 0 ]
@@ -794,7 +798,7 @@ Bp_Max 4
 [v test_process@temp temp `us  1 a 2 39 ]
 "105
 [v test_process@ret ret `uc  1 a 1 38 ]
-"302
+"330
 } 0
 "80
 [v _check_UInfla check_UInfla `(us  1 e 2 0 ]
@@ -827,19 +831,19 @@ Bp_Max 4
 {
 "61
 } 0
-"89 B:\GitHub\PYROSEQ\Pyronum\feu.c
+"110 B:\GitHub\PYROSEQ\Pyronum\feu.c
 [v _feu_process feu_process `(v  1 e 0 0 ]
 {
-"178
+"231
 } 0
-"9
+"23
 [v _feu_tir feu_tir `(v  1 s 0 feu_tir ]
 {
 [v feu_tir@Output Output `uc  1 a 1 wreg ]
 [v feu_tir@Output Output `uc  1 a 1 wreg ]
-"11
+"25
 [v feu_tir@Output Output `uc  1 a 1 6 ]
-"24
+"38
 } 0
 "3 B:\GitHub\PYROSEQ\Pyronum\register.c
 [v _register_write register_write `(v  1 e 0 0 ]
@@ -853,15 +857,25 @@ Bp_Max 4
 [v register_write@Output Output `uc  1 a 1 1 ]
 "30
 } 0
-"3 B:\GitHub\PYROSEQ\Pyronum\feu.c
+"4 B:\GitHub\PYROSEQ\Pyronum\feu.c
+[v _feu_check_pause feu_check_pause `(uc  1 s 1 feu_check_pause ]
+{
+"8
+} 0
+"10
+[v _feu_check_end_P0 feu_check_end_P0 `(uc  1 s 1 feu_check_end_P0 ]
+{
+"14
+} 0
+"17
 [v _feu_check_end feu_check_end `(uc  1 s 1 feu_check_end ]
 {
-"7
+"21
 } 0
-"26
+"40
 [v _feu_check_bp feu_check_bp `(v  1 e 0 0 ]
 {
-"87
+"108
 } 0
 "66 B:\GitHub\PYROSEQ\Pyronum\ecran.c
 [v _ecran_print_num ecran_print_num `(v  1 e 0 0 ]
@@ -890,7 +904,7 @@ Bp_Max 4
 [v DecToStr@value value `uc  1 a 1 15 ]
 "26
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c
 [v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
 {
 [v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
@@ -905,7 +919,7 @@ Bp_Max 4
 [v ___lbdiv@dividend dividend `uc  1 a 1 2 ]
 "26
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "11
@@ -933,13 +947,13 @@ Bp_Max 4
 {
 "37
 } 0
-"132 B:\GitHub\PYROSEQ\Pyronum\config.c
+"137 B:\GitHub\PYROSEQ\Pyronum\config.c
 [v _cf_rcv cf_rcv `(v  1 e 0 0 ]
 {
-"134
+"139
 [v cf_rcv@i i `uc  1 a 1 23 ]
 [v cf_rcv@temp temp `uc  1 a 1 22 ]
-"182
+"187
 } 0
 "52 B:\GitHub\PYROSEQ\Pyronum\eeprom.c
 [v _eeprom_write_array eeprom_write_array `(v  1 e 0 0 ]
@@ -967,14 +981,14 @@ Bp_Max 4
 {
 "62
 } 0
-"92 B:\GitHub\PYROSEQ\Pyronum\config.c
+"97 B:\GitHub\PYROSEQ\Pyronum\config.c
 [v _cf_check_and_display cf_check_and_display `(v  1 e 0 0 ]
 {
-"95
+"100
 [v cf_check_and_display@temp temp `us  1 a 2 22 ]
-"94
+"99
 [v cf_check_and_display@configOk configOk `uc  1 a 1 24 ]
-"130
+"135
 } 0
 "40 B:\GitHub\PYROSEQ\Pyronum\eeprom.c
 [v _eeprom_read_array eeprom_read_array `(v  1 e 0 0 ]
@@ -996,12 +1010,12 @@ Bp_Max 4
 [v eeprom_read@Address Address `uc  1 a 1 0 ]
 "15
 } 0
-"79 B:\GitHub\PYROSEQ\Pyronum\config.c
+"84 B:\GitHub\PYROSEQ\Pyronum\config.c
 [v _cf_check cf_check `(uc  1 e 1 0 ]
 {
-"81
+"86
 [v cf_check@valid valid `uc  1 a 1 19 ]
-"89
+"94
 } 0
 "4
 [v _cf_checksum cf_checksum `(b  1 s 0 cf_checksum ]
@@ -1013,13 +1027,13 @@ Bp_Max 4
 [v cf_checksum@valid valid `uc  1 a 1 12 ]
 "30
 } 0
-"65
+"66
 [v _cf_checkrange cf_checkrange `(b  1 s 0 cf_checkrange ]
 {
-"67
+"68
 [v cf_checkrange@i i `uc  1 a 1 2 ]
 [v cf_checkrange@valid valid `uc  1 a 1 1 ]
-"77
+"82
 } 0
 "33
 [v _cf_checkout cf_checkout `(b  1 s 0 cf_checkout ]
@@ -1032,7 +1046,7 @@ Bp_Max 4
 [v cf_checkout@valid valid `uc  1 a 1 7 ]
 "62
 } 0
-"3 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c
+"3 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "5
@@ -1075,7 +1089,7 @@ Bp_Max 4
 [v armement_process@temp temp `us  1 a 2 38 ]
 "83
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c
+"4 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c
 [v _itoa itoa `(*.35uc  1 e 2 0 ]
 {
 "6
@@ -1099,7 +1113,7 @@ Bp_Max 4
 [v utoa@base base `i  1 p 2 12 ]
 "37
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "11
@@ -1109,7 +1123,7 @@ Bp_Max 4
 [v ___lwmod@divisor divisor `ui  1 p 2 2 ]
 "26
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
@@ -1205,13 +1219,13 @@ Bp_Max 4
 [v delay_ms@TimeToWait TimeToWait `us  1 p 2 0 ]
 "9
 } 0
-"28 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c
+"28 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 {
 [v ___lwtoft@c c `ui  1 p 2 8 ]
 "31
 } 0
-"44 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c
+"44 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
 {
 "47
@@ -1223,7 +1237,7 @@ Bp_Max 4
 [v ___fttol@f1 f1 `f  1 p 3 0 ]
 "73
 } 0
-"51 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c
+"51 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 {
 "54
@@ -1237,7 +1251,7 @@ Bp_Max 4
 [v ___ftmul@f2 f2 `f  1 p 3 16 ]
 "84
 } 0
-"62 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c
+"62 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 {
 [v ___ftpack@arg arg `um  1 p 3 0 ]
@@ -1255,7 +1269,7 @@ Bp_Max 4
 {
 "126
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c
+"8 E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "11

@@ -1,15 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"25 include\micro.h
+"34 include\micro.h
 [s S327 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S327 StructState Armed Go Stop End ]
 [u S330 `uc 1 `S327 1 ]
 [n S330 . State Stat ]
-"32
+"41
 [s S328 :1 `uc 1 :1 `uc 1 ]
 [n S328 StructMod P_0 P_00 ]
 [u S331 `uc 1 `S328 1 ]
 [n S331 . Mods Mod ]
-"37
+"46
 [s S329 `us 1 `uc 1 `uc 1 `S330 1 `S331 1 ]
 [n S329 StructMicro Time Phase Step . . ]
 "13 include\bouton.h
@@ -18,8 +18,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6
 [s S332 `us 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S332 StructBouton Time Memo State Change ]
-"9 include\config.h
-[s S333 `uc + * -> 32 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
+"17 include\config.h
+[s S333 `uc + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
 [n S333 StructConfig Data Index Time1 Time2 IsLong ]
 "32 include\ecran.h
 [s S334 `uc -> 4 `i `*uc 1 `uc -> 4 `i `uc 1 `uc 1 `uc 1 `us 1 `uc 1 ]
@@ -27,13 +27,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\register.h
 [s S335 `uc -> 4 `i ]
 [n S335 StructRelay State ]
-"27 include\test.h
+"30 include\test.h
 [s S336 `uc 1 `uc 1 `us 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
 [n S336 StructTest Step Cpt Time U_Alim U_Infla Test1 Test2 Test3 Test4 Test5 Test6 Test7 ]
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"25 include\feu.h
+"26 include\feu.h
 [s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
 "16 include\feedback.h
@@ -77,6 +77,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ecran_print_num `(v ~T0 @X0 0 ef1`uc ]
 "46
 [v _ecran_print_one_char `(v ~T0 @X0 0 ef2`uc`uc ]
+[s S307 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S307 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+[s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S308 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
+[s S309 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S309 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
+[s S310 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S310 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+[s S311 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S311 . . GIEL GIEH ]
+[u S306 `S307 1 `S308 1 `S309 1 `S310 1 `S311 1 ]
+[n S306 . . . . . . ]
+"5659 include\pic18f452.h
+[v _INTCONbits `VS306 ~T0 @X0 0 e@4082 ]
 [; ;pic18f452.h: 47: extern volatile unsigned char PORTA @ 0xF80;
 "49 include\pic18f452.h
 [; ;pic18f452.h: 49: asm("PORTA equ 0F80h");
@@ -2831,42 +2845,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 :U ..
 -> 48 `c
 -> 48 `c
+-> 49 `c
 -> 48 `c
--> 57 `c
 -> 0 `c
 ..
 ]
-[; ;micro.h: 5: const char Version[] = "0009";
-[; ;micro.h: 25: typedef struct StructState{
-[; ;micro.h: 26: unsigned Armed :1;
-[; ;micro.h: 27: unsigned Go :1;
-[; ;micro.h: 28: unsigned Stop :1;
-[; ;micro.h: 29: unsigned End :1;
-[; ;micro.h: 30: }StruState;
-[; ;micro.h: 32: typedef struct StructMod{
-[; ;micro.h: 33: unsigned P_0 :1;
-[; ;micro.h: 34: unsigned P_00 :1;
-[; ;micro.h: 35: }StruMode;
-[; ;micro.h: 37: typedef struct StructMicro {
-[; ;micro.h: 38: unsigned short Time;
-[; ;micro.h: 39: unsigned char Phase;
-[; ;micro.h: 40: unsigned char Step;
-[; ;micro.h: 41: union {
-[; ;micro.h: 42: unsigned char State;
-[; ;micro.h: 43: struct StructState Stat;
-[; ;micro.h: 44: };
-[; ;micro.h: 45: union {
-[; ;micro.h: 46: unsigned char Mods;
-[; ;micro.h: 47: struct StructMod Mod;
-[; ;micro.h: 48: };
-[; ;micro.h: 49: }struMicro;
-"51
+[; ;micro.h: 5: const char Version[] = "0010";
+[; ;micro.h: 34: typedef struct StructState{
+[; ;micro.h: 35: unsigned Armed :1;
+[; ;micro.h: 36: unsigned Go :1;
+[; ;micro.h: 37: unsigned Stop :1;
+[; ;micro.h: 38: unsigned End :1;
+[; ;micro.h: 39: }StruState;
+[; ;micro.h: 41: typedef struct StructMod{
+[; ;micro.h: 42: unsigned P_0 :1;
+[; ;micro.h: 43: unsigned P_00 :1;
+[; ;micro.h: 44: }StruMode;
+[; ;micro.h: 46: typedef struct StructMicro {
+[; ;micro.h: 47: unsigned short Time;
+[; ;micro.h: 48: unsigned char Phase;
+[; ;micro.h: 49: unsigned char Step;
+[; ;micro.h: 50: union {
+[; ;micro.h: 51: unsigned char State;
+[; ;micro.h: 52: struct StructState Stat;
+[; ;micro.h: 53: };
+[; ;micro.h: 54: union {
+[; ;micro.h: 55: unsigned char Mods;
+[; ;micro.h: 56: struct StructMod Mod;
+[; ;micro.h: 57: };
+[; ;micro.h: 58: }struMicro;
+"60
 [v _Micro `S329 ~T0 @X0 1 e ]
-[; ;micro.h: 51: struMicro Micro;
-[; ;micro.h: 53: void micro_config_rs (void);
-[; ;micro.h: 54: void micro_config (void);
-[; ;micro.h: 55: void micro_wait (void);
-[; ;micro.h: 64: extern void __nop(void);
+[; ;micro.h: 60: struMicro Micro;
+[; ;micro.h: 62: void micro_config_rs (void);
+[; ;micro.h: 63: void micro_config (void);
+[; ;micro.h: 64: void micro_wait (void);
+[; ;micro.h: 73: extern void __nop(void);
 [; ;analog.h: 15: unsigned short ana_read (unsigned char ANx);
 [; ;hardware.h: 15: void hw_config(void);
 [; ;eeprom.h: 4: unsigned char eeprom_read (unsigned char Address);
@@ -2890,19 +2904,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bouton.h: 13: struBouton Bouton[Bp_Max];
 [; ;bouton.h: 15: void bouton_init (void);
 [; ;bouton.h: 16: void bouton_refresh (void);
-[; ;config.h: 9: typedef struct StructConfig {
-[; ;config.h: 10: unsigned char Data[(32 * 3 + 5)];
-[; ;config.h: 11: volatile unsigned char Index;
-[; ;config.h: 12: volatile unsigned short Time1;
-[; ;config.h: 13: unsigned short Time2;
-[; ;config.h: 14: unsigned IsLong :1;
-[; ;config.h: 15: }struConfig;
-"17 include\config.h
+[; ;config.h: 17: typedef struct StructConfig {
+[; ;config.h: 18: unsigned char Data[(32 * 3 + 5 * 3 + 5)];
+[; ;config.h: 19: volatile unsigned char Index;
+[; ;config.h: 20: volatile unsigned short Time1;
+[; ;config.h: 21: unsigned short Time2;
+[; ;config.h: 22: unsigned IsLong :1;
+[; ;config.h: 23: }struConfig;
+"25 include\config.h
 [v _Cf `S333 ~T0 @X0 1 e ]
-[; ;config.h: 17: struConfig Cf;
-[; ;config.h: 19: unsigned char cf_check (void);
-[; ;config.h: 20: void cf_check_and_display (void);
-[; ;config.h: 21: void cf_rcv (void);
+[; ;config.h: 25: struConfig Cf;
+[; ;config.h: 27: unsigned char cf_check (void);
+[; ;config.h: 28: void cf_check_and_display (void);
+[; ;config.h: 29: void cf_rcv (void);
 "27 include\ecran.h
 [v _Blank `Cuc ~T0 @X0 -> 0 `x e ]
 [i _Blank
@@ -2977,28 +2991,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;register.h: 19: struRegister Register;
 [; ;register.h: 21: void register_write (unsigned char Output);
 [; ;register.h: 22: void register_refresh (void);
-[; ;test.h: 27: typedef struct StructTest{
-[; ;test.h: 28: unsigned char Step;
-[; ;test.h: 29: unsigned char Cpt;
-[; ;test.h: 30: unsigned short Time;
-[; ;test.h: 31: float U_Alim;
-[; ;test.h: 32: float U_Infla;
-[; ;test.h: 33: float Test1;
-[; ;test.h: 34: float Test2;
-[; ;test.h: 35: float Test3;
-[; ;test.h: 36: float Test4;
-[; ;test.h: 37: float Test5;
-[; ;test.h: 38: float Test6;
-[; ;test.h: 39: float Test7;
-[; ;test.h: 40: }struTest;
-"42 include\test.h
+[; ;test.h: 30: typedef struct StructTest{
+[; ;test.h: 31: unsigned char Step;
+[; ;test.h: 32: unsigned char Cpt;
+[; ;test.h: 33: unsigned short Time;
+[; ;test.h: 34: float U_Alim;
+[; ;test.h: 35: float U_Infla;
+[; ;test.h: 36: float Test1;
+[; ;test.h: 37: float Test2;
+[; ;test.h: 38: float Test3;
+[; ;test.h: 39: float Test4;
+[; ;test.h: 40: float Test5;
+[; ;test.h: 41: float Test6;
+[; ;test.h: 42: float Test7;
+[; ;test.h: 43: }struTest;
+"45 include\test.h
 [v _Test `S336 ~T0 @X0 1 e ]
-[; ;test.h: 42: struTest Test;
-[; ;test.h: 44: void check_comutest(unsigned char State);
-[; ;test.h: 45: unsigned char check_program_0 (void);
-[; ;test.h: 46: void check_idtest (void);
-[; ;test.h: 47: void check_bpon (void);
-[; ;test.h: 48: unsigned char test_process (void);
+[; ;test.h: 45: struTest Test;
+[; ;test.h: 47: void check_comutest(unsigned char State);
+[; ;test.h: 48: unsigned char check_program_0 (void);
+[; ;test.h: 49: void check_idtest (void);
+[; ;test.h: 50: void check_bpon (void);
+[; ;test.h: 51: unsigned char test_process (void);
 [; ;armement.h: 12: typedef struct StructArm{
 [; ;armement.h: 13: unsigned char Step;
 [; ;armement.h: 14: unsigned char Cpt;
@@ -3009,30 +3023,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"21 include\feu.h
+"23 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 21: volatile unsigned char Decompte;
-"22
+[; ;feu.h: 23: volatile unsigned char Decompte;
+"24
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 25: typedef struct StructFeu{
-[; ;feu.h: 26: unsigned char Step;
-[; ;feu.h: 27: unsigned char Cpt;
-[; ;feu.h: 28: unsigned char Decompte;
-[; ;feu.h: 29: unsigned short SavedTime;
-[; ;feu.h: 30: unsigned short TimeToFire;
-[; ;feu.h: 31: unsigned short Time;
-[; ;feu.h: 32: unsigned short TimeStart;
-[; ;feu.h: 33: unsigned char LastOutput;
-[; ;feu.h: 34: unsigned char NextOutput;
-[; ;feu.h: 35: unsigned CanStopStart :1;
-[; ;feu.h: 36: unsigned SaveTime :1;
-[; ;feu.h: 37: }struFeu;
-"39
+[; ;feu.h: 24: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 26: typedef struct StructFeu{
+[; ;feu.h: 27: unsigned char Step;
+[; ;feu.h: 28: unsigned char Cpt;
+[; ;feu.h: 29: unsigned char Decompte;
+[; ;feu.h: 30: unsigned short SavedTime;
+[; ;feu.h: 31: unsigned short TimeToFire;
+[; ;feu.h: 32: unsigned short Time;
+[; ;feu.h: 33: unsigned short TimeStart;
+[; ;feu.h: 34: unsigned char LastOutput;
+[; ;feu.h: 35: unsigned char NextOutput;
+[; ;feu.h: 36: unsigned CanStopStart :1;
+[; ;feu.h: 37: unsigned SaveTime :1;
+[; ;feu.h: 38: }struFeu;
+"40
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 39: struFeu Feu;
-[; ;feu.h: 41: void feu_check_bp (void);
-[; ;feu.h: 42: void feu_process (void);
+[; ;feu.h: 40: struFeu Feu;
+[; ;feu.h: 42: void feu_check_bp (void);
+[; ;feu.h: 43: void feu_process (void);
 [; ;feedback.h: 16: typedef struct StructFeedback {
 [; ;feedback.h: 17: unsigned short Period;
 [; ;feedback.h: 18: unsigned char Pulse;
@@ -3042,566 +3056,727 @@ Version 3.2 HI-TECH Software Intermediate Code
 "23 include\feedback.h
 [v _Feedback `S339 ~T0 @X0 1 e ]
 [; ;feedback.h: 23: struFeedback Feedback;
-"3 feu.c
-[v _feu_check_end `(uc ~T0 @X0 1 sf ]
-"4
-{
-[; ;feu.c: 3: static unsigned char feu_check_end (void)
-[; ;feu.c: 4: {
-[e :U _feu_check_end ]
-[f ]
-[; ;feu.c: 5: if ((Feu.Cpt >= 32) || (Feu.NextOutput == 0)) {return 1;}
+"4 feu.c
+[v _feu_check_pause `(uc ~T0 @X0 1 sf ]
 "5
-[e $ ! || >= -> . _Feu 1 `i -> 32 `i == -> . _Feu 8 `i -> 0 `i 341  ]
+{
+[; ;feu.c: 4: static unsigned char feu_check_pause (void)
+[; ;feu.c: 5: {
+[e :U _feu_check_pause ]
+[f ]
+[; ;feu.c: 6: if (Feu.NextOutput == 99) {return 1;}
+"6
+[e $ ! == -> . _Feu 8 `i -> 99 `i 341  ]
 {
 [e ) -> -> 1 `i `uc ]
 [e $UE 340  ]
 }
 [e $U 342  ]
-"6
+"7
 [e :U 341 ]
-[; ;feu.c: 6: else {return 0;}
+[; ;feu.c: 7: else {return 0;}
 {
 [e ) -> -> 0 `i `uc ]
 [e $UE 340  ]
 }
 [e :U 342 ]
-[; ;feu.c: 7: }
-"7
+[; ;feu.c: 8: }
+"8
 [e :UE 340 ]
 }
-"9
-[v _feu_tir `(v ~T0 @X0 1 sf1`uc ]
 "10
-{
-[; ;feu.c: 9: static void feu_tir (unsigned char Output)
-[; ;feu.c: 10: {
-[e :U _feu_tir ]
-"9
-[v _Output `uc ~T0 @X0 1 r1 ]
-"10
-[f ]
-[; ;feu.c: 11: PORTAbits.RA5 = 1;
+[v _feu_check_end_P0 `(uc ~T0 @X0 1 sf ]
 "11
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-[; ;feu.c: 12: PORTBbits.RB1 = 1;
+{
+[; ;feu.c: 10: static unsigned char feu_check_end_P0 (void)
+[; ;feu.c: 11: {
+[e :U _feu_check_end_P0 ]
+[f ]
+[; ;feu.c: 12: if ((Feu.Cpt >= 32) || (Feu.NextOutput == 0)) {return 1;}
 "12
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-[; ;feu.c: 14: register_write(Output);
+[e $ ! || >= -> . _Feu 1 `i -> 32 `i == -> . _Feu 8 `i -> 0 `i 344  ]
+{
+[e ) -> -> 1 `i `uc ]
+[e $UE 343  ]
+}
+[e $U 345  ]
+"13
+[e :U 344 ]
+[; ;feu.c: 13: else {return 0;}
+{
+[e ) -> -> 0 `i `uc ]
+[e $UE 343  ]
+}
+[e :U 345 ]
+[; ;feu.c: 14: }
 "14
-[e ( _register_write (1 _Output ]
-[; ;feu.c: 15: delay_ms(40);
-"15
-[e ( _delay_ms (1 -> -> 40 `i `us ]
-[; ;feu.c: 16: register_write(0);
-"16
-[e ( _register_write (1 -> -> 0 `i `uc ]
-[; ;feu.c: 18: PORTBbits.RB1 = 0;
-"18
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-[; ;feu.c: 19: PORTAbits.RA5 = 0;
-"19
-[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
-[; ;feu.c: 22: Feu.LastOutput = Feu.NextOutput;
-"22
-[e = . _Feu 7 . _Feu 8 ]
-[; ;feu.c: 23: Feu.Cpt ++;
-"23
-[e ++ . _Feu 1 -> -> 1 `i `uc ]
-[; ;feu.c: 24: }
-"24
 [e :UE 343 ]
 }
-"26
-[v _feu_check_bp `(v ~T0 @X0 1 ef ]
-"27
+"17
+[v _feu_check_end `(uc ~T0 @X0 1 sf ]
+"18
 {
-[; ;feu.c: 26: void feu_check_bp (void)
-[; ;feu.c: 27: {
-[e :U _feu_check_bp ]
+[; ;feu.c: 17: static unsigned char feu_check_end (void)
+[; ;feu.c: 18: {
+[e :U _feu_check_end ]
 [f ]
-[; ;feu.c: 28: if ( (Micro.Stat.End == 1)
-[; ;feu.c: 29: && (Bouton[Bp_On].State == 0))
-"29
-[e $ ! && == -> . . . _Micro 3 1 3 `i -> 1 `i == -> . *U + &U _Bouton * -> . `E3044 0 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 345  ]
-[; ;feu.c: 30: {
-"30
+[; ;feu.c: 19: if ((Feu.Cpt >= (32 + 5)) || (Feu.NextOutput == 0)) {return 1;}
+"19
+[e $ ! || >= -> . _Feu 1 `i + -> 32 `i -> 5 `i == -> . _Feu 8 `i -> 0 `i 347  ]
 {
-[; ;feu.c: 31: Ecran.Digits = (char *) Version;
-"31
-[e = . _Ecran 1 -> &U _Version `*uc ]
-[; ;feu.c: 32: Ecran.Solid = 0;
-"32
-[e = . _Ecran 7 -> -> 0 `i `uc ]
-"33
+[e ) -> -> 1 `i `uc ]
+[e $UE 346  ]
 }
-[; ;feu.c: 33: }
-[e $U 346  ]
-"34
-[e :U 345 ]
-[; ;feu.c: 34: else if ( (Bouton[Bp_Start].State == 1)
-[; ;feu.c: 35: && (Feu.CanStopStart == 0))
-"35
-[e $ ! && == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i == -> . _Feu 9 `i -> 0 `i 347  ]
-[; ;feu.c: 36: {
-"36
+[e $U 348  ]
+"20
+[e :U 347 ]
+[; ;feu.c: 20: else {return 0;}
 {
-[; ;feu.c: 37: if ((((unsigned short) (Cptms - Feu.TimeStart) > 5000) ? 1 : 0))
-"37
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Feu 6 `ui `us `ui -> -> 5000 `i `ui : -> 1 `i -> 0 `i -> 0 `i 348  ]
-[; ;feu.c: 38: {
-"38
-{
-[; ;feu.c: 39: Feu.CanStopStart = 1;
-"39
-[e = . _Feu 9 -> -> 1 `i `uc ]
-"40
+[e ) -> -> 0 `i `uc ]
+[e $UE 346  ]
 }
 [e :U 348 ]
+[; ;feu.c: 21: }
+"21
+[e :UE 346 ]
+}
+"23
+[v _feu_tir `(v ~T0 @X0 1 sf1`uc ]
+"24
+{
+[; ;feu.c: 23: static void feu_tir (unsigned char Output)
+[; ;feu.c: 24: {
+[e :U _feu_tir ]
+"23
+[v _Output `uc ~T0 @X0 1 r1 ]
+"24
+[f ]
+[; ;feu.c: 25: PORTAbits.RA5 = 1;
+"25
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+[; ;feu.c: 26: PORTBbits.RB1 = 1;
+"26
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;feu.c: 28: register_write(Output);
+"28
+[e ( _register_write (1 _Output ]
+[; ;feu.c: 29: delay_ms(40);
+"29
+[e ( _delay_ms (1 -> -> 40 `i `us ]
+[; ;feu.c: 30: register_write(0);
+"30
+[e ( _register_write (1 -> -> 0 `i `uc ]
+[; ;feu.c: 32: PORTBbits.RB1 = 0;
+"32
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+[; ;feu.c: 33: PORTAbits.RA5 = 0;
+"33
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+[; ;feu.c: 36: Feu.LastOutput = Feu.NextOutput;
+"36
+[e = . _Feu 7 . _Feu 8 ]
+[; ;feu.c: 37: Feu.Cpt ++;
+"37
+[e ++ . _Feu 1 -> -> 1 `i `uc ]
+[; ;feu.c: 38: }
+"38
+[e :UE 349 ]
+}
+"40
+[v _feu_check_bp `(v ~T0 @X0 1 ef ]
 "41
-}
-[; ;feu.c: 40: }
-[; ;feu.c: 41: }
-[e $U 349  ]
-"42
-[e :U 347 ]
-[; ;feu.c: 42: else if ( (Micro.Mods == 0)
-[; ;feu.c: 43: && (Feu.CanStopStart == 1)
-[; ;feu.c: 44: && (Bouton[Bp_Start].State == 0))
+{
+[; ;feu.c: 40: void feu_check_bp (void)
+[; ;feu.c: 41: {
+[e :U _feu_check_bp ]
+[f ]
+[; ;feu.c: 42: if ( (Micro.Stat.End == 1)
+[; ;feu.c: 43: && (Bouton[Bp_On].State == 0))
+"43
+[e $ ! && == -> . . . _Micro 3 1 3 `i -> 1 `i == -> . *U + &U _Bouton * -> . `E3044 0 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 351  ]
+[; ;feu.c: 44: {
 "44
-[e $ ! && && == -> . . _Micro 4 0 `i -> 0 `i == -> . _Feu 9 `i -> 1 `i == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 350  ]
-[; ;feu.c: 45: {
+{
+[; ;feu.c: 45: Ecran.Digits = (char *) Version;
 "45
-{
-[; ;feu.c: 46: if (Micro.Stat.Go == 1)
+[e = . _Ecran 1 -> &U _Version `*uc ]
+[; ;feu.c: 46: Ecran.Solid = 0;
 "46
-[e $ ! == -> . . . _Micro 3 1 1 `i -> 1 `i 351  ]
-[; ;feu.c: 47: {
-"47
-{
-[; ;feu.c: 48: Feu.Step = 0x06;
-"48
-[e = . _Feu 0 -> -> 6 `i `uc ]
-[; ;feu.c: 49: Micro.State = 0x04;
-"49
-[e = . . _Micro 3 0 -> -> 4 `i `uc ]
-"50
-}
-[; ;feu.c: 50: }
-[e $U 352  ]
-"51
-[e :U 351 ]
-[; ;feu.c: 51: else if (Micro.Stat.Stop == 1)
-[e $ ! == -> . . . _Micro 3 1 2 `i -> 1 `i 353  ]
-[; ;feu.c: 52: {
-"52
-{
-[; ;feu.c: 53: Feu.Step = 0x07;
-"53
-[e = . _Feu 0 -> -> 7 `i `uc ]
-[; ;feu.c: 54: Micro.State = 0x02;
-"54
-[e = . . _Micro 3 0 -> -> 2 `i `uc ]
-[; ;feu.c: 55: Feu.TimeStart = Cptms;
-"55
-[e = . _Feu 6 _Cptms ]
-"56
-}
-[e :U 353 ]
-"58
-[e :U 352 ]
-[; ;feu.c: 56: }
-[; ;feu.c: 58: Feu.CanStopStart = 0;
-[e = . _Feu 9 -> -> 0 `i `uc ]
-"59
-}
-[; ;feu.c: 59: }
-[e $U 354  ]
-"60
-[e :U 350 ]
-[; ;feu.c: 60: else if (Bouton[Comu_Test].State == 1)
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 2 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 355  ]
-[; ;feu.c: 61: {
-"61
-{
-[; ;feu.c: 62: Ecran.Digits = (char *) ErreurTir;
-"62
-[e = . _Ecran 1 -> &U _ErreurTir `*uc ]
-[; ;feu.c: 63: Ecran.Solid = 0;
-"63
 [e = . _Ecran 7 -> -> 0 `i `uc ]
-"64
+"47
 }
-[; ;feu.c: 64: }
-[e $U 356  ]
-"65
+[; ;feu.c: 47: }
+[e $U 352  ]
+"48
+[e :U 351 ]
+[; ;feu.c: 48: else if ( (Feu.Step == 0x09)
+[; ;feu.c: 49: && (Bouton[Bp_Start].State == 0))
+"49
+[e $ ! && == -> . _Feu 0 `i -> 9 `i == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 353  ]
+[; ;feu.c: 50: {
+"50
+{
+[; ;feu.c: 51: Feu.TimeStart = Cptms;
+"51
+[e = . _Feu 6 _Cptms ]
+[; ;feu.c: 52: Feu.CanStopStart = 0;
+"52
+[e = . _Feu 9 -> -> 0 `i `uc ]
+[; ;feu.c: 53: Feu.Step = 0x0A;
+"53
+[e = . _Feu 0 -> -> 10 `i `uc ]
+"54
+}
+[; ;feu.c: 54: }
+[e $U 354  ]
+"55
+[e :U 353 ]
+[; ;feu.c: 55: else if ( (Bouton[Bp_Start].State == 1)
+[; ;feu.c: 56: && (Feu.CanStopStart == 0))
+"56
+[e $ ! && == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i == -> . _Feu 9 `i -> 0 `i 355  ]
+[; ;feu.c: 57: {
+"57
+{
+[; ;feu.c: 58: if ((((unsigned short) (Cptms - Feu.TimeStart) > 5000) ? 1 : 0))
+"58
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Feu 6 `ui `us `ui -> -> 5000 `i `ui : -> 1 `i -> 0 `i -> 0 `i 356  ]
+[; ;feu.c: 59: {
+"59
+{
+[; ;feu.c: 60: Feu.CanStopStart = 1;
+"60
+[e = . _Feu 9 -> -> 1 `i `uc ]
+"61
+}
+[e :U 356 ]
+"62
+}
+[; ;feu.c: 61: }
+[; ;feu.c: 62: }
+[e $U 357  ]
+"63
 [e :U 355 ]
-[; ;feu.c: 65: else if (Bouton[Bp_IdTest].State == 0)
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 357  ]
+[; ;feu.c: 63: else if ( (Micro.Mods == 0)
+[; ;feu.c: 64: && (Feu.CanStopStart == 1)
+[; ;feu.c: 65: && (Bouton[Bp_Start].State == 0))
+"65
+[e $ ! && && == -> . . _Micro 4 0 `i -> 0 `i == -> . _Feu 9 `i -> 1 `i == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 358  ]
 [; ;feu.c: 66: {
 "66
 {
-[; ;feu.c: 67: ecran_print_num(Feu.LastOutput);
+[; ;feu.c: 67: if (Micro.Stat.Go == 1)
 "67
-[e ( _ecran_print_num (1 . _Feu 7 ]
-[; ;feu.c: 69: if (Micro.Stat.Stop == 1)
-"69
-[e $ ! == -> . . . _Micro 3 1 2 `i -> 1 `i 358  ]
-[; ;feu.c: 70: {
-"70
+[e $ ! == -> . . . _Micro 3 1 1 `i -> 1 `i 359  ]
+[; ;feu.c: 68: {
+"68
 {
-[; ;feu.c: 71: Ecran.Digit[0] = '-';
+[; ;feu.c: 69: Feu.Step = 0x06;
+"69
+[e = . _Feu 0 -> -> 6 `i `uc ]
+[; ;feu.c: 70: Micro.State = 0x04;
+"70
+[e = . . _Micro 3 0 -> -> 4 `i `uc ]
 "71
-[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
-[; ;feu.c: 72: Ecran.Digit[1] = '-';
-"72
-[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
-[; ;feu.c: 74: Ecran.Digits = Ecran.Digit;
-"74
-[e = . _Ecran 1 &U . _Ecran 0 ]
-"75
 }
-[e :U 358 ]
-[; ;feu.c: 75: }
-[; ;feu.c: 76: Ecran.Solid = 0;
+[; ;feu.c: 71: }
+[e $U 360  ]
+"72
+[e :U 359 ]
+[; ;feu.c: 72: else if (Micro.Stat.Stop == 1)
+[e $ ! == -> . . . _Micro 3 1 2 `i -> 1 `i 361  ]
+[; ;feu.c: 73: {
+"73
+{
+[; ;feu.c: 74: Feu.Step = 0x07;
+"74
+[e = . _Feu 0 -> -> 7 `i `uc ]
+[; ;feu.c: 75: Micro.State = 0x02;
+"75
+[e = . . _Micro 3 0 -> -> 2 `i `uc ]
+[; ;feu.c: 76: Feu.TimeStart = Cptms;
 "76
-[e = . _Ecran 7 -> -> 0 `i `uc ]
+[e = . _Feu 6 _Cptms ]
 "77
 }
-[; ;feu.c: 77: }
-[e $U 359  ]
-"78
-[e :U 357 ]
-[; ;feu.c: 78: else
-[; ;feu.c: 79: {
+[e :U 361 ]
 "79
-{
-[; ;feu.c: 80: if (Micro.Stat.Armed == 1) {ecran_print_one_char(0,'-');}
+[e :U 360 ]
+[; ;feu.c: 77: }
+[; ;feu.c: 79: Feu.CanStopStart = 0;
+[e = . _Feu 9 -> -> 0 `i `uc ]
 "80
-[e $ ! == -> . . . _Micro 3 1 0 `i -> 1 `i 360  ]
+}
+[; ;feu.c: 80: }
+[e $U 362  ]
+"81
+[e :U 358 ]
+[; ;feu.c: 81: else if (Bouton[Comu_Test].State == 1)
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 2 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 363  ]
+[; ;feu.c: 82: {
+"82
+{
+[; ;feu.c: 83: Ecran.Digits = (char *) ErreurTir;
+"83
+[e = . _Ecran 1 -> &U _ErreurTir `*uc ]
+[; ;feu.c: 84: Ecran.Solid = 0;
+"84
+[e = . _Ecran 7 -> -> 0 `i `uc ]
+"85
+}
+[; ;feu.c: 85: }
+[e $U 364  ]
+"86
+[e :U 363 ]
+[; ;feu.c: 86: else if (Bouton[Bp_IdTest].State == 0)
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 1 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 365  ]
+[; ;feu.c: 87: {
+"87
+{
+[; ;feu.c: 88: ecran_print_num(Feu.LastOutput);
+"88
+[e ( _ecran_print_num (1 . _Feu 7 ]
+[; ;feu.c: 90: if (Micro.Stat.Stop == 1)
+"90
+[e $ ! == -> . . . _Micro 3 1 2 `i -> 1 `i 366  ]
+[; ;feu.c: 91: {
+"91
+{
+[; ;feu.c: 92: Ecran.Digit[0] = '-';
+"92
+[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
+[; ;feu.c: 93: Ecran.Digit[1] = '-';
+"93
+[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 45 `ui `uc ]
+[; ;feu.c: 95: Ecran.Digits = Ecran.Digit;
+"95
+[e = . _Ecran 1 &U . _Ecran 0 ]
+"96
+}
+[e :U 366 ]
+[; ;feu.c: 96: }
+[; ;feu.c: 97: Ecran.Solid = 0;
+"97
+[e = . _Ecran 7 -> -> 0 `i `uc ]
+"98
+}
+[; ;feu.c: 98: }
+[e $U 367  ]
+"99
+[e :U 365 ]
+[; ;feu.c: 99: else
+[; ;feu.c: 100: {
+"100
+{
+[; ;feu.c: 101: if (Micro.Stat.Armed == 1) {ecran_print_one_char(0,'-');}
+"101
+[e $ ! == -> . . . _Micro 3 1 0 `i -> 1 `i 368  ]
 {
 [e ( _ecran_print_one_char (2 , -> -> 0 `i `uc -> -> 45 `ui `uc ]
 }
-[e $U 361  ]
-"81
-[e :U 360 ]
-[; ;feu.c: 81: else if (Micro.Stat.Go == 1) {ecran_print_one_char(1,'-');}
-[e $ ! == -> . . . _Micro 3 1 1 `i -> 1 `i 362  ]
+[e $U 369  ]
+"102
+[e :U 368 ]
+[; ;feu.c: 102: else if (Micro.Stat.Go == 1) {ecran_print_one_char(1,'-');}
+[e $ ! == -> . . . _Micro 3 1 1 `i -> 1 `i 370  ]
 {
 [e ( _ecran_print_one_char (2 , -> -> 1 `i `uc -> -> 45 `ui `uc ]
 }
-[e $U 363  ]
-"82
-[e :U 362 ]
-[; ;feu.c: 82: else if (Micro.Stat.Stop == 1) {ecran_print_one_char(2,'-');}
-[e $ ! == -> . . . _Micro 3 1 2 `i -> 1 `i 364  ]
+[e $U 371  ]
+"103
+[e :U 370 ]
+[; ;feu.c: 103: else if (Micro.Stat.Stop == 1) {ecran_print_one_char(2,'-');}
+[e $ ! == -> . . . _Micro 3 1 2 `i -> 1 `i 372  ]
 {
 [e ( _ecran_print_one_char (2 , -> -> 2 `i `uc -> -> 45 `ui `uc ]
 }
-[e $U 365  ]
-"83
-[e :U 364 ]
-[; ;feu.c: 83: else if (Micro.Stat.End == 1) {ecran_print_one_char(3,'-');}
-[e $ ! == -> . . . _Micro 3 1 3 `i -> 1 `i 366  ]
+[e $U 373  ]
+"104
+[e :U 372 ]
+[; ;feu.c: 104: else if (Micro.Stat.End == 1) {ecran_print_one_char(3,'-');}
+[e $ ! == -> . . . _Micro 3 1 3 `i -> 1 `i 374  ]
 {
 [e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 45 `ui `uc ]
 }
-[e :U 366 ]
-"85
-[e :U 365 ]
-[e :U 363 ]
-[e :U 361 ]
-[; ;feu.c: 85: Ecran.Solid = 1;
+[e :U 374 ]
+"106
+[e :U 373 ]
+[e :U 371 ]
+[e :U 369 ]
+[; ;feu.c: 106: Ecran.Solid = 1;
 [e = . _Ecran 7 -> -> 1 `i `uc ]
-"86
+"107
 }
-[e :U 359 ]
-[e :U 356 ]
+[e :U 367 ]
+[e :U 364 ]
+[e :U 362 ]
+[e :U 357 ]
 [e :U 354 ]
-[e :U 349 ]
-[e :U 346 ]
-[; ;feu.c: 86: }
-[; ;feu.c: 87: }
-"87
-[e :UE 344 ]
+[e :U 352 ]
+[; ;feu.c: 107: }
+[; ;feu.c: 108: }
+"108
+[e :UE 350 ]
 }
-"89
+"110
 [v _feu_process `(v ~T0 @X0 1 ef ]
-"90
+"111
 {
-[; ;feu.c: 89: void feu_process (void)
-[; ;feu.c: 90: {
+[; ;feu.c: 110: void feu_process (void)
+[; ;feu.c: 111: {
 [e :U _feu_process ]
 [f ]
-[; ;feu.c: 91: switch (Feu.Step)
-"91
-[e $U 369  ]
-[; ;feu.c: 92: {
-"92
-{
-[; ;feu.c: 93: case 0x00:
-"93
-[e :U 370 ]
-[; ;feu.c: 95: if (Bouton[Bp_Start].State == 0)
-"95
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 371  ]
-[; ;feu.c: 96: {
-"96
-{
-[; ;feu.c: 97: if (Micro.Mods == 0) {Feu.Step = 0x01;}
-"97
-[e $ ! == -> . . _Micro 4 0 `i -> 0 `i 372  ]
-{
-[e = . _Feu 0 -> -> 1 `i `uc ]
-}
-[e $U 373  ]
-"98
-[e :U 372 ]
-[; ;feu.c: 98: else {Feu.Step = 0x03;}
-{
-[e = . _Feu 0 -> -> 3 `i `uc ]
-}
-[e :U 373 ]
-[; ;feu.c: 100: Micro.State = 0x02;
-"100
-[e = . . _Micro 3 0 -> -> 2 `i `uc ]
-[; ;feu.c: 102: Decompte = 50;
-"102
-[e = _Decompte -> -> 50 `i `uc ]
-[; ;feu.c: 103: Cpt1Sur20s = 0;
-"103
-[e = _Cpt1Sur20s -> -> 0 `i `us ]
-[; ;feu.c: 105: Feu.LastOutput = 0;
-"105
-[e = . _Feu 7 -> -> 0 `i `uc ]
-[; ;feu.c: 107: Feu.CanStopStart = 0;
-"107
-[e = . _Feu 9 -> -> 0 `i `uc ]
-[; ;feu.c: 108: Feu.TimeStart = Cptms;
-"108
-[e = . _Feu 6 _Cptms ]
-"109
-}
-[e :U 371 ]
-[; ;feu.c: 109: }
-[; ;feu.c: 110: break;
-"110
-[e $U 368  ]
-[; ;feu.c: 111: case 0x01 :
-"111
-[e :U 374 ]
-[; ;feu.c: 113: Feu.NextOutput = Cf.Data[Feu.Cpt*3];
+[; ;feu.c: 112: switch (Feu.Step)
+"112
+[e $U 377  ]
+[; ;feu.c: 113: {
 "113
-[e = . _Feu 8 *U + &U . _Cf 0 * -> -> * -> . _Feu 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
-[; ;feu.c: 115: if (feu_check_end() == 1) {Feu.Step = 0x08;}
-"115
-[e $ ! == -> ( _feu_check_end ..  `i -> 1 `i 375  ]
 {
-[e = . _Feu 0 -> -> 8 `i `uc ]
-}
-[e $U 376  ]
+[; ;feu.c: 114: case 0x00:
+"114
+[e :U 378 ]
+[; ;feu.c: 116: if (Bouton[Bp_Start].State == 0)
 "116
-[e :U 375 ]
-[; ;feu.c: 116: else
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 379  ]
 [; ;feu.c: 117: {
 "117
 {
-[; ;feu.c: 119: Feu.TimeToFire = Cf.Data[(Feu.Cpt*3) + 1] << 8;
-"119
-[e = . _Feu 4 -> << -> *U + &U . _Cf 0 * -> -> + * -> . _Feu 1 `i -> 3 `i -> 1 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 8 `i `us ]
-[; ;feu.c: 120: Feu.TimeToFire |= Cf.Data[(Feu.Cpt*3) + 2];
-"120
-[e =| . _Feu 4 -> *U + &U . _Cf 0 * -> -> + * -> . _Feu 1 `i -> 3 `i -> 2 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `us ]
-[; ;feu.c: 122: Feu.Step = 0x02;
-"122
-[e = . _Feu 0 -> -> 2 `i `uc ]
-"123
-}
-[e :U 376 ]
-[; ;feu.c: 123: }
-[; ;feu.c: 124: break;
-"124
-[e $U 368  ]
-[; ;feu.c: 125: case 0x02:
-"125
-[e :U 377 ]
-[; ;feu.c: 126: if (Cpt1Sur20s == Feu.TimeToFire)
-"126
-[e $ ! == -> _Cpt1Sur20s `ui -> . _Feu 4 `ui 378  ]
-[; ;feu.c: 127: {
-"127
+[; ;feu.c: 118: if (Micro.Mods == 0) {Feu.Step = 0x01;}
+"118
+[e $ ! == -> . . _Micro 4 0 `i -> 0 `i 380  ]
 {
-[; ;feu.c: 128: feu_tir(Feu.NextOutput);
-"128
-[e ( _feu_tir (1 . _Feu 8 ]
-[; ;feu.c: 130: Feu.Step = 0x01;
-"130
 [e = . _Feu 0 -> -> 1 `i `uc ]
-"131
-}
-[e :U 378 ]
-[; ;feu.c: 131: }
-[; ;feu.c: 132: break;
-"132
-[e $U 368  ]
-[; ;feu.c: 133: case 0x03:
-"133
-[e :U 379 ]
-[; ;feu.c: 134: if (Micro.Mod.P_0 == 1) {Feu.NextOutput = Feu.Cpt+1;}
-"134
-[e $ ! == -> . . . _Micro 4 1 0 `i -> 1 `i 380  ]
-{
-[e = . _Feu 8 -> + -> . _Feu 1 `i -> 1 `i `uc ]
 }
 [e $U 381  ]
-"135
+"119
 [e :U 380 ]
-[; ;feu.c: 135: else if (Micro.Mod.P_00 == 1) {Feu.NextOutput = Cf.Data[Feu.Cpt*3];}
-[e $ ! == -> . . . _Micro 4 1 1 `i -> 1 `i 382  ]
-{
-[e = . _Feu 8 *U + &U . _Cf 0 * -> -> * -> . _Feu 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
-}
-[e :U 382 ]
-"137
-[e :U 381 ]
-[; ;feu.c: 137: if (feu_check_end() == 1) {Feu.Step = 0x08;}
-[e $ ! == -> ( _feu_check_end ..  `i -> 1 `i 383  ]
-{
-[e = . _Feu 0 -> -> 8 `i `uc ]
-}
-[e $U 384  ]
-"138
-[e :U 383 ]
-[; ;feu.c: 138: else {Feu.Step = 0x04;}
-{
-[e = . _Feu 0 -> -> 4 `i `uc ]
-}
-[e :U 384 ]
-[; ;feu.c: 139: break;
-"139
-[e $U 368  ]
-[; ;feu.c: 140: case 0x04:
-"140
-[e :U 385 ]
-[; ;feu.c: 141: if (Bouton[Bp_Start].State == 0)
-"141
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 386  ]
-[; ;feu.c: 142: {
-"142
-{
-[; ;feu.c: 143: delay_ms(15);
-"143
-[e ( _delay_ms (1 -> -> 15 `i `us ]
-[; ;feu.c: 145: feu_tir(Feu.NextOutput);
-"145
-[e ( _feu_tir (1 . _Feu 8 ]
-[; ;feu.c: 147: Feu.Step = 0x05;
-"147
-[e = . _Feu 0 -> -> 5 `i `uc ]
-[; ;feu.c: 148: Feu.Time = Cptms;
-"148
-[e = . _Feu 5 _Cptms ]
-"149
-}
-[e :U 386 ]
-[; ;feu.c: 149: }
-[; ;feu.c: 150: break;
-"150
-[e $U 368  ]
-[; ;feu.c: 151: case 0x05:
-"151
-[e :U 387 ]
-[; ;feu.c: 152: if ((((unsigned short) (Cptms - Feu.Time) > 200) ? 1 : 0))
-"152
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Feu 5 `ui `us `ui -> -> 200 `i `ui : -> 1 `i -> 0 `i -> 0 `i 388  ]
-[; ;feu.c: 153: {
-"153
-{
-[; ;feu.c: 154: if (Bouton[Bp_Start].State == 1) {Feu.Step = 0x03;}
-"154
-[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 389  ]
+[; ;feu.c: 119: else {Feu.Step = 0x03;}
 {
 [e = . _Feu 0 -> -> 3 `i `uc ]
 }
-[e :U 389 ]
+[e :U 381 ]
+[; ;feu.c: 121: Micro.State = 0x02;
+"121
+[e = . . _Micro 3 0 -> -> 2 `i `uc ]
+[; ;feu.c: 123: (INTCONbits.GIE = 0);
+"123
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;feu.c: 124: Decompte = 50;
+"124
+[e = _Decompte -> -> 50 `i `uc ]
+[; ;feu.c: 125: Cpt1Sur20s = 0;
+"125
+[e = _Cpt1Sur20s -> -> 0 `i `us ]
+[; ;feu.c: 126: (INTCONbits.GIE = 1);
+"126
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;feu.c: 128: Feu.LastOutput = 0;
+"128
+[e = . _Feu 7 -> -> 0 `i `uc ]
+[; ;feu.c: 130: Feu.CanStopStart = 0;
+"130
+[e = . _Feu 9 -> -> 0 `i `uc ]
+[; ;feu.c: 131: Feu.TimeStart = Cptms;
+"131
+[e = . _Feu 6 _Cptms ]
+"132
+}
+[e :U 379 ]
+[; ;feu.c: 132: }
+[; ;feu.c: 133: break;
+"133
+[e $U 376  ]
+[; ;feu.c: 134: case 0x01 :
+"134
+[e :U 382 ]
+[; ;feu.c: 136: Feu.NextOutput = Cf.Data[Feu.Cpt*3];
+"136
+[e = . _Feu 8 *U + &U . _Cf 0 * -> -> * -> . _Feu 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
+[; ;feu.c: 138: if (feu_check_pause() == 1) {Feu.Step = 0x09;}
+"138
+[e $ ! == -> ( _feu_check_pause ..  `i -> 1 `i 383  ]
+{
+[e = . _Feu 0 -> -> 9 `i `uc ]
+}
+[e $U 384  ]
+"139
+[e :U 383 ]
+[; ;feu.c: 139: else if (feu_check_end() == 1) {Feu.Step = 0x08;}
+[e $ ! == -> ( _feu_check_end ..  `i -> 1 `i 385  ]
+{
+[e = . _Feu 0 -> -> 8 `i `uc ]
+}
+[e $U 386  ]
+"140
+[e :U 385 ]
+[; ;feu.c: 140: else
+[; ;feu.c: 141: {
+"141
+{
+[; ;feu.c: 143: Feu.TimeToFire = Cf.Data[(Feu.Cpt*3) + 1] << 8;
+"143
+[e = . _Feu 4 -> << -> *U + &U . _Cf 0 * -> -> + * -> . _Feu 1 `i -> 3 `i -> 1 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 8 `i `us ]
+[; ;feu.c: 144: Feu.TimeToFire |= Cf.Data[(Feu.Cpt*3) + 2];
+"144
+[e =| . _Feu 4 -> *U + &U . _Cf 0 * -> -> + * -> . _Feu 1 `i -> 3 `i -> 2 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `us ]
+[; ;feu.c: 146: Feu.Step = 0x02;
+"146
+[e = . _Feu 0 -> -> 2 `i `uc ]
+"147
+}
+[e :U 386 ]
+[e :U 384 ]
+[; ;feu.c: 147: }
+[; ;feu.c: 148: break;
+"148
+[e $U 376  ]
+[; ;feu.c: 149: case 0x02:
+"149
+[e :U 387 ]
+[; ;feu.c: 150: if (Cpt1Sur20s == Feu.TimeToFire)
+"150
+[e $ ! == -> _Cpt1Sur20s `ui -> . _Feu 4 `ui 388  ]
+[; ;feu.c: 151: {
+"151
+{
+[; ;feu.c: 152: feu_tir(Feu.NextOutput);
+"152
+[e ( _feu_tir (1 . _Feu 8 ]
+[; ;feu.c: 154: Feu.Step = 0x01;
+"154
+[e = . _Feu 0 -> -> 1 `i `uc ]
 "155
 }
 [e :U 388 ]
 [; ;feu.c: 155: }
 [; ;feu.c: 156: break;
 "156
-[e $U 368  ]
-[; ;feu.c: 157: case 0x06:
+[e $U 376  ]
+[; ;feu.c: 157: case 0x03:
 "157
-[e :U 390 ]
-[; ;feu.c: 158: if (Feu.SaveTime == 0)
-"158
-[e $ ! == -> . _Feu 10 `i -> 0 `i 391  ]
-[; ;feu.c: 159: {
+[e :U 389 ]
+[; ;feu.c: 159: if (Micro.Mod.P_0 == 1)
 "159
-{
-[; ;feu.c: 160: Feu.Decompte = Decompte;
+[e $ ! == -> . . . _Micro 4 1 0 `i -> 1 `i 390  ]
+[; ;feu.c: 160: {
 "160
-[e = . _Feu 2 _Decompte ]
-[; ;feu.c: 161: Feu.SavedTime = Cpt1Sur20s;
+{
+[; ;feu.c: 161: Feu.NextOutput = Feu.Cpt+1;
 "161
-[e = . _Feu 3 _Cpt1Sur20s ]
-[; ;feu.c: 163: Feu.SaveTime = 1;
+[e = . _Feu 8 -> + -> . _Feu 1 `i -> 1 `i `uc ]
+[; ;feu.c: 163: if (feu_check_end_P0() == 1) {Feu.Step = 0x08;}
 "163
-[e = . _Feu 10 -> -> 1 `i `uc ]
-"164
+[e $ ! == -> ( _feu_check_end_P0 ..  `i -> 1 `i 391  ]
+{
+[e = . _Feu 0 -> -> 8 `i `uc ]
 }
+[e $U 392  ]
+"164
 [e :U 391 ]
-[; ;feu.c: 164: }
-[; ;feu.c: 165: break;
-"165
-[e $U 368  ]
-[; ;feu.c: 166: case 0x07:
-"166
+[; ;feu.c: 164: else {Feu.Step = 0x04;}
+{
+[e = . _Feu 0 -> -> 4 `i `uc ]
+}
 [e :U 392 ]
-[; ;feu.c: 167: Decompte = Feu.Decompte;
+"165
+}
+[; ;feu.c: 165: }
+[e $U 393  ]
+"166
+[e :U 390 ]
+[; ;feu.c: 166: else if (Micro.Mod.P_00 == 1)
+[e $ ! == -> . . . _Micro 4 1 1 `i -> 1 `i 394  ]
+[; ;feu.c: 167: {
 "167
-[e = _Decompte . _Feu 2 ]
-[; ;feu.c: 168: Cpt1Sur20s = Feu.SavedTime;
+{
+[; ;feu.c: 168: Feu.NextOutput = Cf.Data[Feu.Cpt*3];
 "168
-[e = _Cpt1Sur20s . _Feu 3 ]
-[; ;feu.c: 170: Feu.SaveTime = 0;
+[e = . _Feu 8 *U + &U . _Cf 0 * -> -> * -> . _Feu 1 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux ]
+[; ;feu.c: 170: if (feu_check_end() == 1) {Feu.Step = 0x08;}
 "170
-[e = . _Feu 10 -> -> 0 `i `uc ]
-[; ;feu.c: 172: Feu.Step = 0x01;
+[e $ ! == -> ( _feu_check_end ..  `i -> 1 `i 395  ]
+{
+[e = . _Feu 0 -> -> 8 `i `uc ]
+}
+[e $U 396  ]
+"171
+[e :U 395 ]
+[; ;feu.c: 171: else {Feu.Step = 0x04;}
+{
+[e = . _Feu 0 -> -> 4 `i `uc ]
+}
+[e :U 396 ]
 "172
-[e = . _Feu 0 -> -> 1 `i `uc ]
-[; ;feu.c: 173: break;
-"173
-[e $U 368  ]
-[; ;feu.c: 174: case 0x08:
+}
+[e :U 394 ]
 "174
 [e :U 393 ]
-[; ;feu.c: 175: Micro.State = 0x08;
+[; ;feu.c: 172: }
+[; ;feu.c: 174: break;
+[e $U 376  ]
+[; ;feu.c: 175: case 0x04:
 "175
-[e = . . _Micro 3 0 -> -> 8 `i `uc ]
-[; ;feu.c: 176: break;
+[e :U 397 ]
+[; ;feu.c: 176: if (Bouton[Bp_Start].State == 0)
 "176
-[e $U 368  ]
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 0 `i 398  ]
+[; ;feu.c: 177: {
 "177
-}
-[; ;feu.c: 177: }
-[e $U 368  ]
-"91
-[e :U 369 ]
-[e [\ . _Feu 0 , $ -> -> 0 `i `uc 370
- , $ -> -> 1 `i `uc 374
- , $ -> -> 2 `i `uc 377
- , $ -> -> 3 `i `uc 379
- , $ -> -> 4 `i `uc 385
- , $ -> -> 5 `i `uc 387
- , $ -> -> 6 `i `uc 390
- , $ -> -> 7 `i `uc 392
- , $ -> -> 8 `i `uc 393
- 368 ]
-"177
-[e :U 368 ]
-[; ;feu.c: 178: }
+{
+[; ;feu.c: 178: delay_ms(15);
 "178
-[e :UE 367 ]
+[e ( _delay_ms (1 -> -> 15 `i `us ]
+[; ;feu.c: 180: feu_tir(Feu.NextOutput);
+"180
+[e ( _feu_tir (1 . _Feu 8 ]
+[; ;feu.c: 182: Feu.Step = 0x05;
+"182
+[e = . _Feu 0 -> -> 5 `i `uc ]
+[; ;feu.c: 183: Feu.Time = Cptms;
+"183
+[e = . _Feu 5 _Cptms ]
+"184
+}
+[e :U 398 ]
+[; ;feu.c: 184: }
+[; ;feu.c: 185: break;
+"185
+[e $U 376  ]
+[; ;feu.c: 186: case 0x05:
+"186
+[e :U 399 ]
+[; ;feu.c: 187: if ((((unsigned short) (Cptms - Feu.Time) > 200) ? 1 : 0))
+"187
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Feu 5 `ui `us `ui -> -> 200 `i `ui : -> 1 `i -> 0 `i -> 0 `i 400  ]
+[; ;feu.c: 188: {
+"188
+{
+[; ;feu.c: 189: if (Bouton[Bp_Start].State == 1) {Feu.Step = 0x03;}
+"189
+[e $ ! == -> . *U + &U _Bouton * -> . `E3044 3 `ux -> -> # *U &U _Bouton `ui `ux 2 `i -> 1 `i 401  ]
+{
+[e = . _Feu 0 -> -> 3 `i `uc ]
+}
+[e :U 401 ]
+"190
+}
+[e :U 400 ]
+[; ;feu.c: 190: }
+[; ;feu.c: 191: break;
+"191
+[e $U 376  ]
+[; ;feu.c: 192: case 0x06:
+"192
+[e :U 402 ]
+[; ;feu.c: 193: if (Feu.SaveTime == 0)
+"193
+[e $ ! == -> . _Feu 10 `i -> 0 `i 403  ]
+[; ;feu.c: 194: {
+"194
+{
+[; ;feu.c: 195: Feu.Decompte = Decompte;
+"195
+[e = . _Feu 2 _Decompte ]
+[; ;feu.c: 196: Feu.SavedTime = Cpt1Sur20s;
+"196
+[e = . _Feu 3 _Cpt1Sur20s ]
+[; ;feu.c: 198: Feu.SaveTime = 1;
+"198
+[e = . _Feu 10 -> -> 1 `i `uc ]
+"199
+}
+[e :U 403 ]
+[; ;feu.c: 199: }
+[; ;feu.c: 200: break;
+"200
+[e $U 376  ]
+[; ;feu.c: 201: case 0x07:
+"201
+[e :U 404 ]
+[; ;feu.c: 202: Decompte = Feu.Decompte;
+"202
+[e = _Decompte . _Feu 2 ]
+[; ;feu.c: 203: Cpt1Sur20s = Feu.SavedTime;
+"203
+[e = _Cpt1Sur20s . _Feu 3 ]
+[; ;feu.c: 205: Feu.SaveTime = 0;
+"205
+[e = . _Feu 10 -> -> 0 `i `uc ]
+[; ;feu.c: 207: Feu.Step = 0x01;
+"207
+[e = . _Feu 0 -> -> 1 `i `uc ]
+[; ;feu.c: 208: break;
+"208
+[e $U 376  ]
+[; ;feu.c: 210: case 0x09:
+"210
+[e :U 405 ]
+[; ;feu.c: 211: Micro.State = 0x04;
+"211
+[e = . . _Micro 3 0 -> -> 4 `i `uc ]
+[; ;feu.c: 212: break;
+"212
+[e $U 376  ]
+[; ;feu.c: 213: case 0x0A:
+"213
+[e :U 406 ]
+[; ;feu.c: 214: (INTCONbits.GIE = 0);
+"214
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;feu.c: 215: Decompte = 50;
+"215
+[e = _Decompte -> -> 50 `i `uc ]
+[; ;feu.c: 216: Cpt1Sur20s = 0;
+"216
+[e = _Cpt1Sur20s -> -> 0 `i `us ]
+[; ;feu.c: 217: (INTCONbits.GIE = 1);
+"217
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;feu.c: 219: Micro.State = 0x02;
+"219
+[e = . . _Micro 3 0 -> -> 2 `i `uc ]
+[; ;feu.c: 221: Feu.LastOutput = Feu.NextOutput;
+"221
+[e = . _Feu 7 . _Feu 8 ]
+[; ;feu.c: 222: Feu.Cpt ++;
+"222
+[e ++ . _Feu 1 -> -> 1 `i `uc ]
+[; ;feu.c: 224: Feu.Step = 0x01;
+"224
+[e = . _Feu 0 -> -> 1 `i `uc ]
+[; ;feu.c: 225: break;
+"225
+[e $U 376  ]
+[; ;feu.c: 227: case 0x08:
+"227
+[e :U 407 ]
+[; ;feu.c: 228: Micro.State = 0x08;
+"228
+[e = . . _Micro 3 0 -> -> 8 `i `uc ]
+[; ;feu.c: 229: break;
+"229
+[e $U 376  ]
+"230
+}
+[; ;feu.c: 230: }
+[e $U 376  ]
+"112
+[e :U 377 ]
+[e [\ . _Feu 0 , $ -> -> 0 `i `uc 378
+ , $ -> -> 1 `i `uc 382
+ , $ -> -> 2 `i `uc 387
+ , $ -> -> 3 `i `uc 389
+ , $ -> -> 4 `i `uc 397
+ , $ -> -> 5 `i `uc 399
+ , $ -> -> 6 `i `uc 402
+ , $ -> -> 7 `i `uc 404
+ , $ -> -> 9 `i `uc 405
+ , $ -> -> 10 `i `uc 406
+ , $ -> -> 8 `i `uc 407
+ 376 ]
+"230
+[e :U 376 ]
+[; ;feu.c: 231: }
+"231
+[e :UE 375 ]
 }

@@ -3494,7 +3494,7 @@ typedef int ptrdiff_t;
 typedef unsigned size_t;
 typedef unsigned short wchar_t;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.31\include\stdarg.h"
+# 7 "E:\Program Files (x86)\Microchip\xc8\v1.31\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -3513,7 +3513,7 @@ char * ptr;
 void (* func)(char);
 };
 
-# 17 "C:\Program Files (x86)\Microchip\xc8\v1.31\include\conio.h"
+# 17 "E:\Program Files (x86)\Microchip\xc8\v1.31\include\conio.h"
 extern int errno;
 
 
@@ -3630,9 +3630,9 @@ char * DecToStr (unsigned char value, char * result);
 char HexToAscii(unsigned char Value);
 
 # 5 "include\micro.h"
-const char Version[] = "0009";
+const char Version[] = "0010";
 
-# 25
+# 34
 typedef struct StructState{
 unsigned Armed :1;
 unsigned Go :1;
@@ -3666,7 +3666,7 @@ void micro_config (void);
 void micro_wait (void);
 
 
-# 63
+# 72
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -3708,9 +3708,9 @@ struBouton Bouton[Bp_Max];
 void bouton_init (void);
 void bouton_refresh (void);
 
-# 9 "include\config.h"
+# 17 "include\config.h"
 typedef struct StructConfig {
-unsigned char Data[(32 * 3 + 5)];
+unsigned char Data[(32 * 3 + 5 * 3 + 5)];
 volatile unsigned char Index;
 volatile unsigned short Time1;
 unsigned short Time2;
@@ -3762,7 +3762,7 @@ struRegister Register;
 void register_write (unsigned char Output);
 void register_refresh (void);
 
-# 27 "include\test.h"
+# 30 "include\test.h"
 typedef struct StructTest{
 unsigned char Step;
 unsigned char Cpt;
@@ -3798,10 +3798,9 @@ struArm Arm;
 
 void armement_process (void);
 
-# 21 "include\feu.h"
+# 23 "include\feu.h"
 volatile unsigned char Decompte;
 volatile unsigned short Cpt1Sur20s;
-
 
 typedef struct StructFeu{
 unsigned char Step;
@@ -3983,8 +3982,15 @@ Test.Step = 0x08;
 }
 else if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 {
+if (Cf.Data[Test.Cpt*3] == 99)
+{
+Test.Step = 0x15;
+}
+else
+{
 register_write(Cf.Data[Test.Cpt*3]);
 Test.Step = 0x05;
+}
 Test.Time = Cptms;
 }
 break;
@@ -4003,10 +4009,31 @@ register_write(0);
 Test.Time = Cptms;
 }
 break;
+
+case 0x15:
+if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
+{
+Test.Step = 0x16;
+
+
+ecran_print_num(Cf.Data[Test.Cpt*3]);
+Test.Time = Cptms;
+}
+break;
+case 0x16:
+if ((((unsigned short) (Cptms - Test.Time) > 100) ? 1 : 0))
+{
+if (++Test.Cpt > (32 + 5 - 1)) {Test.Step = 0x08;}
+else {Test.Step = 0x04;}
+check_comutest(0);
+Test.Time = Cptms;
+}
+break;
+
 case 0x06:
 if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 {
-if (++Test.Cpt > 31) {Test.Step = 0x08;}
+if (++Test.Cpt > (32 + 5 - 1)) {Test.Step = 0x08;}
 else {Test.Step = 0x04;}
 check_comutest(0);
 Test.Time = Cptms;
@@ -4016,7 +4043,7 @@ case 0x07:
 if ( (Bouton[Bp_IdTest].State == 0)
 && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
 {
-if (++Test.Cpt > 31) {Test.Step = 0x08;}
+if (++Test.Cpt > (32 + 5 - 1)) {Test.Step = 0x08;}
 else {Test.Step = 0x04;}
 check_comutest(0);
 Test.Time = Cptms;
@@ -4025,7 +4052,7 @@ break;
 case 0x08:
 if (Test.Cpt != 0)
 {
-ecran_print_num(Cf.Data[96]);
+ecran_print_num(Cf.Data[(32 * 3 + 5 * 3)]);
 }
 else
 {
@@ -4074,7 +4101,7 @@ break;
 case 0x0C:
 if ((((unsigned short) (Cptms - Test.Time) > 20) ? 1 : 0))
 {
-if (++Test.Cpt > 31) {Test.Step = 0x0E;}
+if (++Test.Cpt > (32 - 1)) {Test.Step = 0x0E;}
 else {Test.Step = 0x0A;}
 check_comutest(0);
 Test.Time = Cptms;
@@ -4084,7 +4111,7 @@ case 0x0D:
 if ( (Bouton[Bp_IdTest].State == 0)
 && ((((unsigned short) (Cptms - Test.Time) > 500) ? 1 : 0)))
 {
-if (++Test.Cpt > 31) {Test.Step = 0x0E;}
+if (++Test.Cpt > (32 - 1)) {Test.Step = 0x0E;}
 else {Test.Step = 0x0A;}
 check_comutest(0);
 Test.Time = Cptms;

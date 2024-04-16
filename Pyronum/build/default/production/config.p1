@@ -1,15 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"25 include\micro.h
+"34 include\micro.h
 [s S327 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S327 StructState Armed Go Stop End ]
 [u S330 `uc 1 `S327 1 ]
 [n S330 . State Stat ]
-"32
+"41
 [s S328 :1 `uc 1 :1 `uc 1 ]
 [n S328 StructMod P_0 P_00 ]
 [u S331 `uc 1 `S328 1 ]
 [n S331 . Mods Mod ]
-"37
+"46
 [s S329 `us 1 `uc 1 `uc 1 `S330 1 `S331 1 ]
 [n S329 StructMicro Time Phase Step . . ]
 "13 include\bouton.h
@@ -18,8 +18,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6
 [s S332 `us 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S332 StructBouton Time Memo State Change ]
-"9 include\config.h
-[s S333 `uc + * -> 32 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
+"17 include\config.h
+[s S333 `uc + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
 [n S333 StructConfig Data Index Time1 Time2 IsLong ]
 "32 include\ecran.h
 [s S334 `uc -> 4 `i `*uc 1 `uc -> 4 `i `uc 1 `uc 1 `uc 1 `us 1 `uc 1 ]
@@ -27,13 +27,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\register.h
 [s S335 `uc -> 4 `i ]
 [n S335 StructRelay State ]
-"27 include\test.h
+"30 include\test.h
 [s S336 `uc 1 `uc 1 `us 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
 [n S336 StructTest Step Cpt Time U_Alim U_Infla Test1 Test2 Test3 Test4 Test5 Test6 Test7 ]
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"25 include\feu.h
+"26 include\feu.h
 [s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
 "16 include\feedback.h
@@ -2819,42 +2819,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 :U ..
 -> 48 `c
 -> 48 `c
+-> 49 `c
 -> 48 `c
--> 57 `c
 -> 0 `c
 ..
 ]
-[; ;micro.h: 5: const char Version[] = "0009";
-[; ;micro.h: 25: typedef struct StructState{
-[; ;micro.h: 26: unsigned Armed :1;
-[; ;micro.h: 27: unsigned Go :1;
-[; ;micro.h: 28: unsigned Stop :1;
-[; ;micro.h: 29: unsigned End :1;
-[; ;micro.h: 30: }StruState;
-[; ;micro.h: 32: typedef struct StructMod{
-[; ;micro.h: 33: unsigned P_0 :1;
-[; ;micro.h: 34: unsigned P_00 :1;
-[; ;micro.h: 35: }StruMode;
-[; ;micro.h: 37: typedef struct StructMicro {
-[; ;micro.h: 38: unsigned short Time;
-[; ;micro.h: 39: unsigned char Phase;
-[; ;micro.h: 40: unsigned char Step;
-[; ;micro.h: 41: union {
-[; ;micro.h: 42: unsigned char State;
-[; ;micro.h: 43: struct StructState Stat;
-[; ;micro.h: 44: };
-[; ;micro.h: 45: union {
-[; ;micro.h: 46: unsigned char Mods;
-[; ;micro.h: 47: struct StructMod Mod;
-[; ;micro.h: 48: };
-[; ;micro.h: 49: }struMicro;
-"51
+[; ;micro.h: 5: const char Version[] = "0010";
+[; ;micro.h: 34: typedef struct StructState{
+[; ;micro.h: 35: unsigned Armed :1;
+[; ;micro.h: 36: unsigned Go :1;
+[; ;micro.h: 37: unsigned Stop :1;
+[; ;micro.h: 38: unsigned End :1;
+[; ;micro.h: 39: }StruState;
+[; ;micro.h: 41: typedef struct StructMod{
+[; ;micro.h: 42: unsigned P_0 :1;
+[; ;micro.h: 43: unsigned P_00 :1;
+[; ;micro.h: 44: }StruMode;
+[; ;micro.h: 46: typedef struct StructMicro {
+[; ;micro.h: 47: unsigned short Time;
+[; ;micro.h: 48: unsigned char Phase;
+[; ;micro.h: 49: unsigned char Step;
+[; ;micro.h: 50: union {
+[; ;micro.h: 51: unsigned char State;
+[; ;micro.h: 52: struct StructState Stat;
+[; ;micro.h: 53: };
+[; ;micro.h: 54: union {
+[; ;micro.h: 55: unsigned char Mods;
+[; ;micro.h: 56: struct StructMod Mod;
+[; ;micro.h: 57: };
+[; ;micro.h: 58: }struMicro;
+"60
 [v _Micro `S329 ~T0 @X0 1 e ]
-[; ;micro.h: 51: struMicro Micro;
-[; ;micro.h: 53: void micro_config_rs (void);
-[; ;micro.h: 54: void micro_config (void);
-[; ;micro.h: 55: void micro_wait (void);
-[; ;micro.h: 64: extern void __nop(void);
+[; ;micro.h: 60: struMicro Micro;
+[; ;micro.h: 62: void micro_config_rs (void);
+[; ;micro.h: 63: void micro_config (void);
+[; ;micro.h: 64: void micro_wait (void);
+[; ;micro.h: 73: extern void __nop(void);
 [; ;analog.h: 15: unsigned short ana_read (unsigned char ANx);
 [; ;hardware.h: 15: void hw_config(void);
 [; ;eeprom.h: 4: unsigned char eeprom_read (unsigned char Address);
@@ -2878,19 +2878,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bouton.h: 13: struBouton Bouton[Bp_Max];
 [; ;bouton.h: 15: void bouton_init (void);
 [; ;bouton.h: 16: void bouton_refresh (void);
-[; ;config.h: 9: typedef struct StructConfig {
-[; ;config.h: 10: unsigned char Data[(32 * 3 + 5)];
-[; ;config.h: 11: volatile unsigned char Index;
-[; ;config.h: 12: volatile unsigned short Time1;
-[; ;config.h: 13: unsigned short Time2;
-[; ;config.h: 14: unsigned IsLong :1;
-[; ;config.h: 15: }struConfig;
-"17 include\config.h
+[; ;config.h: 17: typedef struct StructConfig {
+[; ;config.h: 18: unsigned char Data[(32 * 3 + 5 * 3 + 5)];
+[; ;config.h: 19: volatile unsigned char Index;
+[; ;config.h: 20: volatile unsigned short Time1;
+[; ;config.h: 21: unsigned short Time2;
+[; ;config.h: 22: unsigned IsLong :1;
+[; ;config.h: 23: }struConfig;
+"25 include\config.h
 [v _Cf `S333 ~T0 @X0 1 e ]
-[; ;config.h: 17: struConfig Cf;
-[; ;config.h: 19: unsigned char cf_check (void);
-[; ;config.h: 20: void cf_check_and_display (void);
-[; ;config.h: 21: void cf_rcv (void);
+[; ;config.h: 25: struConfig Cf;
+[; ;config.h: 27: unsigned char cf_check (void);
+[; ;config.h: 28: void cf_check_and_display (void);
+[; ;config.h: 29: void cf_rcv (void);
 "27 include\ecran.h
 [v _Blank `Cuc ~T0 @X0 -> 0 `x e ]
 [i _Blank
@@ -2965,28 +2965,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;register.h: 19: struRegister Register;
 [; ;register.h: 21: void register_write (unsigned char Output);
 [; ;register.h: 22: void register_refresh (void);
-[; ;test.h: 27: typedef struct StructTest{
-[; ;test.h: 28: unsigned char Step;
-[; ;test.h: 29: unsigned char Cpt;
-[; ;test.h: 30: unsigned short Time;
-[; ;test.h: 31: float U_Alim;
-[; ;test.h: 32: float U_Infla;
-[; ;test.h: 33: float Test1;
-[; ;test.h: 34: float Test2;
-[; ;test.h: 35: float Test3;
-[; ;test.h: 36: float Test4;
-[; ;test.h: 37: float Test5;
-[; ;test.h: 38: float Test6;
-[; ;test.h: 39: float Test7;
-[; ;test.h: 40: }struTest;
-"42 include\test.h
+[; ;test.h: 30: typedef struct StructTest{
+[; ;test.h: 31: unsigned char Step;
+[; ;test.h: 32: unsigned char Cpt;
+[; ;test.h: 33: unsigned short Time;
+[; ;test.h: 34: float U_Alim;
+[; ;test.h: 35: float U_Infla;
+[; ;test.h: 36: float Test1;
+[; ;test.h: 37: float Test2;
+[; ;test.h: 38: float Test3;
+[; ;test.h: 39: float Test4;
+[; ;test.h: 40: float Test5;
+[; ;test.h: 41: float Test6;
+[; ;test.h: 42: float Test7;
+[; ;test.h: 43: }struTest;
+"45 include\test.h
 [v _Test `S336 ~T0 @X0 1 e ]
-[; ;test.h: 42: struTest Test;
-[; ;test.h: 44: void check_comutest(unsigned char State);
-[; ;test.h: 45: unsigned char check_program_0 (void);
-[; ;test.h: 46: void check_idtest (void);
-[; ;test.h: 47: void check_bpon (void);
-[; ;test.h: 48: unsigned char test_process (void);
+[; ;test.h: 45: struTest Test;
+[; ;test.h: 47: void check_comutest(unsigned char State);
+[; ;test.h: 48: unsigned char check_program_0 (void);
+[; ;test.h: 49: void check_idtest (void);
+[; ;test.h: 50: void check_bpon (void);
+[; ;test.h: 51: unsigned char test_process (void);
 [; ;armement.h: 12: typedef struct StructArm{
 [; ;armement.h: 13: unsigned char Step;
 [; ;armement.h: 14: unsigned char Cpt;
@@ -2997,30 +2997,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"21 include\feu.h
+"23 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 21: volatile unsigned char Decompte;
-"22
+[; ;feu.h: 23: volatile unsigned char Decompte;
+"24
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 25: typedef struct StructFeu{
-[; ;feu.h: 26: unsigned char Step;
-[; ;feu.h: 27: unsigned char Cpt;
-[; ;feu.h: 28: unsigned char Decompte;
-[; ;feu.h: 29: unsigned short SavedTime;
-[; ;feu.h: 30: unsigned short TimeToFire;
-[; ;feu.h: 31: unsigned short Time;
-[; ;feu.h: 32: unsigned short TimeStart;
-[; ;feu.h: 33: unsigned char LastOutput;
-[; ;feu.h: 34: unsigned char NextOutput;
-[; ;feu.h: 35: unsigned CanStopStart :1;
-[; ;feu.h: 36: unsigned SaveTime :1;
-[; ;feu.h: 37: }struFeu;
-"39
+[; ;feu.h: 24: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 26: typedef struct StructFeu{
+[; ;feu.h: 27: unsigned char Step;
+[; ;feu.h: 28: unsigned char Cpt;
+[; ;feu.h: 29: unsigned char Decompte;
+[; ;feu.h: 30: unsigned short SavedTime;
+[; ;feu.h: 31: unsigned short TimeToFire;
+[; ;feu.h: 32: unsigned short Time;
+[; ;feu.h: 33: unsigned short TimeStart;
+[; ;feu.h: 34: unsigned char LastOutput;
+[; ;feu.h: 35: unsigned char NextOutput;
+[; ;feu.h: 36: unsigned CanStopStart :1;
+[; ;feu.h: 37: unsigned SaveTime :1;
+[; ;feu.h: 38: }struFeu;
+"40
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 39: struFeu Feu;
-[; ;feu.h: 41: void feu_check_bp (void);
-[; ;feu.h: 42: void feu_process (void);
+[; ;feu.h: 40: struFeu Feu;
+[; ;feu.h: 42: void feu_check_bp (void);
+[; ;feu.h: 43: void feu_process (void);
 [; ;feedback.h: 16: typedef struct StructFeedback {
 [; ;feedback.h: 17: unsigned short Period;
 [; ;feedback.h: 18: unsigned char Pulse;
@@ -3046,11 +3046,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;config.c: 6: unsigned long calcul;
 [; ;config.c: 7: unsigned char i, valid = 0;
 [e = _valid -> -> 0 `i `uc ]
-[; ;config.c: 9: for (i = 0, calcul = 0; i < 32; i ++)
+[; ;config.c: 9: for (i = 0, calcul = 0; i < (32 + 5); i ++)
 "9
 {
 [e ; = _i -> -> 0 `i `uc = _calcul -> -> -> 0 `i `l `ul ]
-[e $ < -> _i `i -> 32 `i 341  ]
+[e $ < -> _i `i + -> 32 `i -> 5 `i 341  ]
 [e $U 342  ]
 "10
 [e :U 341 ]
@@ -3063,17 +3063,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "9
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 341  ]
+[e $ < -> _i `i + -> 32 `i -> 5 `i 341  ]
 [e :U 342 ]
 "12
 }
 [; ;config.c: 12: }
-[; ;config.c: 14: if ( (((calcul >> 24) & 0x000000FF) == Cf.Data[97])
-[; ;config.c: 15: && (((calcul >> 16) & 0x000000FF) == Cf.Data[98])
-[; ;config.c: 16: && (((calcul >> 8) & 0x000000FF) == Cf.Data[99])
-[; ;config.c: 17: && ((calcul & 0x000000FF) == Cf.Data[100]))
+[; ;config.c: 14: if ( (((calcul >> 24) & 0x000000FF) == Cf.Data[((32 * 3 + 5 * 3) + 1)])
+[; ;config.c: 15: && (((calcul >> 16) & 0x000000FF) == Cf.Data[((32 * 3 + 5 * 3) + 2)])
+[; ;config.c: 16: && (((calcul >> 8) & 0x000000FF) == Cf.Data[((32 * 3 + 5 * 3) + 3)])
+[; ;config.c: 17: && ((calcul & 0x000000FF) == Cf.Data[((32 * 3 + 5 * 3) + 4)]))
 "17
-[e $ ! && && && == & >> _calcul -> 24 `i -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> -> 97 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul == & >> _calcul -> 16 `i -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> -> 98 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul == & >> _calcul -> 8 `i -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> -> 99 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul == & _calcul -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> -> 100 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul 344  ]
+[e $ ! && && && == & >> _calcul -> 24 `i -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 1 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul == & >> _calcul -> 16 `i -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 2 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul == & >> _calcul -> 8 `i -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul == & _calcul -> -> -> 255 `i `l `ul -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 4 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `ul 344  ]
 [; ;config.c: 18: {
 "18
 {
@@ -3084,9 +3084,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 344 ]
 [; ;config.c: 20: }
-[; ;config.c: 22: if ((Cf.Data[97] == 0) && (Cf.Data[98] == 0) && (Cf.Data[99] == 0) && (Cf.Data[100] == 0))
+[; ;config.c: 22: if ((Cf.Data[((32 * 3 + 5 * 3) + 1)] == 0) && (Cf.Data[((32 * 3 + 5 * 3) + 2)] == 0) && (Cf.Data[((32 * 3 + 5 * 3) + 3)] == 0) && (Cf.Data[((32 * 3 + 5 * 3) + 4)] == 0))
 "22
-[e $ ! && && && == -> *U + &U . _Cf 0 * -> -> -> 97 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> -> 98 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> -> 99 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> -> 100 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i 345  ]
+[e $ ! && && && == -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 1 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 2 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 4 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 0 `i 345  ]
 [; ;config.c: 23: {
 "23
 {
@@ -3129,11 +3129,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _last_out `uc ~T0 @X0 1 a ]
 [; ;config.c: 36: unsigned char last_out = 0;
 [e = _last_out -> -> 0 `i `uc ]
-[; ;config.c: 38: for (i = 0; i < 32; i ++)
+[; ;config.c: 38: for (i = 0; i < (32 + 5); i ++)
 "38
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 348  ]
+[e $ < -> _i `i + -> 32 `i -> 5 `i 348  ]
 [e $U 349  ]
 "39
 [e :U 348 ]
@@ -3191,16 +3191,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "38
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 348  ]
+[e $ < -> _i `i + -> 32 `i -> 5 `i 348  ]
 [e :U 349 ]
 "53
 }
 [; ;config.c: 52: }
 [; ;config.c: 53: }
-[; ;config.c: 55: if ( ((last_out != 0) && (last_out == Cf.Data[96]))
-[; ;config.c: 56: || ((last_out == 0) && (Cf.Data[i*3] == Cf.Data[96])))
+[; ;config.c: 55: if ( ((last_out != 0) && (last_out == Cf.Data[(32 * 3 + 5 * 3)]))
+[; ;config.c: 56: || ((last_out == 0) && (Cf.Data[i*3] == Cf.Data[(32 * 3 + 5 * 3)])))
 "56
-[e $ ! || && != -> _last_out `i -> 0 `i == -> _last_out `i -> *U + &U . _Cf 0 * -> -> -> 96 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i && == -> _last_out `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> * -> _i `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> *U + &U . _Cf 0 * -> -> -> 96 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i 356  ]
+[e $ ! || && != -> _last_out `i -> 0 `i == -> _last_out `i -> *U + &U . _Cf 0 * -> -> + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i && == -> _last_out `i -> 0 `i == -> *U + &U . _Cf 0 * -> -> * -> _i `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> *U + &U . _Cf 0 * -> -> + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i 356  ]
 [; ;config.c: 57: {
 "57
 {
@@ -3219,143 +3219,150 @@ Version 3.2 HI-TECH Software Intermediate Code
 "62
 [e :UE 347 ]
 }
-"65
-[v _cf_checkrange `(b ~T0 @X0 1 sf ]
 "66
+[v _cf_checkrange `(b ~T0 @X0 1 sf ]
+"67
 {
-[; ;config.c: 65: static bit cf_checkrange (void)
-[; ;config.c: 66: {
+[; ;config.c: 66: static bit cf_checkrange (void)
+[; ;config.c: 67: {
 [e :U _cf_checkrange ]
 [f ]
-"67
+"68
 [v _i `uc ~T0 @X0 1 a ]
 [v _valid `uc ~T0 @X0 1 a ]
-[; ;config.c: 67: unsigned char i, valid = 0;
+[; ;config.c: 68: unsigned char i, valid = 0;
 [e = _valid -> -> 0 `i `uc ]
-[; ;config.c: 69: for (i = 0; i < 32; i ++)
-"69
+[; ;config.c: 70: for (i = 0; i < (32 + 5); i ++)
+"70
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 358  ]
+[e $ < -> _i `i + -> 32 `i -> 5 `i 358  ]
 [e $U 359  ]
-"70
-[e :U 358 ]
-[; ;config.c: 70: {
-{
-[; ;config.c: 71: if (Cf.Data[i*3] > 32) {return valid;}
 "71
-[e $ ! > -> *U + &U . _Cf 0 * -> -> * -> _i `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 32 `i 361  ]
+[e :U 358 ]
+[; ;config.c: 71: {
 {
+[; ;config.c: 72: if ( (Cf.Data[i*3] > 32)
+[; ;config.c: 73: && (Cf.Data[i*3] != 99))
+"73
+[e $ ! && > -> *U + &U . _Cf 0 * -> -> * -> _i `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 32 `i != -> *U + &U . _Cf 0 * -> -> * -> _i `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 99 `i 361  ]
+[; ;config.c: 74: {
+"74
+{
+[; ;config.c: 75: return valid;
+"75
 [e ) -> _valid `b ]
 [e $UE 357  ]
+"76
 }
 [e :U 361 ]
-"72
+"77
 }
-"69
+"70
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 358  ]
+[e $ < -> _i `i + -> 32 `i -> 5 `i 358  ]
 [e :U 359 ]
-"72
+"77
 }
-[; ;config.c: 72: }
-[; ;config.c: 74: valid = 1;
-"74
+[; ;config.c: 76: }
+[; ;config.c: 77: }
+[; ;config.c: 79: valid = 1;
+"79
 [e = _valid -> -> 1 `i `uc ]
-[; ;config.c: 76: return valid;
-"76
+[; ;config.c: 81: return valid;
+"81
 [e ) -> _valid `b ]
 [e $UE 357  ]
-[; ;config.c: 77: }
-"77
+[; ;config.c: 82: }
+"82
 [e :UE 357 ]
 }
-"79
+"84
 [v _cf_check `(uc ~T0 @X0 1 ef ]
-"80
+"85
 {
-[; ;config.c: 79: unsigned char cf_check (void)
-[; ;config.c: 80: {
+[; ;config.c: 84: unsigned char cf_check (void)
+[; ;config.c: 85: {
 [e :U _cf_check ]
 [f ]
-"81
-[v _valid `uc ~T0 @X0 1 a ]
-[; ;config.c: 81: unsigned char valid = 0;
-[e = _valid -> -> 0 `i `uc ]
-[; ;config.c: 83: if (cf_checksum() && cf_checkout() && cf_checkrange())
-"83
-[e $ ! && && ( _cf_checksum ..  ( _cf_checkout ..  ( _cf_checkrange ..  363  ]
-[; ;config.c: 84: {
-"84
-{
-[; ;config.c: 85: valid = 1;
-"85
-[e = _valid -> -> 1 `i `uc ]
 "86
+[v _valid `uc ~T0 @X0 1 a ]
+[; ;config.c: 86: unsigned char valid = 0;
+[e = _valid -> -> 0 `i `uc ]
+[; ;config.c: 88: if (cf_checksum() && cf_checkout() && cf_checkrange())
+"88
+[e $ ! && && ( _cf_checksum ..  ( _cf_checkout ..  ( _cf_checkrange ..  363  ]
+[; ;config.c: 89: {
+"89
+{
+[; ;config.c: 90: valid = 1;
+"90
+[e = _valid -> -> 1 `i `uc ]
+"91
 }
 [e :U 363 ]
-[; ;config.c: 86: }
-[; ;config.c: 88: return valid;
-"88
+[; ;config.c: 91: }
+[; ;config.c: 93: return valid;
+"93
 [e ) _valid ]
 [e $UE 362  ]
-[; ;config.c: 89: }
-"89
+[; ;config.c: 94: }
+"94
 [e :UE 362 ]
 }
-"92
+"97
 [v _cf_check_and_display `(v ~T0 @X0 1 ef ]
-"93
+"98
 {
-[; ;config.c: 92: void cf_check_and_display (void)
-[; ;config.c: 93: {
+[; ;config.c: 97: void cf_check_and_display (void)
+[; ;config.c: 98: {
 [e :U _cf_check_and_display ]
 [f ]
-"94
-[v _configOk `uc ~T0 @X0 1 a ]
-[; ;config.c: 94: unsigned char configOk = 0;
-[e = _configOk -> -> 0 `i `uc ]
-"95
-[v _temp `us ~T0 @X0 1 a ]
-[; ;config.c: 95: unsigned short temp;
-[; ;config.c: 97: eeprom_read_array(&Cf.Data[0], 0, (32 * 3 + 5));
-"97
-[e ( _eeprom_read_array (3 , , &U *U + &U . _Cf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc -> + * -> 32 `i -> 3 `i -> 5 `i `uc ]
-[; ;config.c: 99: configOk = cf_check();
 "99
-[e = _configOk ( _cf_check ..  ]
-[; ;config.c: 101: if (configOk == 1)
-"101
-[e $ ! == -> _configOk `i -> 1 `i 365  ]
-[; ;config.c: 102: {
+[v _configOk `uc ~T0 @X0 1 a ]
+[; ;config.c: 99: unsigned char configOk = 0;
+[e = _configOk -> -> 0 `i `uc ]
+"100
+[v _temp `us ~T0 @X0 1 a ]
+[; ;config.c: 100: unsigned short temp;
+[; ;config.c: 102: eeprom_read_array(&Cf.Data[0], 0, (32 * 3 + 5 * 3 + 5));
 "102
-{
-[; ;config.c: 104: if (Cf.IsLong == 1)
+[e ( _eeprom_read_array (3 , , &U *U + &U . _Cf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i `uc ]
+[; ;config.c: 104: configOk = cf_check();
 "104
-[e $ ! == -> . _Cf 4 `i -> 1 `i 366  ]
-[; ;config.c: 105: {
-"105
-{
-[; ;config.c: 106: Ecran.Digit[0] = ' ';
+[e = _configOk ( _cf_check ..  ]
+[; ;config.c: 106: if (configOk == 1)
 "106
-[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 32 `ui `uc ]
-[; ;config.c: 107: Ecran.Digit[1] = ' ';
+[e $ ! == -> _configOk `i -> 1 `i 365  ]
+[; ;config.c: 107: {
 "107
-[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 32 `ui `uc ]
-[; ;config.c: 108: Ecran.Digit[2] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[98]) & 0xF0) >> 4)));
-"108
-[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> >> -> -> & -> *U + &U . _Cf 0 * -> -> -> 98 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 240 `i `uc `i -> 4 `i `uc ]
-[; ;config.c: 109: Ecran.Digit[3] = HexToAscii(((unsigned char) ((Cf.Data[98]) & 0x0F)));
+{
+[; ;config.c: 109: if (Cf.IsLong == 1)
 "109
-[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> & -> *U + &U . _Cf 0 * -> -> -> 98 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 15 `i `uc ]
-[; ;config.c: 111: Ecran.Digits = Ecran.Digit;
+[e $ ! == -> . _Cf 4 `i -> 1 `i 366  ]
+[; ;config.c: 110: {
+"110
+{
+[; ;config.c: 111: Ecran.Digit[0] = ' ';
 "111
-[e = . _Ecran 1 &U . _Ecran 0 ]
-[; ;config.c: 113: temp = Cptms;
+[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 32 `ui `uc ]
+[; ;config.c: 112: Ecran.Digit[1] = ' ';
+"112
+[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux -> -> 32 `ui `uc ]
+[; ;config.c: 113: Ecran.Digit[2] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[((32 * 3 + 5 * 3) + 2)]) & 0xF0) >> 4)));
 "113
+[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> >> -> -> & -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 2 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 240 `i `uc `i -> 4 `i `uc ]
+[; ;config.c: 114: Ecran.Digit[3] = HexToAscii(((unsigned char) ((Cf.Data[((32 * 3 + 5 * 3) + 2)]) & 0x0F)));
+"114
+[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> & -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 2 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 15 `i `uc ]
+[; ;config.c: 116: Ecran.Digits = Ecran.Digit;
+"116
+[e = . _Ecran 1 &U . _Ecran 0 ]
+[; ;config.c: 118: temp = Cptms;
+"118
 [e = _temp _Cptms ]
-[; ;config.c: 115: while((((unsigned short) (Cptms - temp) < 1000) ? 1 : 0)) {ecran_refresh();}
-"115
+[; ;config.c: 120: while((((unsigned short) (Cptms - temp) < 1000) ? 1 : 0)) {ecran_refresh();}
+"120
 [e $U 367  ]
 [e :U 368 ]
 {
@@ -3364,196 +3371,196 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 367 ]
 [e $ != ? < -> -> - -> _Cptms `ui -> _temp `ui `us `ui -> -> 1000 `i `ui : -> 1 `i -> 0 `i -> 0 `i 368  ]
 [e :U 369 ]
-"116
+"121
 }
 [e :U 366 ]
-[; ;config.c: 116: }
-[; ;config.c: 118: Ecran.Digit[0] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[99]) & 0xF0) >> 4)));
-"118
-[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> >> -> -> & -> *U + &U . _Cf 0 * -> -> -> 99 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 240 `i `uc `i -> 4 `i `uc ]
-[; ;config.c: 119: Ecran.Digit[1] = HexToAscii(((unsigned char) ((Cf.Data[99]) & 0x0F)));
-"119
-[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> & -> *U + &U . _Cf 0 * -> -> -> 99 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 15 `i `uc ]
-[; ;config.c: 120: Ecran.Digit[2] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[100]) & 0xF0) >> 4)));
-"120
-[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> >> -> -> & -> *U + &U . _Cf 0 * -> -> -> 100 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 240 `i `uc `i -> 4 `i `uc ]
-[; ;config.c: 121: Ecran.Digit[3] = HexToAscii(((unsigned char) ((Cf.Data[100]) & 0x0F)));
-"121
-[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> & -> *U + &U . _Cf 0 * -> -> -> 100 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 15 `i `uc ]
-[; ;config.c: 123: Ecran.Digits = Ecran.Digit;
+[; ;config.c: 121: }
+[; ;config.c: 123: Ecran.Digit[0] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[((32 * 3 + 5 * 3) + 3)]) & 0xF0) >> 4)));
 "123
-[e = . _Ecran 1 &U . _Ecran 0 ]
+[e = *U + &U . _Ecran 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> >> -> -> & -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 240 `i `uc `i -> 4 `i `uc ]
+[; ;config.c: 124: Ecran.Digit[1] = HexToAscii(((unsigned char) ((Cf.Data[((32 * 3 + 5 * 3) + 3)]) & 0x0F)));
 "124
-}
-[; ;config.c: 124: }
-[e $U 370  ]
+[e = *U + &U . _Ecran 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> & -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 3 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 15 `i `uc ]
+[; ;config.c: 125: Ecran.Digit[2] = HexToAscii(((unsigned char) ((unsigned char) ((Cf.Data[((32 * 3 + 5 * 3) + 4)]) & 0xF0) >> 4)));
 "125
-[e :U 365 ]
-[; ;config.c: 125: else
-[; ;config.c: 126: {
+[e = *U + &U . _Ecran 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> >> -> -> & -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 4 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 240 `i `uc `i -> 4 `i `uc ]
+[; ;config.c: 126: Ecran.Digit[3] = HexToAscii(((unsigned char) ((Cf.Data[((32 * 3 + 5 * 3) + 4)]) & 0x0F)));
 "126
-{
-[; ;config.c: 127: ecran_print_one_char(3, 'E');
-"127
-[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 69 `ui `uc ]
-[; ;config.c: 128: while (1);
+[e = *U + &U . _Ecran 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _Ecran 0 `ui `ux ( _HexToAscii (1 -> & -> *U + &U . _Cf 0 * -> -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 4 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux `i -> 15 `i `uc ]
+[; ;config.c: 128: Ecran.Digits = Ecran.Digit;
 "128
+[e = . _Ecran 1 &U . _Ecran 0 ]
+"129
+}
+[; ;config.c: 129: }
+[e $U 370  ]
+"130
+[e :U 365 ]
+[; ;config.c: 130: else
+[; ;config.c: 131: {
+"131
+{
+[; ;config.c: 132: ecran_print_one_char(3, 'E');
+"132
+[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 69 `ui `uc ]
+[; ;config.c: 133: while (1);
+"133
 [e :U 372 ]
 [e :U 371 ]
 [e $U 372  ]
 [e :U 373 ]
-"129
+"134
 }
 [e :U 370 ]
-[; ;config.c: 129: }
-[; ;config.c: 130: }
-"130
+[; ;config.c: 134: }
+[; ;config.c: 135: }
+"135
 [e :UE 364 ]
 }
-"132
+"137
 [v _cf_rcv `(v ~T0 @X0 1 ef ]
-"133
+"138
 {
-[; ;config.c: 132: void cf_rcv (void)
-[; ;config.c: 133: {
+[; ;config.c: 137: void cf_rcv (void)
+[; ;config.c: 138: {
 [e :U _cf_rcv ]
 [f ]
-"134
+"139
 [v _i `uc ~T0 @X0 1 a ]
 [v _temp `uc ~T0 @X0 1 a ]
-[; ;config.c: 134: unsigned char i, temp = 0;
+[; ;config.c: 139: unsigned char i, temp = 0;
 [e = _temp -> -> 0 `i `uc ]
-[; ;config.c: 136: if ((((unsigned short) (Cptms - Cf.Time2) > 100) ? 1 : 0))
-"136
-[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Cf 3 `ui `us `ui -> -> 100 `i `ui : -> 1 `i -> 0 `i -> 0 `i 375  ]
-[; ;config.c: 137: {
-"137
-{
-[; ;config.c: 138: Cf.Time2 = Cptms;
-"138
-[e = . _Cf 3 _Cptms ]
-[; ;config.c: 140: (INTCONbits.GIE = 0);
-"140
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;config.c: 141: if ((((unsigned short) (Cptms - Cf.Time1) > 100) ? 1 : 0)) {Cf.Index = 0;}
+[; ;config.c: 141: if ((((unsigned short) (Cptms - Cf.Time2) > 100) ? 1 : 0))
 "141
+[e $ ! != ? > -> -> - -> _Cptms `ui -> . _Cf 3 `ui `us `ui -> -> 100 `i `ui : -> 1 `i -> 0 `i -> 0 `i 375  ]
+[; ;config.c: 142: {
+"142
+{
+[; ;config.c: 143: Cf.Time2 = Cptms;
+"143
+[e = . _Cf 3 _Cptms ]
+[; ;config.c: 145: (INTCONbits.GIE = 0);
+"145
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;config.c: 146: if ((((unsigned short) (Cptms - Cf.Time1) > 100) ? 1 : 0)) {Cf.Index = 0;}
+"146
 [e $ ! != ? > -> -> - -> _Cptms `ui -> . _Cf 2 `ui `us `ui -> -> 100 `i `ui : -> 1 `i -> 0 `i -> 0 `i 376  ]
 {
 [e = . _Cf 1 -> -> 0 `i `uc ]
 }
 [e :U 376 ]
-[; ;config.c: 142: (INTCONbits.GIE = 1);
-"142
+[; ;config.c: 147: (INTCONbits.GIE = 1);
+"147
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"143
-}
-[; ;config.c: 143: }
-[e $U 377  ]
-"144
-[e :U 375 ]
-[; ;config.c: 144: else if (Cf.Index == (32 * 3 + 5))
-[e $ ! == -> . _Cf 1 `i + * -> 32 `i -> 3 `i -> 5 `i 378  ]
-[; ;config.c: 145: {
-"145
-{
-[; ;config.c: 146: RCIE = 0;
-"146
-[e = _RCIE -> -> 0 `i `b ]
-[; ;config.c: 148: temp = cf_check();
 "148
-[e = _temp ( _cf_check ..  ]
-[; ;config.c: 150: if (temp == 0)
-"150
-[e $ ! == -> _temp `i -> 0 `i 379  ]
-[; ;config.c: 151: {
-"151
-{
-[; ;config.c: 152: ecran_print_one_char(3, 'E');
-"152
-[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 69 `ui `uc ]
-"153
 }
-[; ;config.c: 153: }
-[e $U 380  ]
-"154
-[e :U 379 ]
-[; ;config.c: 154: else
-[; ;config.c: 155: {
-"155
+[; ;config.c: 148: }
+[e $U 377  ]
+"149
+[e :U 375 ]
+[; ;config.c: 149: else if (Cf.Index == (32 * 3 + 5 * 3 + 5))
+[e $ ! == -> . _Cf 1 `i + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i 378  ]
+[; ;config.c: 150: {
+"150
 {
-[; ;config.c: 157: eeprom_write_array(&Cf.Data[0], 0, (32 * 3 + 5));
+[; ;config.c: 151: RCIE = 0;
+"151
+[e = _RCIE -> -> 0 `i `b ]
+[; ;config.c: 153: temp = cf_check();
+"153
+[e = _temp ( _cf_check ..  ]
+[; ;config.c: 155: if (temp == 0)
+"155
+[e $ ! == -> _temp `i -> 0 `i 379  ]
+[; ;config.c: 156: {
+"156
+{
+[; ;config.c: 157: ecran_print_one_char(3, 'E');
 "157
-[e ( _eeprom_write_array (3 , , &U *U + &U . _Cf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc -> + * -> 32 `i -> 3 `i -> 5 `i `uc ]
-[; ;config.c: 159: for (i = 0; i < (32 * 3 + 5); i ++)
+[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 69 `ui `uc ]
+"158
+}
+[; ;config.c: 158: }
+[e $U 380  ]
 "159
+[e :U 379 ]
+[; ;config.c: 159: else
+[; ;config.c: 160: {
+"160
+{
+[; ;config.c: 162: eeprom_write_array(&Cf.Data[0], 0, (32 * 3 + 5 * 3 + 5));
+"162
+[e ( _eeprom_write_array (3 , , &U *U + &U . _Cf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i `uc ]
+[; ;config.c: 164: for (i = 0; i < (32 * 3 + 5 * 3 + 5); i ++)
+"164
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i + * -> 32 `i -> 3 `i -> 5 `i 381  ]
+[e $ < -> _i `i + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i 381  ]
 [e $U 382  ]
-"160
+"165
 [e :U 381 ]
-[; ;config.c: 160: {
+[; ;config.c: 165: {
 {
-[; ;config.c: 161: Cf.Data[i] = 0;
-"161
-[e = *U + &U . _Cf 0 * -> _i `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc ]
-"162
-}
-"159
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i + * -> 32 `i -> 3 `i -> 5 `i 381  ]
-[e :U 382 ]
-"162
-}
-[; ;config.c: 162: }
-[; ;config.c: 164: eeprom_read_array(&Cf.Data[0], 0, (32 * 3 + 5));
-"164
-[e ( _eeprom_read_array (3 , , &U *U + &U . _Cf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc -> + * -> 32 `i -> 3 `i -> 5 `i `uc ]
-[; ;config.c: 166: temp = cf_check();
+[; ;config.c: 166: Cf.Data[i] = 0;
 "166
-[e = _temp ( _cf_check ..  ]
-[; ;config.c: 168: if (temp == 0)
-"168
-[e $ ! == -> _temp `i -> 0 `i 384  ]
-[; ;config.c: 169: {
+[e = *U + &U . _Cf 0 * -> _i `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc ]
+"167
+}
+"164
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i 381  ]
+[e :U 382 ]
+"167
+}
+[; ;config.c: 167: }
+[; ;config.c: 169: eeprom_read_array(&Cf.Data[0], 0, (32 * 3 + 5 * 3 + 5));
 "169
-{
-[; ;config.c: 170: ecran_print_one_char(3, 'E');
-"170
-[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 69 `ui `uc ]
+[e ( _eeprom_read_array (3 , , &U *U + &U . _Cf 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Cf 0 `ui `ux -> -> 0 `i `uc -> + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i `uc ]
+[; ;config.c: 171: temp = cf_check();
 "171
-}
-[; ;config.c: 171: }
-[e $U 385  ]
-"172
-[e :U 384 ]
-[; ;config.c: 172: else
-[; ;config.c: 173: {
+[e = _temp ( _cf_check ..  ]
+[; ;config.c: 173: if (temp == 0)
 "173
-{
-[; ;config.c: 174: ecran_print_one_char(3, 'P');
+[e $ ! == -> _temp `i -> 0 `i 384  ]
+[; ;config.c: 174: {
 "174
-[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 80 `ui `uc ]
+{
+[; ;config.c: 175: ecran_print_one_char(3, 'E');
 "175
-}
-[e :U 385 ]
+[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 69 `ui `uc ]
 "176
 }
-[e :U 380 ]
-[; ;config.c: 175: }
 [; ;config.c: 176: }
-[; ;config.c: 178: Cf.Index = 0;
+[e $U 385  ]
+"177
+[e :U 384 ]
+[; ;config.c: 177: else
+[; ;config.c: 178: {
 "178
-[e = . _Cf 1 -> -> 0 `i `uc ]
-[; ;config.c: 180: RCIE = 1;
+{
+[; ;config.c: 179: ecran_print_one_char(3, 'P');
+"179
+[e ( _ecran_print_one_char (2 , -> -> 3 `i `uc -> -> 80 `ui `uc ]
 "180
-[e = _RCIE -> -> 1 `i `b ]
+}
+[e :U 385 ]
 "181
 }
-[e :U 378 ]
-"182
-[e :U 377 ]
+[e :U 380 ]
+[; ;config.c: 180: }
 [; ;config.c: 181: }
-[; ;config.c: 182: }
+[; ;config.c: 183: Cf.Index = 0;
+"183
+[e = . _Cf 1 -> -> 0 `i `uc ]
+[; ;config.c: 185: RCIE = 1;
+"185
+[e = _RCIE -> -> 1 `i `b ]
+"186
+}
+[e :U 378 ]
+"187
+[e :U 377 ]
+[; ;config.c: 186: }
+[; ;config.c: 187: }
 [e :UE 374 ]
 }

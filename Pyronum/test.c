@@ -150,10 +150,17 @@ byte test_process (void)
 			}
 			else if (TempsSup(Test.Time, TDef20ms))
 			{
-				register_write(Cf.Data[Test.Cpt*3]);
-				Test.Step = TEST_INFLA_2;
-				Test.Time = Cptms;
-			}
+                if (Cf.Data[Test.Cpt*3] == PAUSE_VALUE) // MOD_V0010
+                {
+                    Test.Step = TEST_NO_INFLA_PRINT;
+                }
+                else
+                {
+                    register_write(Cf.Data[Test.Cpt*3]);
+                    Test.Step = TEST_INFLA_2;
+                }
+                Test.Time = Cptms;
+            }
 			break;
 		case TEST_INFLA_2:	
 			if (TempsSup(Test.Time, TDef20ms))
@@ -170,11 +177,32 @@ byte test_process (void)
 				Test.Time = Cptms;
 			}
 			break;
+        // debut MOD_V0010
+        case TEST_NO_INFLA_PRINT:	
+			if (TempsSup(Test.Time, TDef20ms))
+			{
+				Test.Step = TEST_NO_INFLA_PAUSE;
+
+				// Affiche le num de la pause
+				ecran_print_num(Cf.Data[Test.Cpt*3]);
+				Test.Time = Cptms;
+			}
+			break;
+        case TEST_NO_INFLA_PAUSE:
+			if (TempsSup(Test.Time, TDef100ms))
+			{
+				if (++Test.Cpt > (NB_RELAY + NB_PAUSE_MAX - 1))	{Test.Step = TEST_FIN_INFLA;} // MOD_V0010
+				else                                            {Test.Step = TEST_INFLA;}
+				check_comutest(0);
+				Test.Time = Cptms;
+			}
+			break;
+        // fin MOD_V0010
 		case TEST_INFLA_OK:
 			if (TempsSup(Test.Time, TDef20ms))
 			{
-				if (++Test.Cpt > 31)	{Test.Step = TEST_FIN_INFLA;}
-				else					{Test.Step = TEST_INFLA;}
+				if (++Test.Cpt > (NB_RELAY + NB_PAUSE_MAX - 1))	{Test.Step = TEST_FIN_INFLA;} // MOD_V0010
+				else                                            {Test.Step = TEST_INFLA;}
 				check_comutest(0);
 				Test.Time = Cptms;
 			}
@@ -183,8 +211,8 @@ byte test_process (void)
 			if (	(Bouton[Bp_IdTest].State == 0)
 				&&	(TempsSup(Test.Time, TDef500ms)))
 			{
-				if (++Test.Cpt > 31)	{Test.Step = TEST_FIN_INFLA;}
-				else					{Test.Step = TEST_INFLA;}
+				if (++Test.Cpt > (NB_RELAY + NB_PAUSE_MAX - 1))	{Test.Step = TEST_FIN_INFLA;}   // MOD_V0010
+				else                                            {Test.Step = TEST_INFLA;}
 				check_comutest(0);
 				Test.Time = Cptms;
 			}
@@ -192,7 +220,7 @@ byte test_process (void)
 		case TEST_FIN_INFLA:
 			if (Test.Cpt != 0)
 			{
-				ecran_print_num(Cf.Data[96]);
+				ecran_print_num(Cf.Data[OFFSET_LAST_OUTPUT]);
 			}
 			else
 			{
@@ -241,7 +269,7 @@ byte test_process (void)
 		case TEST_INFLA_OK_P0:
 			if (TempsSup(Test.Time, TDef20ms))
 			{
-				if (++Test.Cpt > 31)	{Test.Step = TEST_FIN_INFLA_P0;}
+				if (++Test.Cpt > (NB_RELAY - 1))	{Test.Step = TEST_FIN_INFLA_P0;}    // MOD_V0010
 				else					{Test.Step = TEST_INFLA_P0;}
 				check_comutest(0);
 				Test.Time = Cptms;
@@ -251,8 +279,8 @@ byte test_process (void)
 			if (	(Bouton[Bp_IdTest].State == 0)
 				&&	(TempsSup(Test.Time, TDef500ms)))
 			{
-				if (++Test.Cpt > 31)	{Test.Step = TEST_FIN_INFLA_P0;}
-				else					{Test.Step = TEST_INFLA_P0;}
+				if (++Test.Cpt > (NB_RELAY - 1))	{Test.Step = TEST_FIN_INFLA_P0;}    // MOD_V0010
+				else                                {Test.Step = TEST_INFLA_P0;}
 				check_comutest(0);
 				Test.Time = Cptms;
 			}

@@ -24,6 +24,9 @@
 #define TEST_WAIT_6				0x13
 #define TEST_WAIT_7				0x14
 
+#define TEST_NO_INFLA_PRINT		0x15    // MOD_V0010
+#define TEST_NO_INFLA_PAUSE		0x16    // MOD_V0010
+
 typedef struct	StructTest{
 	byte		Step;
 	byte		Cpt;

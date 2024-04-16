@@ -1,9 +1,23 @@
 #include "includes.h"
 
+// debut MOD_V0010: detecte si la prochaine sortie est en fait une pause
+static byte feu_check_pause (void)
+{
+	if (Feu.NextOutput == PAUSE_VALUE)	{return true;}
+	else                                {return false;}
+}
+
+static byte feu_check_end_P0 (void)
+{
+	if ((Feu.Cpt >= NB_RELAY) || (Feu.NextOutput == 0))	{return true;}  
+	else                                                {return false;}
+}
+// fin MOD_V0010
+
 static byte feu_check_end (void)
 {
-	if ((Feu.Cpt >= 32) || (Feu.NextOutput == 0))	{return true;}
-	else											{return false;}
+	if ((Feu.Cpt >= (NB_RELAY + NB_PAUSE_MAX)) || (Feu.NextOutput == 0))	{return true;}  // MOD_V0010
+	else                                                                    {return false;}
 }
 
 static void feu_tir (byte Output)
@@ -31,6 +45,13 @@ void feu_check_bp (void)
 		Ecran.Digits = (char *) Version;
 		Ecran.Solid = false;
 	}
+    else if (   (Feu.Step == FEU_PAUSE)
+             &&	(Bouton[Bp_Start].State == 0))
+    {
+        Feu.TimeStart = Cptms;
+        Feu.CanStopStart = false;
+        Feu.Step = FEU_RESTART_AFTER_PAUSE;
+    }
 	else if (	(Bouton[Bp_Start].State == 1)
 			 &&	(Feu.CanStopStart == false))
 	{
@@ -99,9 +120,11 @@ void feu_process (void)
 
 				Micro.State = GO;
 				
+                di(); // MOD_V0010: ajout pour assurer
 				Decompte = 50;	// initialise le chrono de 50ms
 				Cpt1Sur20s = 0;	// initialise le compteur de 1/20 de secondes
-
+                ei(); // MOD_V0010: ajout pour assurer
+                
 				Feu.LastOutput = 0;
 
 				Feu.CanStopStart = false;
@@ -112,7 +135,8 @@ void feu_process (void)
 			// Init de la prochaine sortie à tirer
 			Feu.NextOutput = Cf.Data[Feu.Cpt*CF_SECTOR_SIZE];
 
-			if (feu_check_end() == true)	{Feu.Step = FEU_END;}	// Séquence de tir terminée
+			if (feu_check_pause() == true)      {Feu.Step = FEU_PAUSE;} // MOD_V0010
+            else if (feu_check_end() == true)	{Feu.Step = FEU_END;}	// Séquence de tir terminée
 			else
 			{
 				// Calcul le temps auquel il faut tirer le prochain coup
@@ -131,12 +155,23 @@ void feu_process (void)
 			}
 			break;
 		case FEU_SELECT_P0:
-			if (Micro.Mod.P_0 == true)			{Feu.NextOutput = Feu.Cpt+1;}
-			else if (Micro.Mod.P_00 == true)	{Feu.NextOutput = Cf.Data[Feu.Cpt*CF_SECTOR_SIZE];}
-
-			if (feu_check_end() == true)	{Feu.Step = FEU_END;}	// Séquence de tir terminée
-			else							{Feu.Step = FEU_GO_P0;}
-			break;
+            // debut MOD_V0010
+			if (Micro.Mod.P_0 == true)			
+            {
+                Feu.NextOutput = Feu.Cpt+1;
+                
+                if (feu_check_end_P0() == true)	{Feu.Step = FEU_END;}	// Séquence de tir terminée
+                else							{Feu.Step = FEU_GO_P0;}
+            }
+			else if (Micro.Mod.P_00 == true)
+            {
+                Feu.NextOutput = Cf.Data[Feu.Cpt*CF_SECTOR_SIZE];
+                
+                if (feu_check_end() == true)	{Feu.Step = FEU_END;}	// Séquence de tir terminée
+                else							{Feu.Step = FEU_GO_P0;}
+            }
+            // fin MOD_V0010
+            break;
 		case FEU_GO_P0:
 			if (Bouton[Bp_Start].State == 0)
 			{
@@ -171,6 +206,24 @@ void feu_process (void)
 
 			Feu.Step = FEU_SELECT;
 			break;
+		// debut MOD_V0010
+        case FEU_PAUSE:
+			Micro.State = STOP;
+			break;
+        case FEU_RESTART_AFTER_PAUSE:
+            di();
+            Decompte = 50;	// initialise le chrono de 50ms
+            Cpt1Sur20s = 0;	// initialise le compteur de 1/20 de secondes
+            ei();
+            
+            Micro.State = GO;
+            
+            Feu.LastOutput = Feu.NextOutput;
+            Feu.Cpt ++;
+    
+            Feu.Step = FEU_SELECT;            
+            break;
+        // fin MOD_V0010
 		case FEU_END:
 			Micro.State = END;
 			break;

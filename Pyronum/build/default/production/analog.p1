@@ -1,15 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"25 include\micro.h
+"34 include\micro.h
 [s S327 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S327 StructState Armed Go Stop End ]
 [u S330 `uc 1 `S327 1 ]
 [n S330 . State Stat ]
-"32
+"41
 [s S328 :1 `uc 1 :1 `uc 1 ]
 [n S328 StructMod P_0 P_00 ]
 [u S331 `uc 1 `S328 1 ]
 [n S331 . Mods Mod ]
-"37
+"46
 [s S329 `us 1 `uc 1 `uc 1 `S330 1 `S331 1 ]
 [n S329 StructMicro Time Phase Step . . ]
 "13 include\bouton.h
@@ -18,8 +18,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6
 [s S332 `us 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S332 StructBouton Time Memo State Change ]
-"9 include\config.h
-[s S333 `uc + * -> 32 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
+"17 include\config.h
+[s S333 `uc + + * -> 32 `i -> 3 `i * -> 5 `i -> 3 `i -> 5 `i `Vuc 1 `Vus 1 `us 1 :1 `uc 1 ]
 [n S333 StructConfig Data Index Time1 Time2 IsLong ]
 "32 include\ecran.h
 [s S334 `uc -> 4 `i `*uc 1 `uc -> 4 `i `uc 1 `uc 1 `uc 1 `us 1 `uc 1 ]
@@ -27,13 +27,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 include\register.h
 [s S335 `uc -> 4 `i ]
 [n S335 StructRelay State ]
-"27 include\test.h
+"30 include\test.h
 [s S336 `uc 1 `uc 1 `us 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
 [n S336 StructTest Step Cpt Time U_Alim U_Infla Test1 Test2 Test3 Test4 Test5 Test6 Test7 ]
 "12 include\armement.h
 [s S337 `uc 1 `uc 1 `us 1 `f 1 ]
 [n S337 StructArm Step Cpt Time U_Alim_1A ]
-"25 include\feu.h
+"26 include\feu.h
 [s S338 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S338 StructFeu Step Cpt Decompte SavedTime TimeToFire Time TimeStart LastOutput NextOutput CanStopStart SaveTime ]
 "16 include\feedback.h
@@ -2823,42 +2823,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 :U ..
 -> 48 `c
 -> 48 `c
+-> 49 `c
 -> 48 `c
--> 57 `c
 -> 0 `c
 ..
 ]
-[; ;micro.h: 5: const char Version[] = "0009";
-[; ;micro.h: 25: typedef struct StructState{
-[; ;micro.h: 26: unsigned Armed :1;
-[; ;micro.h: 27: unsigned Go :1;
-[; ;micro.h: 28: unsigned Stop :1;
-[; ;micro.h: 29: unsigned End :1;
-[; ;micro.h: 30: }StruState;
-[; ;micro.h: 32: typedef struct StructMod{
-[; ;micro.h: 33: unsigned P_0 :1;
-[; ;micro.h: 34: unsigned P_00 :1;
-[; ;micro.h: 35: }StruMode;
-[; ;micro.h: 37: typedef struct StructMicro {
-[; ;micro.h: 38: unsigned short Time;
-[; ;micro.h: 39: unsigned char Phase;
-[; ;micro.h: 40: unsigned char Step;
-[; ;micro.h: 41: union {
-[; ;micro.h: 42: unsigned char State;
-[; ;micro.h: 43: struct StructState Stat;
-[; ;micro.h: 44: };
-[; ;micro.h: 45: union {
-[; ;micro.h: 46: unsigned char Mods;
-[; ;micro.h: 47: struct StructMod Mod;
-[; ;micro.h: 48: };
-[; ;micro.h: 49: }struMicro;
-"51
+[; ;micro.h: 5: const char Version[] = "0010";
+[; ;micro.h: 34: typedef struct StructState{
+[; ;micro.h: 35: unsigned Armed :1;
+[; ;micro.h: 36: unsigned Go :1;
+[; ;micro.h: 37: unsigned Stop :1;
+[; ;micro.h: 38: unsigned End :1;
+[; ;micro.h: 39: }StruState;
+[; ;micro.h: 41: typedef struct StructMod{
+[; ;micro.h: 42: unsigned P_0 :1;
+[; ;micro.h: 43: unsigned P_00 :1;
+[; ;micro.h: 44: }StruMode;
+[; ;micro.h: 46: typedef struct StructMicro {
+[; ;micro.h: 47: unsigned short Time;
+[; ;micro.h: 48: unsigned char Phase;
+[; ;micro.h: 49: unsigned char Step;
+[; ;micro.h: 50: union {
+[; ;micro.h: 51: unsigned char State;
+[; ;micro.h: 52: struct StructState Stat;
+[; ;micro.h: 53: };
+[; ;micro.h: 54: union {
+[; ;micro.h: 55: unsigned char Mods;
+[; ;micro.h: 56: struct StructMod Mod;
+[; ;micro.h: 57: };
+[; ;micro.h: 58: }struMicro;
+"60
 [v _Micro `S329 ~T0 @X0 1 e ]
-[; ;micro.h: 51: struMicro Micro;
-[; ;micro.h: 53: void micro_config_rs (void);
-[; ;micro.h: 54: void micro_config (void);
-[; ;micro.h: 55: void micro_wait (void);
-[; ;micro.h: 64: extern void __nop(void);
+[; ;micro.h: 60: struMicro Micro;
+[; ;micro.h: 62: void micro_config_rs (void);
+[; ;micro.h: 63: void micro_config (void);
+[; ;micro.h: 64: void micro_wait (void);
+[; ;micro.h: 73: extern void __nop(void);
 [; ;analog.h: 15: unsigned short ana_read (unsigned char ANx);
 [; ;hardware.h: 15: void hw_config(void);
 [; ;eeprom.h: 4: unsigned char eeprom_read (unsigned char Address);
@@ -2882,19 +2882,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;bouton.h: 13: struBouton Bouton[Bp_Max];
 [; ;bouton.h: 15: void bouton_init (void);
 [; ;bouton.h: 16: void bouton_refresh (void);
-[; ;config.h: 9: typedef struct StructConfig {
-[; ;config.h: 10: unsigned char Data[(32 * 3 + 5)];
-[; ;config.h: 11: volatile unsigned char Index;
-[; ;config.h: 12: volatile unsigned short Time1;
-[; ;config.h: 13: unsigned short Time2;
-[; ;config.h: 14: unsigned IsLong :1;
-[; ;config.h: 15: }struConfig;
-"17 include\config.h
+[; ;config.h: 17: typedef struct StructConfig {
+[; ;config.h: 18: unsigned char Data[(32 * 3 + 5 * 3 + 5)];
+[; ;config.h: 19: volatile unsigned char Index;
+[; ;config.h: 20: volatile unsigned short Time1;
+[; ;config.h: 21: unsigned short Time2;
+[; ;config.h: 22: unsigned IsLong :1;
+[; ;config.h: 23: }struConfig;
+"25 include\config.h
 [v _Cf `S333 ~T0 @X0 1 e ]
-[; ;config.h: 17: struConfig Cf;
-[; ;config.h: 19: unsigned char cf_check (void);
-[; ;config.h: 20: void cf_check_and_display (void);
-[; ;config.h: 21: void cf_rcv (void);
+[; ;config.h: 25: struConfig Cf;
+[; ;config.h: 27: unsigned char cf_check (void);
+[; ;config.h: 28: void cf_check_and_display (void);
+[; ;config.h: 29: void cf_rcv (void);
 "27 include\ecran.h
 [v _Blank `Cuc ~T0 @X0 -> 0 `x e ]
 [i _Blank
@@ -2969,28 +2969,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;register.h: 19: struRegister Register;
 [; ;register.h: 21: void register_write (unsigned char Output);
 [; ;register.h: 22: void register_refresh (void);
-[; ;test.h: 27: typedef struct StructTest{
-[; ;test.h: 28: unsigned char Step;
-[; ;test.h: 29: unsigned char Cpt;
-[; ;test.h: 30: unsigned short Time;
-[; ;test.h: 31: float U_Alim;
-[; ;test.h: 32: float U_Infla;
-[; ;test.h: 33: float Test1;
-[; ;test.h: 34: float Test2;
-[; ;test.h: 35: float Test3;
-[; ;test.h: 36: float Test4;
-[; ;test.h: 37: float Test5;
-[; ;test.h: 38: float Test6;
-[; ;test.h: 39: float Test7;
-[; ;test.h: 40: }struTest;
-"42 include\test.h
+[; ;test.h: 30: typedef struct StructTest{
+[; ;test.h: 31: unsigned char Step;
+[; ;test.h: 32: unsigned char Cpt;
+[; ;test.h: 33: unsigned short Time;
+[; ;test.h: 34: float U_Alim;
+[; ;test.h: 35: float U_Infla;
+[; ;test.h: 36: float Test1;
+[; ;test.h: 37: float Test2;
+[; ;test.h: 38: float Test3;
+[; ;test.h: 39: float Test4;
+[; ;test.h: 40: float Test5;
+[; ;test.h: 41: float Test6;
+[; ;test.h: 42: float Test7;
+[; ;test.h: 43: }struTest;
+"45 include\test.h
 [v _Test `S336 ~T0 @X0 1 e ]
-[; ;test.h: 42: struTest Test;
-[; ;test.h: 44: void check_comutest(unsigned char State);
-[; ;test.h: 45: unsigned char check_program_0 (void);
-[; ;test.h: 46: void check_idtest (void);
-[; ;test.h: 47: void check_bpon (void);
-[; ;test.h: 48: unsigned char test_process (void);
+[; ;test.h: 45: struTest Test;
+[; ;test.h: 47: void check_comutest(unsigned char State);
+[; ;test.h: 48: unsigned char check_program_0 (void);
+[; ;test.h: 49: void check_idtest (void);
+[; ;test.h: 50: void check_bpon (void);
+[; ;test.h: 51: unsigned char test_process (void);
 [; ;armement.h: 12: typedef struct StructArm{
 [; ;armement.h: 13: unsigned char Step;
 [; ;armement.h: 14: unsigned char Cpt;
@@ -3001,30 +3001,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Arm `S337 ~T0 @X0 1 e ]
 [; ;armement.h: 19: struArm Arm;
 [; ;armement.h: 21: void armement_process (void);
-"21 include\feu.h
+"23 include\feu.h
 [v _Decompte `Vuc ~T0 @X0 1 e ]
-[; ;feu.h: 21: volatile unsigned char Decompte;
-"22
+[; ;feu.h: 23: volatile unsigned char Decompte;
+"24
 [v _Cpt1Sur20s `Vus ~T0 @X0 1 e ]
-[; ;feu.h: 22: volatile unsigned short Cpt1Sur20s;
-[; ;feu.h: 25: typedef struct StructFeu{
-[; ;feu.h: 26: unsigned char Step;
-[; ;feu.h: 27: unsigned char Cpt;
-[; ;feu.h: 28: unsigned char Decompte;
-[; ;feu.h: 29: unsigned short SavedTime;
-[; ;feu.h: 30: unsigned short TimeToFire;
-[; ;feu.h: 31: unsigned short Time;
-[; ;feu.h: 32: unsigned short TimeStart;
-[; ;feu.h: 33: unsigned char LastOutput;
-[; ;feu.h: 34: unsigned char NextOutput;
-[; ;feu.h: 35: unsigned CanStopStart :1;
-[; ;feu.h: 36: unsigned SaveTime :1;
-[; ;feu.h: 37: }struFeu;
-"39
+[; ;feu.h: 24: volatile unsigned short Cpt1Sur20s;
+[; ;feu.h: 26: typedef struct StructFeu{
+[; ;feu.h: 27: unsigned char Step;
+[; ;feu.h: 28: unsigned char Cpt;
+[; ;feu.h: 29: unsigned char Decompte;
+[; ;feu.h: 30: unsigned short SavedTime;
+[; ;feu.h: 31: unsigned short TimeToFire;
+[; ;feu.h: 32: unsigned short Time;
+[; ;feu.h: 33: unsigned short TimeStart;
+[; ;feu.h: 34: unsigned char LastOutput;
+[; ;feu.h: 35: unsigned char NextOutput;
+[; ;feu.h: 36: unsigned CanStopStart :1;
+[; ;feu.h: 37: unsigned SaveTime :1;
+[; ;feu.h: 38: }struFeu;
+"40
 [v _Feu `S338 ~T0 @X0 1 e ]
-[; ;feu.h: 39: struFeu Feu;
-[; ;feu.h: 41: void feu_check_bp (void);
-[; ;feu.h: 42: void feu_process (void);
+[; ;feu.h: 40: struFeu Feu;
+[; ;feu.h: 42: void feu_check_bp (void);
+[; ;feu.h: 43: void feu_process (void);
 [; ;feedback.h: 16: typedef struct StructFeedback {
 [; ;feedback.h: 17: unsigned short Period;
 [; ;feedback.h: 18: unsigned char Pulse;

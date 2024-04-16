@@ -2,7 +2,16 @@
 #define	MICRO_H
 
 // Version
-const char Version[] = "0009";
+const char Version[] = "0010";
+
+// MOD_V0010: trace les évolutions sur la V0010
+// Cette version ajoute la fonctionnalité de pause (Etat = STOP) avec la sortie PAUSE_VALUE
+// Lorsque le séquenceur est en pause (Etat = STOP) , celui-ci doit être relancé par un appui sur play
+
+// Attention la taille de la config change pour intégrer le nombre de pause max NB_PAUSE_MAX
+// voir le fichier 'new sequence v1.3.ods'
+
+
 
 // Micro->Phase
 #define MICRO_WAIT		0x00

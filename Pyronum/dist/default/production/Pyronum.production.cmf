@@ -13,7 +13,7 @@
 %PSECTS
 $dist/default/production\startup.obj
 end_init CODE 0 112 112 4 1
-text CODE 0 3656 3656 2 1
+text CODE 0 381C 381C 2 1
 reset_vec CODE 0 0 0 6 1
 idloc IDLOC 0 200000 200000 8 1
 config CONFIG 0 300000 300000 E 1
@@ -21,71 +21,73 @@ $dist/default/production\Pyronum.production.obj
 intcodelo CODE 0 18 18 DA 1
 intcode CODE 0 8 8 E 1
 smallconst SMALLCONST 0 600 600 16 1
-text56 CODE 0 2AD4 2AD4 B4 1
-intcode_body CODE 0 1D6A 1D6A 15C 1
-text53 CODE 0 2168 2168 13E 1
-text52 CODE 0 13BC 13BC 1C4 1
-text51 CODE 0 1BF4 1BF4 176 1
-text50 CODE 0 339C 339C 4C 1
-text49 CODE 0 33E8 33E8 4A 1
-text48 CODE 0 2F78 2F78 68 1
-text47 CODE 0 25FA 25FA 110 1
-text46 CODE 0 3046 3046 66 1
-text45 CODE 0 362E 362E 14 1
-text44 CODE 0 280C 280C FE 1
-text43 CODE 0 3642 3642 E 1
-text42 CODE 0 3432 3432 48 1
-text41 CODE 0 2B88 2B88 B2 1
-text40 CODE 0 31BC 31BC 54 1
-text39 CODE 0 35B8 35B8 22 1
-text38 CODE 0 2C3A 2C3A AE 1
-text37 CODE 0 2D78 2D78 8E 1
-text36 CODE 0 23D0 23D0 118 1
-text35 CODE 0 2CE8 2CE8 90 1
-text34 CODE 0 18E4 18E4 196 1
-text33 CODE 0 334E 334E 4E 1
-text32 CODE 0 1188 1188 234 1
-text31 CODE 0 34FC 34FC 34 1
-text30 CODE 0 2FE0 2FE0 66 1
-text29 CODE 0 22A6 22A6 12A 1
-text28 CODE 0 2F08 2F08 70 1
-text27 CODE 0 BDE BDE 340 1
-text26 CODE 0 347A 347A 44 1
-text25 CODE 0 3614 3614 1A 1
-text24 CODE 0 3210 3210 52 1
-text23 CODE 0 1A7A 1A7A 17A 1
-text22 CODE 0 310C 310C 5C 1
-text21 CODE 0 358C 358C 2C 1
-text20 CODE 0 3262 3262 50 1
-text19 CODE 0 1580 1580 1C0 1
-text18 CODE 0 35FA 35FA 1A 1
-text17 CODE 0 3560 3560 2C 1
-text16 CODE 0 3168 3168 54 1
-text15 CODE 0 24E8 24E8 112 1
-text14 CODE 0 2E06 2E06 86 1
-text13 CODE 0 1EC6 1EC6 15A 1
-text12 CODE 0 2A04 2A04 D0 1
-text11 CODE 0 1740 1740 1A4 1
-text10 CODE 0 35DA 35DA 20 1
-text9 CODE 0 3300 3300 4E 1
-text8 CODE 0 34BE 34BE 3E 1
-text7 CODE 0 F1E F1E 26A 1
-text6 CODE 0 30AC 30AC 60 1
-text5 CODE 0 3530 3530 30 1
-text4 CODE 0 2020 2020 148 1
-text3 CODE 0 290A 290A FA 1
-text2 CODE 0 270A 270A 102 1
-text1 CODE 0 616 616 5C8 1
-text0 CODE 0 2E8C 2E8C 7C 1
+text58 CODE 0 2C44 2C44 B4 1
+intcode_body CODE 0 1EDA 1EDA 15C 1
+text55 CODE 0 22D8 22D8 13E 1
+text54 CODE 0 16D0 16D0 1C4 1
+text53 CODE 0 1D64 1D64 176 1
+text52 CODE 0 352A 352A 4C 1
+text51 CODE 0 3576 3576 4A 1
+text50 CODE 0 3106 3106 68 1
+text49 CODE 0 276A 276A 110 1
+text48 CODE 0 31D4 31D4 66 1
+text47 CODE 0 37F4 37F4 14 1
+text46 CODE 0 297C 297C FE 1
+text45 CODE 0 3808 3808 E 1
+text44 CODE 0 35C0 35C0 48 1
+text43 CODE 0 2CF8 2CF8 B2 1
+text42 CODE 0 334A 334A 54 1
+text41 CODE 0 3746 3746 22 1
+text40 CODE 0 2DAA 2DAA AE 1
+text39 CODE 0 2F76 2F76 8E 1
+text38 CODE 0 2540 2540 118 1
+text37 CODE 0 2E58 2E58 90 1
+text36 CODE 0 1A54 1A54 196 1
+text35 CODE 0 34DC 34DC 4E 1
+text34 CODE 0 12C8 12C8 234 1
+text33 CODE 0 368A 368A 34 1
+text32 CODE 0 316E 316E 66 1
+text31 CODE 0 2416 2416 12A 1
+text30 CODE 0 2EE8 2EE8 8E 1
+text29 CODE 0 CBC CBC 340 1
+text28 CODE 0 3608 3608 44 1
+text27 CODE 0 37C2 37C2 1A 1
+text26 CODE 0 339E 339E 52 1
+text25 CODE 0 1BEA 1BEA 17A 1
+text24 CODE 0 329A 329A 5C 1
+text23 CODE 0 371A 371A 2C 1
+text22 CODE 0 33F0 33F0 50 1
+text21 CODE 0 1894 1894 1C0 1
+text20 CODE 0 37A8 37A8 1A 1
+text19 CODE 0 36EE 36EE 2C 1
+text18 CODE 0 32F6 32F6 54 1
+text17 CODE 0 2658 2658 112 1
+text16 CODE 0 3004 3004 86 1
+text15 CODE 0 2036 2036 15A 1
+text14 CODE 0 2B74 2B74 D0 1
+text13 CODE 0 14FC 14FC 1D4 1
+text12 CODE 0 3788 3788 20 1
+text11 CODE 0 3768 3768 20 1
+text10 CODE 0 37DC 37DC 18 1
+text9 CODE 0 348E 348E 4E 1
+text8 CODE 0 364C 364C 3E 1
+text7 CODE 0 FFC FFC 2CC 1
+text6 CODE 0 323A 323A 60 1
+text5 CODE 0 36BE 36BE 30 1
+text4 CODE 0 2190 2190 148 1
+text3 CODE 0 2A7A 2A7A FA 1
+text2 CODE 0 287A 287A 102 1
+text1 CODE 0 616 616 6A6 1
+text0 CODE 0 308A 308A 7C 1
 cstackCOMRAM COMRAM 1 1 1 2D 1
 cstackBANK0 BANK0 1 BA BA 2B 1
-bssBANK1 BANK1 1 100 100 6B 1
+bssBANK1 BANK1 1 100 100 7A 1
 dataBANK0 BANK0 1 E5 E5 5 1
 bssBANK0 BANK0 1 80 80 3A 1
 bssCOMRAM COMRAM 1 2E 2E 24 1
-cinit CODE 0 32B2 32B2 4E 1
+cinit CODE 0 3440 3440 4E 1
 nvCOMRAM COMRAM 1 52 52 6 1
-idataBANK0 CODE 0 3650 3650 5 1
+idataBANK0 CODE 0 3816 3816 5 1
 $build/default/production/powerup.obj
 powerup CODE 0 F2 F2 20 1
 # %UNUSED Section
@@ -95,34 +97,34 @@ powerup CODE 0 F2 F2 20 1
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
 BANK0 0000EA-0000FF 1
-BANK1 00016B-0001FF 1
+BANK1 00017A-0001FF 1
 BANK2 000200-0002FF 1
 BANK3 000300-0003FF 1
 BANK4 000400-0004FF 1
 BANK5 000500-0005FF 1
 BIGRAM 000058-00007F 1
 BIGRAM 0000EA-0000FF 1
-BIGRAM 00016B-0005FF 1
+BIGRAM 00017A-0005FF 1
 CODE 000006-000007 1
 CODE 000016-000017 1
 CODE 000116-0005FF 1
-CODE 003655-003655 1
-CODE 003658-007FFF 1
+CODE 00381B-00381B 1
+CODE 00381E-007FFF 1
 COMRAM 000058-00007F 1
 CONST 000006-000007 1
 CONST 000016-000017 1
 CONST 000116-0005FF 1
-CONST 003655-003655 1
-CONST 003658-007FFF 1
+CONST 00381B-00381B 1
+CONST 00381E-007FFF 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 003655-003655 1
-MEDIUMCONST 003658-007FFF 1
+MEDIUMCONST 00381B-00381B 1
+MEDIUMCONST 00381E-007FFF 1
 RAM 0000EA-0000FF 1
-RAM 00016B-0005FF 1
+RAM 00017A-0005FF 1
 SFR 000F80-000FFF 1
-SMALLCONST 003655-003655 1
-SMALLCONST 003658-007FFF 1
-STACK 00016B-0005FF 1
+SMALLCONST 00381B-00381B 1
+SMALLCONST 00381E-007FFF 1
+STACK 00017A-0005FF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -156,7 +158,7 @@ $build/default/production/powerup.obj
 $dist/default/production\Pyronum.production.obj
 "B:\GitHub\PYROSEQ\Pyronum\main.c":64 8 intcode CODE
 "B:\GitHub\PYROSEQ\Pyronum\main.c":66 8 intcode CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":86 18 intcodelo CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":86 18 intcodelo CODE
 "B:\GitHub\PYROSEQ\Pyronum\main.c":51 18 intcodelo CODE
 "B:\GitHub\PYROSEQ\Pyronum\main.c":53 5E intcodelo CODE
 "B:\GitHub\PYROSEQ\Pyronum\main.c":55 64 intcodelo CODE
@@ -190,939 +192,977 @@ $dist/default/production\Pyronum.production.obj
 "B:\GitHub\PYROSEQ\Pyronum\test.c":149 724 text1 CODE
 "B:\GitHub\PYROSEQ\Pyronum\test.c":151 72C text1 CODE
 "B:\GitHub\PYROSEQ\Pyronum\test.c":153 75C text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":154 776 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":159 784 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":161 7B4 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":163 7C4 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":164 7DE text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":167 7EA text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":168 804 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":155 776 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":159 77E text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":160 798 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":162 7A4 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":166 7A6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":168 7D6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":170 7E6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":171 800 text1 CODE
 "B:\GitHub\PYROSEQ\Pyronum\test.c":174 80C text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":176 83C text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":177 850 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":178 85C text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":182 864 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":184 864 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":186 89A text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":187 8AE text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":188 8BA text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":193 8C2 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":195 8C8 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":196 8D2 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":199 8D4 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":200 8E4 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":201 8F4 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":203 8F4 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":204 904 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":206 914 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":207 928 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":209 930 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":210 930 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":175 826 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":182 82E text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":184 85E text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":187 86A text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":192 886 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":194 8B6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":195 8CA text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":196 8D6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":202 8DE text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":204 90E text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":205 922 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":206 92E text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":210 936 text1 CODE
 "B:\GitHub\PYROSEQ\Pyronum\test.c":212 936 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":214 93E text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":218 948 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":220 978 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":221 97E text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":226 986 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":214 96C text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":215 980 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":216 98C text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":221 994 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":223 99A text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":224 9A4 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":227 9A6 text1 CODE
 "B:\GitHub\PYROSEQ\Pyronum\test.c":228 9B6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":229 9C6 text1 CODE
 "B:\GitHub\PYROSEQ\Pyronum\test.c":231 9C6 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":232 9E0 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":235 9EC text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":236 9F2 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":242 9FA text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":244 A2A text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":245 A3E text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":246 A4A text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":250 A52 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":252 A52 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":254 A88 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":255 A9C text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":256 AA8 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":261 AB0 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":263 AB6 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":264 ABC text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":267 ABE text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":268 ACE text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":269 ADE text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":271 ADE text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":232 9D6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":234 9E6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":235 9FA text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":240 A02 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":242 A02 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":246 A0C text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":248 A3C text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":249 A42 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":254 A4A text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":256 A7A text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":259 A8A text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":260 AA4 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":263 AB0 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":264 AB6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":270 ABE text1 CODE
 "B:\GitHub\PYROSEQ\Pyronum\test.c":272 AEE text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":274 AFE text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":275 B12 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":286 B1C text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":288 B4C text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":290 B58 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":293 B5E text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":294 B5E text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":296 B64 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":107 B72 text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":302 BDA text1 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":4 BDE text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":7 BE0 text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":9 BF0 text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":11 C1C text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":9 CA2 text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":17 CB2 text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":19 EBA text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":22 ECA text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":24 EEA text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":27 EEC text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":29 F12 text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":30 F1A text27 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":89 F1E text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":91 F20 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":93 F22 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":95 F22 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":97 F28 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":98 F34 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":100 F44 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":102 F50 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":103 F54 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":105 F5C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":107 F6C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":108 F72 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":113 F7C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":115 F9C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":119 FB4 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":120 FE0 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":122 1010 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":126 1018 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":128 1030 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":133 103C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":134 103C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":135 1048 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":137 106C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":138 107C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":140 1084 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":141 1084 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":143 108A text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":145 109C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":147 10A6 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":148 10B6 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":152 10C0 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":154 10F2 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":157 1100 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":158 1100 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":160 1106 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":161 110A text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":163 1112 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":166 111A text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":167 111A text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":168 111E text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":170 1126 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":172 112C text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":175 113A text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":176 1146 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":91 1148 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":178 1184 text7 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":11 1188 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":15 118A text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":21 119C text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":22 11AA text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":23 11B8 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":24 11C6 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":19 11D4 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":28 11F2 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":30 1226 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":32 1286 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":34 1300 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":40 1356 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":41 1388 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":15 13A8 text32 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":44 13B8 text32 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":51 13BC text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":56 13BE text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":58 13EA text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":59 1414 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":60 142E text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":61 143C text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":62 1440 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":63 144C text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":64 1454 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":66 145A text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":67 1460 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":68 1478 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":69 1490 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":71 14A0 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":72 14A8 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":73 14CC text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":74 14DC text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":75 14EC text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":76 14F4 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":78 1504 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":79 150C text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":80 1530 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":81 1540 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":82 1550 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":83 1558 text52 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":84 157C text52 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":132 1580 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":134 1582 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":136 1592 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":138 15C4 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":140 15CC text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":141 15CE text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":142 1608 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":143 160A text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":144 160C text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":146 1618 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":148 161A text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":150 1624 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":152 162C text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":153 1642 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":157 1644 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":159 167C text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":161 168E text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":159 16AA text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":164 16BA text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":166 16F2 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":168 16FC text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":170 1704 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":171 171A text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":174 171C text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":178 1732 text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":180 173A text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":182 173C text19 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":26 1740 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":29 1742 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":31 174C text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":34 1758 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":35 1758 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":37 1764 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":39 1796 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":42 179E text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":44 179E text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":46 17AE text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":48 17B2 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":49 17C2 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":50 17CE text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":51 17D0 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":53 17D4 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":54 17E4 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":55 17F0 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":58 17F8 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":59 17FE text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":60 1800 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":62 1806 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":65 1812 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":67 1818 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":69 1822 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":71 1826 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":72 1836 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":74 1846 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":76 185A text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":78 1862 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":80 1862 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":81 187E text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":82 189A text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":83 18B6 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":85 18D0 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":87 18E0 text11 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":24 18E4 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":28 18E6 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":30 18E8 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":31 18E8 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":33 18EE text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":37 18F6 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":39 18FC text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":41 190C text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":43 1920 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":45 194A text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":46 195A text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":47 196A text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":48 197A text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":50 198A text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":52 1998 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":53 1998 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":55 199E text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":56 19A6 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":58 19B6 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":61 19BC text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":62 19BC text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":64 19C2 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":66 19CE text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":67 19D2 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":68 19D4 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":72 19DA text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":76 1A0C text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":78 1A3E text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":79 1A4A text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":28 1A58 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":83 1A76 text34 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":92 1A7A text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":94 1A7C text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":97 1A8C text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":99 1AC4 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":101 1ACE text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":104 1AD8 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":106 1ADE text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":107 1AEE text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":108 1AFE text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":109 1B12 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":111 1B24 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":113 1B38 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":115 1B40 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":118 1B76 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":119 1B8A text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":120 1B9C text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":121 1BB0 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":123 1BC2 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":124 1BD6 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":127 1BD8 text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":128 1BEE text23 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":130 1BF0 text23 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":44 1BF4 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":49 1BF6 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":51 1C22 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":52 1C5E text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":53 1C64 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":54 1C7C text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":55 1C9E text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":56 1CA6 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":57 1CAE text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":60 1CC6 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":61 1CDA text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":63 1CE4 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":64 1CEE text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":66 1D0A text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":67 1D1E text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":65 1D24 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":70 1D2C text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":71 1D36 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":72 1D56 text51 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":73 1D66 text51 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":66 1D6A intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":68 1D9C intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":70 1DA2 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":72 1DA4 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":73 1DA8 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":75 1DAC intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":77 1DB0 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":79 1DB4 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":80 1DB8 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":83 1DBC intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":85 1DC2 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":87 1DCE intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":88 1DD2 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":89 1DE0 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":90 1DEC intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":93 1DEE intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":96 1DF8 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":98 1E3E intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":100 1E46 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":102 1E58 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":107 1E5C intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":109 1E5C intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":111 1E64 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":112 1E66 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":113 1E72 intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":118 1E7A intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":120 1E7A intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":121 1E7C intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":126 1E8A intcode_body CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":3 1EC6 text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":8 1ECC text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":10 1EDA text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":12 1EEC text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":10 1F12 text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":15 1F3C text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":17 1F54 text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":21 1F76 text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":22 1FDE text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":19 1FFE text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":25 200C text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":26 201C text13 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":91 2020 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":93 2022 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":95 2024 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":96 2024 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":98 202A text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":99 2036 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":102 203C text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":103 203C text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":105 2042 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":108 2050 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":109 2050 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":111 2056 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":112 2062 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":113 206E text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":114 2074 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":115 2078 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":116 207A text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":118 2080 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":119 208C text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":120 209C text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":121 20A2 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":124 20A6 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":126 20AC text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":128 20B4 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":130 20B8 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":132 20CE text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":134 20DA text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":136 20DC text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":138 210C text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":139 2114 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":134 213A text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":143 213E text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":145 214A text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":93 2150 text4 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":150 2164 text4 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":62 2168 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":64 216A text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":65 2186 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":67 21A0 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":68 21A6 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":66 21B6 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":71 21E8 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":72 21EE text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":73 2206 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":70 2216 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":76 2248 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":77 224E text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":75 225E text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":79 2266 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":80 226E text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":81 2274 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":82 227A text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":83 2286 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":84 2290 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":85 2296 text53 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":86 22A2 text53 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":33 22A6 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":35 22A8 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":36 22B8 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":38 22C8 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":40 22DA text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":42 22F8 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":44 2302 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":46 230A text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":51 2356 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":38 2360 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":56 2370 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":58 23B4 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":61 23C4 text29 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":62 23CC text29 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":17 23D0 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":22 23D2 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":24 23DA text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":25 23FA text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":26 2402 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":27 240E text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":29 2440 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":30 2460 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":31 2480 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":32 248A text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":33 2492 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":34 249A text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":35 24D0 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":36 24DC text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":37 24E4 text36 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":8 24E8 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":13 24EA text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":14 24FA text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":15 2512 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":16 2520 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":18 2530 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":19 2548 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":20 2556 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":21 2562 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":22 2572 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":23 2574 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":24 2580 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":22 2586 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":27 258E text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":28 25AA text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":29 25C2 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":30 25CE text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":32 25D6 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":33 25E0 text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":34 25EE text15 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":35 25F6 text15 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":3 25FA text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":5 25FC text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":7 260A text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":8 260C text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":10 260E text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":12 2620 text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":14 2632 text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":15 2634 text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":17 2636 text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":18 2676 text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":19 26AA text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":21 26DE text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\armement.c":22 2706 text47 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":80 270A text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":82 270C text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":84 271A text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":86 271E text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":87 2720 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":90 2722 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":92 2734 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":93 2736 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":95 2738 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":96 2778 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":97 27AC text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":99 27E0 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":100 2808 text2 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":9 280C text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":11 2812 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":13 2814 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":14 2818 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":18 281C text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":19 2820 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":20 2824 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":21 2828 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":22 282C text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":23 2830 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":25 2834 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":26 2838 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":27 283C text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":28 2840 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":29 2844 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":30 2848 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":31 284C text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":32 2850 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":33 2854 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":34 2858 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":35 285C text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":36 2860 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":37 2864 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":11 286A text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":40 2906 text44 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":64 290A text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":66 290C text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":68 291A text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":69 291C text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":71 291E text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":73 2930 text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":74 2970 text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":75 29A4 text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":77 29D8 text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":78 2A00 text3 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":66 2A04 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":70 2A0A text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":72 2A1E text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":74 2A44 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":75 2A54 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":77 2A64 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":79 2A70 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":80 2A80 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":81 2A90 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":84 2A92 text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":85 2AAC text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":88 2ABC text12 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":89 2AD0 text12 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":8 2AD4 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":14 2AD6 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":15 2ADE text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":16 2AF2 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":17 2AFA text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":19 2B02 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":20 2B16 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":21 2B1E text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":23 2B22 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":24 2B2A text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":25 2B32 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":26 2B3A text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":27 2B3C text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":28 2B42 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":26 2B44 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":31 2B48 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":32 2B4E text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":33 2B5A text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":34 2B62 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":36 2B64 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":37 2B6A text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":39 2B6E text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":40 2B74 text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":41 2B7C text56 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":42 2B84 text56 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":116 2B88 text41 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":119 2B8A text41 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":121 2BA6 text41 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":123 2BFA text41 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":125 2C18 text41 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":127 2C36 text41 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":8 2C3A text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":14 2C3C text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":15 2C4A text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":16 2C56 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":17 2C66 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":18 2C68 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":19 2C74 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":17 2C7A text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":22 2C82 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":23 2C8E text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":24 2CAA text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":25 2CC2 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":27 2CC8 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":28 2CD4 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":29 2CDC text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":30 2CDC text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":31 2CE4 text38 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":4 2CE8 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":6 2CEA text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":8 2CFA text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":9 2D12 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":10 2D42 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":12 2D50 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":14 2D74 text35 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":8 2D78 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":13 2D7A text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":14 2D86 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":15 2D96 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":16 2D98 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":17 2DA4 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":15 2DAA text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":20 2DB2 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":21 2DCE text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":22 2DE6 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":23 2DF2 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":24 2DFA text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":25 2DFA text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":26 2E02 text37 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":4 2E06 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":9 2E0C text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":10 2E1C text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":11 2E26 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":12 2E36 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":13 2E38 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":14 2E3E text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":12 2E44 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":17 2E4C text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":18 2E52 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":19 2E62 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":20 2E6E text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":22 2E74 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":23 2E7A text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":25 2E82 text14 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":26 2E88 text14 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":132 2E8C text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":134 2E8E text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":137 2E9E text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":138 2EA2 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":141 2EA6 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":144 2EAC text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":147 2EB6 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":150 2EBA text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":153 2EBE text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":156 2EC2 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":160 2EC6 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":161 2ECA text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":163 2ECE text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":166 2ED0 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":167 2ED4 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":169 2ED6 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":170 2EDA text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":172 2EDC text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":173 2EE0 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":175 2EE2 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":176 2EE6 text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":177 2EEA text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\main.c":163 2EEC text0 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":65 2F08 text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":67 2F0A text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":69 2F1A text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":71 2F2C text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":69 2F4C text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":74 2F5C text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":76 2F6C text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":77 2F74 text28 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":4 2F78 text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":6 2F7E text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":8 2F8C text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":9 2FA4 text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":11 2FA6 text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":13 2FB8 text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":14 2FBA text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":16 2FBE text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":17 2FCA text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":19 2FD2 text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":21 2FD4 text48 CODE
-"B:\GitHub\PYROSEQ\Pyronum\analog.c":22 2FDC text48 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":3 2FE0 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":25 2FE2 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":26 2FF6 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":27 3018 text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":40 303A text30 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":41 3042 text30 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":103 3046 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":106 3048 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":108 3058 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":109 3068 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":110 3078 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":111 3088 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":113 3098 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":114 30A8 text46 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":3 30AC text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":6 30AE text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":10 30B2 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":12 30B6 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":13 30B8 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":14 30BA text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":15 30BC text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":16 30BE text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":17 30C0 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":20 30C2 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":22 30C6 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":23 30C8 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":24 30CA text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":25 30CC text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":26 30CE text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":27 30D0 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":28 30D2 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":29 30D4 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":32 30D6 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":34 30DA text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":35 30DC text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":36 30DE text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":37 30E0 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":38 30E2 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":39 30E4 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":40 30E6 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":41 30E8 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":44 30EA text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":46 30EE text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":47 30F0 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":48 30F2 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":49 30F4 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":50 30F6 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":51 30F8 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":52 30FA text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":53 30FC text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":56 30FE text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":58 3102 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":59 3104 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":60 3106 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\hardware.c":61 3108 text6 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":52 310C text22 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":54 310E text22 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":56 3116 text22 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":58 311A text22 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":60 3130 text22 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":62 3164 text22 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":19 3168 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":21 316A text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":23 317A text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":25 3180 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":26 3184 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":28 3190 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":30 3192 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":32 31A2 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":34 31AE text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":37 31B2 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":38 31B8 text16 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":3 31BC text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":5 31C2 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":6 31C6 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":8 31C8 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":9 31D8 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":11 31DC text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":13 31E6 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":14 31F2 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":6 31F6 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":17 3208 text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":6 320C text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":17 320E text40 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":40 3210 text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":44 3212 text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":46 3224 text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":47 3238 text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":48 3240 text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":44 3246 text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":50 325A text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":44 325E text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":50 3260 text24 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":52 3262 text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":56 3264 text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":58 3276 text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":59 3288 text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":60 3290 text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":56 3296 text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":62 32AA text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":56 32AE text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":62 32B0 text20 CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4043 32B2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4045 32B2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4048 32B2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4105 32B2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4106 32B6 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4107 32B8 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4108 32B8 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4109 32BA cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4110 32BC cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4113 32BE cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4114 32C2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4115 32C4 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4116 32C4 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4117 32C6 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4118 32C8 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4121 32CA cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4122 32CE cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4123 32D0 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4124 32D0 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4125 32D2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4126 32D4 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4131 32D6 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4132 32D8 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4133 32DA cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4134 32DC cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4135 32DE cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4136 32E0 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4137 32E2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4138 32E6 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4139 32EA cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4140 32EA cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4141 32EC cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4142 32F0 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4143 32F2 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4144 32F4 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4150 32F6 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4152 32F6 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4153 32F8 cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4154 32FA cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4155 32FC cinit CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":3 3300 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":8 3306 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":11 3308 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":12 330A text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":14 330C text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":16 330E text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":17 3320 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":18 3320 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":20 3322 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":21 3334 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":23 3336 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":16 3338 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":26 3346 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":29 3348 text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\register.c":30 334A text9 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":3 334E text33 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":5 3350 text33 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":6 3362 text33 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":7 3374 text33 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":8 3386 text33 CODE
-"B:\GitHub\PYROSEQ\Pyronum\bouton.c":9 3398 text33 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c":28 339C text50 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c":30 339E text50 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c":31 33E4 text50 CODE
-"B:\GitHub\PYROSEQ\Pyronum\time.c":4 33E8 text49 CODE
-"B:\GitHub\PYROSEQ\Pyronum\time.c":6 33EA text49 CODE
-"B:\GitHub\PYROSEQ\Pyronum\time.c":8 33F2 text49 CODE
-"B:\GitHub\PYROSEQ\Pyronum\time.c":9 342A text49 CODE
-"B:\GitHub\PYROSEQ\Pyronum\time.c":8 342E text49 CODE
-"B:\GitHub\PYROSEQ\Pyronum\time.c":9 3430 text49 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":50 3432 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":52 3438 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":54 343C text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":56 3446 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":58 3448 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":59 344C text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":60 3450 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":61 3454 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":56 3458 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":64 3476 text42 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":79 347A text26 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":81 347C text26 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":83 348C text26 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":85 34A4 text26 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":88 34B4 text26 CODE
-"B:\GitHub\PYROSEQ\Pyronum\config.c":89 34BA text26 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":9 34BE text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":11 34C4 text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":12 34C6 text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":14 34C8 text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":15 34D2 text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":16 34E4 text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":18 34EA text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":19 34EC text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":22 34EE text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":23 34F2 text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":24 34F8 text8 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":28 34FC text31 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":32 3502 text31 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":34 350E text31 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":38 3518 text31 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":41 3526 text31 CODE
-"B:\GitHub\PYROSEQ\Pyronum\utils.c":42 352C text31 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":39 3530 text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":43 3532 text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":64 3536 text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":65 353A text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":69 353E text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":75 3542 text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":82 3546 text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":83 3548 text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":84 354A text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":85 354C text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":87 354E text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":88 3556 text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":89 355C text5 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":41 3560 text17 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":43 3562 text17 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":45 3568 text17 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":46 356C text17 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":48 3582 text17 CODE
-"B:\GitHub\PYROSEQ\Pyronum\test.c":50 3588 text17 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":18 358C text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":20 3592 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":21 3596 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":23 359A text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":24 359C text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":25 359E text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":27 35A0 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":29 35A2 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":30 35A6 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":32 35AA text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":33 35AC text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":35 35B0 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":37 35B2 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":38 35B4 text21 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":91 35B8 text39 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":94 35BA text39 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":96 35BE text39 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":98 35C4 text39 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":100 35C6 text39 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":101 35D6 text39 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":3 35DA text10 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":5 35DC text10 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":6 35F4 text10 CODE
-"B:\GitHub\PYROSEQ\Pyronum\feu.c":7 35F6 text10 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":3 35FA text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":5 35FC text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":9 35FE text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":14 3602 text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":22 3606 text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":34 360A text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":35 360C text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":36 360E text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\micro.c":37 3610 text18 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":3 3614 text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":5 361A text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":7 361E text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":8 3620 text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":9 3622 text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":11 3624 text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":12 3626 text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":14 3628 text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":15 362A text25 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":42 362E text45 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":44 3634 text45 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":46 363C text45 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":48 363E text45 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":3 3642 text43 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":5 3644 text43 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":6 3648 text43 CODE
-"B:\GitHub\PYROSEQ\Pyronum\ecran.c":7 364C text43 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":273 B02 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":274 B0E text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":278 B16 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":280 B16 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":282 B4C text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":283 B60 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":284 B6C text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":289 B74 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":291 B7A text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":292 B80 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":295 B82 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":296 B92 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":297 BA2 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":299 BA2 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":300 BB2 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":302 BC2 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":303 BD6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":305 BE0 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":306 BE0 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":308 BE6 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":314 BEE text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":316 C1E text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":318 C2A text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":321 C30 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":322 C30 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":324 C36 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":107 C44 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":330 CB8 text1 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":4 CBC text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":7 CBE text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":9 CCE text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":11 CFA text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":9 D80 text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":17 D90 text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":19 F98 text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":22 FA8 text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":24 FC8 text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":27 FCA text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":29 FF0 text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":30 FF8 text29 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":110 FFC text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":112 FFE text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":114 1000 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":116 1000 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":118 1006 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":119 1012 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":121 1022 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":123 102E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":124 1030 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":125 1034 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":126 103C text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":128 103E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":130 104E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":131 1054 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":136 105E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":138 107E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":139 1096 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":143 10A6 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":144 10D2 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":146 1102 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":150 110A text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":152 1122 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":157 112E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":159 112E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":161 1132 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":163 113E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":164 1156 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":166 115E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":168 1162 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":170 1182 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":175 1188 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":176 1188 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":178 118E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":180 11A0 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":182 11AA text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":183 11BA text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":187 11C4 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":189 11F6 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":192 1204 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":193 1204 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":195 120A text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":196 120E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":198 1216 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":201 121E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":202 121E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":203 1222 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":205 122A text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":207 1230 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":211 123E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":213 1246 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":214 1246 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":215 1248 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":216 124C text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":217 1254 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":219 1256 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":221 1262 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":222 1266 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":228 126E text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":229 127A text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":112 127C text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":231 12C4 text7 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":11 12C8 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":15 12CA text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":21 12DC text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":22 12EA text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":23 12F8 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":24 1306 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":19 1314 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":28 1332 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":30 1366 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":32 13C6 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":34 1440 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":40 1496 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":41 14C8 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":15 14E8 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":44 14F8 text34 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":40 14FC text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":43 14FE text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":45 1508 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":49 151A text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":51 152C text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":52 1534 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":53 153A text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":55 1548 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":56 1548 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":58 1554 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":60 1586 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":63 158E text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":65 158E text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":67 159E text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":69 15A2 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":70 15B2 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":71 15BE text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":72 15C0 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":74 15C4 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":75 15D4 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":76 15E0 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":79 15E8 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":80 15EE text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":81 15F0 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":83 15F6 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":86 1602 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":88 1608 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":90 1612 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":92 1616 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":93 1626 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":95 1636 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":97 1646 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":99 164E text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":101 164E text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":102 166A text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":103 1686 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":104 16A2 text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":106 16BC text13 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":108 16CC text13 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":51 16D0 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":56 16D2 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":58 16FE text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":59 1728 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":60 1742 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":61 1750 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":62 1754 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":63 1760 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":64 1768 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":66 176E text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":67 1774 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":68 178C text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":69 17A4 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":71 17B4 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":72 17BC text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":73 17E0 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":74 17F0 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":75 1800 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":76 1808 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":78 1818 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":79 1820 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":80 1844 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":81 1854 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":82 1864 text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":83 186C text54 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\ftmul.c":84 1890 text54 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":137 1894 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":139 1896 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":141 18A6 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":143 18D8 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":145 18E0 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":146 18E2 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":147 191C text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":148 191E text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":149 1920 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":151 192C text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":153 192E text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":155 1938 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":157 1940 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":158 1956 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":162 1958 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":164 1990 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":166 19A2 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":164 19BE text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":169 19CE text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":171 1A06 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":173 1A10 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":175 1A18 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":176 1A2E text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":179 1A30 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":183 1A46 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":185 1A4E text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":187 1A50 text21 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":24 1A54 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":28 1A56 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":30 1A58 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":31 1A58 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":33 1A5E text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":37 1A66 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":39 1A6C text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":41 1A7C text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":43 1A90 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":45 1ABA text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":46 1ACA text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":47 1ADA text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":48 1AEA text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":50 1AFA text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":52 1B08 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":53 1B08 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":55 1B0E text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":56 1B16 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":58 1B26 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":61 1B2C text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":62 1B2C text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":64 1B32 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":66 1B3E text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":67 1B42 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":68 1B44 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":72 1B4A text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":76 1B7C text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":78 1BAE text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":79 1BBA text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":28 1BC8 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":83 1BE6 text36 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":97 1BEA text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":99 1BEC text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":102 1BFC text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":104 1C34 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":106 1C3E text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":109 1C48 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":111 1C4E text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":112 1C5E text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":113 1C6E text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":114 1C82 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":116 1C94 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":118 1CA8 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":120 1CB0 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":123 1CE6 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":124 1CFA text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":125 1D0C text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":126 1D20 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":128 1D32 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":129 1D46 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":132 1D48 text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":133 1D5E text25 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":135 1D60 text25 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":44 1D64 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":49 1D66 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":51 1D92 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":52 1DCE text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":53 1DD4 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":54 1DEC text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":55 1E0E text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":56 1E16 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":57 1E1E text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":60 1E36 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":61 1E4A text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":63 1E54 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":64 1E5E text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":66 1E7A text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":67 1E8E text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":65 1E94 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":70 1E9C text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":71 1EA6 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":72 1EC6 text53 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\fttol.c":73 1ED6 text53 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":66 1EDA intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":68 1F0C intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":70 1F12 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":72 1F14 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":73 1F18 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":75 1F1C intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":77 1F20 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":79 1F24 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":80 1F28 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":83 1F2C intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":85 1F32 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":87 1F3E intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":88 1F42 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":89 1F50 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":90 1F5C intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":93 1F5E intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":96 1F68 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":98 1FAE intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":100 1FB6 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":102 1FC8 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":107 1FCC intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":109 1FCC intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":111 1FD4 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":112 1FD6 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":113 1FE2 intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":118 1FEA intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":120 1FEA intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":121 1FEC intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":126 1FFA intcode_body CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":3 2036 text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":8 203C text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":10 204A text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":12 205C text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":10 2082 text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":15 20AC text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":17 20C4 text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":21 20E6 text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":22 214E text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":19 216E text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":25 217C text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":26 218C text15 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":91 2190 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":93 2192 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":95 2194 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":96 2194 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":98 219A text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":99 21A6 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":102 21AC text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":103 21AC text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":105 21B2 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":108 21C0 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":109 21C0 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":111 21C6 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":112 21D2 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":113 21DE text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":114 21E4 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":115 21E8 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":116 21EA text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":118 21F0 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":119 21FC text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":120 220C text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":121 2212 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":124 2216 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":126 221C text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":128 2224 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":130 2228 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":132 223E text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":134 224A text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":136 224C text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":138 227C text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":139 2284 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":134 22AA text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":143 22AE text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":145 22BA text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":93 22C0 text4 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":150 22D4 text4 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":62 22D8 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":64 22DA text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":65 22F6 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":67 2310 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":68 2316 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":66 2326 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":71 2358 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":72 235E text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":73 2376 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":70 2386 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":76 23B8 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":77 23BE text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":75 23CE text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":79 23D6 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":80 23DE text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":81 23E4 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":82 23EA text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":83 23F6 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":84 2400 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":85 2406 text55 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\float.c":86 2412 text55 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":33 2416 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":35 2418 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":36 2428 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":38 2438 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":40 244A text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":42 2468 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":44 2472 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":46 247A text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":51 24C6 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":38 24D0 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":56 24E0 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":58 2524 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":61 2534 text31 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":62 253C text31 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":17 2540 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":22 2542 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":24 254A text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":25 256A text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":26 2572 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":27 257E text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":29 25B0 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":30 25D0 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":31 25F0 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":32 25FA text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":33 2602 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":34 260A text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":35 2640 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":36 264C text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":37 2654 text38 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":8 2658 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":13 265A text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":14 266A text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":15 2682 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":16 2690 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":18 26A0 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":19 26B8 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":20 26C6 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":21 26D2 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":22 26E2 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":23 26E4 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":24 26F0 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":22 26F6 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":27 26FE text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":28 271A text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":29 2732 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":30 273E text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":32 2746 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":33 2750 text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":34 275E text17 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awmod.c":35 2766 text17 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":3 276A text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":5 276C text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":7 277A text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":8 277C text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":10 277E text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":12 2790 text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":14 27A2 text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":15 27A4 text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":17 27A6 text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":18 27E6 text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":19 281A text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":21 284E text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\armement.c":22 2876 text49 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":80 287A text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":82 287C text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":84 288A text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":86 288E text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":87 2890 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":90 2892 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":92 28A4 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":93 28A6 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":95 28A8 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":96 28E8 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":97 291C text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":99 2950 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":100 2978 text2 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":9 297C text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":11 2982 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":13 2984 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":14 2988 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":18 298C text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":19 2990 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":20 2994 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":21 2998 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":22 299C text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":23 29A0 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":25 29A4 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":26 29A8 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":27 29AC text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":28 29B0 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":29 29B4 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":30 29B8 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":31 29BC text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":32 29C0 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":33 29C4 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":34 29C8 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":35 29CC text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":36 29D0 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":37 29D4 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":11 29DA text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":40 2A76 text46 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":64 2A7A text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":66 2A7C text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":68 2A8A text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":69 2A8C text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":71 2A8E text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":73 2AA0 text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":74 2AE0 text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":75 2B14 text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":77 2B48 text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":78 2B70 text3 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":66 2B74 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":70 2B7A text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":72 2B8E text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":74 2BB4 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":75 2BC4 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":77 2BD4 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":79 2BE0 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":80 2BF0 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":81 2C00 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":84 2C02 text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":85 2C1C text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":88 2C2C text14 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":89 2C40 text14 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":8 2C44 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":14 2C46 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":15 2C4E text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":16 2C62 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":17 2C6A text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":19 2C72 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":20 2C86 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":21 2C8E text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":23 2C92 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":24 2C9A text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":25 2CA2 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":26 2CAA text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":27 2CAC text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":28 2CB2 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":26 2CB4 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":31 2CB8 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":32 2CBE text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":33 2CCA text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":34 2CD2 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":36 2CD4 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":37 2CDA text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":39 2CDE text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":40 2CE4 text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":41 2CEC text58 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\awdiv.c":42 2CF4 text58 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":116 2CF8 text43 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":119 2CFA text43 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":121 2D16 text43 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":123 2D6A text43 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":125 2D88 text43 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":127 2DA6 text43 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":8 2DAA text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":14 2DAC text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":15 2DBA text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":16 2DC6 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":17 2DD6 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":18 2DD8 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":19 2DE4 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":17 2DEA text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":22 2DF2 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":23 2DFE text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":24 2E1A text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":25 2E32 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":27 2E38 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":28 2E44 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":29 2E4C text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":30 2E4C text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwdiv.c":31 2E54 text40 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":4 2E58 text37 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":6 2E5A text37 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":8 2E6A text37 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":9 2E82 text37 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":10 2EB2 text37 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":12 2EC0 text37 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\itoa.c":14 2EE4 text37 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":66 2EE8 text30 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":68 2EEA text30 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":70 2EFA text30 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":73 2F0C text30 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":70 2F4A text30 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":79 2F5A text30 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":81 2F6A text30 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":82 2F72 text30 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":8 2F76 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":13 2F78 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":14 2F84 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":15 2F94 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":16 2F96 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":17 2FA2 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":15 2FA8 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":20 2FB0 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":21 2FCC text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":22 2FE4 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":23 2FF0 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":24 2FF8 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":25 2FF8 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwmod.c":26 3000 text39 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":4 3004 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":9 300A text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":10 301A text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":11 3024 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":12 3034 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":13 3036 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":14 303C text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":12 3042 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":17 304A text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":18 3050 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":19 3060 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":20 306C text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":22 3072 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":23 3078 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":25 3080 text16 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lbdiv.c":26 3086 text16 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":132 308A text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":134 308C text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":137 309C text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":138 30A0 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":141 30A4 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":144 30AA text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":147 30B4 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":150 30B8 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":153 30BC text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":156 30C0 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":160 30C4 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":161 30C8 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":163 30CC text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":166 30CE text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":167 30D2 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":169 30D4 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":170 30D8 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":172 30DA text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":173 30DE text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":175 30E0 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":176 30E4 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":177 30E8 text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\main.c":163 30EA text0 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":4 3106 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":6 310C text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":8 311A text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":9 3132 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":11 3134 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":13 3146 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":14 3148 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":16 314C text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":17 3158 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":19 3160 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":21 3162 text50 CODE
+"B:\GitHub\PYROSEQ\Pyronum\analog.c":22 316A text50 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":3 316E text32 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":25 3170 text32 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":26 3184 text32 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":27 31A6 text32 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":40 31C8 text32 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\wmul.c":41 31D0 text32 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":103 31D4 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":106 31D6 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":108 31E6 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":109 31F6 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":110 3206 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":111 3216 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":113 3226 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":114 3236 text48 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":3 323A text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":6 323C text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":10 3240 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":12 3244 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":13 3246 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":14 3248 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":15 324A text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":16 324C text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":17 324E text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":20 3250 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":22 3254 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":23 3256 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":24 3258 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":25 325A text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":26 325C text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":27 325E text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":28 3260 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":29 3262 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":32 3264 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":34 3268 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":35 326A text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":36 326C text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":37 326E text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":38 3270 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":39 3272 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":40 3274 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":41 3276 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":44 3278 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":46 327C text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":47 327E text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":48 3280 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":49 3282 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":50 3284 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":51 3286 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":52 3288 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":53 328A text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":56 328C text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":58 3290 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":59 3292 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":60 3294 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\hardware.c":61 3296 text6 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":52 329A text24 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":54 329C text24 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":56 32A4 text24 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":58 32A8 text24 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":60 32BE text24 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":62 32F2 text24 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":19 32F6 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":21 32F8 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":23 3308 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":25 330E text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":26 3312 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":28 331E text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":30 3320 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":32 3330 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":34 333C text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":37 3340 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":38 3346 text18 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":3 334A text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":5 3350 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":6 3354 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":8 3356 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":9 3366 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":11 336A text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":13 3374 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":14 3380 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":6 3384 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":17 3396 text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":6 339A text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":17 339C text42 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":40 339E text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":44 33A0 text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":46 33B2 text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":47 33C6 text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":48 33CE text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":44 33D4 text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":50 33E8 text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":44 33EC text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":50 33EE text26 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":52 33F0 text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":56 33F2 text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":58 3404 text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":59 3416 text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":60 341E text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":56 3424 text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":62 3438 text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":56 343C text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":62 343E text22 CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4045 3440 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4047 3440 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4050 3440 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4107 3440 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4108 3444 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4109 3446 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4110 3446 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4111 3448 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4112 344A cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4115 344C cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4116 3450 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4117 3452 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4118 3452 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4119 3454 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4120 3456 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4123 3458 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4124 345C cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4125 345E cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4126 345E cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4127 3460 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4128 3462 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4133 3464 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4134 3466 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4135 3468 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4136 346A cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4137 346C cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4138 346E cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4139 3470 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4140 3474 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4141 3478 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4142 3478 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4143 347A cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4144 347E cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4145 3480 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4146 3482 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4152 3484 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4154 3484 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4155 3486 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4156 3488 cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\Pyronum.production.as":4157 348A cinit CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":3 348E text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":8 3494 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":11 3496 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":12 3498 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":14 349A text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":16 349C text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":17 34AE text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":18 34AE text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":20 34B0 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":21 34C2 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":23 34C4 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":16 34C6 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":26 34D4 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":29 34D6 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\register.c":30 34D8 text9 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":3 34DC text35 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":5 34DE text35 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":6 34F0 text35 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":7 3502 text35 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":8 3514 text35 CODE
+"B:\GitHub\PYROSEQ\Pyronum\bouton.c":9 3526 text35 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c":28 352A text52 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c":30 352C text52 CODE
+"E:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\lwtoft.c":31 3572 text52 CODE
+"B:\GitHub\PYROSEQ\Pyronum\time.c":4 3576 text51 CODE
+"B:\GitHub\PYROSEQ\Pyronum\time.c":6 3578 text51 CODE
+"B:\GitHub\PYROSEQ\Pyronum\time.c":8 3580 text51 CODE
+"B:\GitHub\PYROSEQ\Pyronum\time.c":9 35B8 text51 CODE
+"B:\GitHub\PYROSEQ\Pyronum\time.c":8 35BC text51 CODE
+"B:\GitHub\PYROSEQ\Pyronum\time.c":9 35BE text51 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":50 35C0 text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":52 35C6 text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":54 35CA text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":56 35D4 text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":58 35D6 text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":59 35DA text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":60 35DE text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":61 35E2 text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":56 35E6 text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":64 3604 text44 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":84 3608 text28 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":86 360A text28 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":88 361A text28 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":90 3632 text28 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":93 3642 text28 CODE
+"B:\GitHub\PYROSEQ\Pyronum\config.c":94 3648 text28 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":23 364C text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":25 3652 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":26 3654 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":28 3656 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":29 3660 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":30 3672 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":32 3678 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":33 367A text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":36 367C text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":37 3680 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":38 3686 text8 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":28 368A text33 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":32 3690 text33 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":34 369C text33 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":38 36A6 text33 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":41 36B4 text33 CODE
+"B:\GitHub\PYROSEQ\Pyronum\utils.c":42 36BA text33 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":39 36BE text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":43 36C0 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":64 36C4 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":65 36C8 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":69 36CC text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":75 36D0 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":82 36D4 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":83 36D6 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":84 36D8 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":85 36DA text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":87 36DC text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":88 36E4 text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":89 36EA text5 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":41 36EE text19 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":43 36F0 text19 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":45 36F6 text19 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":46 36FA text19 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":48 3710 text19 CODE
+"B:\GitHub\PYROSEQ\Pyronum\test.c":50 3716 text19 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":18 371A text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":20 3720 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":21 3724 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":23 3728 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":24 372A text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":25 372C text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":27 372E text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":29 3730 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":30 3734 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":32 3738 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":33 373A text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":35 373E text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":37 3740 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":38 3742 text23 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":91 3746 text41 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":94 3748 text41 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":96 374C text41 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":98 3752 text41 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":100 3754 text41 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":101 3764 text41 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":10 3768 text11 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":12 376A text11 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":13 3782 text11 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":14 3784 text11 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":17 3788 text12 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":19 378A text12 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":20 37A2 text12 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":21 37A4 text12 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":3 37A8 text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":5 37AA text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":9 37AC text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":14 37B0 text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":22 37B4 text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":34 37B8 text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":35 37BA text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":36 37BC text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\micro.c":37 37BE text20 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":3 37C2 text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":5 37C8 text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":7 37CC text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":8 37CE text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":9 37D0 text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":11 37D2 text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":12 37D4 text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":14 37D6 text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\eeprom.c":15 37D8 text27 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":4 37DC text10 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":6 37DE text10 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":7 37EE text10 CODE
+"B:\GitHub\PYROSEQ\Pyronum\feu.c":8 37F0 text10 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":42 37F4 text47 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":44 37FA text47 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":46 3802 text47 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":48 3804 text47 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":3 3808 text45 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":5 380A text45 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":6 380E text45 CODE
+"B:\GitHub\PYROSEQ\Pyronum\ecran.c":7 3812 text45 CODE
 $dist/default/production\startup.obj
 "B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":118 0 reset_vec CODE
 "B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":119 0 reset_vec CODE
 "B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":123 2 reset_vec CODE
 "B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":129 112 init CODE
 "B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":145 112 end_init CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":78 3656 text CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":79 3656 text CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":80 3656 text CODE
-"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":82 3656 text CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":78 381C text CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":79 381C text CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":80 381C text CODE
+"B:\GitHub\PYROSEQ\Pyronum\dist/default/production\startup.as":82 381C text CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1138,25 +1178,25 @@ $dist/default/production\startup.obj
 ___lbdiv@counter BD 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___lwdiv@dividend BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___awdiv@counter 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Pyronum.production.obj
-__end_of_ecran_wait 35DA 0 CODE 0 text39 dist/default/production\Pyronum.production.obj
+__end_of_ecran_wait 3768 0 CODE 0 text41 dist/default/production\Pyronum.production.obj
 ___lwdiv@counter BF 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 _RD 7D30 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _WR 7D31 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ___lwtoft@c C2 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 _Cf 100 0 BANK1 1 bssBANK1 dist/default/production\Pyronum.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__S1 16B 0 ABS 0 - dist/default/production\Pyronum.production.obj
+__S1 17A 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __S2 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_STVR$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _GIE 7F97 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\Pyronum.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\Pyronum.production.obj
 cf_checkout@last_out C2 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_micro_config_rs 3614 0 CODE 0 text18 dist/default/production\Pyronum.production.obj
+__end_of_micro_config_rs 37C2 0 CODE 0 text20 dist/default/production\Pyronum.production.obj
 _Arm 9A 0 BANK0 1 bssBANK0 dist/default/production\Pyronum.production.obj
 _Feu 80 0 BANK0 1 bssBANK0 dist/default/production\Pyronum.production.obj
-__end_of___awdiv 2B88 0 CODE 0 text56 dist/default/production\Pyronum.production.obj
-__end_of_feu_tir 34FC 0 CODE 0 text8 dist/default/production\Pyronum.production.obj
+__end_of___awdiv 2CF8 0 CODE 0 text58 dist/default/production\Pyronum.production.obj
+__end_of_feu_tir 368A 0 CODE 0 text8 dist/default/production\Pyronum.production.obj
 cf_checkrange@valid BB 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ecran_print_num@Num CC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 bouton_refresh@i BF 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1170,18 +1210,18 @@ _RCIP 7CFD 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _Low_priority 18 0 CODE 0 intcodelo dist/default/production\Pyronum.production.obj
 _WREN 7D32 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _CFGS 7D36 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_itoa 2CE8 0 CODE 0 text35 dist/default/production\Pyronum.production.obj
-_utoa 23D0 0 CODE 0 text36 dist/default/production\Pyronum.production.obj
-_main 2E8C 0 CODE 0 text0 dist/default/production\Pyronum.production.obj
+_itoa 2E58 0 CODE 0 text37 dist/default/production\Pyronum.production.obj
+_utoa 2540 0 CODE 0 text38 dist/default/production\Pyronum.production.obj
+_main 308A 0 CODE 0 text0 dist/default/production\Pyronum.production.obj
 __cntErrataNOP_dist/default/production\startup.obj 1 0 ABS 0 - dist/default/production\startup.obj
 ___sp 0 0 STACK 2 stack dist/default/production\startup.obj
 _Test 2E 0 COMRAM 1 bssCOMRAM dist/default/production\Pyronum.production.obj
 eeprom_write_array@Address BE 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 start 112 0 CODE 0 init dist/default/production\startup.obj
-_ana_read 2F78 0 CODE 0 text48 dist/default/production\Pyronum.production.obj
+_ana_read 3106 0 CODE 0 text50 dist/default/production\Pyronum.production.obj
 ___fttol@f1 BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___ftmul@f1 C7 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_bouton_refresh 13BC 0 CODE 0 text32 dist/default/production\Pyronum.production.obj
+__end_of_bouton_refresh 14FC 0 CODE 0 text34 dist/default/production\Pyronum.production.obj
 ecran_dot@Dot BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___fttol@lval C4 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 eeprom_write@Address BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1210,13 +1250,13 @@ itoa@base CF 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.ob
 utoa@base C6 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_feu_process 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ___ftmul@f2 CA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_cf_check 347A 0 CODE 0 text26 dist/default/production\Pyronum.production.obj
+_cf_check 3608 0 CODE 0 text28 dist/default/production\Pyronum.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\Pyronum.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\Pyronum.production.obj
-_feu_check_bp 1740 0 CODE 0 text11 dist/default/production\Pyronum.production.obj
-___ftpack 2168 0 CODE 0 text53 dist/default/production\Pyronum.production.obj
+_feu_check_bp 14FC 0 CODE 0 text13 dist/default/production\Pyronum.production.obj
+___ftpack 22D8 0 CODE 0 text55 dist/default/production\Pyronum.production.obj
 __size_of_cf_check 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_ecran_blank 3046 0 CODE 0 text46 dist/default/production\Pyronum.production.obj
+_ecran_blank 31D4 0 CODE 0 text48 dist/default/production\Pyronum.production.obj
 utoa@c CA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 check_UAlim@temp DC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ?___awmod BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1233,12 +1273,12 @@ __Lrparam 0 0 ABS 0 rparam dist/default/production\Pyronum.production.obj
 register_write@Output BB 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Hram 0 0 ABS 0 ram dist/default/production\Pyronum.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production\Pyronum.production.obj
-_eeprom_read_array 3210 0 CODE 0 text24 dist/default/production\Pyronum.production.obj
+_eeprom_read_array 339E 0 CODE 0 text26 dist/default/production\Pyronum.production.obj
 _Ecran AA 0 BANK0 1 bssBANK0 dist/default/production\Pyronum.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Pyronum.production.obj
 _Blank 606 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production\Pyronum.production.obj
-__end_of_ecran_raz_digit 3650 0 CODE 0 text43 dist/default/production\Pyronum.production.obj
+__end_of_ecran_raz_digit 3816 0 CODE 0 text45 dist/default/production\Pyronum.production.obj
 __Hsfr 0 0 ABS 0 sfr dist/default/production\Pyronum.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production\Pyronum.production.obj
 _Micro 52 0 COMRAM 1 nvCOMRAM dist/default/production\Pyronum.production.obj
@@ -1250,13 +1290,14 @@ __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Pyronum.production.obj
 _Cptms 4F 0 COMRAM 1 bssCOMRAM dist/default/production\Pyronum.production.obj
 ?_ana_read C0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 DecToStr@compareValue C7 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
+__size_of_feu_check_end_P0 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ___ftmul@cntr D4 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 _ADCON0 FC2 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _ADCON1 FC1 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _EECON2 FA7 0 ABS 0 - dist/default/production\Pyronum.production.obj
 armement_process@temp E0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_DecToStr 1EC6 0 CODE 0 text13 dist/default/production\Pyronum.production.obj
-_check_comutest 31BC 0 CODE 0 text40 dist/default/production\Pyronum.production.obj
+_DecToStr 2036 0 CODE 0 text15 dist/default/production\Pyronum.production.obj
+_check_comutest 334A 0 CODE 0 text42 dist/default/production\Pyronum.production.obj
 ?___fttol BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Pyronum.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Pyronum.production.obj
@@ -1268,7 +1309,7 @@ _Register A6 0 BANK0 1 bssBANK0 dist/default/production\Pyronum.production.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Pyronum.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Pyronum.production.obj
 _TMR0IF 7F92 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_delay_ms 33E8 0 CODE 0 text49 dist/default/production\Pyronum.production.obj
+_delay_ms 3576 0 CODE 0 text51 dist/default/production\Pyronum.production.obj
 __size_of_cf_checkout 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 check_program_0@ret C0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 _EEDATA FA8 0 ABS 0 - dist/default/production\Pyronum.production.obj
@@ -1286,7 +1327,7 @@ __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Pyronum.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Pyronum.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Pyronum.production.obj
 ?___lwdiv BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-___lwtoft 339C 0 CODE 0 text50 dist/default/production\Pyronum.production.obj
+___lwtoft 352A 0 CODE 0 text52 dist/default/production\Pyronum.production.obj
 __size_of_DecToStr 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\Pyronum.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Pyronum.production.obj
@@ -1303,7 +1344,7 @@ _ADRESL FC3 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_eeprom_write 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 eeprom_write_array@pData BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_micro_wait 2168 0 CODE 0 text4 dist/default/production\Pyronum.production.obj
+__end_of_micro_wait 22D8 0 CODE 0 text4 dist/default/production\Pyronum.production.obj
 ___ftmul@f3_as_product D1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_feu_tir 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Pyronum.production.obj
@@ -1314,26 +1355,26 @@ __size_of_check_comutest 0 0 ABS 0 - dist/default/production\Pyronum.production.
 __pnvCOMRAM 52 0 COMRAM 1 nvCOMRAM dist/default/production\Pyronum.production.obj
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_Low_priority 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of___ftpack 22A6 0 CODE 0 text53 dist/default/production\Pyronum.production.obj
-_hw_config 30AC 0 CODE 0 text6 dist/default/production\Pyronum.production.obj
+__end_of___ftpack 2416 0 CODE 0 text55 dist/default/production\Pyronum.production.obj
+_hw_config 323A 0 CODE 0 text6 dist/default/production\Pyronum.production.obj
 ?___ftpack BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 check_comutest@State C0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_check_UInfla 270A 0 CODE 0 text2 dist/default/production\Pyronum.production.obj
+_check_UInfla 287A 0 CODE 0 text2 dist/default/production\Pyronum.production.obj
 __CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of___ftpack 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_armement_process 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of___fttol 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _test_process 616 0 CODE 0 text1 dist/default/production\Pyronum.production.obj
-__end_of___awmod 25FA 0 CODE 0 text15 dist/default/production\Pyronum.production.obj
+__end_of___awmod 276A 0 CODE 0 text17 dist/default/production\Pyronum.production.obj
 __size_of_ecran_dot 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_WDTPS$1 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hdata 0 0 ABS 0 data dist/default/production\Pyronum.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\Pyronum.production.obj
-_feu_check_end 35DA 0 CODE 0 text10 dist/default/production\Pyronum.production.obj
+_feu_check_end 3788 0 CODE 0 text12 dist/default/production\Pyronum.production.obj
 itoa@cp D1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 stackhi 5FF 0 ABS 0 - dist/default/production\startup.obj
-_check_program_0 3168 0 CODE 0 text16 dist/default/production\Pyronum.production.obj
+_check_program_0 32F6 0 CODE 0 text18 dist/default/production\Pyronum.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Pyronum.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_ecran_wait 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
@@ -1341,7 +1382,7 @@ __pcstackBANK0 BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.producti
 ___awmod@sign C0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Htemp 0 0 COMRAM 1 temp dist/default/production\Pyronum.production.obj
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\Pyronum.production.obj
-stacklo 16B 0 ABS 0 - dist/default/production\startup.obj
+stacklo 17A 0 ABS 0 - dist/default/production\startup.obj
 test_process@ret E0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\Pyronum.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\Pyronum.production.obj
@@ -1349,18 +1390,18 @@ __CFG_BOR$ON 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hinit 112 0 CODE 0 init dist/default/production\Pyronum.production.obj
 __Linit 112 0 CODE 0 init dist/default/production\Pyronum.production.obj
 __Hintcodelo F2 0 CODE 0 intcodelo dist/default/production\Pyronum.production.obj
-_cf_rcv 1580 0 CODE 0 text19 dist/default/production\Pyronum.production.obj
+_cf_rcv 1894 0 CODE 0 text21 dist/default/production\Pyronum.production.obj
 __Lintcodelo 18 0 CODE 0 intcodelo dist/default/production\Pyronum.production.obj
-___wmul 2FE0 0 CODE 0 text30 dist/default/production\Pyronum.production.obj
+___wmul 316E 0 CODE 0 text32 dist/default/production\Pyronum.production.obj
 _Bouton 8E 0 BANK0 1 bssBANK0 dist/default/production\Pyronum.production.obj
 __cntErrataNOP_build/default/production\powerup.obj 0 0 ABS 0 - build/default/production/powerup.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\Pyronum.production.obj
-__end_of_main 2F08 0 CODE 0 text0 dist/default/production\Pyronum.production.obj
+__end_of_main 3106 0 CODE 0 text0 dist/default/production\Pyronum.production.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\Pyronum.production.obj
 __size_of___lwtoft 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_eeprom_read_array 3262 0 CODE 0 text24 dist/default/production\Pyronum.production.obj
+__end_of_eeprom_read_array 33F0 0 CODE 0 text26 dist/default/production\Pyronum.production.obj
 __pintcodelo 18 0 CODE 0 intcodelo dist/default/production\Pyronum.production.obj
-__end_of_armement_process 1A7A 0 CODE 0 text34 dist/default/production\Pyronum.production.obj
+__end_of_armement_process 1BEA 0 CODE 0 text36 dist/default/production\Pyronum.production.obj
 powerup F2 0 CODE 0 powerup build/default/production/powerup.obj
 __Htext 0 0 ABS 0 text dist/default/production\Pyronum.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\Pyronum.production.obj
@@ -1370,18 +1411,18 @@ __LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Pyronum.production.obj
 eeprom_read_array@i C0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __pdataBANK0 E5 0 BANK0 1 dataBANK0 dist/default/production\Pyronum.production.obj
 _ErreurTir 60B 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
-__end_of___lwtoft 33E8 0 CODE 0 text50 dist/default/production\Pyronum.production.obj
+__end_of___lwtoft 3576 0 CODE 0 text52 dist/default/production\Pyronum.production.obj
 ___ftmul@sign D5 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-end_of_initialization 32F6 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
+end_of_initialization 3484 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
 ecran_print_num@tempStr CD 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_ecran_print_one_char 3432 0 CODE 0 text42 dist/default/production\Pyronum.production.obj
+_ecran_print_one_char 35C0 0 CODE 0 text44 dist/default/production\Pyronum.production.obj
 __size_of_ecran_blank 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ___awdiv@sign 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Pyronum.production.obj
 __size_of_ecran_digit 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ___wmul@multiplicand BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ?_DecToStr C1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_ana_read 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_eeprom_write 358C 0 CODE 0 text21 dist/default/production\Pyronum.production.obj
+_eeprom_write 371A 0 CODE 0 text23 dist/default/production\Pyronum.production.obj
 __CFG_BORV$45 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __end_of_Low_priority F2 0 CODE 0 intcodelo dist/default/production\Pyronum.production.obj
 DecToStr@value C9 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1394,12 +1435,13 @@ _TRISDbits F95 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _PORTBbits F81 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _TRISEbits F96 0 ABS 0 - dist/default/production\Pyronum.production.obj
 _PORTCbits F82 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_register_write 334E 0 CODE 0 text9 dist/default/production\Pyronum.production.obj
+__end_of_register_write 34DC 0 CODE 0 text9 dist/default/production\Pyronum.production.obj
 _PORTEbits F84 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_ecran_dot 362E 0 CODE 0 text45 dist/default/production\Pyronum.production.obj
-_cf_checkrange 2F08 0 CODE 0 text28 dist/default/production\Pyronum.production.obj
+_ecran_dot 37F4 0 CODE 0 text47 dist/default/production\Pyronum.production.obj
+_cf_checkrange 2EE8 0 CODE 0 text30 dist/default/production\Pyronum.production.obj
 __size_of_cf_checkrange 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_register_write 3300 0 CODE 0 text9 dist/default/production\Pyronum.production.obj
+_register_write 348E 0 CODE 0 text9 dist/default/production\Pyronum.production.obj
+__end_of_feu_check_pause 37F4 0 CODE 0 text10 dist/default/production\Pyronum.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Pyronum.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\Pyronum.production.obj
 ?___lwtoft C2 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1411,7 +1453,7 @@ __Hbank0 0 0 ABS 0 bank0 dist/default/production\Pyronum.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Pyronum.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\Pyronum.production.obj
 __Lbank1 0 0 ABS 0 bank1 dist/default/production\Pyronum.production.obj
-__end_of_feu_process 1188 0 CODE 0 text7 dist/default/production\Pyronum.production.obj
+__end_of_feu_process 12C8 0 CODE 0 text7 dist/default/production\Pyronum.production.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\Pyronum.production.obj
 __Lbank2 0 0 ABS 0 bank2 dist/default/production\Pyronum.production.obj
 __size_of_check_program_0 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
@@ -1419,21 +1461,21 @@ ana_read@ANx C3 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production
 __Hbank3 0 0 ABS 0 bank3 dist/default/production\Pyronum.production.obj
 __Lbank3 0 0 ABS 0 bank3 dist/default/production\Pyronum.production.obj
 ___ftmul@exp D0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__cntErrataNOP_dist/default/production\Pyronum.production.obj 77 0 ABS 0 - dist/default/production\Pyronum.production.obj
+__cntErrataNOP_dist/default/production\Pyronum.production.obj 7B 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hbank4 0 0 ABS 0 bank4 dist/default/production\Pyronum.production.obj
 __Lbank4 0 0 ABS 0 bank4 dist/default/production\Pyronum.production.obj
-_ecran_raz_digit 3642 0 CODE 0 text43 dist/default/production\Pyronum.production.obj
+_ecran_raz_digit 3808 0 CODE 0 text45 dist/default/production\Pyronum.production.obj
 __Hbank5 0 0 ABS 0 bank5 dist/default/production\Pyronum.production.obj
 __Lbank5 0 0 ABS 0 bank5 dist/default/production\Pyronum.production.obj
 __Hpowerup 112 0 CODE 0 powerup dist/default/production\Pyronum.production.obj
 __Lpowerup F2 0 CODE 0 powerup dist/default/production\Pyronum.production.obj
-_check_idtest 3560 0 CODE 0 text17 dist/default/production\Pyronum.production.obj
+_check_idtest 36EE 0 CODE 0 text19 dist/default/production\Pyronum.production.obj
 __Htext0 0 0 ABS 0 text0 dist/default/production\Pyronum.production.obj
 __Ltext0 0 0 ABS 0 text0 dist/default/production\Pyronum.production.obj
 __size_of_ecran_raz_digit 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Htext1 0 0 ABS 0 text1 dist/default/production\Pyronum.production.obj
 __Ltext1 0 0 ABS 0 text1 dist/default/production\Pyronum.production.obj
-__ptext0 2E8C 0 CODE 0 text0 dist/default/production\Pyronum.production.obj
+__ptext0 308A 0 CODE 0 text0 dist/default/production\Pyronum.production.obj
 __size_of_ecran_print_num 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Htext2 0 0 ABS 0 text2 dist/default/production\Pyronum.production.obj
 __Ltext2 0 0 ABS 0 text2 dist/default/production\Pyronum.production.obj
@@ -1441,32 +1483,32 @@ __ptext1 616 0 CODE 0 text1 dist/default/production\Pyronum.production.obj
 cf_check_and_display@configOk D2 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Htext3 0 0 ABS 0 text3 dist/default/production\Pyronum.production.obj
 __Ltext3 0 0 ABS 0 text3 dist/default/production\Pyronum.production.obj
-__ptext2 270A 0 CODE 0 text2 dist/default/production\Pyronum.production.obj
+__ptext2 287A 0 CODE 0 text2 dist/default/production\Pyronum.production.obj
 __Htext4 0 0 ABS 0 text4 dist/default/production\Pyronum.production.obj
 __Ltext4 0 0 ABS 0 text4 dist/default/production\Pyronum.production.obj
-__ptext3 290A 0 CODE 0 text3 dist/default/production\Pyronum.production.obj
+__ptext3 2A7A 0 CODE 0 text3 dist/default/production\Pyronum.production.obj
 __Htext5 0 0 ABS 0 text5 dist/default/production\Pyronum.production.obj
 __Ltext5 0 0 ABS 0 text5 dist/default/production\Pyronum.production.obj
-__ptext4 2020 0 CODE 0 text4 dist/default/production\Pyronum.production.obj
+__ptext4 2190 0 CODE 0 text4 dist/default/production\Pyronum.production.obj
 __Htext6 0 0 ABS 0 text6 dist/default/production\Pyronum.production.obj
 __Ltext6 0 0 ABS 0 text6 dist/default/production\Pyronum.production.obj
-__ptext5 3530 0 CODE 0 text5 dist/default/production\Pyronum.production.obj
+__ptext5 36BE 0 CODE 0 text5 dist/default/production\Pyronum.production.obj
 __Htext7 0 0 ABS 0 text7 dist/default/production\Pyronum.production.obj
 __Ltext7 0 0 ABS 0 text7 dist/default/production\Pyronum.production.obj
-__ptext6 30AC 0 CODE 0 text6 dist/default/production\Pyronum.production.obj
+__ptext6 323A 0 CODE 0 text6 dist/default/production\Pyronum.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Pyronum.production.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Pyronum.production.obj
-__end_of_hw_config 310C 0 CODE 0 text6 dist/default/production\Pyronum.production.obj
-_HexToAscii 34FC 0 CODE 0 text31 dist/default/production\Pyronum.production.obj
+__end_of_hw_config 329A 0 CODE 0 text6 dist/default/production\Pyronum.production.obj
+_HexToAscii 368A 0 CODE 0 text33 dist/default/production\Pyronum.production.obj
 __Htext8 0 0 ABS 0 text8 dist/default/production\Pyronum.production.obj
 __Ltext8 0 0 ABS 0 text8 dist/default/production\Pyronum.production.obj
-__ptext7 F1E 0 CODE 0 text7 dist/default/production\Pyronum.production.obj
-_ecran_digit 280C 0 CODE 0 text44 dist/default/production\Pyronum.production.obj
+__ptext7 FFC 0 CODE 0 text7 dist/default/production\Pyronum.production.obj
+_ecran_digit 297C 0 CODE 0 text46 dist/default/production\Pyronum.production.obj
 __pbssCOMRAM 2E 0 COMRAM 1 bssCOMRAM dist/default/production\Pyronum.production.obj
 __Htext9 0 0 ABS 0 text9 dist/default/production\Pyronum.production.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/production\Pyronum.production.obj
-__ptext8 34BE 0 CODE 0 text8 dist/default/production\Pyronum.production.obj
-__ptext9 3300 0 CODE 0 text9 dist/default/production\Pyronum.production.obj
+__ptext8 364C 0 CODE 0 text8 dist/default/production\Pyronum.production.obj
+__ptext9 348E 0 CODE 0 text9 dist/default/production\Pyronum.production.obj
 _micro_wait$2387 C5 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Pyronum.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Pyronum.production.obj
@@ -1474,23 +1516,23 @@ __size_of_bouton_refresh 0 0 ABS 0 - dist/default/production\Pyronum.production.
 HexToAscii@character BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 feu_tir@Output C0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ?_check_UInfla D6 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of__initialization 32F6 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
+__end_of__initialization 3484 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
 micro_wait@tempTime C3 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_eeprom_write_array 3262 0 CODE 0 text20 dist/default/production\Pyronum.production.obj
+_eeprom_write_array 33F0 0 CODE 0 text22 dist/default/production\Pyronum.production.obj
 eeprom_read_array@Address BD 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_micro_config 3560 0 CODE 0 text5 dist/default/production\Pyronum.production.obj
-__end_of___lwdiv 2CE8 0 CODE 0 text38 dist/default/production\Pyronum.production.obj
+__end_of_micro_config 36EE 0 CODE 0 text5 dist/default/production\Pyronum.production.obj
+__end_of___lwdiv 2E58 0 CODE 0 text40 dist/default/production\Pyronum.production.obj
 cf_rcv@i D1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_ecran_print_one_char 347A 0 CODE 0 text42 dist/default/production\Pyronum.production.obj
+__end_of_ecran_print_one_char 3608 0 CODE 0 text44 dist/default/production\Pyronum.production.obj
 __size_of_ecran_refresh 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_bouton_init 334E 0 CODE 0 text33 dist/default/production\Pyronum.production.obj
+_bouton_init 34DC 0 CODE 0 text35 dist/default/production\Pyronum.production.obj
 cf_check_and_display@temp D0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Hidata 0 0 CODE 0 idata dist/default/production\Pyronum.production.obj
 __Lidata 0 0 CODE 0 idata dist/default/production\Pyronum.production.obj
 eeprom_write@Data BB 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Hrdata 0 0 COMRAM 1 rdata dist/default/production\Pyronum.production.obj
 __Lrdata 0 0 COMRAM 1 rdata dist/default/production\Pyronum.production.obj
-_cf_checksum BDE 0 CODE 0 text27 dist/default/production\Pyronum.production.obj
+_cf_checksum CBC 0 CODE 0 text29 dist/default/production\Pyronum.production.obj
 __Hidloc 200008 0 IDLOC 0 idloc dist/default/production\Pyronum.production.obj
 itoa@buf CB 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Lidloc 200000 0 IDLOC 0 idloc dist/default/production\Pyronum.production.obj
@@ -1499,11 +1541,12 @@ itoa@val CD 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 utoa@val C4 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 cf_checksum@i C7 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Hstack 0 0 STACK 2 stack dist/default/production\Pyronum.production.obj
-_micro_config_rs 35FA 0 CODE 0 text18 dist/default/production\Pyronum.production.obj
+_micro_config_rs 37A8 0 CODE 0 text20 dist/default/production\Pyronum.production.obj
 __Lstack 0 0 STACK 2 stack dist/default/production\Pyronum.production.obj
-int_func 1D6A 0 CODE 0 intcode_body dist/default/production\Pyronum.production.obj
-___awmod 24E8 0 CODE 0 text15 dist/default/production\Pyronum.production.obj
-___lwmod 2D78 0 CODE 0 text37 dist/default/production\Pyronum.production.obj
+__end_of_feu_check_end_P0 3788 0 CODE 0 text11 dist/default/production\Pyronum.production.obj
+int_func 1EDA 0 CODE 0 intcode_body dist/default/production\Pyronum.production.obj
+___awmod 2658 0 CODE 0 text17 dist/default/production\Pyronum.production.obj
+___lwmod 2F76 0 CODE 0 text39 dist/default/production\Pyronum.production.obj
 __Hparam 0 0 ABS 0 rparam dist/default/production\Pyronum.production.obj
 __Lparam 0 0 ABS 0 rparam dist/default/production\Pyronum.production.obj
 __size_of_hw_config 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
@@ -1512,50 +1555,51 @@ __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Pyronum.productio
 eeprom_read_array@pData BB 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Pyronum.production.obj
 ___ftpack@sign BE 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_ecran_blank 30AC 0 CODE 0 text46 dist/default/production\Pyronum.production.obj
+__end_of_ecran_blank 323A 0 CODE 0 text48 dist/default/production\Pyronum.production.obj
 __Hsmallconst 616 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
 __Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
 __psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
 main@cpt E4 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_bouton_refresh 1188 0 CODE 0 text32 dist/default/production\Pyronum.production.obj
+_bouton_refresh 12C8 0 CODE 0 text34 dist/default/production\Pyronum.production.obj
 _Version 610 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
-___fttol 1BF4 0 CODE 0 text51 dist/default/production\Pyronum.production.obj
+___fttol 1D64 0 CODE 0 text53 dist/default/production\Pyronum.production.obj
 __Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\Pyronum.production.obj
 __Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\Pyronum.production.obj
 ?___wmul BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-___lbdiv 2E06 0 CODE 0 text14 dist/default/production\Pyronum.production.obj
+___lbdiv 3004 0 CODE 0 text16 dist/default/production\Pyronum.production.obj
 __size_of_delay_ms 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hcinit 0 0 ABS 0 cinit dist/default/production\Pyronum.production.obj
-___ftmul 13BC 0 CODE 0 text52 dist/default/production\Pyronum.production.obj
+___ftmul 16D0 0 CODE 0 text54 dist/default/production\Pyronum.production.obj
 __Lcinit 0 0 ABS 0 cinit dist/default/production\Pyronum.production.obj
-_feu_tir 34BE 0 CODE 0 text8 dist/default/production\Pyronum.production.obj
-__pcinit 32B2 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
+_feu_tir 364C 0 CODE 0 text8 dist/default/production\Pyronum.production.obj
+__pcinit 3440 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-___awdiv 2AD4 0 CODE 0 text56 dist/default/production\Pyronum.production.obj
+_feu_check_pause 37DC 0 CODE 0 text10 dist/default/production\Pyronum.production.obj
+___awdiv 2C44 0 CODE 0 text58 dist/default/production\Pyronum.production.obj
 __ramtop 600 0 RAM 0 ramtop dist/default/production\startup.obj
 __mediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\startup.obj
-_cf_check_and_display 1A7A 0 CODE 0 text23 dist/default/production\Pyronum.production.obj
-___lwdiv 2C3A 0 CODE 0 text38 dist/default/production\Pyronum.production.obj
+_cf_check_and_display 1BEA 0 CODE 0 text25 dist/default/production\Pyronum.production.obj
+___lwdiv 2DAA 0 CODE 0 text40 dist/default/production\Pyronum.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hconst 0 0 CODE 0 const dist/default/production\Pyronum.production.obj
 __Lconst 0 0 CODE 0 const dist/default/production\Pyronum.production.obj
 __size_of_itoa 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_check_idtest 358C 0 CODE 0 text17 dist/default/production\Pyronum.production.obj
+__end_of_check_idtest 371A 0 CODE 0 text19 dist/default/production\Pyronum.production.obj
 ana_read@temp C4 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___fttol@exp1 C8 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_feu_process F1E 0 CODE 0 text7 dist/default/production\Pyronum.production.obj
+_feu_process FFC 0 CODE 0 text7 dist/default/production\Pyronum.production.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Pyronum.production.obj
 __LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Pyronum.production.obj
 bouton_refresh@temp BE 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__pidataBANK0 3650 0 CODE 0 idataBANK0 dist/default/production\Pyronum.production.obj
-_eeprom_read 3614 0 CODE 0 text25 dist/default/production\Pyronum.production.obj
+__pidataBANK0 3816 0 CODE 0 idataBANK0 dist/default/production\Pyronum.production.obj
+_eeprom_read 37C2 0 CODE 0 text27 dist/default/production\Pyronum.production.obj
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_cf_check_and_display 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ___ftpack@arg BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_check_bpon 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_cf_check 34BE 0 CODE 0 text26 dist/default/production\Pyronum.production.obj
+__end_of_cf_check 364C 0 CODE 0 text28 dist/default/production\Pyronum.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Pyronum.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Pyronum.production.obj
 cf_rcv@temp D0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1569,31 +1613,31 @@ cf_checkout@i C3 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.productio
 __size_of_check_UAlim 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\Pyronum.production.obj
 __LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\Pyronum.production.obj
-_check_bpon 310C 0 CODE 0 text22 dist/default/production\Pyronum.production.obj
+_check_bpon 329A 0 CODE 0 text24 dist/default/production\Pyronum.production.obj
 __pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\Pyronum.production.obj
 __Htext10 0 0 ABS 0 text10 dist/default/production\Pyronum.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\Pyronum.production.obj
-__end_of_ecran_refresh 2C3A 0 CODE 0 text41 dist/default/production\Pyronum.production.obj
+__end_of_ecran_refresh 2DAA 0 CODE 0 text43 dist/default/production\Pyronum.production.obj
 __size_of_micro_wait 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Htext20 0 0 ABS 0 text20 dist/default/production\Pyronum.production.obj
 __Ltext20 0 0 ABS 0 text20 dist/default/production\Pyronum.production.obj
-__ptext10 35DA 0 CODE 0 text10 dist/default/production\Pyronum.production.obj
-__end_of_cf_checksum F1E 0 CODE 0 text27 dist/default/production\Pyronum.production.obj
+__ptext10 37DC 0 CODE 0 text10 dist/default/production\Pyronum.production.obj
+__end_of_cf_checksum FFC 0 CODE 0 text29 dist/default/production\Pyronum.production.obj
 __Htext30 0 0 ABS 0 text30 dist/default/production\Pyronum.production.obj
 __Htext11 0 0 ABS 0 text11 dist/default/production\Pyronum.production.obj
 __Ltext30 0 0 ABS 0 text30 dist/default/production\Pyronum.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\Pyronum.production.obj
 __size_of_test_process 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_cf_checkout 23D0 0 CODE 0 text29 dist/default/production\Pyronum.production.obj
-__ptext20 3262 0 CODE 0 text20 dist/default/production\Pyronum.production.obj
+__end_of_cf_checkout 2540 0 CODE 0 text31 dist/default/production\Pyronum.production.obj
+__ptext20 37A8 0 CODE 0 text20 dist/default/production\Pyronum.production.obj
 __Htext40 0 0 ABS 0 text40 dist/default/production\Pyronum.production.obj
 __Htext21 0 0 ABS 0 text21 dist/default/production\Pyronum.production.obj
 __Ltext40 0 0 ABS 0 text40 dist/default/production\Pyronum.production.obj
 __Ltext21 0 0 ABS 0 text21 dist/default/production\Pyronum.production.obj
 eeprom_write_array@i C1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__ptext11 1740 0 CODE 0 text11 dist/default/production\Pyronum.production.obj
-__ptext30 2FE0 0 CODE 0 text30 dist/default/production\Pyronum.production.obj
-__end_of___lbdiv 2E8C 0 CODE 0 text14 dist/default/production\Pyronum.production.obj
+__ptext11 3768 0 CODE 0 text11 dist/default/production\Pyronum.production.obj
+__ptext30 2EE8 0 CODE 0 text30 dist/default/production\Pyronum.production.obj
+__end_of___lbdiv 308A 0 CODE 0 text16 dist/default/production\Pyronum.production.obj
 __Htext50 0 0 ABS 0 text50 dist/default/production\Pyronum.production.obj
 __Htext31 0 0 ABS 0 text31 dist/default/production\Pyronum.production.obj
 __Htext12 0 0 ABS 0 text12 dist/default/production\Pyronum.production.obj
@@ -1601,231 +1645,238 @@ eeprom_read@Address BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.pro
 __Ltext50 0 0 ABS 0 text50 dist/default/production\Pyronum.production.obj
 __Ltext31 0 0 ABS 0 text31 dist/default/production\Pyronum.production.obj
 __Ltext12 0 0 ABS 0 text12 dist/default/production\Pyronum.production.obj
-__ptext21 358C 0 CODE 0 text21 dist/default/production\Pyronum.production.obj
-__ptext40 31BC 0 CODE 0 text40 dist/default/production\Pyronum.production.obj
+__ptext21 1894 0 CODE 0 text21 dist/default/production\Pyronum.production.obj
+__ptext40 2DAA 0 CODE 0 text40 dist/default/production\Pyronum.production.obj
 __Htext41 0 0 ABS 0 text41 dist/default/production\Pyronum.production.obj
 __Htext22 0 0 ABS 0 text22 dist/default/production\Pyronum.production.obj
 __Ltext41 0 0 ABS 0 text41 dist/default/production\Pyronum.production.obj
 __Ltext22 0 0 ABS 0 text22 dist/default/production\Pyronum.production.obj
-__ptext12 2A04 0 CODE 0 text12 dist/default/production\Pyronum.production.obj
-__ptext31 34FC 0 CODE 0 text31 dist/default/production\Pyronum.production.obj
-__ptext50 339C 0 CODE 0 text50 dist/default/production\Pyronum.production.obj
+__ptext12 3788 0 CODE 0 text12 dist/default/production\Pyronum.production.obj
+__ptext31 2416 0 CODE 0 text31 dist/default/production\Pyronum.production.obj
+__ptext50 3106 0 CODE 0 text50 dist/default/production\Pyronum.production.obj
 __Htext51 0 0 ABS 0 text51 dist/default/production\Pyronum.production.obj
 __Htext32 0 0 ABS 0 text32 dist/default/production\Pyronum.production.obj
 __Htext13 0 0 ABS 0 text13 dist/default/production\Pyronum.production.obj
 __Ltext51 0 0 ABS 0 text51 dist/default/production\Pyronum.production.obj
 __Ltext32 0 0 ABS 0 text32 dist/default/production\Pyronum.production.obj
 __Ltext13 0 0 ABS 0 text13 dist/default/production\Pyronum.production.obj
-__ptext22 310C 0 CODE 0 text22 dist/default/production\Pyronum.production.obj
-__ptext41 2B88 0 CODE 0 text41 dist/default/production\Pyronum.production.obj
+__ptext22 33F0 0 CODE 0 text22 dist/default/production\Pyronum.production.obj
+__ptext41 3746 0 CODE 0 text41 dist/default/production\Pyronum.production.obj
 __Htext42 0 0 ABS 0 text42 dist/default/production\Pyronum.production.obj
 __Htext23 0 0 ABS 0 text23 dist/default/production\Pyronum.production.obj
 __Ltext42 0 0 ABS 0 text42 dist/default/production\Pyronum.production.obj
 __Ltext23 0 0 ABS 0 text23 dist/default/production\Pyronum.production.obj
-__ptext13 1EC6 0 CODE 0 text13 dist/default/production\Pyronum.production.obj
-__ptext32 1188 0 CODE 0 text32 dist/default/production\Pyronum.production.obj
-__ptext51 1BF4 0 CODE 0 text51 dist/default/production\Pyronum.production.obj
+__ptext13 14FC 0 CODE 0 text13 dist/default/production\Pyronum.production.obj
+__ptext32 316E 0 CODE 0 text32 dist/default/production\Pyronum.production.obj
+__ptext51 3576 0 CODE 0 text51 dist/default/production\Pyronum.production.obj
 _ADCON0bits FC2 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Htext52 0 0 ABS 0 text52 dist/default/production\Pyronum.production.obj
 __Htext33 0 0 ABS 0 text33 dist/default/production\Pyronum.production.obj
 __Htext14 0 0 ABS 0 text14 dist/default/production\Pyronum.production.obj
-__end_of_eeprom_write_array 32B2 0 CODE 0 text20 dist/default/production\Pyronum.production.obj
+__end_of_eeprom_write_array 3440 0 CODE 0 text22 dist/default/production\Pyronum.production.obj
 __Ltext52 0 0 ABS 0 text52 dist/default/production\Pyronum.production.obj
 __Ltext33 0 0 ABS 0 text33 dist/default/production\Pyronum.production.obj
 __Ltext14 0 0 ABS 0 text14 dist/default/production\Pyronum.production.obj
-__ptext23 1A7A 0 CODE 0 text23 dist/default/production\Pyronum.production.obj
-__ptext42 3432 0 CODE 0 text42 dist/default/production\Pyronum.production.obj
+__ptext23 371A 0 CODE 0 text23 dist/default/production\Pyronum.production.obj
+__ptext42 334A 0 CODE 0 text42 dist/default/production\Pyronum.production.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Htext43 0 0 ABS 0 text43 dist/default/production\Pyronum.production.obj
 __Htext24 0 0 ABS 0 text24 dist/default/production\Pyronum.production.obj
 __Ltext43 0 0 ABS 0 text43 dist/default/production\Pyronum.production.obj
 __Ltext24 0 0 ABS 0 text24 dist/default/production\Pyronum.production.obj
-__ptext14 2E06 0 CODE 0 text14 dist/default/production\Pyronum.production.obj
-__ptext33 334E 0 CODE 0 text33 dist/default/production\Pyronum.production.obj
-__ptext52 13BC 0 CODE 0 text52 dist/default/production\Pyronum.production.obj
-__end_of_check_comutest 3210 0 CODE 0 text40 dist/default/production\Pyronum.production.obj
+__ptext14 2B74 0 CODE 0 text14 dist/default/production\Pyronum.production.obj
+__ptext33 368A 0 CODE 0 text33 dist/default/production\Pyronum.production.obj
+__ptext52 352A 0 CODE 0 text52 dist/default/production\Pyronum.production.obj
+__end_of_check_comutest 339E 0 CODE 0 text42 dist/default/production\Pyronum.production.obj
 __Htext53 0 0 ABS 0 text53 dist/default/production\Pyronum.production.obj
 __Htext34 0 0 ABS 0 text34 dist/default/production\Pyronum.production.obj
 __Htext15 0 0 ABS 0 text15 dist/default/production\Pyronum.production.obj
 __Ltext53 0 0 ABS 0 text53 dist/default/production\Pyronum.production.obj
 __Ltext34 0 0 ABS 0 text34 dist/default/production\Pyronum.production.obj
 __Ltext15 0 0 ABS 0 text15 dist/default/production\Pyronum.production.obj
-__ptext24 3210 0 CODE 0 text24 dist/default/production\Pyronum.production.obj
-__ptext43 3642 0 CODE 0 text43 dist/default/production\Pyronum.production.obj
+__ptext24 329A 0 CODE 0 text24 dist/default/production\Pyronum.production.obj
+__ptext43 2CF8 0 CODE 0 text43 dist/default/production\Pyronum.production.obj
 __size_of_eeprom_write_array 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Htext44 0 0 ABS 0 text44 dist/default/production\Pyronum.production.obj
 __Htext25 0 0 ABS 0 text25 dist/default/production\Pyronum.production.obj
 __Ltext44 0 0 ABS 0 text44 dist/default/production\Pyronum.production.obj
 __Ltext25 0 0 ABS 0 text25 dist/default/production\Pyronum.production.obj
-__ptext15 24E8 0 CODE 0 text15 dist/default/production\Pyronum.production.obj
-__ptext34 18E4 0 CODE 0 text34 dist/default/production\Pyronum.production.obj
-__ptext53 2168 0 CODE 0 text53 dist/default/production\Pyronum.production.obj
+__ptext15 2036 0 CODE 0 text15 dist/default/production\Pyronum.production.obj
+__ptext34 12C8 0 CODE 0 text34 dist/default/production\Pyronum.production.obj
+__ptext53 1D64 0 CODE 0 text53 dist/default/production\Pyronum.production.obj
 ___inthi_sp 0 0 STACK 2 stack dist/default/production\startup.obj
+__Htext54 0 0 ABS 0 text54 dist/default/production\Pyronum.production.obj
 __Htext35 0 0 ABS 0 text35 dist/default/production\Pyronum.production.obj
 __Htext16 0 0 ABS 0 text16 dist/default/production\Pyronum.production.obj
+__Ltext54 0 0 ABS 0 text54 dist/default/production\Pyronum.production.obj
 __Ltext35 0 0 ABS 0 text35 dist/default/production\Pyronum.production.obj
 __Ltext16 0 0 ABS 0 text16 dist/default/production\Pyronum.production.obj
-__ptext25 3614 0 CODE 0 text25 dist/default/production\Pyronum.production.obj
-__ptext44 280C 0 CODE 0 text44 dist/default/production\Pyronum.production.obj
+__ptext25 1BEA 0 CODE 0 text25 dist/default/production\Pyronum.production.obj
+__ptext44 35C0 0 CODE 0 text44 dist/default/production\Pyronum.production.obj
 __Htext45 0 0 ABS 0 text45 dist/default/production\Pyronum.production.obj
 __Htext26 0 0 ABS 0 text26 dist/default/production\Pyronum.production.obj
 __Ltext45 0 0 ABS 0 text45 dist/default/production\Pyronum.production.obj
 __Ltext26 0 0 ABS 0 text26 dist/default/production\Pyronum.production.obj
-__ptext16 3168 0 CODE 0 text16 dist/default/production\Pyronum.production.obj
-__ptext35 2CE8 0 CODE 0 text35 dist/default/production\Pyronum.production.obj
+__ptext16 3004 0 CODE 0 text16 dist/default/production\Pyronum.production.obj
+__ptext35 34DC 0 CODE 0 text35 dist/default/production\Pyronum.production.obj
+__ptext54 16D0 0 CODE 0 text54 dist/default/production\Pyronum.production.obj
+__Htext55 0 0 ABS 0 text55 dist/default/production\Pyronum.production.obj
 __Htext36 0 0 ABS 0 text36 dist/default/production\Pyronum.production.obj
 __Htext17 0 0 ABS 0 text17 dist/default/production\Pyronum.production.obj
+__Ltext55 0 0 ABS 0 text55 dist/default/production\Pyronum.production.obj
 __Ltext36 0 0 ABS 0 text36 dist/default/production\Pyronum.production.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/production\Pyronum.production.obj
-__ptext26 347A 0 CODE 0 text26 dist/default/production\Pyronum.production.obj
-__ptext45 362E 0 CODE 0 text45 dist/default/production\Pyronum.production.obj
+__ptext26 339E 0 CODE 0 text26 dist/default/production\Pyronum.production.obj
+__ptext45 3808 0 CODE 0 text45 dist/default/production\Pyronum.production.obj
 __size_of_HexToAscii 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_ecran_wait 35B8 0 CODE 0 text39 dist/default/production\Pyronum.production.obj
+_ecran_wait 3746 0 CODE 0 text41 dist/default/production\Pyronum.production.obj
 __Htext46 0 0 ABS 0 text46 dist/default/production\Pyronum.production.obj
 __Htext27 0 0 ABS 0 text27 dist/default/production\Pyronum.production.obj
 __Ltext46 0 0 ABS 0 text46 dist/default/production\Pyronum.production.obj
 __Ltext27 0 0 ABS 0 text27 dist/default/production\Pyronum.production.obj
-__ptext17 3560 0 CODE 0 text17 dist/default/production\Pyronum.production.obj
-__ptext36 23D0 0 CODE 0 text36 dist/default/production\Pyronum.production.obj
+__ptext17 2658 0 CODE 0 text17 dist/default/production\Pyronum.production.obj
+__ptext36 1A54 0 CODE 0 text36 dist/default/production\Pyronum.production.obj
+__ptext55 22D8 0 CODE 0 text55 dist/default/production\Pyronum.production.obj
 ___awmod@divisor BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__Htext56 0 0 ABS 0 text56 dist/default/production\Pyronum.production.obj
 __Htext37 0 0 ABS 0 text37 dist/default/production\Pyronum.production.obj
 __Htext18 0 0 ABS 0 text18 dist/default/production\Pyronum.production.obj
-__end_of___lwmod 2E06 0 CODE 0 text37 dist/default/production\Pyronum.production.obj
-__Ltext56 0 0 ABS 0 text56 dist/default/production\Pyronum.production.obj
+__end_of___lwmod 3004 0 CODE 0 text39 dist/default/production\Pyronum.production.obj
 __Ltext37 0 0 ABS 0 text37 dist/default/production\Pyronum.production.obj
 __Ltext18 0 0 ABS 0 text18 dist/default/production\Pyronum.production.obj
-__ptext27 BDE 0 CODE 0 text27 dist/default/production\Pyronum.production.obj
-__ptext46 3046 0 CODE 0 text46 dist/default/production\Pyronum.production.obj
+__ptext27 37C2 0 CODE 0 text27 dist/default/production\Pyronum.production.obj
+__ptext46 297C 0 CODE 0 text46 dist/default/production\Pyronum.production.obj
 ___lwmod@divisor BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_micro_wait 2020 0 CODE 0 text4 dist/default/production\Pyronum.production.obj
+_micro_wait 2190 0 CODE 0 text4 dist/default/production\Pyronum.production.obj
 __Htext47 0 0 ABS 0 text47 dist/default/production\Pyronum.production.obj
 __Htext28 0 0 ABS 0 text28 dist/default/production\Pyronum.production.obj
 eeprom_write_array@NbData BF 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __Ltext47 0 0 ABS 0 text47 dist/default/production\Pyronum.production.obj
 __Ltext28 0 0 ABS 0 text28 dist/default/production\Pyronum.production.obj
-__ptext18 35FA 0 CODE 0 text18 dist/default/production\Pyronum.production.obj
-__ptext37 2D78 0 CODE 0 text37 dist/default/production\Pyronum.production.obj
-__ptext56 2AD4 0 CODE 0 text56 dist/default/production\Pyronum.production.obj
+__ptext18 32F6 0 CODE 0 text18 dist/default/production\Pyronum.production.obj
+__ptext37 2E58 0 CODE 0 text37 dist/default/production\Pyronum.production.obj
 __Htext38 0 0 ABS 0 text38 dist/default/production\Pyronum.production.obj
 __Htext19 0 0 ABS 0 text19 dist/default/production\Pyronum.production.obj
 __Ltext38 0 0 ABS 0 text38 dist/default/production\Pyronum.production.obj
 __Ltext19 0 0 ABS 0 text19 dist/default/production\Pyronum.production.obj
-__ptext28 2F08 0 CODE 0 text28 dist/default/production\Pyronum.production.obj
-__ptext47 25FA 0 CODE 0 text47 dist/default/production\Pyronum.production.obj
-__end_of_arm_UAlim_1A 270A 0 CODE 0 text47 dist/default/production\Pyronum.production.obj
+__ptext28 3608 0 CODE 0 text28 dist/default/production\Pyronum.production.obj
+__ptext47 37F4 0 CODE 0 text47 dist/default/production\Pyronum.production.obj
+__end_of_arm_UAlim_1A 287A 0 CODE 0 text49 dist/default/production\Pyronum.production.obj
 ___fttol@sign1 C3 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_check_bpon 3168 0 CODE 0 text22 dist/default/production\Pyronum.production.obj
+__end_of_check_bpon 32F6 0 CODE 0 text24 dist/default/production\Pyronum.production.obj
 __Htext48 0 0 ABS 0 text48 dist/default/production\Pyronum.production.obj
 __Htext29 0 0 ABS 0 text29 dist/default/production\Pyronum.production.obj
 __Ltext48 0 0 ABS 0 text48 dist/default/production\Pyronum.production.obj
 __Ltext29 0 0 ABS 0 text29 dist/default/production\Pyronum.production.obj
-__ptext19 1580 0 CODE 0 text19 dist/default/production\Pyronum.production.obj
-__ptext38 2C3A 0 CODE 0 text38 dist/default/production\Pyronum.production.obj
+__ptext19 36EE 0 CODE 0 text19 dist/default/production\Pyronum.production.obj
+__ptext38 2540 0 CODE 0 text38 dist/default/production\Pyronum.production.obj
 ___intlo_sp 0 0 STACK 2 stack dist/default/production\startup.obj
+__Htext58 0 0 ABS 0 text58 dist/default/production\Pyronum.production.obj
 __Htext39 0 0 ABS 0 text39 dist/default/production\Pyronum.production.obj
+__Ltext58 0 0 ABS 0 text58 dist/default/production\Pyronum.production.obj
 __Ltext39 0 0 ABS 0 text39 dist/default/production\Pyronum.production.obj
-__ptext29 22A6 0 CODE 0 text29 dist/default/production\Pyronum.production.obj
-__ptext48 2F78 0 CODE 0 text48 dist/default/production\Pyronum.production.obj
+__ptext29 CBC 0 CODE 0 text29 dist/default/production\Pyronum.production.obj
+__ptext48 31D4 0 CODE 0 text48 dist/default/production\Pyronum.production.obj
 __Htext49 0 0 ABS 0 text49 dist/default/production\Pyronum.production.obj
 __Ltext49 0 0 ABS 0 text49 dist/default/production\Pyronum.production.obj
 cf_checksum@valid C6 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__ptext39 35B8 0 CODE 0 text39 dist/default/production\Pyronum.production.obj
+__ptext39 2F76 0 CODE 0 text39 dist/default/production\Pyronum.production.obj
+__ptext58 2C44 0 CODE 0 text58 dist/default/production\Pyronum.production.obj
 __size_of_check_UInfla 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__ptext49 33E8 0 CODE 0 text49 dist/default/production\Pyronum.production.obj
+__ptext49 276A 0 CODE 0 text49 dist/default/production\Pyronum.production.obj
 _INTCONbits FF2 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_CCP2MUX$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_check_program_0 31BC 0 CODE 0 text16 dist/default/production\Pyronum.production.obj
+__end_of_check_program_0 334A 0 CODE 0 text18 dist/default/production\Pyronum.production.obj
 __Hend_init 116 0 CODE 0 end_init dist/default/production\Pyronum.production.obj
 __Lend_init 112 0 CODE 0 end_init dist/default/production\Pyronum.production.obj
 ___lbdiv@divisor BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_check_idtest 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_ecran_print_num 2AD4 0 CODE 0 text12 dist/default/production\Pyronum.production.obj
+__end_of_ecran_print_num 2C44 0 CODE 0 text14 dist/default/production\Pyronum.production.obj
 ___ftpack@exp BD 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___awdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Pyronum.production.obj
 ___lwdiv@divisor BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_test_process BDE 0 CODE 0 text1 dist/default/production\Pyronum.production.obj
-__end_of_delay_ms 3432 0 CODE 0 text49 dist/default/production\Pyronum.production.obj
-_ecran_refresh 2B88 0 CODE 0 text41 dist/default/production\Pyronum.production.obj
+__end_of_test_process CBC 0 CODE 0 text1 dist/default/production\Pyronum.production.obj
+__end_of_delay_ms 35C0 0 CODE 0 text51 dist/default/production\Pyronum.production.obj
+_ecran_refresh 2CF8 0 CODE 0 text43 dist/default/production\Pyronum.production.obj
 __size_of_register_write 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __end_of_Armed 606 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
-__end_of___ftmul 1580 0 CODE 0 text52 dist/default/production\Pyronum.production.obj
+__end_of___ftmul 1894 0 CODE 0 text54 dist/default/production\Pyronum.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __smallconst 600 0 SMALLCONST 0 smallconst dist/default/production\startup.obj
 __CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_micro_config 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hreset_vec 6 0 CODE 0 reset_vec dist/default/production\Pyronum.production.obj
-__end_of_cf_checkrange 2F78 0 CODE 0 text28 dist/default/production\Pyronum.production.obj
+__end_of_cf_checkrange 2F76 0 CODE 0 text30 dist/default/production\Pyronum.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Pyronum.production.obj
 __CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_itoa 2D78 0 CODE 0 text35 dist/default/production\Pyronum.production.obj
+__end_of_itoa 2EE8 0 CODE 0 text37 dist/default/production\Pyronum.production.obj
 __CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 DecToStr@power10 CA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_cf_checkout 22A6 0 CODE 0 text29 dist/default/production\Pyronum.production.obj
+_cf_checkout 2416 0 CODE 0 text31 dist/default/production\Pyronum.production.obj
 DecToStr@result C1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ecran_print_one_char@Digit BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 check_UInfla@temp DC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_check_UAlim 2A04 0 CODE 0 text3 dist/default/production\Pyronum.production.obj
+__end_of_check_UAlim 2B74 0 CODE 0 text3 dist/default/production\Pyronum.production.obj
 cf_checkrange@i BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_feu_check_bp 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __accesstop 80 0 ABS 0 - dist/default/production\startup.obj
 test_process@temp E1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
+__size_of_feu_check_pause 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Pyronum.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\Pyronum.production.obj
 _Cpt1Sur20s 4D 0 COMRAM 1 bssCOMRAM dist/default/production\Pyronum.production.obj
-__pintcode_body 1D6A 0 CODE 0 intcode_body dist/default/production\Pyronum.production.obj
-__end_of_cf_rcv 1740 0 CODE 0 text19 dist/default/production\Pyronum.production.obj
+__pintcode_body 1EDA 0 CODE 0 intcode_body dist/default/production\Pyronum.production.obj
+__end_of_cf_rcv 1A54 0 CODE 0 text21 dist/default/production\Pyronum.production.obj
 eeprom_read_array@NbData BE 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-intlevel0 3656 0 CODE 0 text dist/default/production\startup.obj
-__end_of_bouton_init 339C 0 CODE 0 text33 dist/default/production\Pyronum.production.obj
-intlevel1 3656 0 CODE 0 text dist/default/production\startup.obj
+intlevel0 381C 0 CODE 0 text dist/default/production\startup.obj
+__end_of_bouton_init 352A 0 CODE 0 text35 dist/default/production\Pyronum.production.obj
+intlevel1 381C 0 CODE 0 text dist/default/production\startup.obj
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-intlevel2 3656 0 CODE 0 text dist/default/production\startup.obj
-intlevel3 3656 0 CODE 0 text dist/default/production\startup.obj
-__end_of_check_UInfla 280C 0 CODE 0 text2 dist/default/production\Pyronum.production.obj
+intlevel2 381C 0 CODE 0 text dist/default/production\startup.obj
+intlevel3 381C 0 CODE 0 text dist/default/production\startup.obj
+__end_of_check_UInfla 297C 0 CODE 0 text2 dist/default/production\Pyronum.production.obj
 __size_of_micro_config_rs 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_utoa 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __end_of_Version 615 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
 cf_checkout@valid C1 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_micro_config 3530 0 CODE 0 text5 dist/default/production\Pyronum.production.obj
+_micro_config 36BE 0 CODE 0 text5 dist/default/production\Pyronum.production.obj
 __size_of___lwmod 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_eeprom_read_array 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_arm_UAlim_1A 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_feu_check_bp 18E4 0 CODE 0 text11 dist/default/production\Pyronum.production.obj
-__end_of___wmul 3046 0 CODE 0 text30 dist/default/production\Pyronum.production.obj
+__end_of_feu_check_bp 16D0 0 CODE 0 text13 dist/default/production\Pyronum.production.obj
+__end_of___wmul 31D4 0 CODE 0 text32 dist/default/production\Pyronum.production.obj
 ___lbdiv@quotient BE 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ?_check_UAlim D6 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-start_initialization 32B2 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
-__end_of_DecToStr 2020 0 CODE 0 text13 dist/default/production\Pyronum.production.obj
-__end_of_ana_read 2FE0 0 CODE 0 text48 dist/default/production\Pyronum.production.obj
+start_initialization 3440 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
+__end_of_DecToStr 2190 0 CODE 0 text15 dist/default/production\Pyronum.production.obj
+__end_of_ana_read 316E 0 CODE 0 text50 dist/default/production\Pyronum.production.obj
 ___awdiv@quotient 8 0 COMRAM 1 cstackCOMRAM dist/default/production\Pyronum.production.obj
 ___lwdiv@quotient C0 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of_eeprom_read 362E 0 CODE 0 text25 dist/default/production\Pyronum.production.obj
-__end_of_High_priority 1EC6 0 CODE 0 intcode_body dist/default/production\Pyronum.production.obj
+__end_of_eeprom_read 37DC 0 CODE 0 text27 dist/default/production\Pyronum.production.obj
+__end_of_High_priority 2036 0 CODE 0 intcode_body dist/default/production\Pyronum.production.obj
 __CFG_OSCS$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ecran_digit@Char BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-__end_of___fttol 1D6A 0 CODE 0 text51 dist/default/production\Pyronum.production.obj
-__end_of_ecran_dot 3642 0 CODE 0 text45 dist/default/production\Pyronum.production.obj
-__end_of_cf_check_and_display 1BF4 0 CODE 0 text23 dist/default/production\Pyronum.production.obj
-__end_of_utoa 24E8 0 CODE 0 text36 dist/default/production\Pyronum.production.obj
+__end_of___fttol 1EDA 0 CODE 0 text53 dist/default/production\Pyronum.production.obj
+__end_of_ecran_dot 3808 0 CODE 0 text47 dist/default/production\Pyronum.production.obj
+__end_of_cf_check_and_display 1D64 0 CODE 0 text25 dist/default/production\Pyronum.production.obj
+__end_of_utoa 2658 0 CODE 0 text38 dist/default/production\Pyronum.production.obj
 __size_of___awmod 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __CFG_DEBUG$ON 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __size_of_ecran_print_one_char 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_check_UAlim 290A 0 CODE 0 text3 dist/default/production\Pyronum.production.obj
-__initialization 32B2 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
+_check_UAlim 2A7A 0 CODE 0 text3 dist/default/production\Pyronum.production.obj
+__initialization 3440 0 CODE 0 cinit dist/default/production\Pyronum.production.obj
 register_write@i BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 HexToAscii@Value BB 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ?_arm_UAlim_1A D6 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 __size_of_feu_check_end 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_ecran_digit 290A 0 CODE 0 text44 dist/default/production\Pyronum.production.obj
-__end_of_eeprom_write 35B8 0 CODE 0 text21 dist/default/production\Pyronum.production.obj
-__end_of_feu_check_end 35FA 0 CODE 0 text10 dist/default/production\Pyronum.production.obj
-_armement_process 18E4 0 CODE 0 text34 dist/default/production\Pyronum.production.obj
+__end_of_ecran_digit 2A7A 0 CODE 0 text46 dist/default/production\Pyronum.production.obj
+__end_of_eeprom_write 3746 0 CODE 0 text23 dist/default/production\Pyronum.production.obj
+__end_of_feu_check_end 37A8 0 CODE 0 text12 dist/default/production\Pyronum.production.obj
+_armement_process 1A54 0 CODE 0 text36 dist/default/production\Pyronum.production.obj
 __size_of_bouton_init 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 ___awmod@dividend BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___lwmod@dividend BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1834,13 +1885,14 @@ delay_ms@TimeToWait BA 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.pro
 ___awmod@counter BF 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___wmul@product BE 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___lwmod@counter BF 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
-_arm_UAlim_1A 25FA 0 CODE 0 text47 dist/default/production\Pyronum.production.obj
+_arm_UAlim_1A 276A 0 CODE 0 text49 dist/default/production\Pyronum.production.obj
 __CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-__end_of_HexToAscii 3530 0 CODE 0 text31 dist/default/production\Pyronum.production.obj
+__end_of_HexToAscii 36BE 0 CODE 0 text33 dist/default/production\Pyronum.production.obj
 __size_of___ftmul 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 __end_of_ErreurTir 610 0 SMALLCONST 0 smallconst dist/default/production\Pyronum.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
-_ecran_print_num 2A04 0 CODE 0 text12 dist/default/production\Pyronum.production.obj
+_ecran_print_num 2B74 0 CODE 0 text14 dist/default/production\Pyronum.production.obj
+_feu_check_end_P0 3768 0 CODE 0 text11 dist/default/production\Pyronum.production.obj
 __size_of_High_priority 0 0 ABS 0 - dist/default/production\Pyronum.production.obj
 cf_checksum@calcul C8 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
 ___lbdiv@dividend BC 0 BANK0 1 cstackBANK0 dist/default/production\Pyronum.production.obj
@@ -1877,6 +1929,6 @@ config 0 300000 300000 E 1
 idloc 0 200000 200000 8 1
 cstackCOMRAM 1 1 1 57 1
 bssBANK0 1 80 80 6A 1
-bssBANK1 1 100 100 6B 1
-text1 0 616 616 303F 1
-text 0 3656 3656 2 1
+bssBANK1 1 100 100 7A 1
+text1 0 616 616 3205 1
+text 0 381C 381C 2 1

@@ -8,19 +8,20 @@
 #define TIME_TO_STOP		5000
 
 // Etape du feu d'artifice
-#define FEU_ARMED			0x00
-#define FEU_SELECT			0x01
-#define FEU_GO				0x02
-#define FEU_SELECT_P0		0x03
-#define FEU_GO_P0			0x04
-#define FEU_WAIT_P0			0x05
-#define FEU_STOP			0x06
-#define FEU_RESTART			0x07
-#define FEU_END				0x08
+#define FEU_ARMED                   0x00
+#define FEU_SELECT                  0x01
+#define FEU_GO                      0x02
+#define FEU_SELECT_P0               0x03
+#define FEU_GO_P0                   0x04
+#define FEU_WAIT_P0                 0x05
+#define FEU_STOP                    0x06
+#define FEU_RESTART                 0x07
+#define FEU_END                     0x08
+#define FEU_PAUSE                   0x09    // MOD_V0010
+#define FEU_RESTART_AFTER_PAUSE     0x0A    // MOD_V0010
 
 volatile byte Decompte;
 volatile word Cpt1Sur20s;
-
 
 typedef struct	StructFeu{
 	byte		Step;
